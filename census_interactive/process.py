@@ -5,11 +5,17 @@ import numpy as np
 import pandas as pd
 
 
-"""
-All active contributor by gender by window: './contributor/all/'
-Core active contributor by gender by window: './contributor/core/'
-"""
-def load_contributor(lang,dat, store_path):
+def load_contributor(lang, dat, store_path):
+    """
+    Stores formatted JavaScript variables for graph from:
+    All active contributor by gender by window: './contributor/all/'
+    Core active contributor by gender by window: './contributor/core/'
+
+    :string lang: programming language
+    :dict dat: CSV data
+    :string store_path: path to Contributor graph settings
+    :return: None
+    """ 
     max_win = 45
     dat = dat[dat['win']<=max_win]
 
@@ -111,10 +117,16 @@ def load_contributor(lang,dat, store_path):
 
     
 
-"""
-Commit count by gender by window: './commit/graph'
-"""
 def load_commit(lang, dat, store_path):
+    """
+    Stores formatted JavaScript variables for graph from:
+    Commit count by gender by window: './commit/graph'
+
+    :string lang: programming language
+    :dict dat: CSV data
+    :string store_path: path to Contributor graph settings
+    :return: None
+    """ 
     max_win = 45
     dat = dat[dat['win']<=max_win]
     
@@ -199,11 +211,16 @@ def load_commit(lang, dat, store_path):
 
 
 
-
-"""
-All active project count by window: './project/'
-"""
 def load_project(lang, dat, store_path):
+    """
+    Stores formatted JavaScript variables for graph from:
+    All active project count by window: './project/'
+
+    :string lang: programming language
+    :dict dat: CSV data
+    :string store_path: path to Contributor graph settings
+    :return: None
+    """ 
     max_win = 45
     dat = dat[dat['win']<=max_win]
 
