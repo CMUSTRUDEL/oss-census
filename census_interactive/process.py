@@ -85,10 +85,7 @@ def load_contributor(lang, dat, store_path):
         month = time - math.floor(time/12)*12
         if not month:
             month = 12
-        if month == 3:
-            x.append("{}".format(year))
-        else:
-            x.append("{}-{}".format(year,month))
+        x.append("{}-{}".format(year,month))
     wins = x
 
     # Graph setup information
@@ -180,10 +177,7 @@ def load_commit(lang, dat, store_path):
         month = time - math.floor(time/12)*12
         if not month:
             month = 12
-        if month == 3:
-            x.append("{}".format(year))
-        else:
-            x.append("{}-{}".format(year,month))
+        x.append("{}-{}".format(year,month))
     wins = x
 
     # Graph setup information
@@ -269,10 +263,7 @@ def load_project(lang, dat, store_path):
         month = time - math.floor(time/12)*12
         if not month:
             month = 12
-        if month == 3:
-            x.append("{}".format(year))
-        else:
-            x.append("{}-{}".format(year,month))
+        x.append("{}-{}".format(year,month))
     wins = x
 
     # Graph setup information
