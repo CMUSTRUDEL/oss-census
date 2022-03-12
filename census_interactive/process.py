@@ -5,17 +5,18 @@ import numpy as np
 import pandas as pd
 
 
-def load_contributor(lang, dat, store_path):
+def load_contributor(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
     All active contributor by gender by window: './contributor/all/'
     Core active contributor by gender by window: './contributor/core/'
 
     :string lang: programming language
-    :dict dat: CSV data
+    :string dat_path: CSV pandas data
     :string store_path: path to Contributor graph settings
     :return: None
     """ 
+    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
     max_win = 45
     dat = dat[dat['win']<=max_win]
 
@@ -109,21 +110,22 @@ def load_contributor(lang, dat, store_path):
         out_file.write('var x_categories = %s;' % x_categories)
         out_file.write('var height_ratio = %s;' % height_ratio)
         out_file.write('var data = %s;' % data)
-    webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
+    #webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
 
 
     
 
-def load_commit(lang, dat, store_path):
+def load_commit(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
     Commit count by gender by window: './commit/graph'
 
     :string lang: programming language
-    :dict dat: CSV data
+    :string dat_path: CSV data path
     :string store_path: path to Contributor graph settings
     :return: None
     """ 
+    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
     max_win = 45
     dat = dat[dat['win']<=max_win]
     
@@ -201,20 +203,21 @@ def load_commit(lang, dat, store_path):
         out_file.write('var x_categories = %s;' % x_categories)
         out_file.write('var height_ratio = %s;' % height_ratio)
         out_file.write('var data = %s;' % data)
-    webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
+    #webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
 
 
 
-def load_project(lang, dat, store_path):
+def load_project(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
     All active project count by window: './project/'
 
     :string lang: programming language
-    :dict dat: CSV data
+    :string dat_path: CSV data path
     :string store_path: path to Contributor graph settings
     :return: None
     """ 
+    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
     max_win = 45
     dat = dat[dat['win']<=max_win]
 
@@ -287,4 +290,4 @@ def load_project(lang, dat, store_path):
         out_file.write('var x_categories = %s;' % x_categories)
         out_file.write('var height_ratio = %s;' % height_ratio)
         out_file.write('var data = %s;' % data)
-    webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
+    #webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
