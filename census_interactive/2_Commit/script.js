@@ -1,4 +1,4 @@
-Highcharts.chart('container', {
+Highcharts.chart('commit', {
   chart: {
       type: 'column',
       height: height_ratio + '%'
