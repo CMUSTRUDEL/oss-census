@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Highcharts.chart('project', {
-=======
-Highcharts.chart('third', {
->>>>>>> 4bcc6233425e630f5db27ae29a638bc2620bc6e1
+var chart_project = new Highcharts.chart('project', {
   chart: {
     type: 'column',
     height: height_ratio + '%'

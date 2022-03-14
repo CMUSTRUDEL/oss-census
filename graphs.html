@@ -17,13 +17,14 @@
         }
     </style>
 
-   
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
+
+
 <body class="bg-white font-family-karla">
     <!-- Top Bar Nav -->
-    <nav class="w-full py-4 bg-blue-800 shadow">
+    <nav class="w-full py-4 bg-blue-900 shadow">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
             <nav>
                 <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
@@ -37,4 +38,82 @@
     <!-- select component use event listeners search up onchange/click 'event.target.value' retrieve data user inputs
     in function specify wut to do 
     -->
+    <div class="flex justify-center">
+        <div class="mb-3 my-6 xl:w-96">
+            <label for="language-select">Choose a language:</label>
+            <select name="language" id="language-select" onchange="update()" class="form-select appearance-none 
+                block
+                w-full
+                px-3
+                py-1.5
+                my-4
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding bg-no-repeat
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                <option selected>--Please choose an option--</option>
+                <option value="Python">Python</option>
+                <option value="C#">C#</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="Go">Go</option>
+                <option value="Ruby">Ruby</option>
+                <option value="C++">C++</option>
+                <option value="TypeScript">TypeScript</option>
+                <option value="PHP">PHP</option>
+                <option value="C">C</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Jupyter">Jupyter</option>
+                <option value="Shell">Shell</option>
+                <option value="Objective-C">Objective-C</option>
+                <option value="All">All</option>
+            </select>
+            <label for="category-select">Choose a Category:</label>
+            <select name="category" id="category-select" onchange="update()" class="form-select appearance-none 
+                block
+                w-full
+                px-3
+                py-1.5
+                my-4
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding bg-no-repeat
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                <option selected>--Please choose an option--</option>
+                <option value="Contributors">Contributors</option>
+                <option value="Commits">Commits</option>
+                <option value="Project">Project</option>
+                <option value="All">All</option>
+            </select>
+            <div class="flex space-x-2 justify-center">
+                <button
+                  type="button"
+                  data-mdb-ripple="true"
+                  data-mdb-ripple-color="light"
+                  class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                >Generate</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function update() {
+            var select = document.getElementById('language-select');
+			var option = select.options[select.selectedIndex];
+            console.log(select, option, option.value);
+        } 
+    </script>
 </body>

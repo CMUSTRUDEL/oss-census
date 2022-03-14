@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-Highcharts.chart('commit', {
-=======
-Highcharts.chart('second', {
->>>>>>> 4bcc6233425e630f5db27ae29a638bc2620bc6e1
+var chart_commit = new Highcharts.chart('commit', {
   chart: {
       type: 'column',
       height: height_ratio + '%'
-  
   },
   title: {
       text: title

@@ -1,20 +1,17 @@
 languages:
-- JavaScript
-- Python
-# - Java
-# - Go
-# - Ruby
-# - C++
-# - TypeScript
-# - PHP
-# - C#
-# - C
-# - HTML
-# - CSS
-# - Jupyter
-# - Shell
-# - Objective-C
-# - All
-genders:
-# - male
-# - female
+-JavaScript
+Python
+-Java
+-Go
+-Ruby
+-C++
+-TypeScript
+-PHP
+-C#
+-C
+-HTML
+-CSS
+-Jupyter
+-Shell
+-Objective-C
+-All

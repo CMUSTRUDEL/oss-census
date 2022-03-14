@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Highcharts.chart('contributor', {
-=======
-Highcharts.chart('first', {
->>>>>>> 4bcc6233425e630f5db27ae29a638bc2620bc6e1
+var chart_contributor = new Highcharts.chart('contributor', {
   chart: {
       type: 'column',
       height: height_ratio + '%'
