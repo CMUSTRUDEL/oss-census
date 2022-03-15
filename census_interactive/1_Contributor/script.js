@@ -1,4 +1,4 @@
-var chart_contributor = new Highcharts.chart('contributor', {
+var chart_contributor = new Highcharts.chart('cont', {
   chart: {
       type: 'column',
       height: height_ratio + '%'

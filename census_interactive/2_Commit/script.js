@@ -1,4 +1,4 @@
-var chart_commit = new Highcharts.chart('commit', {
+var chart_commit = new Highcharts.chart('comm', {
   chart: {
       type: 'column',
       height: height_ratio + '%'

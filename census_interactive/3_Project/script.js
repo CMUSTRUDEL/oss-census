@@ -1,4 +1,4 @@
-var chart_project = new Highcharts.chart('project', {
+var chart_project = new Highcharts.chart('proj', {
   chart: {
     type: 'column',
     height: height_ratio + '%'
