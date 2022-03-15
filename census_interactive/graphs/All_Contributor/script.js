@@ -1,10 +1,14 @@
-var chart_project = new Highcharts.chart('proj', {
+var chart_contributor = new Highcharts.chart('all_cont', {
   chart: {
-    type: 'column',
-    height: height_ratio + '%'
+      type: 'column',
+      height: height_ratio + '%'
+  
   },
   title: {
-      text: title
+      text: title,
+      style: {
+        fontSize: 14
+      }
   },
   xAxis: {
       title: {
@@ -30,18 +34,15 @@ var chart_project = new Highcharts.chart('proj', {
         },
         opposite: true
     }],
-  legend: {
-      align: 'right',
-      x: -150,
-      verticalAlign: 'top',
-      y: 30,
-      floating: true,
-      backgroundColor:
-          Highcharts.defaultOptions.legend.backgroundColor || 'white',
-      borderColor: '#CCC',
-      borderWidth: 1,
-      shadow: false
-  },
+    legend: {
+        layout: 'vertical',
+        align: 'left',
+        y: 30,
+        x: 70,
+        verticalAlign: 'top',
+        floating: true,
+        backgroundColor: '#FFFFFF'
+      },
   tooltip: {
       headerFormat: '<b>{point.x}</b><br/>',
       pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'

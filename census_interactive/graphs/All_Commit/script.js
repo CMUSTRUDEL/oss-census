@@ -1,11 +1,13 @@
-var chart_contributor = new Highcharts.chart('cont', {
+var chart_commit = new Highcharts.chart('all_comm', {
   chart: {
       type: 'column',
       height: height_ratio + '%'
-  
   },
   title: {
-      text: title
+      text: title,
+      style: {
+          fontSize: 14
+      }
   },
   xAxis: {
       title: {
@@ -32,16 +34,13 @@ var chart_contributor = new Highcharts.chart('cont', {
         opposite: true
     }],
   legend: {
-      align: 'right',
-      x: -150,
-      verticalAlign: 'top',
-      y: 30,
-      floating: true,
-      backgroundColor:
-          Highcharts.defaultOptions.legend.backgroundColor || 'white',
-      borderColor: '#CCC',
-      borderWidth: 1,
-      shadow: false
+    layout: 'vertical',
+    align: 'left',
+    y: 30,
+    x: 70,
+    verticalAlign: 'top',
+    floating: true,
+    backgroundColor: '#FFFFFF'
   },
   tooltip: {
       headerFormat: '<b>{point.x}</b><br/>',

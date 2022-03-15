@@ -6,6 +6,9 @@
     <title>OSS Census</title>
     <meta name="author" content="Justin">
     <meta name="description" content="">
+    <!-- Top Bar Nav -->
+    <link rel="import" href="navigation.html">
+    
 
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -16,8 +19,9 @@
             font-family: karla;
         }
     </style>
-
-    <!-- Graph 1 CSS and Script links -->
+    <!-- JS links -->
+    <script src="js/graphs.js"></script>
+    <!-- Highchart Imports -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -35,7 +39,7 @@
             <nav>
                 <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
                     <li><a class="hover:text-gray-200 hover:underline px-4" href="index.html">Results</a></li>
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="graphs.html">Graphs</a></li>
+                    <li><a class="hover:text-gray-200 underline px-4" href="graphs.html">Graphs</a></li>
                 </ul>
             </nav>
         </div>
@@ -117,13 +121,13 @@
 
     <!-- Graph 1_Contributor -->
 
-    <div id="contributor" class="flex flex-col items-center w-full my-10">                
-        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+    <div id="contributor" style="display: none" class="flex flex-col items-center w-full my-10">                
+        <a href="#" class="px-12 hover:opacity-75 my-4 md:w-3/3">
             <figure class="highcharts-figure">
                 <div id="cont"></div>
                 <!-- JS file link -->
-                <script src="census_interactive/1_Contributor/data.js"></script>
-                <script src="census_interactive/1_Contributor/script.js"></script>
+                <script src="census_interactive/graphs/1_Contributor/data.js"></script>
+                <script src="census_interactive/graphs/1_Contributor/script.js"></script>
                 <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
             </figure>
         </a>
@@ -131,13 +135,13 @@
     
     <!-- Graph 2_Commit -->
 
-    <div id="commit" class="flex flex-col items-center my-10 w-full">
-        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+    <div id="commit" style="display: none" class="flex flex-col items-center my-10 w-full">
+        <a href="#" class="px-12 hover:opacity-75 my-4 md:w-3/3">
             <figure class="highcharts-figure">
                 <div id="comm"></div> 
                 <!-- JS file link -->
-                <script src="census_interactive/2_Commit/data.js"></script>
-                <script src="census_interactive/2_Commit/script.js"></script>
+                <script src="census_interactive/graphs/2_Commit/data.js"></script>
+                <script src="census_interactive/graphs/2_Commit/script.js"></script>
                 <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
             </figure>
         </a>
@@ -145,91 +149,15 @@
 
     <!-- 3_Project Graph -->
 
-    <div id="project" class="flex flex-col items-center my-10 w-full">
-        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+    <div id="project" style="display: none" class="flex flex-col items-center my-10 w-full">
+        <a href="#" class="px-12 hover:opacity-75 my-4 md:w-3/3">
             <figure class="highcharts-figure">
                 <div id="proj"></div>
                 <!-- JS file link -->
-                <script src="census_interactive/3_Project/data.js"></script>
-                <script src="census_interactive/3_Project/script.js"></script>
+                <script src="census_interactive/graphs/3_Project/data.js"></script>
+                <script src="census_interactive/graphs/3_Project/script.js"></script>
                 <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
             </figure>
         </a>
     </div>
-
-    <!-- TODO: Move all Java Script functions to JS files -->
-    <script>
-        function update() {
-            var select_lang = document.getElementById('language-select');
-            var select_cat = document.getElementById('category-select')
-			localStorage.setItem("language", select_lang.options[select_lang.selectedIndex].value);
-            localStorage.setItem("category", select_cat.options[select_cat.selectedIndex].value);
-        } 
-
-        function showGraphs() {
-            var cat = localStorage.getItem("category")
-            var lang = localStorage.getItem("language")
-
-            // Ensure that user selects language and category
-            if (lang === "") {
-                alert('Please select a language');
-            }
-            else if (cat === "") {
-                alert('Please select a category');
-            }
-            else {
-                // Store category
-
-                var cont = document.getElementById("contributor");
-                var comm = document.getElementById("commit");
-                var proj = document.getElementById("project");
-                
-                // TODO: Update data.js variable for language data
-                // loadData(lang);
-
-                // Show contributor graph, hide others
-                if (cat === "contributor") {
-                    comm.setAttribute("style", "display:none");
-                    proj.setAttribute("style", "display:none");
-                    cont.setAttribute("style", "display:show");
-                }
-                // Show commit graph, hide others
-                else if (cat === "commit") {
-                    cont.setAttribute("style", "display:none");
-                    proj.setAttribute("style", "display:none");
-                    comm.setAttribute("style", "display:show");
-                }
-                // Show project graph, hide others
-                else {
-                    comm.setAttribute("style", "display:none");
-                    cont.setAttribute("style", "display:none");
-                    proj.setAttribute("style", "display:show");
-                }
-            }
-        }
-        
-        // TODO: Update to use localstorage
-        function storedValue() {
-            var variableStored = localStorage.getItem("category"); 
-
-            if(variableStored.length > 0){
-                document.getElementById("category-select").selected = variableStored;
-            } else{}
-        }
-
-        // Call to python function to update graph JS data
-        function loadData(input) {
-            $.ajax({
-                type: "POST",
-                url: "/run.py",
-                data: { param: input },
-                success: callbackFunc
-            });
-        }
-        function callbackFunc(response) {
-            // do something with the response
-            console.log("Data loaded!");
-        }
-
-    </script>
 </body>

@@ -98,7 +98,7 @@ def load_contributor(lang, dat_path, store_path):
     label_y = 'Number of Contributors (thousand)'
     label_y_secondary = "Female Ratio = F/(F + M)"
     x_categories = wins
-    height_ratio = (9 / 16 * 100) # 16:9 ratio
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all_unknown, all_male, all_female, among_all, among_core]
    
     # write data to js file that creates variables referenced in script.js file
@@ -191,7 +191,7 @@ def load_commit(lang, dat_path, store_path):
     label_y = 'Commit Numbers (thousand)'
     label_y_secondary = "Female Commit Ratio = F/(F + M)"
     x_categories = wins
-    height_ratio = (9 / 16 * 100) # 16:9 ratio
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all_unknown, all_male, all_female, ratio_female]
     
     # write data to js file that creates variables referenced in script.js file
@@ -278,7 +278,7 @@ def load_project(lang, dat_path, store_path):
     label_y = 'Active Public Project Numbers (thousand)'
     label_y_secondary = "Female Participated Project Ratio"
     x_categories = wins
-    height_ratio = (9 / 16 * 100) # 16:9 ratio
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all, has_female, ratio_female]
     
     # write data to js file that creates variables referenced in script.js file
