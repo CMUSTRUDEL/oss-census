@@ -45,25 +45,21 @@
 
     <!-- Text Header -->
     <header class="w-full container mx-auto">
-        <div class="flex flex-col items-center py-12">
+        <div class="flex flex-col items-center py-8">
             <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
                 OSS Census
             </a>
-            <p class="text-lg text-gray-600">
-                Will Add Subtitle Later
-            </p>
         </div>
     </header>
 
 
     <div class="container mx-auto flex flex-wrap">
-        <!-- Graphs Section -->
-        <section class="w-full items-center px-3">
-        
-
         <!-- Top 3 All Language Graphs -->
-        <div id="contributor" class="flex flex-col items-center w-full my-4">                
-            <article class="flex flex-row shadow w-full md:w-3/3">                 
+        <div id="contributor" class="flex flex-col items-center w-full my-4">
+            <p class="py-4 text-lg text-gray-600">
+                Figure 1
+            </p>               
+            <article class="flex flex-row shadow w-full md:w-3/3">   
                 <a href="#" class="px-2 hover:opacity-75 my-2 md:w-1/3">
                     <figure class="highcharts-figure">
                         <div id="all_cont"></div>
@@ -91,9 +87,46 @@
                         <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                     </figure>
                 </a>        
-            </article>
+            </article> 
         </div>
         
+        <div id="all-description" class="flex flex-col shadow items-center mx-10 my-10 w-full">
+            <h1 class="font-bold leading-tight text-gray-900 py-4 font-3xl">Longitudinal Pattern</h1>
+            <p class="text-base font-light leading-relaxed py-1 px-4 mt-0 mb-4">
+                Results to RQ1 are shown in Figure 1. The left y-axis in Figure 1
+                corresponds to the histogram in the graph, indicating the number of
+                developers (Figure 1a), commits (Figure 1b), and projects (Figure 1c).
+                The right y-axis corresponds to the lines indicating the ratio of
+                female participation.
+            </p>
+            <p class="text-base font-light leading-relaxed py-1 px-4 mt-0 mb-4">
+                Overall, all three measurements show a similarly low but
+                steady increase in the female ratio. As presented in Figure 1,
+                in the beginning (2008), female contributors took up less than 3%
+                of all active contributor population and number of commits, and
+                participated in only 5.8% of all projects. The ratio had been relatively
+                stable until 2012, followed by an increase in the next 6 years. By
+                the end of our data, female participation has increased for all three
+                aspects. Female ratio grew to 7.96% among all and 6.0% among core
+                contributors; the ratio of female-authored commits reached 10.98%;
+                and as many as 19.3% projects had at least one female contributor.
+                There is a drastic increase of female commit around 2018 in
+                Figure 1b. We speculate that one of the reasons is the increase in
+                female commits to Ruby projects, of which many are programming
+                course repository with a large number of female participants. After
+                a manual inspection, we found that the top 50 Ruby public projects
+                with the most number of female contributors are all course materials. Moreover, education programs in other ecosystems such
+                as Jupyter Notebook, although not as prevalent as in Ruby, also
+                attracted many female developers.
+            </p>
+            <p class="text-base font-light leading-relaxed py-1 px-4 mt-0 mb-4">
+                Similar to Canedo et al.’s findings[3], we observed a lower
+                level of female participation as core developers. Shown in Figure 1a, the core female contributor ratio in 2018 is 6.0%, much higher
+                than the 2.3% reported by Canedo et al. [3]. Overall, female ratio
+                among core and among all developers were both around 3% at first
+                and started to diverge in late 2011.
+            </p>
+        </div>
 
         <!-- Graph 2_Commit -->
         <div id="commit" class="flex flex-col items-center my-10 w-full">
@@ -121,19 +154,11 @@
             class="relative w-full flex items-center invisible md:visible md:pb-12"
             x-data="getCarouselData()"
         >
-            <button
-                class="absolute bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 ml-12"
-                x-on:click="decrement()">
-                &#8592;
-            </button>
+
             <template x-for="image in images.slice(currentIndex, currentIndex + 6)" :key="images.indexOf(image)">
                 <img class="w-1/6 hover:opacity-75" :src="image">
             </template>
-            <button
-                class="absolute right-0 bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 mr-12"
-                x-on:click="increment()">
-                &#8594;
-            </button>
+           
         </div>
         <div class="w-full container mx-auto flex flex-col items-center">
             <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
