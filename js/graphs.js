@@ -23,8 +23,6 @@ function showGraphs() {
         var comm = document.getElementById("commit");
         var proj = document.getElementById("project");
         
-        // TODO: Update data.js variable for language data
-        // loadData(lang);
 
         // Show contributor graph, hide others
         if (cat === "contributor") {
@@ -54,18 +52,4 @@ function storedValue() {
     if(variableStored.length > 0){
         document.getElementById("category-select").selected = variableStored;
     } else{}
-}
-
-// Call to python function to update graph JS data
-function loadData(input) {
-    $.ajax({
-        type: "POST",
-        url: "/run.py",
-        data: { param: input },
-        success: callbackFunc
-    });
-}
-function callbackFunc(response) {
-    // do something with the response
-    console.log("Data loaded!");
 }
