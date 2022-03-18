@@ -21,24 +21,28 @@ function showGraphs() {
         var cont = document.getElementById("contributor");
         var comm = document.getElementById("commit");
         var proj = document.getElementById("project");
-        // identify proper html <script> by category
-        parseData('census_interactive/data/'+cat+'/'+lang+'.json')
-
     
         // Show contributor graph, hide others
         if (cat === "contributor") {
+            // Update JSON object referenced for graphs
+            parseData("Contributor", lang)
+
             comm.setAttribute("style", "display:none");
             proj.setAttribute("style", "display:none");
             cont.setAttribute("style", "display:show");
         }
         // Show commit graph, hide others
         else if (cat === "commit") {
+            parseData("Commit", lang)
+
             cont.setAttribute("style", "display:none");
             proj.setAttribute("style", "display:none");
             comm.setAttribute("style", "display:show");
         }
         // Show project graph, hide others
         else {           
+            parseData("Project", lang)
+
             comm.setAttribute("style", "display:none");
             cont.setAttribute("style", "display:none");
             proj.setAttribute("style", "display:show");
