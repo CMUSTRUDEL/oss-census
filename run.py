@@ -14,20 +14,22 @@ def main():
     ##########################################
 
     # Contributor 
-    store_path = "census_interactive/graphs/All_Contributor"
-    lang = "All"
-    dat_path = './data/contributor_by_win/'+lang+'.csv'
-    load_contributor(lang, dat_path, store_path)
+    for lang in langs:
+        dat_path = './raw_data/contributor_by_win/'+lang+'.csv'
+        store_path = './census_interactive/data/contributor/'
+        load_contributor(lang, dat_path, store_path)
 
     # Commits
-    store_path = "census_interactive/graphs/All_Commit"
-    dat_path = './data/commits_by_win/'+lang+'.csv'
-    load_commit(lang, dat_path, store_path)
+    for lang in langs:  
+        dat_path = './raw_data/commits_by_win/'+lang+'.csv'
+        store_path = './census_interactive/data/commit/'
+        load_commit(lang, dat_path, store_path)
 
-    # Project store p   ath
-    store_path = "census_interactive/graphs/All_Project"
-    dat_path = './data/final_proj_by_win/full.csv'
-    load_project(lang, dat_path, store_path)
+    # Project 
+    for lang in langs:
+        dat_path = './raw_data/final_proj_by_win/full.csv'
+        store_path = './census_interactive/data/project/'
+        load_project(lang, dat_path, store_path)
 
 if __name__== "__main__" :
     main()

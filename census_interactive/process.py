@@ -3,7 +3,7 @@ import math
 import os, webbrowser
 import numpy as np
 import pandas as pd
-
+import json
 
 def load_contributor(lang, dat_path, store_path):
     """
@@ -102,16 +102,16 @@ def load_contributor(lang, dat_path, store_path):
     data = [all_unknown, all_male, all_female, among_all, among_core]
    
     # write data to js file that creates variables referenced in script.js file
-    with open(store_path + '/data.js', 'w') as out_file:
-        out_file.write('var title = "%s";' % title)
-        out_file.write('var label_x = "%s";' % label_x)
-        out_file.write('var label_y = "%s";' % label_y)
-        out_file.write('var label_y_secondary = "%s";' % label_y_secondary)
-        out_file.write('var x_categories = %s;' % x_categories)
-        out_file.write('var height_ratio = %s;' % height_ratio)
-        out_file.write('var data = %s;' % data)
-    #webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
-
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['label_x'] = label_x 
+    out_dict['label_y'] = label_y
+    out_dict['label_y_secondary'] = label_y_secondary
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path + '/' + lang + '.json', 'w') as out_file:
+        json.dump(out_dict, out_file)
 
     
 
@@ -195,15 +195,17 @@ def load_commit(lang, dat_path, store_path):
     data = [all_unknown, all_male, all_female, ratio_female]
     
     # write data to js file that creates variables referenced in script.js file
-    with open(store_path + '/data.js', 'w') as out_file:
-        out_file.write('var title = "%s";' % title)
-        out_file.write('var label_x = "%s";' % label_x)
-        out_file.write('var label_y = "%s";' % label_y)
-        out_file.write('var label_y_secondary = "%s";' % label_y_secondary)
-        out_file.write('var x_categories = %s;' % x_categories)
-        out_file.write('var height_ratio = %s;' % height_ratio)
-        out_file.write('var data = %s;' % data)
-    #webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['label_x'] = label_x 
+    out_dict['label_y'] = label_y
+    out_dict['label_y_secondary'] = label_y_secondary
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path + '/' + lang + '.json', 'w') as out_file:
+        json.dump(out_dict, out_file)
+
 
 
 
@@ -282,12 +284,13 @@ def load_project(lang, dat_path, store_path):
     data = [all, has_female, ratio_female]
     
     # write data to js file that creates variables referenced in script.js file
-    with open(store_path + '/data.js', 'w') as out_file:
-        out_file.write('var title = "%s";' % title)
-        out_file.write('var label_x = "%s";' % label_x)
-        out_file.write('var label_y = "%s";' % label_y)
-        out_file.write('var label_y_secondary = "%s";' % label_y_secondary)
-        out_file.write('var x_categories = %s;' % x_categories)
-        out_file.write('var height_ratio = %s;' % height_ratio)
-        out_file.write('var data = %s;' % data)
-    #webbrowser.open('file://' + os.path.realpath(store_path + '/index.html'))
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['label_x'] = label_x 
+    out_dict['label_y'] = label_y
+    out_dict['label_y_secondary'] = label_y_secondary
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path + '/' + lang + '.json', 'w') as out_file:
+        json.dump(out_dict, out_file)

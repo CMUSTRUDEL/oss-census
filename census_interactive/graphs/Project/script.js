@@ -1,25 +1,21 @@
-var chart_contributor = new Highcharts.chart('all_cont', {
+var chart_project = new Highcharts.chart('proj', {
   chart: {
-      type: 'column',
-      height: height_ratio + '%'
-  
+    type: 'column',
+    height: obj.height_ratio + '%'
   },
   title: {
-      text: title,
-      style: {
-        fontSize: 14
-      }
+      text: obj.title
   },
   xAxis: {
       title: {
-          text: label_x
+          text: obj.label_x
       },
-      categories: x_categories
+      categories: obj.x_categories
   },
   yAxis: [{
       min: 0,
       title: {
-          text: label_y
+          text: obj.label_y
       },
       stackLabels: {
           enabled: false,
@@ -27,22 +23,25 @@ var chart_contributor = new Highcharts.chart('all_cont', {
     },
     { // Secondary yAxis
         title: {
-            text: label_y_secondary,
+            text: obj.label_y_secondary,
         },
         labels: {
             format: '{value}',
         },
         opposite: true
     }],
-    legend: {
-        layout: 'vertical',
-        align: 'left',
-        y: 30,
-        x: 70,
-        verticalAlign: 'top',
-        floating: true,
-        backgroundColor: '#FFFFFF'
-      },
+  legend: {
+      align: 'right',
+      x: -150,
+      verticalAlign: 'top',
+      y: 30,
+      floating: true,
+      backgroundColor:
+          Highcharts.defaultOptions.legend.backgroundColor || 'white',
+      borderColor: '#CCC',
+      borderWidth: 1,
+      shadow: false
+  },
   tooltip: {
       headerFormat: '<b>{point.x}</b><br/>',
       pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
@@ -57,5 +56,5 @@ var chart_contributor = new Highcharts.chart('all_cont', {
           },
       }
   },
-  series: data
+  series: obj.data
 });
