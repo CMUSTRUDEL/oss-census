@@ -13,6 +13,6 @@ CSV files formatted using scripts in the process.py module in census_interactive
 python run.py
 ```
 
-Processed JS variables are stored in census_interactive/data/
+All graphs' processed JSON variables are stored in census_interactive/data/ and compiled in the data.js JSON in js/
 
 *Note: CSV data uploaded from server to raw_data/ 

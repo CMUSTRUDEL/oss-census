@@ -5,7 +5,6 @@ var obj = '{"title": "", \
             "x_categories": "", \
             "height_ratio": "", \
             "data": "" }';
-    
 
 // Converting empty JSON to json string object
 var obj = JSON.parse(obj);
@@ -20,4 +19,3 @@ function parseData(cat, lang) {
     obj.height_ratio = data[cat][lang]["height_ratio"]
     obj.data = data[cat][lang]["data"]
 }
-

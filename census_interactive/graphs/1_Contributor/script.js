@@ -1,25 +1,26 @@
+var obj = data["Contributor"]["All"]
 var chart_contributor = new Highcharts.chart('all_cont', {
   chart: {
       type: 'column',
-      height: height_ratio + '%'
+      height: obj["height_ratio"] + '%'
   
   },
   title: {
-      text: title,
+      text: obj["title"],
       style: {
         fontSize: 14
       }
   },
   xAxis: {
       title: {
-          text: label_x
+          text: obj["label_x"]
       },
-      categories: x_categories
+      categories: obj["x_categories"]
   },
   yAxis: [{
       min: 0,
       title: {
-          text: label_y
+          text: obj["label_y"]
       },
       stackLabels: {
           enabled: false,
@@ -27,7 +28,7 @@ var chart_contributor = new Highcharts.chart('all_cont', {
     },
     { // Secondary yAxis
         title: {
-            text: label_y_secondary,
+            text: obj["label_y_secondary"],
         },
         labels: {
             format: '{value}',
@@ -57,5 +58,5 @@ var chart_contributor = new Highcharts.chart('all_cont', {
           },
       }
   },
-  series: data
+  series: obj["data"]
 });
