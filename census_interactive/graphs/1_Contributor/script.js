@@ -1,12 +1,12 @@
 var obj = data["Contributor"]["All"]
-var chart_contributor = new Highcharts.chart('all_cont', {
+var one_contributor = new Highcharts.chart('all_cont', {
   chart: {
       type: 'column',
       height: obj["height_ratio"] + '%'
   
   },
   title: {
-      text: obj["title"],
+      text: 'A. ' + obj["title"],
       style: {
         fontSize: 14
       }

@@ -1,11 +1,11 @@
 var obj = data["Commit"]["All"]
-var chart_commit = new Highcharts.chart('all_comm', {
+var one_commit = new Highcharts.chart('all_comm', {
   chart: {
       type: 'column',
       height: obj["height_ratio"] + '%'
   },
   title: {
-      text: obj["title"],
+      text: 'B. ' + obj["title"],
       style: {
           fontSize: 14
       }

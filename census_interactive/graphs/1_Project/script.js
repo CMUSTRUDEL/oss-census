@@ -1,11 +1,11 @@
 var obj = data["Project"]["All"]
-var chart_project = new Highcharts.chart('all_proj', {
+var one_project = new Highcharts.chart('all_proj', {
   chart: {
     type: 'column',
     height: obj["height_ratio"] + '%'
   },
   title: {
-      text:  obj["title"],
+      text:  'C. ' + obj["title"],
       style: {
         fontSize: 14
       }
