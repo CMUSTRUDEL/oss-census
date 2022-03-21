@@ -59,8 +59,8 @@
             <div class="flex flex-col text-center">
                 <div class="mx-auto my-6 w-1/2">
                     <!-- Dropdown for language selection -->
-                    <label for="language-select" class="font-bold">Choose a language:</label>
-                    <select name="language" id="language-select" onchange="update()" class="form-select appearance-none 
+                    <label for="language-select-left" class="font-bold">Choose a language:</label>
+                    <select name="language" id="language-select-left" onchange="updateLeft()" class="form-select appearance-none 
                         block
                         w-full
                         px-3
@@ -96,8 +96,8 @@
                     </select>
 
                     <!-- Dropdown for category selection -->
-                    <label for="category-select" class="font-bold">Choose a Category:</label>
-                    <select name="category" id="category-select" onload="storedValue()" onchange="update()" class="form-select appearance-none 
+                    <label for="category-select-left" class="font-bold">Choose a Category:</label>
+                    <select name="category" id="category-select-left" onload="storedValue()" onchange="updateLeft()" class="form-select appearance-none 
                         block
                         w-full
                         px-3
@@ -120,7 +120,7 @@
                         <!-- <option value="all">All</option> -->
                     </select>
                     <button
-                        onclick="showGraphs()"
+                        onclick="showGraphLeft()"
                         type="button"
                         data-mdb-ripple="true"
                         data-mdb-ripple-color="light"
@@ -130,7 +130,7 @@
 
                 <!-- Graph 1_Contributor -->
 
-                <div id="contributor" style="display: none" class="flex-col items-center w-full my-10">                
+                <div id="contributor-left" style="display: none" class="flex-col items-center w-full my-10">                
                     <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                         <figure class="highcharts-figure">
                             <div id="cont-left"></div>
@@ -146,7 +146,7 @@
 
                 <!-- Graph 2_Commit -->
 
-                <div id="commit" style="display: none" class="flex-col items-center my-10 w-full">
+                <div id="commit-left" style="display: none" class="flex-col items-center my-10 w-full">
                     <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                         <figure class="highcharts-figure">
                             <div id="comm-left"></div> 
@@ -161,7 +161,7 @@
 
                 <!-- 3_Project Graph -->
 
-                <div id="project" style="display: none" class="flex-col items-center my-10 w-full">
+                <div id="project-left" style="display: none" class="flex-col items-center my-10 w-full">
                     <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                         <figure class="highcharts-figure">
                             <div id="proj-left"></div>
@@ -178,8 +178,8 @@
             <div class="flex flex-col text-center">
                 <div class="mx-auto my-6 w-1/2">
                     <!-- Dropdown for language selection -->
-                    <label for="language-select" class="font-bold">Choose a language:</label>
-                    <select name="language" id="language-select" onchange="update()" class="form-select appearance-none 
+                    <label for="language-select-right" class="font-bold">Choose a language:</label>
+                    <select name="language" id="language-select-right" onchange="updateRight()" class="form-select appearance-none 
                         block
                         w-full
                         px-3
@@ -215,8 +215,8 @@
                     </select>
 
                     <!-- Dropdown for category selection -->
-                    <label for="category-select" class="font-bold">Choose a Category:</label>
-                    <select name="category" id="category-select" onload="storedValue()" onchange="update()" class="form-select appearance-none 
+                    <label for="category-select-right" class="font-bold">Choose a Category:</label>
+                    <select name="category" id="category-select-right" onload="storedValue()" onchange="updateRight()" class="form-select appearance-none 
                         block
                         w-full
                         px-3
@@ -239,7 +239,7 @@
                         <!-- <option value="all">All</option> -->
                     </select>
                     <button
-                        onclick="showGraphs()"
+                        onclick="showGraphRight()"
                         type="button"
                         data-mdb-ripple="true"
                         data-mdb-ripple-color="light"
@@ -249,7 +249,7 @@
 
                 <!-- Graph 1_Contributor -->
                 
-                <div id="contributor" style="display: none" class="flex-col items-center w-full my-10">                
+                <div id="contributor-right" style="display: none" class="flex-col items-center w-full my-10">  
                     <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                         <figure class="highcharts-figure">
                             <div id="cont-right"></div>
@@ -265,7 +265,7 @@
 
                 <!-- Graph 2_Commit -->
 
-                <div id="commit" style="display: none" class="flex-col items-center my-10 w-full">
+                <div id="commit-right" style="display: none" class="flex-col items-center my-10 w-full">
                     <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                         <figure class="highcharts-figure">
                             <div id="comm-right"></div> 
@@ -280,7 +280,7 @@
 
                 <!-- 3_Project Graph -->
 
-                <div id="project" style="display: none" class="flex-col items-center my-10 w-full">
+                <div id="project-right" style="display: none" class="flex-col items-center my-10 w-full">
                     <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                         <figure class="highcharts-figure">
                             <div id="proj-right"></div>

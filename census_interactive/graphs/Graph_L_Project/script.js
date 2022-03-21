@@ -1,5 +1,5 @@
 function graphProject() {
-    var chart_project = new Highcharts.chart('proj-left', {
+    new Highcharts.chart('proj-left', {
     chart: {
         type: 'column',
         height: obj.height_ratio + '%'
