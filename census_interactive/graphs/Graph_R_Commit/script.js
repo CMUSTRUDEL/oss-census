@@ -1,5 +1,5 @@
 function graphCommit() {
-    new Highcharts.chart('comm', {
+    new Highcharts.chart('comm-right', {
     chart: {
         type: 'column',
         height: obj.height_ratio + '%'
