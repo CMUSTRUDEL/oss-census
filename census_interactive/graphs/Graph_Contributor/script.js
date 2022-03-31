@@ -1,8 +1,9 @@
-function graphProject() {
-    new Highcharts.chart('proj-left', {
+function graphContributor() {
+    new Highcharts.chart('cont', {
     chart: {
         type: 'column',
         height: obj.height_ratio + '%'
+    
     },
     title: {
         text: obj.title

@@ -91,8 +91,6 @@ def load_contributor(lang, dat_path, store_path):
 
     # Graph setup information
     lang_title = lang
-    if lang == "C#":
-        lang_title = "C\#"
     title = "Active Contributors in "  + lang_title + " Public Projects"
     label_x = 'Time (quarter)'
     label_y = 'Number of Contributors (thousand)'
@@ -184,8 +182,7 @@ def load_commit(lang, dat_path, store_path):
 
     # Graph setup information
     lang_title = lang
-    if lang == "C#":
-        lang_title = "C\#"
+
     title = "Commits in "+ lang_title +" Public Projects" 
     label_x = 'Time (quarter)'
     label_y = 'Commit Numbers (thousand)'
@@ -273,8 +270,7 @@ def load_project(lang, dat_path, store_path):
 
     # Graph setup information
     lang_title = lang
-    if lang == "C#":
-        lang_title = "C\#"
+
     title = "Active Public Projects in "+ lang_title +" Ecosystem" 
     label_x = 'Time (quarter)'
     label_y = 'Active Public Project Numbers (thousand)'

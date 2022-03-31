@@ -1,9 +1,8 @@
-function graphContributor() {
-    new Highcharts.chart('cont-left', {
+function graphCommit() {
+    new Highcharts.chart('comm', {
     chart: {
         type: 'column',
         height: obj.height_ratio + '%'
-    
     },
     title: {
         text: obj.title
