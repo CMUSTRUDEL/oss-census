@@ -55,91 +55,80 @@
     
 
     <!-- Graph Comparison -->
-    <div class="flex items-center justify-center mx-auto px-10">
-        <div class="w-full" style="justify-content: space-evenly">
-            <div class="flex flex-row flex-wrap">
-                <!-- Dropdown for language selection -->
-                <label for="language-select" class="font-bold">Choose a language:</label>
-                <select name="language" id="language-select" onchange="update()" class="form-select appearance-none 
-                    block
-                    w-full
-                    px-3
-                    py-1
-                    my-3
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding bg-no-repeat
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                    <option value="" selected disabled hidden>--Select an Option--</option>
-                    <option value="Python">Python</option>
-                    <option value="C#">C#</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Java">Java</option>
-                    <option value="Go">Go</option>
-                    <option value="Ruby">Ruby</option>
-                    <option value="C++">C++</option>
-                    <option value="TypeScript">TypeScript</option>
-                    <option value="PHP">PHP</option>
-                    <option value="C">C</option>
-                    <option value="HTML">HTML</option>
-                    <option value="CSS">CSS</option>
-                    <option value="Jupyter">Jupyter</option>
-                    <option value="Shell">Shell</option>
-                    <option value="Objective-C">Objective-C</option>
-                    <option value="All">All</option>
-                </select>
-
-                <!-- Dropdown for category selection -->
-                <label for="category-select" class="font-bold">Choose a Category:</label>
-                <select name="category" id="category-select" onload="storedValue()" onchange="updateLeft()" class="form-select appearance-none 
-                    block
-                    w-full
-                    px-3
-                    py-1
-                    my-3
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding bg-no-repeat
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                    <option value="" selected disabled hidden>--Select an Option--</option>
-                    <option value="contributor">Contributors</option>
-                    <option value="commit">Commits</option>
-                    <option value="project">Project</option>
-                    <!-- <option value="all">All</option> -->
-                </select>
+    <div class="flex flex-col items-center justify-center mx-auto px-10">
+        <div id="query" class="w-full" style="justify-content: space-evenly">
+            <div class="flex flex-row space-x-16">
+                <div class="flex flex-row items-center space-x-4">
+                    <!-- Dropdown for language selection -->
+                    <label for="language-select" class="font-bold">Language:</label>
+                    <select name="language" id="language-select" onchange="update()" class="form-select appearance-none 
+                        block
+                        w-full
+                        px-3
+                        py-1
+                        my-3
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                        <option value="" selected disabled hidden>--Select an Option--</option>
+                        <option value="Python">Python</option>
+                        <option value="C#">C#</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Java">Java</option>
+                        <option value="Go">Go</option>
+                        <option value="Ruby">Ruby</option>
+                        <option value="C++">C++</option>
+                        <option value="TypeScript">TypeScript</option>
+                        <option value="PHP">PHP</option>
+                        <option value="C">C</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="Jupyter">Jupyter</option>
+                        <option value="Shell">Shell</option>
+                        <option value="Objective-C">Objective-C</option>
+                        <option value="All">All</option>
+                    </select>
+                </div>
+                <div class="flex flex-row items-center space-x-4">
+                    <!-- Dropdown for category selection -->
+                    <label for="category-select" class="font-bold">Category:</label>
+                    <select name="category" id="category-select" onload="storedValue()" onchange="updateLeft()" class="form-select appearance-none 
+                        block
+                        w-full
+                        px-3
+                        py-1
+                        my-3
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                        <option value="" selected disabled hidden>--Select an Option--</option>
+                        <option value="contributor">Contributors</option>
+                        <option value="commit">Commits</option>
+                        <option value="project">Project</option>
+                        <!-- <option value="all">All</option> -->
+                    </select>
+                </div>
             </div>
-
-            <!-- buttons -->
-            <div class="my-auto">
-                    <!-- Button should generate graphs for all selected -->
-                <button
-                    onclick=""
-                    type="button"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                    class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
-                >Add
-                </button>
-                <button
-                    onclick=""
-                    type="button"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                    class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
-                >Delete
-                </button>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="w-full" style="justify-content: space-evenly">
+            <div class="my-auto mt-5 space-x-1">
+                <!-- Button should generate graphs for all selected -->
                 <button
                     onclick="showGraph()"
                     type="button"
@@ -147,7 +136,23 @@
                     data-mdb-ripple-color="light"
                     class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >Generate
-                </button>  
+                </button> 
+                <button
+                    onclick="addRow()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
+                >Add
+                </button>
+                <button
+                    onclick="removeRow()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
+                >Delete
+                </button> 
             </div>       
         </div>
 
