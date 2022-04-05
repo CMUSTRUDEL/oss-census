@@ -187,7 +187,7 @@ function addRow() {
         div.id = 'graph-' + String(num_rows)
 
         div.innerHTML = `
-        <div class="mx-auto my-6 w-1/2"> 
+        <div class="mx-auto my-3 w-full"> 
             <div id="contributor-`+ String(num_rows) + `" style="display: none" class="flex-col items-center w-full my-10">                
                 <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                     <figure class="highcharts-figure">
