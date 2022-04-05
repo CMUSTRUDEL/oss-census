@@ -27,6 +27,7 @@ function showGraph() {
         else if (cat == "" || cat == null) {
             alert('Please select a category');
         }
+        return
     }
 
     let cont;
