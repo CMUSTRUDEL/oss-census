@@ -13,3 +13,5 @@ function storedValue() {
         document.getElementById("category-select").selected = variableStored;
     } else{}
 }
+
+// add back line onload="storedValue()"

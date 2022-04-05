@@ -1,5 +1,5 @@
-function graphCommit() {
-    new Highcharts.chart('comm', {
+function graphCommit(graph_id) {
+    new Highcharts.chart('comm-' + graph_id, {
     chart: {
         type: 'column',
         height: obj.height_ratio + '%'
@@ -7,7 +7,7 @@ function graphCommit() {
     title: {
         text: obj.title
     },
-    xAxis: {
+    xAxis: { 
         title: {
             text: obj.label_x
         },

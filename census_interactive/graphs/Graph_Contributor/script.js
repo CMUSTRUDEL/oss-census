@@ -1,5 +1,5 @@
-function graphContributor() {
-    new Highcharts.chart('cont', {
+function graphContributor(graph_id) {
+    new Highcharts.chart('cont-' + graph_id, {
     chart: {
         type: 'column',
         height: obj.height_ratio + '%'
