@@ -188,7 +188,7 @@ function addRow() {
 
         div.innerHTML = `
         <div class="mx-auto my-3 w-full"> 
-            <div id="contributor-`+ String(num_rows) + `" style="display: none" class="flex-col items-center w-full my-10">                
+            <div id="contributor-`+ String(num_rows) + `" style="display: none" class="flex-col items-center w-full my-3">                
                 <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                     <figure class="highcharts-figure">
                         <div id="cont-`+ String(num_rows) + `"></div>
@@ -201,7 +201,7 @@ function addRow() {
                 </a>
             </div>
         
-            <div id="commit-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-10 w-full">
+            <div id="commit-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
                 <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                     <figure class="highcharts-figure">
                         <div id="comm-`+ String(num_rows) + `"></div> 
@@ -214,7 +214,7 @@ function addRow() {
                 </a>
             </div>
 
-            <div id="project-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-10 w-full">
+            <div id="project-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
                 <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                     <figure class="highcharts-figure">
                         <div id="proj-`+ String(num_rows) + `"></div>
@@ -228,12 +228,26 @@ function addRow() {
             </div>   
         </div>
         `
-        document.getElementById('visualizations').appendChild(div);
+        if (num_rows % 2 == 0) {
+            // Add graph to right column if new number of graphs is even
+            document.getElementById('visualizations-right').appendChild(div);
+        }
+        else {
+            document.getElementById('visualizations-left').appendChild(div);
+        }
 
     }
 
   function removeGraph() {
-    let element = document.getElementById('visualizations');
-    var child = element.lastElementChild;
+    if (num_rows % 2 == 1) {
+        // Remove graph from right column if new number of graphs is odd
+        let element = document.getElementById('visualizations-right');
+        var child = element.lastElementChild;
+    }
+    else {
+        let element = document.getElementById('visualizations-left');
+        var child = element.lastElementChild;
+    }
+   
     element.removeChild(child);
   }
