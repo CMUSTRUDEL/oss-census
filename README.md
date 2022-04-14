@@ -1,5 +1,5 @@
 ### OSS Census Visualizations ###
-**See the *gh/pages* branch for website code**
+**See the *gh/pages* branch for update-to-date website code**
 
 # Customize Visualizations
 Highcharts graph JavaScript can be found in *census_interactive/graphs/* for each graph. Results page graphs are each represented by a folder named *FIGURENUMBER_CATEGORY*. For comparison graphs on the Graph Page, folders are named *Graph_CATEGORY*. You can modify the JS to customize each graph. 
