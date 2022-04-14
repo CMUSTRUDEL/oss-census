@@ -15,9 +15,9 @@ To see how we modify the data stored in this variable, read more in the next sec
 
 
 # Update Data
-**data/raw** contains CSV data uploaded from our server. Feel free to update these CSV files if there is more update-to-date data.
+**data/raw** stores CSV data uploaded from our server. Feel free to update these CSV files if there is more update-to-date data.
 
-**data/processed** contains JSON data of each graph's CSV. It's formatted into specific fields via scripts from process.py and these fields are accessed in each graph's script.js file.
+**data/processed** stores JSON data of each graph's CSV. It's formatted into specific fields via scripts from process.py and these fields are accessed in each graph's script.js file.
 
 **census_interactive/process.py** module contains functions named *load_CATEGORY* to format data from *data/raw*. Each function creates appropriate axis labels, an array (used for plotting line graphs), etc. using this data to store data as JSON in *data/processed*
 
@@ -31,4 +31,6 @@ Executing the `run.py` script invokes calls to the process.py functions for spec
 
 
 # Everything Else
-**js** 
+**js/graphs** defines `onclick` and `onchange` event functions for updating, adding, and deleting data. Variable data is stored via localStorage.
+
+**js/parse** defines the JSON storage structure and a function to access each graph's data given a category and language.

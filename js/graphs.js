@@ -9,9 +9,6 @@ function update(graph_num) {
 
     var select_lang = document.getElementById('language-select-' + String(num));
     var select_cat = document.getElementById('category-select-' + String(num));
-    console.log(graph_num, ":GRAPH")
-    console.log(num_rows, ":ROWS")
-    console.log(select_lang.options[select_lang.selectedIndex].value, ":Lang value")
 
     localStorage.setItem("language-" + String(graph_num), select_lang.options[select_lang.selectedIndex].value);
     localStorage.setItem("category-" + String(graph_num), select_cat.options[select_cat.selectedIndex].value);
