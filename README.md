@@ -1,18 +1,34 @@
 ### OSS Census Visualizations ###
 
 # Customize Visualizations
-Highchart JS can be found in census_interactive/graphs/ labeled as either FIGURE#_GRAPH for 'Results' page graphs or GRAPH for the 'Graph' page.
+Highcharts graph JavaScript can be found in *census_interactive/graphs/* for each graph. Results page graphs are each represented by a folder named *FIGURENUMBER_CATEGORY*. For comparison graphs on the Graph Page, folders are named *Graph_CATEGORY*. You can modify the JS to customize each graph. 
+
+All Highchart Imports are linked at the top of each HTML file. 
+
+Each `script.js` file also has a `data` variable accessed as something like this:
+```
+var obj = data["Commit"]["All"]
+```
+The `data` variable is located in `js/data.js`. This JS file's data is shared by `<script>` tags in our graph.html file with our `script.js` files. `data` stores information in JSON format (like a Python dictionary), where nested fields store array data for each graphs. 
+
+To see how we modify the data stored in this variable, read more in the next section "Update Data" and check out the `js/data.js` file.
 
 
 # Update Data
-CSV files formatted using scripts in the process.py module in census_interactive/
+**data/raw** contains CSV data uploaded from our server. Feel free to update these CSV files if there is more update-to-date data.
+
+**data/processed** contains JSON data of each graph's CSV. It's formatted into specific fields via scripts from process.py and these fields are accessed in each graph's script.js file.
+
+**census_interactive/process.py** module contains functions named *load_CATEGORY* to format data from *data/raw*. Each function creates appropriate axis labels, an array (used for plotting line graphs), etc. using this data to store data as JSON in *data/processed*
 
 1. Specify languages in config.yaml
-2. Execute script to call functions from process.py module
+2. Execute `run.py` script
 ```
 python run.py
 ```
 
-All graphs' processed JSON variables are stored in census_interactive/data/ and compiled in the data.js JSON in js/
+Executing the `run.py` script invokes calls to the process.py functions for specified graphs in config.yaml. It then updates the `data` variable in `js/data.js` with an aggregation of all the JSON files in *data/processed*.
 
-*Note: CSV data uploaded from server to raw_data/ 
+
+# Everything Else
+**js** 
