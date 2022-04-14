@@ -239,14 +239,17 @@ function addRow() {
     }
 
   function removeGraph() {
+    let element;
+    let child; 
+
     if (num_rows % 2 == 1) {
         // Remove graph from right column if new number of graphs is odd
-        let element = document.getElementById('visualizations-right');
-        var child = element.lastElementChild;
+        element = document.getElementById('visualizations-right');
+        child = element.lastElementChild;
     }
     else {
-        let element = document.getElementById('visualizations-left');
-        var child = element.lastElementChild;
+        element = document.getElementById('visualizations-left');
+        child = element.lastElementChild;
     }
    
     element.removeChild(child);
