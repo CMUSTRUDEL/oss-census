@@ -10,6 +10,7 @@ var obj = '{"title": "", \
 var obj = JSON.parse(obj);
 
 function parseData(cat, lang) {
+    console.log("Parsing Data...")
     console.log(cat, lang)
     // data variable stored in data.js
     obj.title = data[cat][lang]["title"];
