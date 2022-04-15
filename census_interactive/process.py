@@ -290,3 +290,81 @@ def load_project(lang, dat_path, store_path):
     out_dict['data'] = data
     with open(store_path + '/' + lang + '.json', 'w') as out_file:
         json.dump(out_dict, out_file)
+
+
+
+
+
+def load_single_contributor(lang, dat_path, store_path):
+    """
+    :string lang: programming language
+    :string dat_path: CSV pandas data
+    :string store_path: path to Contributor graph settings
+    :return: None
+    """ 
+
+    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
+    max_win = 45
+    dat = dat[dat['win']<=max_win]
+
+    # Format column data of contributors by gender
+    all_female = {}
+    all_female["name"] = "All female"
+    all_female["type"] = "spline"
+    all_female["data"] = list(dat["female_all"] / 1000)
+    all_female["color"] = "#de2d26"
+    all_female["yAxis"] = 1
+    all_female["marker"] = { 
+            "fillColor": '#FFFFFF',
+            "radius": 5,
+            "lineWidth": 2,
+            "lineColor": 'darkblue'
+    }    
+
+    all_male = {}
+    all_male["name"] = "All male"
+    all_male["type"] = "spline"
+    all_male["data"] = list((dat["female_all"] + dat["male_all"]) / 1000)
+    all_male["color"] = "#f29d4b"
+    all_male["yAxis"] = 1
+    all_male["marker"] = { 
+            "fillColor": '#FFFFFF',
+            "radius": 5,
+            "lineWidth": 2,
+            "lineColor": 'darkblue'
+    }    
+      
+
+    # Change window to date
+    wins = dat["win"]
+    x = []
+    for win in wins:
+        time = 3 * win
+        year = 2008 + math.floor(time/12)
+        month = time - math.floor(time/12)*12
+        if not month:
+            month = 12
+        x.append("{}-{}".format(year,month))
+    wins = x
+
+    # Graph setup information
+    lang_title = lang
+    title = "Active Contributors in "  + lang_title + " Public Projects"
+    label_x = 'Time (quarter)'
+    label_y = 'Number of Contributors (thousand)'
+    x_categories = wins
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
+    data = [all_male, all_female]
+   
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['label_x'] = label_x 
+    out_dict['label_y'] = label_y
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path + '/' + lang + '.json', 'w') as out_file:
+        json.dump(out_dict, out_file)
+
+    
