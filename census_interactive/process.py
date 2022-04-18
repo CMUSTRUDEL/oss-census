@@ -205,7 +205,6 @@ def load_commit(lang, dat_path, store_path):
 
 
 
-
 def load_project(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:

@@ -27,7 +27,6 @@ def main():
         with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Contributor"][lang] = add_data
- 
 
     # Commits
     data["Commit"] = dict()
@@ -54,12 +53,9 @@ def main():
             add_data = json.load(json_file)
             data["Project"][lang] = add_data
 
-
     # Combine all JSON to one dictionary in js/
     with open('js/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
-
-        json.dump(data, out_file)
 
 
 if __name__== "__main__" :
