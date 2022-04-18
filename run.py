@@ -21,16 +21,15 @@ def main():
     for lang in langs:
         dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
         store_path = './census_interactive/data/processed/contributor'
-        load_single_contributor(lang, dat_path, store_path)
+        load_contributor_pie(lang, dat_path, store_path)
 
         # Save graph data to overall JSON data
         with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Contributor"][lang] = add_data
  
-
     # Combine all JSON to one dictionary in js/
-    with open('./census_interactive/single_graphs/Line_Contributor/data.js', 'w') as out_file:
+    with open('./census_interactive/single_graphs/Pie_Male_Female/script/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
 
 
@@ -45,7 +44,6 @@ def main():
     #     with open('./census_interactive/data/processed/commit/'+lang+'.json') as json_file:
     #         add_data = json.load(json_file)
     #         data["Commit"][lang] = add_data
-
 
     # # Project 
     # data["Project"] = dict()
