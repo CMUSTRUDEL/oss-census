@@ -33,7 +33,6 @@ def main():
     with open('./census_interactive/single_graphs/Line_Contributor/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
 
-        json.dump(data, out_file)
 
     # # Commits
     # data["Commit"] = dict()
