@@ -1,17 +1,17 @@
 languages:
-# - JavaScript
+- JavaScript
 - Python
-# - Java
-# - Go
-# - Ruby
-# - C++
-# - TypeScript
-# - PHP
-# - C#
-# - C
-# - HTML
-# - CSS
-# - Jupyter
-# - Shell
-# - Objective-C
-# - All
+- Java
+- Go
+- Ruby
+- C++
+- TypeScript
+- PHP
+- C#
+- C
+- HTML
+- CSS
+- Jupyter
+- Shell
+- Objective-C
+- All
