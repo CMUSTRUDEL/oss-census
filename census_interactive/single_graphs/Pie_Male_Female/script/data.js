@@ -11,8 +11,8 @@ var data = {
                     "y": 91.53464175928116
                 }
             ],
-            "subtitle": "2022",
-            "title": "Male vs female for all"
+            "subtitle": "2019-3",
+            "title": "Male vs female for ALL"
         }
     }
 };

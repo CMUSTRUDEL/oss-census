@@ -27,7 +27,7 @@ def main():
         with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Contributor"][lang] = add_data
- 
+    
     # Combine all JSON to one dictionary in js/
     with open('./census_interactive/single_graphs/Pie_Male_Female/script/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))

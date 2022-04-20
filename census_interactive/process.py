@@ -6,9 +6,6 @@ import pandas as pd
 import json
 
 
-# TODO: 1. format the data properly here, update object variables (title, subtitle, data)
-#       2. scale for multiple langs
-
 def load_contributor_pie(lang, dat_path, store_path):
     """
     :string lang: programming language
@@ -36,9 +33,17 @@ def load_contributor_pie(lang, dat_path, store_path):
     out_dict = {"data": [] }
     out_dict["data"].append(female)
     out_dict["data"].append(male)
-    out_dict["title"] = "Male vs female for " + lang
-    # TODO: update this year
-    out_dict["subtitle"] = "2022"
+    
+    # Set Title
+    out_dict["title"] = "Male vs female for " + lang.capitalize()
+
+    # Set Subtitle to (Last) Year in Plot
+    time = 3 * dat["win"].iloc[-1]
+    year = 2008 + math.floor(time/12)
+    month = time - math.floor(time/12)*12
+    if not month:
+        month = 12
+    out_dict["subtitle"] = "{}-{}".format(year,month)
+
     with open(store_path + '/' + lang + '.json', 'w') as out_file:
         json.dump(out_dict, out_file)
-    
