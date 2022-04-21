@@ -15,49 +15,28 @@ def main():
     ##########################################
 
     data = dict()
-
-    # Contributor 
+    
+    # Focus on Contributor for pie graphs
     data["Contributor"] = dict()
+
+    all_years = dict()
     for lang in langs:
         dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
         store_path = './census_interactive/data/processed/contributor'
-        load_contributor_pie(lang, dat_path, store_path)
+        for compare_option in ["all", "male"]:
+            load_contributor_pie(lang, dat_path, store_path, compare_option)
 
-        # Save graph data to overall JSON data
-        with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
-            add_data = json.load(json_file)
-            data["Contributor"][lang] = add_data
+            # Save graph data to overall JSON data
+            with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
+                add_data = json.load(json_file)
+                all_years[lang] = add_data
+    data["Contributor"]["All Years"] = all_years
+    
+    single_year = dict()
     
     # Combine all JSON to one dictionary in js/
-    with open('./census_interactive/single_graphs/Pie_Male_Female/script/data.js', 'w') as out_file:
+    with open('./census_interactive/single_graphs/Pie_Contributor_All/script/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
-
-
-    # # Commits
-    # data["Commit"] = dict()
-    # for lang in langs:  
-    #     dat_path = './census_interactive/data/raw/commits_by_win/'+lang+'.csv'
-    #     store_path = './census_interactive/data/processed/commit'
-    #     load_commit(lang, dat_path, store_path)
-
-    #     # Save graph data to overall JSON data
-    #     with open('./census_interactive/data/processed/commit/'+lang+'.json') as json_file:
-    #         add_data = json.load(json_file)
-    #         data["Commit"][lang] = add_data
-
-    # # Project 
-    # data["Project"] = dict()
-    # for lang in langs:
-    #     dat_path = './census_interactive/data/raw/final_proj_by_win/full.csv'
-    #     store_path = './census_interactive/data/processed/project'
-    #     load_project(lang, dat_path, store_path)
-
-    #     # Save graph data to overall JSON data
-    #     with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
-    #         add_data = json.load(json_file)
-    #         data["Project"][lang] = add_data
-
-
 
 
 
