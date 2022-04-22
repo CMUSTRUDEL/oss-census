@@ -310,10 +310,8 @@ def load_single_contributor(lang, dat_path, store_path):
     # Format column data of contributors by gender
     all_female = {}
     all_female["name"] = "All female"
-    all_female["type"] = "spline"
     all_female["data"] = list(dat["female_all"] / 1000)
     all_female["color"] = "#de2d26"
-    all_female["yAxis"] = 1
     all_female["marker"] = { 
             "fillColor": '#FFFFFF',
             "radius": 5,
@@ -323,10 +321,8 @@ def load_single_contributor(lang, dat_path, store_path):
 
     all_male = {}
     all_male["name"] = "All male"
-    all_male["type"] = "spline"
     all_male["data"] = list((dat["female_all"] + dat["male_all"]) / 1000)
     all_male["color"] = "#f29d4b"
-    all_male["yAxis"] = 1
     all_male["marker"] = { 
             "fillColor": '#FFFFFF',
             "radius": 5,
