@@ -23,14 +23,14 @@ def load_contributor_pie(lang, dat_path, store_path, compare_opt, year_opt):
 
     if year_opt == "single":
         # Single year
-        female_total = list(dat["female_" + lang])[-1]
-        male_total = list(dat["male_" + lang])[-1]
-        all_total = list(dat["all_" + lang])[-1]
+        female_total = list(dat["female_all"])[-1]
+        male_total = list(dat["male_all"])[-1]
+        all_total = list(dat["all_all"])[-1]
     else: 
         # Combine all year data
-        female_total = sum(list(dat["female_" + lang]))
-        male_total = sum(list(dat["male_" + lang]))
-        all_total = sum(list(dat["all_" + lang]))
+        female_total = sum(list(dat["female_all"]))
+        male_total = sum(list(dat["male_all"]))
+        all_total = sum(list(dat["all_all"]))
 
     # Set num_comparison to value of data for "all" if compared against female data
     if compare_opt == "all":

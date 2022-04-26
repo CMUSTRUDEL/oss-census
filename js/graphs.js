@@ -54,31 +54,28 @@ function showGraph() {
             // Reloads graph with updated data vars
             graphContributor()
         }
-        else {
-            alert("Only Contributor graphs available at this time")
+        // Show commit graph, hide others
+        else if (cat === "commit") {
+            parseData("Commit", lang)
+
+            cont.setAttribute("style", "display:none");
+            proj.setAttribute("style", "display:none");
+            comm.setAttribute("style", "display:show");
+
+            // Reloads graph with updated data vars
+            graphCommit()            
         }
-        // // Show commit graph, hide others
-        // else if (cat === "commit") {
-        //     parseData("Commit", lang)
+        // Show project graph, hide others
+        else {           
+            parseData("Project", lang)
 
-        //     cont.setAttribute("style", "display:none");
-        //     proj.setAttribute("style", "display:none");
-        //     comm.setAttribute("style", "display:show");
+            comm.setAttribute("style", "display:none");
+            cont.setAttribute("style", "display:none");
+            proj.setAttribute("style", "display:show");
 
-        //     // Reloads graph with updated data vars
-        //     graphCommit()            
-        // }
-        // // Show project graph, hide others
-        // else {           
-        //     parseData("Project", lang)
-
-        //     comm.setAttribute("style", "display:none");
-        //     cont.setAttribute("style", "display:none");
-        //     proj.setAttribute("style", "display:show");
-
-        //     // Reloads graph with updated data variables
-        //     graphProject()  
-        // }
+            // Reloads graph with updated data variables
+            graphProject()  
+        }
     }
 }
 
@@ -165,11 +162,10 @@ function addRow() {
     `;
   
     document.getElementById('query').appendChild(div);
-
     addGraph();
   }
   
-  function removeRow() {
+function removeRow() {
     // Remove query row option
     // Call to remove graph div element
     if (num_rows == 1) {
@@ -183,67 +179,67 @@ function addRow() {
 
     // Remove graph div child node
     removeGraph();
-  }
-  
+}
 
-    function addGraph() {
-        const div = document.createElement('div');  
-        div.className = 'graph';
-        div.id = 'graph-' + String(num_rows)
 
-        div.innerHTML = `
-        <div class="mx-auto my-3 w-full"> 
-            <div id="contributor-`+ String(num_rows) + `" style="display: none" class="flex-col items-center w-full my-3">                
-                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                    <figure class="highcharts-figure">
-                        <div id="cont-`+ String(num_rows) + `"></div>
-                        <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="census_interactive/graphs/Graph_Contributor/script.js"></script>
-                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                    </figure>
-                </a>
-            </div>
-        
-            <div id="commit-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
-                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                    <figure class="highcharts-figure">
-                        <div id="comm-`+ String(num_rows) + `"></div> 
-                        <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="census_interactive/graphs/Graph_Commit/script.js"></script>
-                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                    </figure>
-                </a>
-            </div>
+function addGraph() {
+    const div = document.createElement('div');  
+    div.className = 'graph';
+    div.id = 'graph-' + String(num_rows)
 
-            <div id="project-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
-                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                    <figure class="highcharts-figure">
-                        <div id="proj-`+ String(num_rows) + `"></div>
-                        <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="census_interactive/graphs/Graph_Project/script.js"></script>
-                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                    </figure>
-                </a>
-            </div>   
+    div.innerHTML = `
+    <div class="mx-auto my-3 w-full"> 
+        <div id="contributor-`+ String(num_rows) + `" style="display: none" class="flex-col items-center w-full my-3">                
+            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                <figure class="highcharts-figure">
+                    <div id="cont-`+ String(num_rows) + `"></div>
+                    <!-- JS file link -->
+                    <script src="js/data.js"></script>
+                    <script src="js/parse.js"></script>
+                    <script src="census_interactive/graphs/Graph_Contributor/script.js"></script>
+                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                </figure>
+            </a>
         </div>
-        `
-        if (num_rows % 2 == 0) {
-            // Add graph to right column if new number of graphs is even
-            document.getElementById('visualizations-right').appendChild(div);
-        }
-        else {
-            document.getElementById('visualizations-left').appendChild(div);
-        }
+    
+        <div id="commit-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
+            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                <figure class="highcharts-figure">
+                    <div id="comm-`+ String(num_rows) + `"></div> 
+                    <!-- JS file link -->
+                    <script src="js/data.js"></script>
+                    <script src="js/parse.js"></script>
+                    <script src="census_interactive/graphs/Graph_Commit/script.js"></script>
+                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                </figure>
+            </a>
+        </div>
 
+        <div id="project-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
+            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                <figure class="highcharts-figure">
+                    <div id="proj-`+ String(num_rows) + `"></div>
+                    <!-- JS file link -->
+                    <script src="js/data.js"></script>
+                    <script src="js/parse.js"></script>
+                    <script src="census_interactive/graphs/Graph_Project/script.js"></script>
+                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                </figure>
+            </a>
+        </div>   
+    </div>
+    `
+    if (num_rows % 2 == 0) {
+        // Add graph to right column if new number of graphs is even
+        document.getElementById('visualizations-right').appendChild(div);
+    }
+    else {
+        document.getElementById('visualizations-left').appendChild(div);
     }
 
-  function removeGraph() {
+}
+
+function removeGraph() {
     let element;
     let child; 
 
@@ -258,4 +254,4 @@ function addRow() {
     }
    
     element.removeChild(child);
-  }
+}
