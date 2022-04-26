@@ -14,8 +14,7 @@ def main():
     langs = [] if config["languages"] is None else config["languages"]
     ##########################################
 
-    data = dict()
-    
+    data = dict()    
     # Focus on Contributor for pie graphs
     data["Contributor"] = dict()
 
@@ -53,7 +52,5 @@ def main():
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
 
 
-
 if __name__== "__main__" :
-    main()
-    
+    main()    

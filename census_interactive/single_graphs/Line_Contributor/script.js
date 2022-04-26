@@ -3,7 +3,6 @@ var one_contributor = new Highcharts.chart('all_cont', {
   chart: {
       type: 'column',
       height: obj["height_ratio"] + '%'
-  
   },
   title: {
       text: 'A. ' + obj["title"],
