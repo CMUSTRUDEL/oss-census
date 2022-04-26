@@ -21,8 +21,12 @@ To see how we modify the data stored in this variable, read more in the next sec
 
 **census_interactive/process.py** module contains functions named *load_CATEGORY* to format data from *data/raw*. Each function creates appropriate axis labels, an array (used for plotting line graphs), etc. using this data to store data as JSON in *data/processed*
 
-1. Specify languages in config.yaml
-2. Execute `run.py` script
+1. Ensure proper setup by ensuring all modules installed
+```
+python -m pip install -r requirements.txt
+```
+2. Specify languages in `config.yaml`
+3. Execute `run.py` script
 ```
 python run.py
 ```
