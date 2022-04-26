@@ -52,30 +52,33 @@ function showGraph() {
             cont.setAttribute("style", "display:show");
 
             // Reloads graph with updated data vars
-            graphContributor(String(num))
+            graphContributor()
         }
-        // Show commit graph, hide others
-        else if (cat === "commit") {
-            parseData("Commit", lang)
-
-            cont.setAttribute("style", "display:none");
-            proj.setAttribute("style", "display:none");
-            comm.setAttribute("style", "display:show");
-
-            // Reloads graph with updated data vars
-            graphCommit(String(num))            
+        else {
+            alert("Only Contributor graphs available at this time")
         }
-        // Show project graph, hide others
-        else {           
-            parseData("Project", lang)
+        // // Show commit graph, hide others
+        // else if (cat === "commit") {
+        //     parseData("Commit", lang)
 
-            comm.setAttribute("style", "display:none");
-            cont.setAttribute("style", "display:none");
-            proj.setAttribute("style", "display:show");
+        //     cont.setAttribute("style", "display:none");
+        //     proj.setAttribute("style", "display:none");
+        //     comm.setAttribute("style", "display:show");
 
-            // Reloads graph with updated data variables
-            graphProject(String(num))  
-        }
+        //     // Reloads graph with updated data vars
+        //     graphCommit()            
+        // }
+        // // Show project graph, hide others
+        // else {           
+        //     parseData("Project", lang)
+
+        //     comm.setAttribute("style", "display:none");
+        //     cont.setAttribute("style", "display:none");
+        //     proj.setAttribute("style", "display:show");
+
+        //     // Reloads graph with updated data variables
+        //     graphProject()  
+        // }
     }
 }
 

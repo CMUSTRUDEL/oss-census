@@ -61,9 +61,9 @@ def main():
 
     ## Single Graph Data 
 
-    single_data = dict()    
+    data = dict()    
     # Focus on Contributor for pie graphs
-    single_data["Contributor"] = dict()
+    data["Contributor"] = dict()
     
     for lang in langs:
         dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
@@ -80,7 +80,7 @@ def main():
             with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
                 add_data = json.load(json_file)
                 all_years[lang] = add_data
-            single_data["Contributor"]["All Years"] = single_year
+        data["Contributor"]["All Years"] = all_years
         
         # Single Year
         year_option = "single"
@@ -93,12 +93,12 @@ def main():
             with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
                 add_data = json.load(json_file)
                 all_years[lang] = add_data
-            single_data["Contributor"]["Single Year"] = single_year
+        data["Contributor"]["Single Year"] = single_year
         
 
     # Combine all JSON to one dictionary in js/
     with open('./js/data.js', 'w') as out_file:
-        out_file.write('var single_data = %s;' % json.dumps(single_data,indent=4, sort_keys=True))
+        out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
 
 
