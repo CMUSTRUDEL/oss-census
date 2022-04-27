@@ -24,9 +24,6 @@ function parseData(cat, lang) {
 }
 
 function parsePieData(cat, lang, year) {
-    console.log(data_sy);
-    console.log(data_sy[cat]);
-    console.log(data_sy[cat][year]);
     // obj data variable stored in data.js, taken into function for single graphs
     obj.title = data_sy[cat][year][lang]["title"];
     obj.label_x = data_sy[cat][year][lang]["subtitle"];
