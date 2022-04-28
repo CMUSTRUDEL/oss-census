@@ -1,4 +1,4 @@
-var obj = data["Contributor"]["All"]
+var obj = data["Contributor"]["Ruby"]
 var one_contributor = new Highcharts.chart('all_cont', {
   chart: {
       type: 'column',
@@ -35,14 +35,26 @@ var one_contributor = new Highcharts.chart('all_cont', {
       pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
   },
   plotOptions: {
-      column: {
-          stacking: 'normal',
-          groupPadding: 0,
-          pointPadding: 0,
-          dataLabels: {
-              enabled: false
-          },
-      }
+    series: {
+        label: {
+            connectorAllowed: false
+        },
+        pointStart: 2
+    }
   },
-  series: obj["data"]
+  series: obj["data"],
+  responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+        }
+    }]
+}
 });

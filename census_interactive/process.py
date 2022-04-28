@@ -298,7 +298,7 @@ def load_project(lang, dat_path, store_path):
     with open(store_path + '/' + lang + '.json', 'w') as out_file:
         json.dump(out_dict, out_file)
 
-        
+
 
 def load_contributor_pie(lang, dat_path, store_path, compare_opt, year_opt):
     """
