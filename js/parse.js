@@ -9,6 +9,9 @@ var obj = '{"title": "", \
 // Converting empty JSON to json string object
 var obj = JSON.parse(obj);
 
+
+/* Parsing Functions */
+
 function parseData(cat, lang) {
     console.log("Parsing Data...")
     console.log(cat, lang)
@@ -20,4 +23,11 @@ function parseData(cat, lang) {
     obj.x_categories = data[cat][lang]["x_categories"];
     obj.height_ratio = data[cat][lang]["height_ratio"];
     obj.data = data[cat][lang]["data"];
+}
+
+function parsePieData(cat, lang, yearOpt, compareOpt) {
+    // obj data variable stored in data.js, taken into function for single graphs
+    obj.title = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["title"];
+    obj.label_x = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["subtitle"];
+    obj.data = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["data"];
 }

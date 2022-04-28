@@ -12,10 +12,15 @@ def main():
     with open ("config.yaml", 'r') as stream:
         config = yaml.safe_load(stream)
     langs = [] if config["languages"] is None else config["languages"]
+    # Single graph x axis options, syntax as COMPAREOPTION_female and YEAROPTION_years
+    compare_options = ["all_female", "male_female"]
+    year_options = ["all_years", "single_years"]
     ##########################################
 
-    data = dict()
 
+    ## Comparison Graph Data
+
+    data = dict()
     # Contributor 
     data["Contributor"] = dict()
     for lang in langs:
@@ -52,12 +57,41 @@ def main():
         with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Project"][lang] = add_data
+            
+
+
+    ## Single Contributor Graph Data 
+
+
+    ## Pie Graph ##
+
+    store_path = './census_interactive/data/processed/contributor'
+    data_pie = dict()   
+    
+    # Focus on Contributor for pie graphs
+    data_pie["Contributor"] = dict()
+    for year_option in year_options:
+        data_pie["Contributor"][year_option] = dict()
+        for lang in langs:
+            dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
+            data_pie["Contributor"][year_option][lang] = dict()
+            for compare_option in compare_options:
+                compare_option = compare_option.lower()
+
+                # Updates processed JSON file
+                load_contributor_pie(lang, dat_path, store_path, compare_option, year_option)
+
+                # Save graph data to overall JSON data
+                with open(store_path+'/'+lang+'.json') as json_file:
+                    add_data = json.load(json_file)
+                    data_pie["Contributor"][year_option][lang][compare_option] = add_data
+    
 
     # Combine all JSON to one dictionary in js/
-    with open('js/data.js', 'w') as out_file:
+    with open('./js/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
+        out_file.write('var data_pie = %s;' % json.dumps(data_pie,indent=4, sort_keys=True))
 
 
 if __name__== "__main__" :
-    main()
-    
+    main()    
