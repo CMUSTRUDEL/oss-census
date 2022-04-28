@@ -1,5 +1,5 @@
-function graphPie() {
-    new Highcharts.chart('pie', {
+function graphPie(year_opt) {
+    new Highcharts.chart('pie-'+year_opt, {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,

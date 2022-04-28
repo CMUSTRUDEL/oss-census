@@ -1,20 +1,20 @@
 languages:
-# - JavaScript
-# - Python
-# - Java
-# - Go
+- JavaScript
+- Python
+- Java
+- Go
 - Ruby
-# - C++
-# - TypeScript
-# - PHP
-# - C#
-# - C
-# - HTML
-# - CSS
-# - Jupyter
-# - Shell
-# - Objective-C
-# - All
+- C++
+- TypeScript
+- PHP
+- C#
+- C
+- HTML
+- CSS
+- Jupyter
+- Shell
+- Objective-C
+- All
 comparison: 
 - All
 - Male

@@ -23,9 +23,9 @@ function parseData(cat, lang) {
     obj.data = data[cat][lang]["data"];
 }
 
-function parsePieData(cat, lang, year) {
+function parsePieData(cat, lang, year_opt, compare_opt) {
     // obj data variable stored in data.js, taken into function for single graphs
-    obj.title = data_sy[cat][year][lang]["title"];
-    obj.label_x = data_sy[cat][year][lang]["subtitle"];
-    obj.data = data_sy[cat][year][lang]["data"];
+    obj.title = data_sy[cat][year_opt][lang][compare_opt]["title"];
+    obj.label_x = data_sy[cat][year_opt][lang][compare_opt]["subtitle"];
+    obj.data = data_sy[cat][year_opt][lang][compare_opt]["data"];
 }

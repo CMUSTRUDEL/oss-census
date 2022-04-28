@@ -65,13 +65,15 @@ def main():
     # Focus on Contributor for pie graphs
     data_sy["Contributor"] = dict()
     
+    all_years = dict()
+    single_year = dict()
     for lang in langs:
         dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
         store_path = './census_interactive/data/processed/contributor'
             
         # All Years
         year_option = "all"
-        all_years = dict()
+        all_years[lang] = dict()
         for compare_option in compare_options:
             compare_option = compare_option.lower()
             load_contributor_pie(lang, dat_path, store_path, compare_option, year_option)
@@ -79,12 +81,11 @@ def main():
             # Save graph data to overall JSON data
             with open(store_path+'/'+lang+'.json') as json_file:
                 add_data = json.load(json_file)
-                all_years[lang] = add_data
-        data_sy["Contributor"]["all"] = all_years
+                all_years[lang][compare_option] = add_data
         
         # Single Year
         year_option = "single"
-        single_year = dict()
+        single_year[lang] = dict()
         for compare_option in compare_options:
             compare_option = compare_option.lower()
             load_contributor_pie(lang, dat_path, store_path, compare_option, year_option)
@@ -92,8 +93,10 @@ def main():
             # Save graph data_sy to overall JSON data
             with open(store_path+'/'+lang+'.json') as json_file:
                 add_data = json.load(json_file)
-                single_year[lang] = add_data
-        data_sy["Contributor"]["single"] = single_year
+                single_year[lang][compare_option] = add_data
+
+    data_sy["Contributor"]["all"] = all_years
+    data_sy["Contributor"]["single"] = single_year
         
 
     # Combine all JSON to one dictionary in js/
