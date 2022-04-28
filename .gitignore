@@ -1,0 +1,8 @@
+js/data.js
+
+.DS_Store
+
+# Python caching
+__pycache__/
+*.pyc
+.pytest_cache

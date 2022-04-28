@@ -2,32 +2,38 @@
 
 // Global var tracks number of graphs
 num_rows = 1 
+max_graphs = 10
 
 function update(graph_num) {
     // Takes string representing graph number
     num = parseInt(graph_num)
 
     var select_lang = document.getElementById('language-select-' + String(num));
-    var select_cat = document.getElementById('category-select-' + String(num));
+    // Only one category toggled at a time
+    var select_cat = document.getElementById('category-select');
 
     localStorage.setItem("language-" + String(graph_num), select_lang.options[select_lang.selectedIndex].value);
-    localStorage.setItem("category-" + String(graph_num), select_cat.options[select_cat.selectedIndex].value);
+    localStorage.setItem("category", select_cat.options[select_cat.selectedIndex].value);
 } 
 
 
 function showGraph() {
     let cat;
     let lang;
+    let no_empty_options = true;
 
     for (let num = 1; num < num_rows + 1; num++) {
-        cat = localStorage.getItem("category-" + String(num));
+        cat = localStorage.getItem("category");
         lang = localStorage.getItem("language-" + String(num));
-
+        console.log(lang)
+        console.log("LANGUAGE")
         if (lang == "" || lang == null) {
             alert('Please select a language');
+            no_empty_options = false;
         }
         else if (cat == "" || cat == null) {
             alert('Please select a category');
+            no_empty_options = false;
         }
     }
 
@@ -35,14 +41,25 @@ function showGraph() {
     let comm;
     let proj;
 
-    for (let num = 1; num < num_rows + 1; num++) {
-        cat = localStorage.getItem("category-" + String(num));
-        lang = localStorage.getItem("language-" + String(num));
-        // Store category
-        cont = document.getElementById("contributor-" + String(num));
-        comm = document.getElementById("commit-" + String(num));
-        proj = document.getElementById("project-" + String(num));
+    // Only generate graphs if all options are selected
+    if (no_empty_options) {
+        for (let num = 1; num < num_rows + 1; num++) {
+            cat = localStorage.getItem("category");
+            lang = localStorage.getItem("language-" + String(num));
+            // Store category
+            cont = document.getElementById("contributor-" + String(num));
+            comm = document.getElementById("commit-" + String(num));
+            proj = document.getElementById("project-" + String(num));
+        
+            // Show contributor graph, hide others
+            if (cat == "contributor" ) {
+                // Update JSON object referenced for graphs
+                parseData("Contributor", lang)
+                comm.setAttribute("style", "display:none");
+                proj.setAttribute("style", "display:none");
+                cont.setAttribute("style", "display:show");
     
+<<<<<<< HEAD
         // Show contributor graph, hide others
         if (cat == "contributor" ) {
             // Update JSON object referenced for graphs
@@ -75,6 +92,33 @@ function showGraph() {
 
             // Reloads graph with updated data variables
             graphProject()  
+=======
+                // Reloads graph with updated data vars
+                graphContributor(String(num))
+            }
+            // Show commit graph, hide others
+            else if (cat === "commit") {
+                parseData("Commit", lang)
+    
+                cont.setAttribute("style", "display:none");
+                proj.setAttribute("style", "display:none");
+                comm.setAttribute("style", "display:show");
+    
+                // Reloads graph with updated data vars
+                graphCommit(String(num))            
+            }
+            // Show project graph, hide others
+            else {           
+                parseData("Project", lang)
+    
+                comm.setAttribute("style", "display:none");
+                cont.setAttribute("style", "display:none");
+                proj.setAttribute("style", "display:show");
+    
+                // Reloads graph with updated data variables
+                graphProject(String(num))  
+            }
+>>>>>>> gh-pages
         }
     }
 }
@@ -83,7 +127,7 @@ function addRow() {
     // Add query row
     // Call function to add graph div
 
-    if (num_rows == 6) {
+    if (num_rows == max_graphs) {
         alert("Maximum number of graphs reached")
         return
     }
@@ -93,17 +137,16 @@ function addRow() {
     div.className = 'row';
     div.id = 'row-' + String(num_rows)
     div.innerHTML = `
-        <div class="flex flex-row space-x-16">
         <div class="flex flex-row items-center space-x-4">
             <!-- Dropdown for language selection -->
-            <label for="language-select-` + String(num_rows) + `" class="font-bold">Language:</label>
             <select name="language-` + String(num_rows) + `" id="language-select-` + String(num_rows) + `" onchange="update(` + String(num_rows) + `)" class="form-select appearance-none 
                 block
                 w-full
-                px-3
+                px-2
                 py-1
                 my-3
                 text-base
+                text-center
                 font-normal
                 text-gray-700
                 bg-white bg-clip-padding bg-no-repeat
@@ -113,7 +156,7 @@ function addRow() {
                 ease-in-out
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                <option value="" selected disabled hidden>--Select an Option--</option>
+                <option value="" selected disabled hidden>--Select--</option>
                 <option value="Python">Python</option>
                 <option value="C#">C#</option>
                 <option value="JavaScript">JavaScript</option>
@@ -132,33 +175,6 @@ function addRow() {
                 <option value="All">All</option>
             </select>
         </div>
-        <div class="flex flex-row items-center space-x-4">
-            <!-- Dropdown for category selection -->
-            <label for="category-select-` + String(num_rows) + `" class="font-bold">Category:</label>
-            <select name="category-` + String(num_rows) + `" id="category-select-` + String(num_rows) + `" onchange="update(` + String(num_rows) + `)" class="form-select appearance-none 
-                block
-                w-full
-                px-3
-                py-1
-                my-3
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding bg-no-repeat
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                <option value="" selected disabled hidden>--Select an Option--</option>
-                <option value="contributor">Contributors</option>
-                <option value="commit">Commits</option>
-                <option value="project">Project</option>
-                <!-- <option value="all">All</option> -->
-            </select>
-        </div>
-    </div>
     `;
   
     document.getElementById('query').appendChild(div);

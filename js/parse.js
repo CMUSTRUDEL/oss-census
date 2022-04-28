@@ -13,7 +13,13 @@ var obj = JSON.parse(obj);
 /* Parsing Functions */
 
 function parseData(cat, lang) {
+<<<<<<< HEAD
     // obj data variable stored in data.js, taken into function 
+=======
+    console.log("Parsing Data...")
+    console.log(cat, lang)
+    // data variable stored in data.js
+>>>>>>> gh-pages
     obj.title = data[cat][lang]["title"];
     obj.label_x = data[cat][lang]["label_x"];
     obj.label_y = data[cat][lang]["label_y"];
