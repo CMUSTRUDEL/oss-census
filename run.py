@@ -21,42 +21,42 @@ def main():
     ## Comparison Graph Data
 
     data = dict()
-    # # Contributor 
-    # data["Contributor"] = dict()
-    # for lang in langs:
-    #     dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
-    #     store_path = './census_interactive/data/processed/contributor'
-    #     load_contributor(lang, dat_path, store_path)
+    # Contributor 
+    data["Contributor"] = dict()
+    for lang in langs:
+        dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
+        store_path = './census_interactive/data/processed/contributor'
+        load_contributor(lang, dat_path, store_path)
 
-    #     # Save graph data to overall JSON data
-    #     with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
-    #         add_data = json.load(json_file)
-    #         data["Contributor"][lang] = add_data
+        # Save graph data to overall JSON data
+        with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
+            add_data = json.load(json_file)
+            data["Contributor"][lang] = add_data
 
-    # # Commits
-    # data["Commit"] = dict()
-    # for lang in langs:  
-    #     dat_path = './census_interactive/data/raw/commits_by_win/'+lang+'.csv'
-    #     store_path = './census_interactive/data/processed/commit'
-    #     load_commit(lang, dat_path, store_path)
+    # Commits
+    data["Commit"] = dict()
+    for lang in langs:  
+        dat_path = './census_interactive/data/raw/commits_by_win/'+lang+'.csv'
+        store_path = './census_interactive/data/processed/commit'
+        load_commit(lang, dat_path, store_path)
 
-    #     # Save graph data to overall JSON data
-    #     with open('./census_interactive/data/processed/commit/'+lang+'.json') as json_file:
-    #         add_data = json.load(json_file)
-    #         data["Commit"][lang] = add_data
+        # Save graph data to overall JSON data
+        with open('./census_interactive/data/processed/commit/'+lang+'.json') as json_file:
+            add_data = json.load(json_file)
+            data["Commit"][lang] = add_data
 
 
-    # # Project 
-    # data["Project"] = dict()
-    # for lang in langs:
-    #     dat_path = './census_interactive/data/raw/final_proj_by_win/full.csv'
-    #     store_path = './census_interactive/data/processed/project'
-    #     load_project(lang, dat_path, store_path)
+    # Project 
+    data["Project"] = dict()
+    for lang in langs:
+        dat_path = './census_interactive/data/raw/final_proj_by_win/full.csv'
+        store_path = './census_interactive/data/processed/project'
+        load_project(lang, dat_path, store_path)
 
-    #     # Save graph data to overall JSON data
-    #     with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
-    #         add_data = json.load(json_file)
-    #         data["Project"][lang] = add_data
+        # Save graph data to overall JSON data
+        with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
+            add_data = json.load(json_file)
+            data["Project"][lang] = add_data
             
 
 
