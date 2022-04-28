@@ -71,18 +71,6 @@ def load_contributor_pie(lang, dat_path, store_path, compare_opt, year_opt):
         json.dump(out_dict, out_file)
 
 
-def _format_date(year):
-    # Format year and month of dataframe value "{}-{}".format(year,month)
-
-<<<<<<< HEAD
-    time = 3 * year
-    year = 2008 + math.floor(time/12)
-    month = time - math.floor(time/12)*12
-    if not month:
-        month = 12
-
-    return "{}-{}".format(year,month)
-=======
 def load_project(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
@@ -137,12 +125,7 @@ def load_project(lang, dat_path, store_path):
     wins = dat["win"]
     x = []
     for win in wins:
-        time = 3 * win
-        year = 2008 + math.floor(time/12)
-        month = time - math.floor(time/12)*12
-        if not month:
-            month = 12
-        x.append("{}-{}".format(year,month))
+        x.append(_format_date(win))
     wins = x
 
     # Graph setup information
@@ -167,4 +150,15 @@ def load_project(lang, dat_path, store_path):
     out_dict['data'] = data
     with open(store_path + '/' + lang + '.json', 'w') as out_file:
         json.dump(out_dict, out_file)
->>>>>>> gh-pages
+
+
+def _format_date(year):
+    # Format year and month of dataframe value "{}-{}".format(year,month)
+
+    time = 3 * year
+    year = 2008 + math.floor(time/12)
+    month = time - math.floor(time/12)*12
+    if not month:
+        month = 12
+
+    return "{}-{}".format(year,month)

@@ -13,13 +13,9 @@ var obj = JSON.parse(obj);
 /* Parsing Functions */
 
 function parseData(cat, lang) {
-<<<<<<< HEAD
-    // obj data variable stored in data.js, taken into function 
-=======
     console.log("Parsing Data...")
     console.log(cat, lang)
     // data variable stored in data.js
->>>>>>> gh-pages
     obj.title = data[cat][lang]["title"];
     obj.label_x = data[cat][lang]["label_x"];
     obj.label_y = data[cat][lang]["label_y"];
@@ -29,9 +25,9 @@ function parseData(cat, lang) {
     obj.data = data[cat][lang]["data"];
 }
 
-function parsePieData(cat, lang, year_opt, compare_opt) {
+function parsePieData(cat, lang, yearOpt, compareOpt) {
     // obj data variable stored in data.js, taken into function for single graphs
-    obj.title = data_sy[cat][year_opt][lang][compare_opt]["title"];
-    obj.label_x = data_sy[cat][year_opt][lang][compare_opt]["subtitle"];
-    obj.data = data_sy[cat][year_opt][lang][compare_opt]["data"];
+    obj.title = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["title"];
+    obj.label_x = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["subtitle"];
+    obj.data = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["data"];
 }

@@ -1,28 +1,28 @@
 /* Functions to add, update, and delete HTML for viewing single graphs */
 
 function update() {
-    var select_lang = document.getElementById('language-select');
-    var select_cat = document.getElementById('category-select');
-    var select_year = document.getElementById('year-select');
-    var select_compare = document.getElementById('compare-select');
+    var selectLang = document.getElementById('language-select');
+    var selectCat = document.getElementById('category-select');
+    var selectYear = document.getElementById('year-select');
+    var selectCompare = document.getElementById('compare-select');
 
 
-    localStorage.setItem("language", select_lang.options[select_lang.selectedIndex].value);
-    localStorage.setItem("category", select_cat.options[select_cat.selectedIndex].value);
-    localStorage.setItem("year", select_year.options[select_year.selectedIndex].value);
-    localStorage.setItem("compare", select_compare.options[select_compare.selectedIndex].value);
+    localStorage.setItem("language", selectLang.options[selectLang.selectedIndex].value);
+    localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
+    localStorage.setItem("year", selectYear.options[selectYear.selectedIndex].value);
+    localStorage.setItem("compare", selectCompare.options[selectCompare.selectedIndex].value);
 } 
 
 
 function showGraph() {
     let cat;
     let lang;
-    let year_opt;
+    let yearOpt;
 
     cat = localStorage.getItem("category");
     lang = localStorage.getItem("language");
-    year_opt = localStorage.getItem("year");
-    compare_opt = localStorage.getItem("compare");
+    yearOpt = localStorage.getItem("year");
+    compareOpt = localStorage.getItem("compare");
 
     if (lang == "" || lang == null) {
         alert('Please select a language');
@@ -30,32 +30,32 @@ function showGraph() {
     else if (cat == "" || cat == null) {
         alert('Please select a category');
     }
-    else if (year_opt == "" || year_opt == null) {
+    else if (yearOpt == "" || yearOpt == null) {
         alert('Please select a year option');
     }
-    else if (compare_opt == "" || compare_opt == null) {
+    else if (compareOpt == "" || compareOpt == null) {
         alert('Please select a compare option');
     }
 
     // Select Pie chart HTML
-    pie_single = document.getElementById("pie-single");
-    pie_all = document.getElementById("pie-all");
+    pieSingle = document.getElementById("pie-single");
+    pieAll = document.getElementById("pie-all");
 
     // Show contributor graph, hide others
     if (cat == "contributor" ) {
         // Update JSON object referenced for graphs
-        parsePieData("Contributor", lang, year_opt, compare_opt)
+        parsePieData("Contributor", lang, yearOpt, compareOpt)
 
-        if (year_opt == "single") {
-            pie_single.setAttribute("style", "display:show");
-            pie_all.setAttribute("style", "display:none");
+        if (yearOpt == "single") {
+            pieSingle.setAttribute("style", "display:show");
+            pieAll.setAttribute("style", "display:none");
         }
         else {
-            pie_all.setAttribute("style", "display:show");
-            pie_single.setAttribute("style", "display:none");
+            pieAll.setAttribute("style", "display:show");
+            pieSingle.setAttribute("style", "display:none");
         }
         // Reloads graph with updated data vars
-        graphPie(year_opt);
+        graphPie(yearOpt);
     }
     else {
         alert("Only Contributor graphs available at this time");

@@ -1,39 +1,39 @@
 /* Functions to add, update, and delete HTML */
 
 // Global var tracks number of graphs
-num_rows = 1 
-max_graphs = 10
+numRows = 1 
+maxGraphs = 10
 
 function update(graph_num) {
     // Takes string representing graph number
     num = parseInt(graph_num)
 
-    var select_lang = document.getElementById('language-select-' + String(num));
+    var selectLang = document.getElementById('language-select-' + String(num));
     // Only one category toggled at a time
-    var select_cat = document.getElementById('category-select');
+    var selectCat = document.getElementById('category-select');
 
-    localStorage.setItem("language-" + String(graph_num), select_lang.options[select_lang.selectedIndex].value);
-    localStorage.setItem("category", select_cat.options[select_cat.selectedIndex].value);
+    localStorage.setItem("language-" + String(graph_num), selectLang.options[selectLang.selectedIndex].value);
+    localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
 } 
 
 
 function showGraph() {
     let cat;
     let lang;
-    let no_empty_options = true;
+    let noEmptyOptions = true;
 
-    for (let num = 1; num < num_rows + 1; num++) {
+    for (let num = 1; num < numRows + 1; num++) {
         cat = localStorage.getItem("category");
         lang = localStorage.getItem("language-" + String(num));
         console.log(lang)
         console.log("LANGUAGE")
         if (lang == "" || lang == null) {
             alert('Please select a language');
-            no_empty_options = false;
+            noEmptyOptions = false;
         }
         else if (cat == "" || cat == null) {
             alert('Please select a category');
-            no_empty_options = false;
+            noEmptyOptions = false;
         }
     }
 
@@ -42,8 +42,8 @@ function showGraph() {
     let proj;
 
     // Only generate graphs if all options are selected
-    if (no_empty_options) {
-        for (let num = 1; num < num_rows + 1; num++) {
+    if (noEmptyOptions) {
+        for (let num = 1; num < numRows + 1; num++) {
             cat = localStorage.getItem("category");
             lang = localStorage.getItem("language-" + String(num));
             // Store category
@@ -59,40 +59,6 @@ function showGraph() {
                 proj.setAttribute("style", "display:none");
                 cont.setAttribute("style", "display:show");
     
-<<<<<<< HEAD
-        // Show contributor graph, hide others
-        if (cat == "contributor" ) {
-            // Update JSON object referenced for graphs
-            parseData("Contributor", lang)
-            comm.setAttribute("style", "display:none");
-            proj.setAttribute("style", "display:none");
-            cont.setAttribute("style", "display:show");
-
-            // Reloads graph with updated data vars
-            graphContributor()
-        }
-        // Show commit graph, hide others
-        else if (cat === "commit") {
-            parseData("Commit", lang)
-
-            cont.setAttribute("style", "display:none");
-            proj.setAttribute("style", "display:none");
-            comm.setAttribute("style", "display:show");
-
-            // Reloads graph with updated data vars
-            graphCommit()            
-        }
-        // Show project graph, hide others
-        else {           
-            parseData("Project", lang)
-
-            comm.setAttribute("style", "display:none");
-            cont.setAttribute("style", "display:none");
-            proj.setAttribute("style", "display:show");
-
-            // Reloads graph with updated data variables
-            graphProject()  
-=======
                 // Reloads graph with updated data vars
                 graphContributor(String(num))
             }
@@ -118,7 +84,6 @@ function showGraph() {
                 // Reloads graph with updated data variables
                 graphProject(String(num))  
             }
->>>>>>> gh-pages
         }
     }
 }
@@ -127,19 +92,19 @@ function addRow() {
     // Add query row
     // Call function to add graph div
 
-    if (num_rows == max_graphs) {
+    if (numRows == maxGraphs) {
         alert("Maximum number of graphs reached")
         return
     }
-    num_rows += 1;
+    numRows += 1;
 
     const div = document.createElement('div');  
     div.className = 'row';
-    div.id = 'row-' + String(num_rows)
+    div.id = 'row-' + String(numRows)
     div.innerHTML = `
         <div class="flex flex-row items-center space-x-4">
             <!-- Dropdown for language selection -->
-            <select name="language-` + String(num_rows) + `" id="language-select-` + String(num_rows) + `" onchange="update(` + String(num_rows) + `)" class="form-select appearance-none 
+            <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="update(` + String(numRows) + `)" class="form-select appearance-none 
                 block
                 w-full
                 px-2
@@ -184,10 +149,10 @@ function addRow() {
 function removeRow() {
     // Remove query row option
     // Call to remove graph div element
-    if (num_rows == 1) {
+    if (numRows == 1) {
         return
     }
-    num_rows -= 1;
+    numRows -= 1;
 
     let element = document.getElementById('query');
     var child = element.lastElementChild;
@@ -201,14 +166,14 @@ function removeRow() {
 function addGraph() {
     const div = document.createElement('div');  
     div.className = 'graph';
-    div.id = 'graph-' + String(num_rows)
+    div.id = 'graph-' + String(numRows)
 
     div.innerHTML = `
     <div class="mx-auto my-3 w-full"> 
-        <div id="contributor-`+ String(num_rows) + `" style="display: none" class="flex-col items-center w-full my-3">                
+        <div id="contributor-`+ String(numRows) + `" style="display: none" class="flex-col items-center w-full my-3">                
             <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                 <figure class="highcharts-figure">
-                    <div id="cont-`+ String(num_rows) + `"></div>
+                    <div id="cont-`+ String(numRows) + `"></div>
                     <!-- JS file link -->
                     <script src="js/data.js"></script>
                     <script src="js/parse.js"></script>
@@ -218,10 +183,10 @@ function addGraph() {
             </a>
         </div>
     
-        <div id="commit-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
+        <div id="commit-`+ String(numRows) + `" style="display: none" class="flex-col items-center my-3 w-full">
             <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                 <figure class="highcharts-figure">
-                    <div id="comm-`+ String(num_rows) + `"></div> 
+                    <div id="comm-`+ String(numRows) + `"></div> 
                     <!-- JS file link -->
                     <script src="js/data.js"></script>
                     <script src="js/parse.js"></script>
@@ -231,10 +196,10 @@ function addGraph() {
             </a>
         </div>
 
-        <div id="project-`+ String(num_rows) + `" style="display: none" class="flex-col items-center my-3 w-full">
+        <div id="project-`+ String(numRows) + `" style="display: none" class="flex-col items-center my-3 w-full">
             <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                 <figure class="highcharts-figure">
-                    <div id="proj-`+ String(num_rows) + `"></div>
+                    <div id="proj-`+ String(numRows) + `"></div>
                     <!-- JS file link -->
                     <script src="js/data.js"></script>
                     <script src="js/parse.js"></script>
@@ -245,7 +210,7 @@ function addGraph() {
         </div>   
     </div>
     `
-    if (num_rows % 2 == 0) {
+    if (numRows % 2 == 0) {
         // Add graph to right column if new number of graphs is even
         document.getElementById('visualizations-right').appendChild(div);
     }
@@ -259,7 +224,7 @@ function removeGraph() {
     let element;
     let child; 
 
-    if (num_rows % 2 == 1) {
+    if (numRows % 2 == 1) {
         // Remove graph from right column if new number of graphs is odd
         element = document.getElementById('visualizations-right');
         child = element.lastElementChild;

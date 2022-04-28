@@ -12,8 +12,9 @@ def main():
     with open ("config.yaml", 'r') as stream:
         config = yaml.safe_load(stream)
     langs = [] if config["languages"] is None else config["languages"]
-    # Single graph x axis options
-    compare_options = [] if config["comparison"] is None else config["comparison"]
+    # Single graph x axis options, syntax as COMPAREOPTION_female and YEAROPTION_years
+    compare_options = ["all_female", "male_female"]
+    year_options = ["all_years", "single_years"]
     ##########################################
 
 
@@ -59,50 +60,37 @@ def main():
             
 
 
-    ## Single Graph Data 
+    ## Single Contributor Graph Data 
 
-    data_sy = dict()    
-    # Focus on Contributor for pie graphs
-    data_sy["Contributor"] = dict()
+
+    ## Pie Graph ##
+
+    store_path = './census_interactive/data/processed/contributor'
+    data_pie = dict()   
     
-    all_years = dict()
-    single_year = dict()
-    for lang in langs:
-        dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
-        store_path = './census_interactive/data/processed/contributor'
-            
-        # All Years
-        year_option = "all"
-        all_years[lang] = dict()
-        for compare_option in compare_options:
-            compare_option = compare_option.lower()
-            load_contributor_pie(lang, dat_path, store_path, compare_option, year_option)
+    # Focus on Contributor for pie graphs
+    data_pie["Contributor"] = dict()
+    for year_option in year_options:
+        data_pie["Contributor"][year_option] = dict()
+        for lang in langs:
+            dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
+            data_pie["Contributor"][year_option][lang] = dict()
+            for compare_option in compare_options:
+                compare_option = compare_option.lower()
 
-            # Save graph data to overall JSON data
-            with open(store_path+'/'+lang+'.json') as json_file:
-                add_data = json.load(json_file)
-                all_years[lang][compare_option] = add_data
-        
-        # Single Year
-        year_option = "single"
-        single_year[lang] = dict()
-        for compare_option in compare_options:
-            compare_option = compare_option.lower()
-            load_contributor_pie(lang, dat_path, store_path, compare_option, year_option)
+                # Updates processed JSON file
+                load_contributor_pie(lang, dat_path, store_path, compare_option, year_option)
 
-            # Save graph data_sy to overall JSON data
-            with open(store_path+'/'+lang+'.json') as json_file:
-                add_data = json.load(json_file)
-                single_year[lang][compare_option] = add_data
-
-    data_sy["Contributor"]["all"] = all_years
-    data_sy["Contributor"]["single"] = single_year
-        
+                # Save graph data to overall JSON data
+                with open(store_path+'/'+lang+'.json') as json_file:
+                    add_data = json.load(json_file)
+                    data_pie["Contributor"][year_option][lang][compare_option] = add_data
+    
 
     # Combine all JSON to one dictionary in js/
     with open('./js/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
-        out_file.write('var data_sy = %s;' % json.dumps(data_sy,indent=4, sort_keys=True))
+        out_file.write('var data_pie = %s;' % json.dumps(data_pie,indent=4, sort_keys=True))
 
 
 if __name__== "__main__" :
