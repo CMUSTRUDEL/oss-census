@@ -52,7 +52,7 @@
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-8">
             <a class="font-bold text-gray-600 uppercase hover:text-gray-700 text-4xl" href="#">
-                Graphs
+                View Graph
             </a>
         </div>
     </header>
@@ -88,7 +88,9 @@
                     <!-- <option value="all">All</option> -->
                 </select>
                 
-                <!-- Dropdown for Single or All Year selection -->
+            <!-- Dropdown for Single or All Year selection 
+                NOTE: Default to "all" years in single_graphs
+
                 <label for="year-select" class="font-bold">Year:</label>
                 <select name="year" id="year-select" onchange="update()" class="form-select appearance-none 
                     block
@@ -111,6 +113,7 @@
                     <option value="single">Most Recent Year</option>
                     <option value="all">All</option>
                 </select>
+            -->
             
                 <!-- Dropdown for language selection -->
                 <label for="language-select" class="font-bold">Language:</label>
@@ -173,6 +176,30 @@
                     <option value="male">Male</option>
                     <option value="all">All</option>
                 </select>
+
+                <!-- Dropdown for compare selection -->
+                <label for="graph-select" class="font-bold">Type:</label>
+                <select name="graph" id="graph-select" onchange="update()" class="form-select appearance-none 
+                    block
+                    w-full
+                    px-2
+                    py-1
+                    my-3
+                    text-base
+                    text-center
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                    <option value="" selected disabled hidden>--Select--</option>
+                    <option value="pie">Pie</option>
+                    <option value="bar">Bar</option>
+                </select>
             
                 <!-- Buttons -->
                 <div class="my-auto space-x-1 text-center">
@@ -221,6 +248,21 @@
                     <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                 </figure>
             </a>
-        </div> 
+        </div>
+        <div id="bar"  style="display: none" class="flex-col items-center w-full my-3">                
+            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                <figure class="highcharts-figure">
+                    <div id="bar"></div>
+                    <!-- JS file link -->
+                    <script src="js/data.js"></script>
+                    <script src="js/parse.js"></script>
+                    <script>
+                    var obj = data_bar["Contributor"];
+                    </script>
+                    <script src="census_interactive/single_graphs/Bar_Contributor/script.js"></script>
+                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                </figure>
+            </a>
+        </div>   
     </div>
 </body>

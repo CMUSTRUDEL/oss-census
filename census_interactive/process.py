@@ -267,6 +267,112 @@ def load_project(lang, dat_path, store_path):
     wins = dat["win"]
     x = []
     for win in wins:
+        x.append(_format_date(win))
+    wins = x
+
+    # Graph setup information
+    lang_title = lang
+
+    title = "Active Public Projects in "+ lang_title +" Ecosystem" 
+    label_x = 'Time (quarter)'
+    label_y = 'Active Public Project Numbers (thousand)'
+    label_y_secondary = "Female Participated Project Ratio"
+    x_categories = wins
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
+    data = [all, has_female, ratio_female]
+    
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['label_x'] = label_x 
+    out_dict['label_y'] = label_y
+    out_dict['label_y_secondary'] = label_y_secondary
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path + '/' + lang + '.json', 'w') as out_file:
+        json.dump(out_dict, out_file)
+
+
+
+## Single Graph functions ##
+
+def load_contributor_bar(dat_path, store_path, compare_opt):
+    """
+    Stores formatted JavaScript variables for graph from:
+    All active project count by window: './project/'
+
+    :string lang: programming language
+    :string dat_path: CSV data path
+    :string store_path: path to Contributor graph settings
+    :string compare_opt: "male" or "all" gender(s) that is compared against data for females
+    :return: None
+    """ 
+
+    langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++'
+            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C', 'All']
+    
+    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
+    max_win = 45
+    dat = dat[dat['win']<=max_win]
+    data = []
+    
+    for compare in ['female', compare_opt]:
+        add_data = dict()
+        add_data["name"] = compare.capitalize() 
+        add_data["data"] = []
+
+        # Combine all year data
+        for lang in langs:
+            total = sum(list(dat[compare+"_"+lang]))
+            add_data["data"].append(total)
+
+        data.append(add_data)
+    print(data)
+    input()
+
+    dat = dat[dat['win']<=max_win]
+
+    # Format column data of contributors by gender
+    all = {}
+    all["name"] = "All"
+    all["type"] = "column"
+    all["data"] = list(dat[lang+"_all"] / 1000)
+    all["color"] = "#f29d4b"
+
+    has_female = {}
+    has_female["name"] = "Has female"
+    has_female["type"] = "column"
+    has_female["data"] = list(dat[lang+"_fem"] / 1000)
+    has_female["color"] = "#de2d26"
+
+    
+    # Plot ratio line for female in all commits
+    ratio = dat[lang+"_fem"] / dat[lang+"_all"]
+    for win in dat["win"]:
+        win = win - 1
+        if dat[lang+"_all"][win] <= 5:
+            ratio[win] = 0
+
+    # Format line data of contributors
+    ratio_female = {}
+    ratio_female["name"] = "Female ratio"
+    ratio_female["type"] = "spline"
+    ratio_female["data"] = list(ratio)
+    ratio_female["color"] = "darkblue"
+    ratio_female["yAxis"] = 1
+    ratio_female["marker"] = { 
+        "fillColor": '#FFFFFF',
+        "radius": 5,
+        "lineWidth": 2,
+        "lineColor": 'darkblue'
+    } 
+
+
+    # Change window to date
+    wins = dat["win"]
+    x = []
+    for win in wins:
         time = 3 * win
         year = 2008 + math.floor(time/12)
         month = time - math.floor(time/12)*12
@@ -282,7 +388,7 @@ def load_project(lang, dat_path, store_path):
     label_x = 'Time (quarter)'
     label_y = 'Active Public Project Numbers (thousand)'
     label_y_secondary = "Female Participated Project Ratio"
-    x_categories = wins
+    x_categories = langs
     height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all, has_female, ratio_female]
     
@@ -361,87 +467,6 @@ def load_contributor_pie(lang, dat_path, store_path, compare_opt, year_opt):
         end_date = _format_date(dat["win"].iloc[-1])
         out_dict["subtitle"] = start_date + " to " + end_date
 
-    with open(store_path + '/' + lang + '.json', 'w') as out_file:
-        json.dump(out_dict, out_file)
-
-
-def load_project(lang, dat_path, store_path):
-    """
-    Stores formatted JavaScript variables for graph from:
-    All active project count by window: './project/'
-
-    :string lang: programming language
-    :string dat_path: CSV data path
-    :string store_path: path to Contributor graph settings
-    :return: None
-    """ 
-    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
-    max_win = 45
-    dat = dat[dat['win']<=max_win]
-
-    # Format column data of contributors by gender
-    all = {}
-    all["name"] = "All"
-    all["type"] = "column"
-    all["data"] = list(dat[lang+"_all"] / 1000)
-    all["color"] = "#f29d4b"
-
-    has_female = {}
-    has_female["name"] = "Has female"
-    has_female["type"] = "column"
-    has_female["data"] = list(dat[lang+"_fem"] / 1000)
-    has_female["color"] = "#de2d26"
-
-    
-    # Plot ratio line for female in all commits
-    ratio = dat[lang+"_fem"] / dat[lang+"_all"]
-    for win in dat["win"]:
-        win = win - 1
-        if dat[lang+"_all"][win] <= 5:
-            ratio[win] = 0
-
-    # Format line data of contributors
-    ratio_female = {}
-    ratio_female["name"] = "Female ratio"
-    ratio_female["type"] = "spline"
-    ratio_female["data"] = list(ratio)
-    ratio_female["color"] = "darkblue"
-    ratio_female["yAxis"] = 1
-    ratio_female["marker"] = { 
-        "fillColor": '#FFFFFF',
-        "radius": 5,
-        "lineWidth": 2,
-        "lineColor": 'darkblue'
-    } 
-
-
-    # Change window to date
-    wins = dat["win"]
-    x = []
-    for win in wins:
-        x.append(_format_date(win))
-    wins = x
-
-    # Graph setup information
-    lang_title = lang
-
-    title = "Active Public Projects in "+ lang_title +" Ecosystem" 
-    label_x = 'Time (quarter)'
-    label_y = 'Active Public Project Numbers (thousand)'
-    label_y_secondary = "Female Participated Project Ratio"
-    x_categories = wins
-    height_ratio = (9 / 13 * 100) # 16:9 ratio
-    data = [all, has_female, ratio_female]
-    
-    # write data to js file that creates variables referenced in script.js file
-    out_dict = dict()
-    out_dict['title'] = title
-    out_dict['label_x'] = label_x 
-    out_dict['label_y'] = label_y
-    out_dict['label_y_secondary'] = label_y_secondary
-    out_dict['x_categories'] = x_categories
-    out_dict['height_ratio'] = height_ratio
-    out_dict['data'] = data
     with open(store_path + '/' + lang + '.json', 'w') as out_file:
         json.dump(out_dict, out_file)
 

@@ -25,9 +25,28 @@ function parseData(cat, lang) {
     obj.data = data[cat][lang]["data"];
 }
 
+// Handler for specifying pie or bar graph data parsing
+function parseSingleData(cat, lang, yearOpt, compareOpt, graphOpt) {
+    if (graphOpt == "pie") {
+        // Pie graph parsing
+        parsePieData(cat, lang, yearOpt, compareOpt)
+    }
+    else {
+        // Bar graph parsing
+        parseBarData(cat, lang, compareOpt) 
+    }
+}
+
 function parsePieData(cat, lang, yearOpt, compareOpt) {
     // obj data variable stored in data.js, taken into function for single graphs
     obj.title = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["title"];
     obj.label_x = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["subtitle"];
     obj.data = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["data"];
+}
+
+function parseBarData(cat, lang, compareOpt) {
+    // obj data variable stored in data.js, taken into function for single graphs
+    obj.title = data_pie[cat][lang][compareOpt+'_female']["title"];
+    obj.label_x = data_pie[cat][lang][compareOpt+'_female']["subtitle"];
+    obj.data = data_pie[cat][lang][compareOpt+'_female']["data"];
 }
