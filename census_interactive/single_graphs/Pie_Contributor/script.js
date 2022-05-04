@@ -1,5 +1,5 @@
 function graphPie(year_opt) {
-    new Highcharts.chart('pie-'+year_opt, {
+    new Highcharts.chart('pie-cont-'+year_opt, {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -7,10 +7,10 @@ function graphPie(year_opt) {
             type: 'pie'
         },
         title: {
-            text: obj["title"]
+            text: obj.title
         },
         subtitle: {
-            text: obj["subtitle"]
+            text: obj.subtitle
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -30,6 +30,6 @@ function graphPie(year_opt) {
                 }
             }
         },
-        series: [{ data: obj["data"]}]
+        series: [{ data: obj.data}]
     });
 }

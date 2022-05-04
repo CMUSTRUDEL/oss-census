@@ -8,6 +8,7 @@ var obj = '{"title": "", \
 
 // Converting empty JSON to json string object
 var obj = JSON.parse(obj);
+// obj used to access values throughout shared JS
 
 
 /* Parsing Functions */
@@ -31,22 +32,36 @@ function parseSingleData(cat, lang, yearOpt, compareOpt, graphOpt) {
         // Pie graph parsing
         parsePieData(cat, lang, yearOpt, compareOpt)
     }
-    else {
+    else if (graphOpt == "bar") {
         // Bar graph parsing
-        parseBarData(cat, lang, compareOpt) 
+        parseBarData(cat, compareOpt) 
+    }
+    else {
+        error("Invalid graph option passed to parser...");
     }
 }
 
 function parsePieData(cat, lang, yearOpt, compareOpt) {
+    console.log("Parsing Single Pie graph data...");
+
+    yearKey = yearOpt+'_years';
+    compareKey = compareOpt+'_female';
+
     // obj data variable stored in data.js, taken into function for single graphs
-    obj.title = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["title"];
-    obj.label_x = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["subtitle"];
-    obj.data = data_pie[cat][yearOpt+'_years'][lang][compareOpt+'_female']["data"];
+    obj.title = data_pie[cat][yearKey][lang][compareKey]["title"];
+    obj.label_x = data_pie[cat][yearKey][lang][compareKey]["subtitle"];
+    obj.data = data_pie[cat][yearKey][lang][compareKey]["data"];
 }
 
-function parseBarData(cat, lang, compareOpt) {
+function parseBarData(cat, compareOpt) {
+    console.log("Parsing Single Bar graph data...");
+
+    compareKey = compareOpt+'_female';
     // obj data variable stored in data.js, taken into function for single graphs
-    obj.title = data_pie[cat][lang][compareOpt+'_female']["title"];
-    obj.label_x = data_pie[cat][lang][compareOpt+'_female']["subtitle"];
-    obj.data = data_pie[cat][lang][compareOpt+'_female']["data"];
+    obj.title = data_bar[cat][compareKey]["title"];
+    obj.label_x = data_bar[cat][compareKey]["label_x"];
+    obj.label_y = data_bar[cat][compareKey]["label_y"];
+    obj.data = data_bar[cat][compareKey]["data"];
+    obj.x_categories = data_bar[cat][compareKey]["x_categories"];
+    obj.height_ratio = data_bar[cat][compareKey]["height_ratio"];
 }

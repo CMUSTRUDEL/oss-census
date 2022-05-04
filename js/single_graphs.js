@@ -7,11 +7,13 @@ function update() {
     var selectGraph = document.getElementById('graph-select');
     // Year set to 'all', as it is of less interest to select most recent year
     var selectYear = 'all';
+    // var selectGraph = document.getElementById('graph-select');
+
 
 
     localStorage.setItem("language", selectLang.options[selectLang.selectedIndex].value);
     localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
-    localStorage.setItem("year", selectYear.options[selectYear.selectedIndex].value);
+    localStorage.setItem("year", selectYear);
     localStorage.setItem("compare", selectCompare.options[selectCompare.selectedIndex].value);
     localStorage.setItem("graph", selectGraph.options[selectGraph.selectedIndex].value);
 } 
@@ -45,15 +47,16 @@ function showGraph() {
         alert('Please select a graph option');
     }
 
-    let selectedGraph = graphOpt + '-' + yearOpt;
-    let graphOpts = ['pie-single', 'pie-all', 'bar-single', 'bar-all'];
+    let graphOpts = ['bar', 'pie']; 
   
-    // Show contributor graph, hide others
+    // Show proper graph, hide others
     if (cat == "contributor" ) {
         // Update JSON object referenced for graphs
         parseSingleData("Contributor", lang, yearOpt, compareOpt, graphOpt)
 
-        for (opt in graphOpts) {
+        for (let i = 0; i < graphOpts.length; i++) {
+            let opt = graphOpts[i];
+
             if (opt == graphOpt) {
                 // Display html for selected option
                 document.getElementById(opt).setAttribute("style", "display:show");

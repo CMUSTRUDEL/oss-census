@@ -177,7 +177,7 @@
                     <option value="all">All</option>
                 </select>
 
-                <!-- Dropdown for compare selection -->
+                <!-- Dropdown for graph selection-->
                 <label for="graph-select" class="font-bold">Type:</label>
                 <select name="graph" id="graph-select" onchange="update()" class="form-select appearance-none 
                     block
@@ -200,7 +200,8 @@
                     <option value="pie">Pie</option>
                     <option value="bar">Bar</option>
                 </select>
-            
+             
+
                 <!-- Buttons -->
                 <div class="my-auto space-x-1 text-center">
                     <!-- Button should generate graphs for all selected -->
@@ -219,10 +220,10 @@
 
     <!-- Graph visualization -->
     <div class="mx-auto my-1 w-full">
-        <div id="pie-all"  style="display: none" class="flex-col items-center w-full my-3">                
+        <div id="pie"  style="display: none" class="flex-col items-center w-full my-3">                
             <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                 <figure class="highcharts-figure">
-                    <div id="pie-all"></div>
+                    <div id="pie-cont-all"></div>
                     <!-- JS file link -->
                     <script src="js/data.js"></script>
                     <script src="js/parse.js"></script>
@@ -234,25 +235,10 @@
                 </figure>
             </a>
         </div> 
-        <div id="pie-single"  style="display: none" class="flex-col items-center w-full my-3">                
-            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                <figure class="highcharts-figure">
-                    <div id="pie-single"></div>
-                    <!-- JS file link -->
-                    <script src="js/data.js"></script>
-                    <script src="js/parse.js"></script>
-                    <script>
-                    var obj = data_pie["Contributor"]["single_years"];
-                    </script>
-                    <script src="census_interactive/single_graphs/Pie_Contributor/script.js"></script>
-                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                </figure>
-            </a>
-        </div>
         <div id="bar"  style="display: none" class="flex-col items-center w-full my-3">                
             <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                 <figure class="highcharts-figure">
-                    <div id="bar"></div>
+                    <div id="bar-cont"></div>
                     <!-- JS file link -->
                     <script src="js/data.js"></script>
                     <script src="js/parse.js"></script>

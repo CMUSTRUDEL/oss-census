@@ -12,9 +12,6 @@ def main():
     with open ("config.yaml", 'r') as stream:
         config = yaml.safe_load(stream)
     langs = [] if config["languages"] is None else config["languages"]
-    # Single graph x axis options, syntax as COMPAREOPTION_female and YEAROPTION_years
-    compare_options = ["all_female", "male_female"]
-    year_options = ["all_years", "single_years"]
     ##########################################
 
 
@@ -62,7 +59,12 @@ def main():
 
     ## Single Contributor Graph Data 
 
-
+    ########################## SINGLE GRAPH SETTINGS ###########################
+    # Single graph x axis options, syntax as COMPAREOPTION_female and YEAROPTION_years
+    compare_options = ["all", "male"]
+    year_options = ["all_years", "single_years"]
+    ############################################################################
+    
     ## Pie Graph ##
 
     store_path = './census_interactive/data/processed/contributor'
@@ -84,7 +86,7 @@ def main():
                 # Save graph data to overall JSON data
                 with open(store_path+'/'+lang+'.json') as json_file:
                     add_data = json.load(json_file)
-                    data_pie["Contributor"][year_option][lang][compare_option] = add_data
+                    data_pie["Contributor"][year_option][lang][compare_option+"_female"] = add_data
 
     
     ## Bar Graph ##
@@ -104,7 +106,7 @@ def main():
         # Save graph data to overall JSON data
         with open(store_path+'/'+'all_bar'+'.json') as json_file:
             add_data = json.load(json_file)
-            data_bar["Contributor"][compare_option] = add_data
+        data_bar["Contributor"][compare_option+'_female'] = add_data
 
 
     # Combine all JSON to one dictionary in js/

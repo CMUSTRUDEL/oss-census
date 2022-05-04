@@ -13037,15 +13037,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.70370029382025
+                            "y": 3.5674324355182514
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.29629970617975
+                            "name": "All",
+                            "y": 96.43256756448176
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for All"
+                    "title": "Female vs. All for All"
                 },
                 "male_female": {
                     "data": [
@@ -13054,12 +13054,12 @@ var data = {
                             "y": 5.70370029382025
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.29629970617975
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for All"
+                    "title": "Female vs. Male for All"
                 }
             },
             "C": {
@@ -13067,15 +13067,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.61830846437139
+                            "y": 2.081541177078019
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.3816915356286
+                            "name": "All",
+                            "y": 97.91845882292198
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for C"
+                    "title": "Female vs. All for C"
                 },
                 "male_female": {
                     "data": [
@@ -13084,12 +13084,12 @@ var data = {
                             "y": 3.61830846437139
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.3816915356286
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for C"
+                    "title": "Female vs. Male for C"
                 }
             },
             "C#": {
@@ -13097,15 +13097,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 4.292913609383456
+                            "y": 2.1797450619550354
                         },
                         {
-                            "name": "All_female",
-                            "y": 95.70708639061655
+                            "name": "All",
+                            "y": 97.82025493804495
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for C#"
+                    "title": "Female vs. All for C#"
                 },
                 "male_female": {
                     "data": [
@@ -13114,12 +13114,12 @@ var data = {
                             "y": 4.292913609383456
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 95.70708639061655
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for C#"
+                    "title": "Female vs. Male for C#"
                 }
             },
             "C++": {
@@ -13127,15 +13127,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 4.335070526069428
+                            "y": 2.296578358446793
                         },
                         {
-                            "name": "All_female",
-                            "y": 95.66492947393057
+                            "name": "All",
+                            "y": 97.7034216415532
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for C++"
+                    "title": "Female vs. All for C++"
                 },
                 "male_female": {
                     "data": [
@@ -13144,12 +13144,12 @@ var data = {
                             "y": 4.335070526069428
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 95.66492947393057
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for C++"
+                    "title": "Female vs. Male for C++"
                 }
             },
             "CSS": {
@@ -13157,15 +13157,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 8.751668971436747
+                            "y": 4.612004246844707
                         },
                         {
-                            "name": "All_female",
-                            "y": 91.24833102856326
+                            "name": "All",
+                            "y": 95.3879957531553
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Css"
+                    "title": "Female vs. All for Css"
                 },
                 "male_female": {
                     "data": [
@@ -13174,12 +13174,12 @@ var data = {
                             "y": 8.751668971436747
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 91.24833102856326
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Css"
+                    "title": "Female vs. Male for Css"
                 }
             },
             "Go": {
@@ -13187,15 +13187,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.6043656207366985
+                            "y": 2.1921090711165983
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.3956343792633
+                            "name": "All",
+                            "y": 97.8078909288834
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Go"
+                    "title": "Female vs. All for Go"
                 },
                 "male_female": {
                     "data": [
@@ -13204,12 +13204,12 @@ var data = {
                             "y": 3.6043656207366985
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.3956343792633
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Go"
+                    "title": "Female vs. Male for Go"
                 }
             },
             "HTML": {
@@ -13217,15 +13217,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 10.04560247890398
+                            "y": 4.9391221361245705
                         },
                         {
-                            "name": "All_female",
-                            "y": 89.95439752109601
+                            "name": "All",
+                            "y": 95.06087786387542
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Html"
+                    "title": "Female vs. All for Html"
                 },
                 "male_female": {
                     "data": [
@@ -13234,12 +13234,12 @@ var data = {
                             "y": 10.04560247890398
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 89.95439752109601
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Html"
+                    "title": "Female vs. Male for Html"
                 }
             },
             "Java": {
@@ -13247,15 +13247,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.735540658927687
+                            "y": 2.6718299195842112
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.26445934107231
+                            "name": "All",
+                            "y": 97.32817008041579
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Java"
+                    "title": "Female vs. All for Java"
                 },
                 "male_female": {
                     "data": [
@@ -13264,12 +13264,12 @@ var data = {
                             "y": 5.735540658927687
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.26445934107231
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Java"
+                    "title": "Female vs. Male for Java"
                 }
             },
             "JavaScript": {
@@ -13277,15 +13277,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 6.240830166725528
+                            "y": 3.3807303202565087
                         },
                         {
-                            "name": "All_female",
-                            "y": 93.75916983327447
+                            "name": "All",
+                            "y": 96.6192696797435
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Javascript"
+                    "title": "Female vs. All for Javascript"
                 },
                 "male_female": {
                     "data": [
@@ -13294,12 +13294,12 @@ var data = {
                             "y": 6.240830166725528
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 93.75916983327447
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Javascript"
+                    "title": "Female vs. Male for Javascript"
                 }
             },
             "Jupyter": {
@@ -13307,15 +13307,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 12.026228898293262
+                            "y": 5.960928946003572
                         },
                         {
-                            "name": "All_female",
-                            "y": 87.97377110170675
+                            "name": "All",
+                            "y": 94.03907105399642
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Jupyter"
+                    "title": "Female vs. All for Jupyter"
                 },
                 "male_female": {
                     "data": [
@@ -13324,12 +13324,12 @@ var data = {
                             "y": 12.026228898293262
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 87.97377110170675
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Jupyter"
+                    "title": "Female vs. Male for Jupyter"
                 }
             },
             "Objective-C": {
@@ -13337,15 +13337,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.8467825036421135
+                            "y": 2.1881846920048185
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.1532174963579
+                            "name": "All",
+                            "y": 97.81181530799519
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Objective-c"
+                    "title": "Female vs. All for Objective-c"
                 },
                 "male_female": {
                     "data": [
@@ -13354,12 +13354,12 @@ var data = {
                             "y": 3.8467825036421135
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.1532174963579
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Objective-c"
+                    "title": "Female vs. Male for Objective-c"
                 }
             },
             "PHP": {
@@ -13367,15 +13367,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 4.027781188199228
+                            "y": 2.0922989974155337
                         },
                         {
-                            "name": "All_female",
-                            "y": 95.97221881180077
+                            "name": "All",
+                            "y": 97.90770100258447
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Php"
+                    "title": "Female vs. All for Php"
                 },
                 "male_female": {
                     "data": [
@@ -13384,12 +13384,12 @@ var data = {
                             "y": 4.027781188199228
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 95.97221881180077
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Php"
+                    "title": "Female vs. Male for Php"
                 }
             },
             "Python": {
@@ -13397,15 +13397,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.656678054271143
+                            "y": 3.223815265771441
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.34332194572886
+                            "name": "All",
+                            "y": 96.77618473422855
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Python"
+                    "title": "Female vs. All for Python"
                 },
                 "male_female": {
                     "data": [
@@ -13414,12 +13414,12 @@ var data = {
                             "y": 5.656678054271143
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.34332194572886
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Python"
+                    "title": "Female vs. Male for Python"
                 }
             },
             "Ruby": {
@@ -13427,15 +13427,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.70370029382025
+                            "y": 3.5674324355182514
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.29629970617975
+                            "name": "All",
+                            "y": 96.43256756448176
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Ruby"
+                    "title": "Female vs. All for Ruby"
                 },
                 "male_female": {
                     "data": [
@@ -13444,12 +13444,12 @@ var data = {
                             "y": 5.70370029382025
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.29629970617975
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Ruby"
+                    "title": "Female vs. Male for Ruby"
                 }
             },
             "Shell": {
@@ -13457,15 +13457,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.452155716087604
+                            "y": 1.8307862461090567
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.5478442839124
+                            "name": "All",
+                            "y": 98.16921375389094
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Shell"
+                    "title": "Female vs. All for Shell"
                 },
                 "male_female": {
                     "data": [
@@ -13474,12 +13474,12 @@ var data = {
                             "y": 3.452155716087604
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.5478442839124
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Shell"
+                    "title": "Female vs. Male for Shell"
                 }
             },
             "TypeScript": {
@@ -13487,15 +13487,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.275099262620533
+                            "y": 2.9660126265737916
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.72490073737947
+                            "name": "All",
+                            "y": 97.03398737342621
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Typescript"
+                    "title": "Female vs. All for Typescript"
                 },
                 "male_female": {
                     "data": [
@@ -13504,12 +13504,12 @@ var data = {
                             "y": 5.275099262620533
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.72490073737947
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Typescript"
+                    "title": "Female vs. Male for Typescript"
                 }
             }
         },
@@ -13519,15 +13519,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.70370029382025
+                            "y": 3.5674324355182514
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.29629970617975
+                            "name": "All",
+                            "y": 96.43256756448176
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for All"
+                    "title": "Female vs. All for All"
                 },
                 "male_female": {
                     "data": [
@@ -13536,12 +13536,12 @@ var data = {
                             "y": 5.70370029382025
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.29629970617975
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for All"
+                    "title": "Female vs. Male for All"
                 }
             },
             "C": {
@@ -13549,15 +13549,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.61830846437139
+                            "y": 2.081541177078019
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.3816915356286
+                            "name": "All",
+                            "y": 97.91845882292198
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for C"
+                    "title": "Female vs. All for C"
                 },
                 "male_female": {
                     "data": [
@@ -13566,12 +13566,12 @@ var data = {
                             "y": 3.61830846437139
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.3816915356286
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for C"
+                    "title": "Female vs. Male for C"
                 }
             },
             "C#": {
@@ -13579,15 +13579,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 4.292913609383456
+                            "y": 2.1797450619550354
                         },
                         {
-                            "name": "All_female",
-                            "y": 95.70708639061655
+                            "name": "All",
+                            "y": 97.82025493804495
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for C#"
+                    "title": "Female vs. All for C#"
                 },
                 "male_female": {
                     "data": [
@@ -13596,12 +13596,12 @@ var data = {
                             "y": 4.292913609383456
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 95.70708639061655
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for C#"
+                    "title": "Female vs. Male for C#"
                 }
             },
             "C++": {
@@ -13609,15 +13609,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 4.335070526069428
+                            "y": 2.296578358446793
                         },
                         {
-                            "name": "All_female",
-                            "y": 95.66492947393057
+                            "name": "All",
+                            "y": 97.7034216415532
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for C++"
+                    "title": "Female vs. All for C++"
                 },
                 "male_female": {
                     "data": [
@@ -13626,12 +13626,12 @@ var data = {
                             "y": 4.335070526069428
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 95.66492947393057
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for C++"
+                    "title": "Female vs. Male for C++"
                 }
             },
             "CSS": {
@@ -13639,15 +13639,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 8.751668971436747
+                            "y": 4.612004246844707
                         },
                         {
-                            "name": "All_female",
-                            "y": 91.24833102856326
+                            "name": "All",
+                            "y": 95.3879957531553
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Css"
+                    "title": "Female vs. All for Css"
                 },
                 "male_female": {
                     "data": [
@@ -13656,12 +13656,12 @@ var data = {
                             "y": 8.751668971436747
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 91.24833102856326
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Css"
+                    "title": "Female vs. Male for Css"
                 }
             },
             "Go": {
@@ -13669,15 +13669,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.6043656207366985
+                            "y": 2.1921090711165983
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.3956343792633
+                            "name": "All",
+                            "y": 97.8078909288834
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Go"
+                    "title": "Female vs. All for Go"
                 },
                 "male_female": {
                     "data": [
@@ -13686,12 +13686,12 @@ var data = {
                             "y": 3.6043656207366985
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.3956343792633
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Go"
+                    "title": "Female vs. Male for Go"
                 }
             },
             "HTML": {
@@ -13699,15 +13699,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 10.04560247890398
+                            "y": 4.9391221361245705
                         },
                         {
-                            "name": "All_female",
-                            "y": 89.95439752109601
+                            "name": "All",
+                            "y": 95.06087786387542
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Html"
+                    "title": "Female vs. All for Html"
                 },
                 "male_female": {
                     "data": [
@@ -13716,12 +13716,12 @@ var data = {
                             "y": 10.04560247890398
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 89.95439752109601
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Html"
+                    "title": "Female vs. Male for Html"
                 }
             },
             "Java": {
@@ -13729,15 +13729,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.735540658927687
+                            "y": 2.6718299195842112
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.26445934107231
+                            "name": "All",
+                            "y": 97.32817008041579
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Java"
+                    "title": "Female vs. All for Java"
                 },
                 "male_female": {
                     "data": [
@@ -13746,12 +13746,12 @@ var data = {
                             "y": 5.735540658927687
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.26445934107231
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Java"
+                    "title": "Female vs. Male for Java"
                 }
             },
             "JavaScript": {
@@ -13759,15 +13759,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 6.240830166725528
+                            "y": 3.3807303202565087
                         },
                         {
-                            "name": "All_female",
-                            "y": 93.75916983327447
+                            "name": "All",
+                            "y": 96.6192696797435
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Javascript"
+                    "title": "Female vs. All for Javascript"
                 },
                 "male_female": {
                     "data": [
@@ -13776,12 +13776,12 @@ var data = {
                             "y": 6.240830166725528
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 93.75916983327447
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Javascript"
+                    "title": "Female vs. Male for Javascript"
                 }
             },
             "Jupyter": {
@@ -13789,15 +13789,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 12.026228898293262
+                            "y": 5.960928946003572
                         },
                         {
-                            "name": "All_female",
-                            "y": 87.97377110170675
+                            "name": "All",
+                            "y": 94.03907105399642
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Jupyter"
+                    "title": "Female vs. All for Jupyter"
                 },
                 "male_female": {
                     "data": [
@@ -13806,12 +13806,12 @@ var data = {
                             "y": 12.026228898293262
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 87.97377110170675
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Jupyter"
+                    "title": "Female vs. Male for Jupyter"
                 }
             },
             "Objective-C": {
@@ -13819,15 +13819,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.8467825036421135
+                            "y": 2.1881846920048185
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.1532174963579
+                            "name": "All",
+                            "y": 97.81181530799519
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Objective-c"
+                    "title": "Female vs. All for Objective-c"
                 },
                 "male_female": {
                     "data": [
@@ -13836,12 +13836,12 @@ var data = {
                             "y": 3.8467825036421135
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.1532174963579
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Objective-c"
+                    "title": "Female vs. Male for Objective-c"
                 }
             },
             "PHP": {
@@ -13849,15 +13849,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 4.027781188199228
+                            "y": 2.0922989974155337
                         },
                         {
-                            "name": "All_female",
-                            "y": 95.97221881180077
+                            "name": "All",
+                            "y": 97.90770100258447
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Php"
+                    "title": "Female vs. All for Php"
                 },
                 "male_female": {
                     "data": [
@@ -13866,12 +13866,12 @@ var data = {
                             "y": 4.027781188199228
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 95.97221881180077
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Php"
+                    "title": "Female vs. Male for Php"
                 }
             },
             "Python": {
@@ -13879,15 +13879,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.656678054271143
+                            "y": 3.223815265771441
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.34332194572886
+                            "name": "All",
+                            "y": 96.77618473422855
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Python"
+                    "title": "Female vs. All for Python"
                 },
                 "male_female": {
                     "data": [
@@ -13896,12 +13896,12 @@ var data = {
                             "y": 5.656678054271143
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.34332194572886
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Python"
+                    "title": "Female vs. Male for Python"
                 }
             },
             "Ruby": {
@@ -13909,15 +13909,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.70370029382025
+                            "y": 3.5674324355182514
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.29629970617975
+                            "name": "All",
+                            "y": 96.43256756448176
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Ruby"
+                    "title": "Female vs. All for Ruby"
                 },
                 "male_female": {
                     "data": [
@@ -13926,12 +13926,12 @@ var data = {
                             "y": 5.70370029382025
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.29629970617975
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Ruby"
+                    "title": "Female vs. Male for Ruby"
                 }
             },
             "Shell": {
@@ -13939,15 +13939,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 3.452155716087604
+                            "y": 1.8307862461090567
                         },
                         {
-                            "name": "All_female",
-                            "y": 96.5478442839124
+                            "name": "All",
+                            "y": 98.16921375389094
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Shell"
+                    "title": "Female vs. All for Shell"
                 },
                 "male_female": {
                     "data": [
@@ -13956,12 +13956,12 @@ var data = {
                             "y": 3.452155716087604
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 96.5478442839124
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Shell"
+                    "title": "Female vs. Male for Shell"
                 }
             },
             "TypeScript": {
@@ -13969,15 +13969,15 @@ var data = {
                     "data": [
                         {
                             "name": "Female",
-                            "y": 5.275099262620533
+                            "y": 2.9660126265737916
                         },
                         {
-                            "name": "All_female",
-                            "y": 94.72490073737947
+                            "name": "All",
+                            "y": 97.03398737342621
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All_female for Typescript"
+                    "title": "Female vs. All for Typescript"
                 },
                 "male_female": {
                     "data": [
@@ -13986,14 +13986,161 @@ var data = {
                             "y": 5.275099262620533
                         },
                         {
-                            "name": "Male_female",
+                            "name": "Male",
                             "y": 94.72490073737947
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male_female for Typescript"
+                    "title": "Female vs. Male for Typescript"
                 }
             }
+        }
+    }
+};var data_bar = {
+    "Contributor": {
+        "all_female": {
+            "data": [
+                {
+                    "color": "#de2d26",
+                    "data": [
+                        57241,
+                        9677,
+                        88178,
+                        47007,
+                        6605,
+                        35932,
+                        26302,
+                        4092,
+                        21324,
+                        23786,
+                        51547,
+                        29365,
+                        5172,
+                        14451,
+                        5413,
+                        35932
+                    ],
+                    "name": "Female",
+                    "type": "column"
+                },
+                {
+                    "color": "#f29d4b",
+                    "data": [
+                        1718326,
+                        434274,
+                        2520075,
+                        1712349,
+                        294703,
+                        971291,
+                        1118967,
+                        133871,
+                        997842,
+                        1118925,
+                        992100,
+                        607343,
+                        81593,
+                        774882,
+                        241961,
+                        971291
+                    ],
+                    "name": "All",
+                    "type": "column"
+                }
+            ],
+            "height_ratio": 53.84615384615385,
+            "label_x": "Languages",
+            "label_y": "Total Number of Contributors",
+            "title": "Active Contributors Across Languages from 2008-3-2019-3",
+            "x_categories": [
+                "Python",
+                "C#",
+                "JavaScript",
+                "Java",
+                "Go",
+                "Ruby",
+                "C++",
+                "TypeScript",
+                "PHP",
+                "C",
+                "HTML",
+                "CSS",
+                "Jupyter",
+                "Shell",
+                "Objective-C",
+                "All"
+            ]
+        },
+        "male_female": {
+            "data": [
+                {
+                    "color": "#de2d26",
+                    "data": [
+                        57241,
+                        9677,
+                        88178,
+                        47007,
+                        6605,
+                        35932,
+                        26302,
+                        4092,
+                        21324,
+                        23786,
+                        51547,
+                        29365,
+                        5172,
+                        14451,
+                        5413,
+                        35932
+                    ],
+                    "name": "Female",
+                    "type": "column"
+                },
+                {
+                    "color": "#f29d4b",
+                    "data": [
+                        954678,
+                        215741,
+                        1324743,
+                        772567,
+                        176645,
+                        594045,
+                        580424,
+                        73480,
+                        508099,
+                        633593,
+                        461583,
+                        306171,
+                        37834,
+                        404157,
+                        135302,
+                        594045
+                    ],
+                    "name": "Male",
+                    "type": "column"
+                }
+            ],
+            "height_ratio": 53.84615384615385,
+            "label_x": "Languages",
+            "label_y": "Total Number of Contributors",
+            "title": "Active Contributors Across Languages from 2008-3-2019-3",
+            "x_categories": [
+                "Python",
+                "C#",
+                "JavaScript",
+                "Java",
+                "Go",
+                "Ruby",
+                "C++",
+                "TypeScript",
+                "PHP",
+                "C",
+                "HTML",
+                "CSS",
+                "Jupyter",
+                "Shell",
+                "Objective-C",
+                "All"
+            ]
         }
     }
 };
