@@ -38,3 +38,27 @@ Executing the `run.py` script invokes calls to the process.py functions for spec
 **js/graphs** defines `onclick` and `onchange` event functions for updating, adding, and deleting data. Variable data is stored via localStorage.
 
 **js/parse** defines the JSON storage structure and a function to access each graph's data given a category and language.
+
+**config.yaml** lists all data that would like to be processed. If only specific language's CSV files are updated for example, we may not want to wait for everything to update. The following are the maximum options that can be applied:
+```
+languages:
+- JavaScript
+- Python
+- Java
+- Go
+- Ruby
+- C++
+- TypeScript
+- PHP
+- C#
+- C
+- HTML
+- CSS
+- Jupyter
+- Shell
+- Objective-C
+- All
+comparisons:
+- male
+- all
+```
