@@ -51,7 +51,7 @@ var data = {
                         15448.476,
                         15258.734
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -103,7 +103,7 @@ var data = {
                         7899.636,
                         7638.776
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -155,7 +155,7 @@ var data = {
                         810.716,
                         838.75
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -322,7 +322,7 @@ var data = {
                         934.355,
                         892.14
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -374,7 +374,7 @@ var data = {
                         565.817,
                         538.639
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -426,7 +426,7 @@ var data = {
                         15.488,
                         13.821
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -593,7 +593,7 @@ var data = {
                         482.334,
                         479.135
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -645,7 +645,7 @@ var data = {
                         259.575,
                         250.651
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -697,7 +697,7 @@ var data = {
                         15.569,
                         13.184
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -864,7 +864,7 @@ var data = {
                         1115.725,
                         1083.752
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -916,7 +916,7 @@ var data = {
                         650.664,
                         635.931
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -968,7 +968,7 @@ var data = {
                         27.091,
                         24.716
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -1135,7 +1135,7 @@ var data = {
                         485.004,
                         540.434
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -1187,7 +1187,7 @@ var data = {
                         227.625,
                         284.42
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -1239,7 +1239,7 @@ var data = {
                         29.468,
                         25.44
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -1406,7 +1406,7 @@ var data = {
                         514.675,
                         501.22
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -1458,7 +1458,7 @@ var data = {
                         316.209,
                         317.406
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -1510,7 +1510,7 @@ var data = {
                         13.737,
                         15.035
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -1677,7 +1677,7 @@ var data = {
                         1053.202,
                         985.827
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -1729,7 +1729,7 @@ var data = {
                         522.184,
                         484.319
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -1781,7 +1781,7 @@ var data = {
                         65.043,
                         57.98
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -1948,7 +1948,7 @@ var data = {
                         1703.779,
                         1568.185
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -2000,7 +2000,7 @@ var data = {
                         807.714,
                         740.783
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -2052,7 +2052,7 @@ var data = {
                         51.922,
                         49.583
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -2219,7 +2219,7 @@ var data = {
                         2860.932,
                         2609.667
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -2271,7 +2271,7 @@ var data = {
                         1467.105,
                         1359.621
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -2323,7 +2323,7 @@ var data = {
                         154.472,
                         143.671
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -2490,7 +2490,7 @@ var data = {
                         734.686,
                         657.517
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -2542,7 +2542,7 @@ var data = {
                         198.187,
                         163.854
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -2594,7 +2594,7 @@ var data = {
                         33.449,
                         52.564
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -2761,7 +2761,7 @@ var data = {
                         71.802,
                         70.667
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -2813,7 +2813,7 @@ var data = {
                         44.13,
                         39.444
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -2865,7 +2865,7 @@ var data = {
                         3.225,
                         2.541
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -3032,7 +3032,7 @@ var data = {
                         691.038,
                         642.721
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -3084,7 +3084,7 @@ var data = {
                         390.026,
                         359.854
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -3136,7 +3136,7 @@ var data = {
                         20.25,
                         17.57
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -3303,7 +3303,7 @@ var data = {
                         1806.879,
                         1754.135
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -3355,7 +3355,7 @@ var data = {
                         1065.466,
                         1036.855
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -3407,7 +3407,7 @@ var data = {
                         73.13,
                         73.383
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -3574,7 +3574,7 @@ var data = {
                         2190.617,
                         2675.814
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -3626,7 +3626,7 @@ var data = {
                         920.305,
                         966.148
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -3678,7 +3678,7 @@ var data = {
                         281.243,
                         322.526
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -3845,7 +3845,7 @@ var data = {
                         417.898,
                         389.998
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -3897,7 +3897,7 @@ var data = {
                         231.401,
                         215.376
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -3949,7 +3949,7 @@ var data = {
                         10.109,
                         9.425
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -4116,7 +4116,7 @@ var data = {
                         385.55,
                         407.522
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -4168,7 +4168,7 @@ var data = {
                         233.228,
                         245.475
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -4220,7 +4220,7 @@ var data = {
                         16.52,
                         17.311
                     ],
-                    "name": "All female",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -4389,7 +4389,7 @@ var data = {
                         31.973,
                         30.653
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -4441,7 +4441,7 @@ var data = {
                         17.496,
                         16.916
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -4493,7 +4493,7 @@ var data = {
                         1.486,
                         1.432
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -4713,7 +4713,7 @@ var data = {
                         40.301,
                         39.487
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -4765,7 +4765,7 @@ var data = {
                         21.689,
                         21.608
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -4817,7 +4817,7 @@ var data = {
                         0.995,
                         0.981
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -5037,7 +5037,7 @@ var data = {
                         23.776,
                         24.732
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -5089,7 +5089,7 @@ var data = {
                         10.969,
                         10.991
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -5141,7 +5141,7 @@ var data = {
                         0.678,
                         0.706
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -5361,7 +5361,7 @@ var data = {
                         47.965,
                         46.024
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -5413,7 +5413,7 @@ var data = {
                         24.322,
                         23.297
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -5465,7 +5465,7 @@ var data = {
                         1.337,
                         1.214
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -5685,7 +5685,7 @@ var data = {
                         29.025,
                         29.881
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -5737,7 +5737,7 @@ var data = {
                         13.657,
                         13.706
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -5789,7 +5789,7 @@ var data = {
                         1.507,
                         1.456
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -6009,7 +6009,7 @@ var data = {
                         22.221,
                         22.103
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -6061,7 +6061,7 @@ var data = {
                         12.572,
                         12.58
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -6113,7 +6113,7 @@ var data = {
                         0.545,
                         0.576
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -6333,7 +6333,7 @@ var data = {
                         60.378,
                         59.607
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -6385,7 +6385,7 @@ var data = {
                         25.746,
                         24.661
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -6437,7 +6437,7 @@ var data = {
                         3.382,
                         3.373
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -6657,7 +6657,7 @@ var data = {
                         79.875,
                         78.406
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -6709,7 +6709,7 @@ var data = {
                         31.85,
                         30.473
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -6761,7 +6761,7 @@ var data = {
                         2.399,
                         2.353
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -6981,7 +6981,7 @@ var data = {
                         137.188,
                         128.263
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -7033,7 +7033,7 @@ var data = {
                         66.381,
                         61.658
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -7085,7 +7085,7 @@ var data = {
                         5.775,
                         5.445
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -7305,7 +7305,7 @@ var data = {
                         9.518,
                         10.106
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -7357,7 +7357,7 @@ var data = {
                         4.028,
                         4.128
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -7409,7 +7409,7 @@ var data = {
                         0.616,
                         0.651
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -7629,7 +7629,7 @@ var data = {
                         6.719,
                         6.084
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -7681,7 +7681,7 @@ var data = {
                         3.409,
                         3.128
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -7733,7 +7733,7 @@ var data = {
                         0.167,
                         0.155
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -7953,7 +7953,7 @@ var data = {
                         34.743,
                         33.524
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -8005,7 +8005,7 @@ var data = {
                         17.339,
                         16.388
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -8057,7 +8057,7 @@ var data = {
                         0.861,
                         0.803
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -8277,7 +8277,7 @@ var data = {
                         86.333,
                         85.892
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -8329,7 +8329,7 @@ var data = {
                         45.106,
                         43.723
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -8381,7 +8381,7 @@ var data = {
                         3.246,
                         3.206
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -8601,7 +8601,7 @@ var data = {
                         31.973,
                         30.653
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -8653,7 +8653,7 @@ var data = {
                         17.496,
                         16.916
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -8705,7 +8705,7 @@ var data = {
                         1.486,
                         1.432
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -8925,7 +8925,7 @@ var data = {
                         38.157,
                         36.271
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -8977,7 +8977,7 @@ var data = {
                         17.991,
                         17.159
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -9029,7 +9029,7 @@ var data = {
                         0.881,
                         0.812
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -9249,7 +9249,7 @@ var data = {
                         17.121,
                         17.694
                     ],
-                    "name": "All unknown",
+                    "name": "All Unknown",
                     "type": "column"
                 },
                 {
@@ -9301,7 +9301,7 @@ var data = {
                         9.156,
                         9.24
                     ],
-                    "name": "All male",
+                    "name": "All Men",
                     "type": "column"
                 },
                 {
@@ -9353,7 +9353,7 @@ var data = {
                         0.608,
                         0.651
                     ],
-                    "name": "All female",
+                    "name": "All women",
                     "type": "column"
                 },
                 {
@@ -9627,7 +9627,7 @@ var data = {
                         45.058,
                         44.133
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -9846,7 +9846,7 @@ var data = {
                         2.053,
                         1.866
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -10065,7 +10065,7 @@ var data = {
                         0.871,
                         0.915
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -10284,7 +10284,7 @@ var data = {
                         1.896,
                         1.895
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -10503,7 +10503,7 @@ var data = {
                         1.804,
                         1.835
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -10722,7 +10722,7 @@ var data = {
                         0.874,
                         0.865
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -10941,7 +10941,7 @@ var data = {
                         4.861,
                         4.562
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -11160,7 +11160,7 @@ var data = {
                         3.285,
                         3.667
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -11379,7 +11379,7 @@ var data = {
                         10.615,
                         9.828
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -11598,7 +11598,7 @@ var data = {
                         2.188,
                         1.815
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -11817,7 +11817,7 @@ var data = {
                         0.19,
                         0.169
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -12036,7 +12036,7 @@ var data = {
                         1.284,
                         1.15
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -12255,7 +12255,7 @@ var data = {
                         4.438,
                         4.529
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -12474,7 +12474,7 @@ var data = {
                         8.923,
                         9.229
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -12693,7 +12693,7 @@ var data = {
                         1.019,
                         1.027
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -12912,7 +12912,7 @@ var data = {
                         0.757,
                         0.781
                     ],
-                    "name": "Has female",
+                    "name": "Has Women",
                     "type": "column"
                 },
                 {
@@ -14050,7 +14050,7 @@ var data = {
             "height_ratio": 53.84615384615385,
             "label_x": "Languages",
             "label_y": "Total Number of Contributors",
-            "title": "Active Contributors All Languages 2008-3-2019-3",
+            "title": "Active Contributors All Languages 2008-3 to 2019-3",
             "x_categories": [
                 "Python",
                 "C#",
@@ -14122,7 +14122,7 @@ var data = {
             "height_ratio": 53.84615384615385,
             "label_x": "Languages",
             "label_y": "Total Number of Contributors",
-            "title": "Active Contributors All Languages 2008-3-2019-3",
+            "title": "Active Contributors All Languages 2008-3 to 2019-3",
             "x_categories": [
                 "Python",
                 "C#",
