@@ -12,6 +12,7 @@ def main():
     with open ("config.yaml", 'r') as stream:
         config = yaml.safe_load(stream)
     langs = [] if config["languages"] is None else config["languages"]
+    compare_options = [] if config["comparison"] is None else config["comparison"]
     ##########################################
 
 
@@ -60,8 +61,7 @@ def main():
     ## Single Contributor Graph Data 
 
     ########################## SINGLE GRAPH SETTINGS ###########################
-    # Single graph x axis options, syntax as COMPAREOPTION_female and YEAROPTION_years
-    compare_options = ["all", "male"]
+    # Single graph x axis options, syntax YEAROPTION_years
     year_options = ["all_years", "single_years"]
     ############################################################################
     

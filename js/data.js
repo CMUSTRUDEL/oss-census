@@ -221,7 +221,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in All Public Projects",
             "x_categories": [
                 "2008-3",
@@ -492,7 +492,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in C Public Projects",
             "x_categories": [
                 "2008-3",
@@ -763,7 +763,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in C# Public Projects",
             "x_categories": [
                 "2008-3",
@@ -1034,7 +1034,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in C++ Public Projects",
             "x_categories": [
                 "2008-3",
@@ -1305,7 +1305,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in CSS Public Projects",
             "x_categories": [
                 "2008-3",
@@ -1576,7 +1576,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in Go Public Projects",
             "x_categories": [
                 "2008-3",
@@ -1847,7 +1847,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in HTML Public Projects",
             "x_categories": [
                 "2008-3",
@@ -2118,7 +2118,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in Java Public Projects",
             "x_categories": [
                 "2008-3",
@@ -2389,7 +2389,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in JavaScript Public Projects",
             "x_categories": [
                 "2008-3",
@@ -2660,7 +2660,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in Jupyter Public Projects",
             "x_categories": [
                 "2008-3",
@@ -2931,7 +2931,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in Objective-C Public Projects",
             "x_categories": [
                 "2008-3",
@@ -3202,7 +3202,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in PHP Public Projects",
             "x_categories": [
                 "2008-3",
@@ -3473,7 +3473,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in Python Public Projects",
             "x_categories": [
                 "2008-3",
@@ -3744,7 +3744,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in Ruby Public Projects",
             "x_categories": [
                 "2008-3",
@@ -4015,7 +4015,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in Shell Public Projects",
             "x_categories": [
                 "2008-3",
@@ -4286,7 +4286,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
-            "label_y_secondary": "Female Commit Ratio = F/(F + M)",
+            "label_y_secondary": "Women Commit Ratio = F/(F + M)",
             "title": "Commits in TypeScript Public Projects",
             "x_categories": [
                 "2008-3",
@@ -4612,7 +4612,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in All Public Projects",
             "x_categories": [
                 "2008-3",
@@ -4936,7 +4936,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in C Public Projects",
             "x_categories": [
                 "2008-3",
@@ -5260,7 +5260,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in C# Public Projects",
             "x_categories": [
                 "2008-3",
@@ -5584,7 +5584,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in C++ Public Projects",
             "x_categories": [
                 "2008-3",
@@ -5908,7 +5908,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in CSS Public Projects",
             "x_categories": [
                 "2008-3",
@@ -6232,7 +6232,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in Go Public Projects",
             "x_categories": [
                 "2008-3",
@@ -6556,7 +6556,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in HTML Public Projects",
             "x_categories": [
                 "2008-3",
@@ -6880,7 +6880,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in Java Public Projects",
             "x_categories": [
                 "2008-3",
@@ -7204,7 +7204,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in JavaScript Public Projects",
             "x_categories": [
                 "2008-3",
@@ -7528,7 +7528,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in Jupyter Public Projects",
             "x_categories": [
                 "2008-3",
@@ -7852,7 +7852,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in Objective-C Public Projects",
             "x_categories": [
                 "2008-3",
@@ -8176,7 +8176,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in PHP Public Projects",
             "x_categories": [
                 "2008-3",
@@ -8500,7 +8500,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in Python Public Projects",
             "x_categories": [
                 "2008-3",
@@ -8824,7 +8824,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in Ruby Public Projects",
             "x_categories": [
                 "2008-3",
@@ -9148,7 +9148,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in Shell Public Projects",
             "x_categories": [
                 "2008-3",
@@ -9472,7 +9472,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "Female Ratio = F/(F + M)",
+            "label_y_secondary": "Women Ratio = F/(F + M)",
             "title": "Active Contributors in TypeScript Public Projects",
             "x_categories": [
                 "2008-3",
@@ -9685,7 +9685,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -9693,7 +9693,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in All Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -9904,7 +9904,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -9912,7 +9912,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in C Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -10123,7 +10123,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -10131,7 +10131,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in C# Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -10342,7 +10342,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -10350,7 +10350,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in C++ Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -10561,7 +10561,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -10569,7 +10569,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in CSS Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -10780,7 +10780,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -10788,7 +10788,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in Go Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -10999,7 +10999,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -11007,7 +11007,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in HTML Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -11218,7 +11218,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -11226,7 +11226,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in Java Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -11437,7 +11437,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -11445,7 +11445,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in JavaScript Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -11656,7 +11656,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -11664,7 +11664,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in Jupyter Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -11875,7 +11875,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -11883,7 +11883,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in Objective-C Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -12094,7 +12094,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -12102,7 +12102,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in PHP Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -12313,7 +12313,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -12321,7 +12321,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in Python Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -12532,7 +12532,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -12540,7 +12540,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in Ruby Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -12751,7 +12751,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -12759,7 +12759,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in Shell Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -12970,7 +12970,7 @@ var data = {
                         "lineWidth": 2,
                         "radius": 5
                     },
-                    "name": "Female ratio",
+                    "name": "Women Ratio",
                     "type": "spline",
                     "yAxis": 1
                 }
@@ -12978,7 +12978,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Active Public Project Numbers (thousand)",
-            "label_y_secondary": "Female Participated Project Ratio",
+            "label_y_secondary": "Women Participated Project Ratio",
             "title": "Active Public Projects in TypeScript Ecosystem",
             "x_categories": [
                 "2008-3",
@@ -13045,7 +13045,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for All"
+                    "title": "Women vs. All for All"
                 },
                 "male_female": {
                     "data": [
@@ -13059,7 +13059,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for All"
+                    "title": "Women vs. Men for All"
                 }
             },
             "C": {
@@ -13075,7 +13075,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for C"
+                    "title": "Women vs. All for C"
                 },
                 "male_female": {
                     "data": [
@@ -13089,7 +13089,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for C"
+                    "title": "Women vs. Men for C"
                 }
             },
             "C#": {
@@ -13105,7 +13105,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for C#"
+                    "title": "Women vs. All for C#"
                 },
                 "male_female": {
                     "data": [
@@ -13119,7 +13119,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for C#"
+                    "title": "Women vs. Men for C#"
                 }
             },
             "C++": {
@@ -13135,7 +13135,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for C++"
+                    "title": "Women vs. All for C++"
                 },
                 "male_female": {
                     "data": [
@@ -13149,7 +13149,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for C++"
+                    "title": "Women vs. Men for C++"
                 }
             },
             "CSS": {
@@ -13165,7 +13165,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Css"
+                    "title": "Women vs. All for Css"
                 },
                 "male_female": {
                     "data": [
@@ -13179,7 +13179,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Css"
+                    "title": "Women vs. Men for Css"
                 }
             },
             "Go": {
@@ -13195,7 +13195,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Go"
+                    "title": "Women vs. All for Go"
                 },
                 "male_female": {
                     "data": [
@@ -13209,7 +13209,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Go"
+                    "title": "Women vs. Men for Go"
                 }
             },
             "HTML": {
@@ -13225,7 +13225,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Html"
+                    "title": "Women vs. All for Html"
                 },
                 "male_female": {
                     "data": [
@@ -13239,7 +13239,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Html"
+                    "title": "Women vs. Men for Html"
                 }
             },
             "Java": {
@@ -13255,7 +13255,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Java"
+                    "title": "Women vs. All for Java"
                 },
                 "male_female": {
                     "data": [
@@ -13269,7 +13269,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Java"
+                    "title": "Women vs. Men for Java"
                 }
             },
             "JavaScript": {
@@ -13285,7 +13285,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Javascript"
+                    "title": "Women vs. All for Javascript"
                 },
                 "male_female": {
                     "data": [
@@ -13299,7 +13299,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Javascript"
+                    "title": "Women vs. Men for Javascript"
                 }
             },
             "Jupyter": {
@@ -13315,7 +13315,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Jupyter"
+                    "title": "Women vs. All for Jupyter"
                 },
                 "male_female": {
                     "data": [
@@ -13329,7 +13329,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Jupyter"
+                    "title": "Women vs. Men for Jupyter"
                 }
             },
             "Objective-C": {
@@ -13345,7 +13345,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Objective-c"
+                    "title": "Women vs. All for Objective-c"
                 },
                 "male_female": {
                     "data": [
@@ -13359,7 +13359,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Objective-c"
+                    "title": "Women vs. Men for Objective-c"
                 }
             },
             "PHP": {
@@ -13375,7 +13375,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Php"
+                    "title": "Women vs. All for Php"
                 },
                 "male_female": {
                     "data": [
@@ -13389,7 +13389,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Php"
+                    "title": "Women vs. Men for Php"
                 }
             },
             "Python": {
@@ -13405,7 +13405,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Python"
+                    "title": "Women vs. All for Python"
                 },
                 "male_female": {
                     "data": [
@@ -13419,7 +13419,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Python"
+                    "title": "Women vs. Men for Python"
                 }
             },
             "Ruby": {
@@ -13435,7 +13435,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Ruby"
+                    "title": "Women vs. All for Ruby"
                 },
                 "male_female": {
                     "data": [
@@ -13449,7 +13449,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Ruby"
+                    "title": "Women vs. Men for Ruby"
                 }
             },
             "Shell": {
@@ -13465,7 +13465,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Shell"
+                    "title": "Women vs. All for Shell"
                 },
                 "male_female": {
                     "data": [
@@ -13479,7 +13479,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Shell"
+                    "title": "Women vs. Men for Shell"
                 }
             },
             "TypeScript": {
@@ -13495,7 +13495,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Typescript"
+                    "title": "Women vs. All for Typescript"
                 },
                 "male_female": {
                     "data": [
@@ -13509,7 +13509,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Typescript"
+                    "title": "Women vs. Men for Typescript"
                 }
             }
         },
@@ -13527,7 +13527,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for All"
+                    "title": "Women vs. All for All"
                 },
                 "male_female": {
                     "data": [
@@ -13541,7 +13541,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for All"
+                    "title": "Women vs. Men for All"
                 }
             },
             "C": {
@@ -13557,7 +13557,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for C"
+                    "title": "Women vs. All for C"
                 },
                 "male_female": {
                     "data": [
@@ -13571,7 +13571,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for C"
+                    "title": "Women vs. Men for C"
                 }
             },
             "C#": {
@@ -13587,7 +13587,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for C#"
+                    "title": "Women vs. All for C#"
                 },
                 "male_female": {
                     "data": [
@@ -13601,7 +13601,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for C#"
+                    "title": "Women vs. Men for C#"
                 }
             },
             "C++": {
@@ -13617,7 +13617,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for C++"
+                    "title": "Women vs. All for C++"
                 },
                 "male_female": {
                     "data": [
@@ -13631,7 +13631,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for C++"
+                    "title": "Women vs. Men for C++"
                 }
             },
             "CSS": {
@@ -13647,7 +13647,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Css"
+                    "title": "Women vs. All for Css"
                 },
                 "male_female": {
                     "data": [
@@ -13661,7 +13661,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Css"
+                    "title": "Women vs. Men for Css"
                 }
             },
             "Go": {
@@ -13677,7 +13677,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Go"
+                    "title": "Women vs. All for Go"
                 },
                 "male_female": {
                     "data": [
@@ -13691,7 +13691,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Go"
+                    "title": "Women vs. Men for Go"
                 }
             },
             "HTML": {
@@ -13707,7 +13707,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Html"
+                    "title": "Women vs. All for Html"
                 },
                 "male_female": {
                     "data": [
@@ -13721,7 +13721,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Html"
+                    "title": "Women vs. Men for Html"
                 }
             },
             "Java": {
@@ -13737,7 +13737,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Java"
+                    "title": "Women vs. All for Java"
                 },
                 "male_female": {
                     "data": [
@@ -13751,7 +13751,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Java"
+                    "title": "Women vs. Men for Java"
                 }
             },
             "JavaScript": {
@@ -13767,7 +13767,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Javascript"
+                    "title": "Women vs. All for Javascript"
                 },
                 "male_female": {
                     "data": [
@@ -13781,7 +13781,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Javascript"
+                    "title": "Women vs. Men for Javascript"
                 }
             },
             "Jupyter": {
@@ -13797,7 +13797,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Jupyter"
+                    "title": "Women vs. All for Jupyter"
                 },
                 "male_female": {
                     "data": [
@@ -13811,7 +13811,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Jupyter"
+                    "title": "Women vs. Men for Jupyter"
                 }
             },
             "Objective-C": {
@@ -13827,7 +13827,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Objective-c"
+                    "title": "Women vs. All for Objective-c"
                 },
                 "male_female": {
                     "data": [
@@ -13841,7 +13841,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Objective-c"
+                    "title": "Women vs. Men for Objective-c"
                 }
             },
             "PHP": {
@@ -13857,7 +13857,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Php"
+                    "title": "Women vs. All for Php"
                 },
                 "male_female": {
                     "data": [
@@ -13871,7 +13871,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Php"
+                    "title": "Women vs. Men for Php"
                 }
             },
             "Python": {
@@ -13887,7 +13887,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Python"
+                    "title": "Women vs. All for Python"
                 },
                 "male_female": {
                     "data": [
@@ -13901,7 +13901,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Python"
+                    "title": "Women vs. Men for Python"
                 }
             },
             "Ruby": {
@@ -13917,7 +13917,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Ruby"
+                    "title": "Women vs. All for Ruby"
                 },
                 "male_female": {
                     "data": [
@@ -13931,7 +13931,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Ruby"
+                    "title": "Women vs. Men for Ruby"
                 }
             },
             "Shell": {
@@ -13947,7 +13947,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Shell"
+                    "title": "Women vs. All for Shell"
                 },
                 "male_female": {
                     "data": [
@@ -13961,7 +13961,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Shell"
+                    "title": "Women vs. Men for Shell"
                 }
             },
             "TypeScript": {
@@ -13977,7 +13977,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. All for Typescript"
+                    "title": "Women vs. All for Typescript"
                 },
                 "male_female": {
                     "data": [
@@ -13991,7 +13991,7 @@ var data = {
                         }
                     ],
                     "subtitle": "2008-3 to 2019-3",
-                    "title": "Female vs. Male for Typescript"
+                    "title": "Women vs. Men for Typescript"
                 }
             }
         }
@@ -14020,7 +14020,7 @@ var data = {
                         5413,
                         35932
                     ],
-                    "name": "Female",
+                    "name": "Women",
                     "type": "column"
                 },
                 {
@@ -14050,7 +14050,7 @@ var data = {
             "height_ratio": 53.84615384615385,
             "label_x": "Languages",
             "label_y": "Total Number of Contributors",
-            "title": "Active Contributors Across Languages from 2008-3-2019-3",
+            "title": "Active Contributors All Languages 2008-3-2019-3",
             "x_categories": [
                 "Python",
                 "C#",
@@ -14092,7 +14092,7 @@ var data = {
                         5413,
                         35932
                     ],
-                    "name": "Female",
+                    "name": "Women",
                     "type": "column"
                 },
                 {
@@ -14115,14 +14115,14 @@ var data = {
                         135302,
                         594045
                     ],
-                    "name": "Male",
+                    "name": "Men",
                     "type": "column"
                 }
             ],
             "height_ratio": 53.84615384615385,
             "label_x": "Languages",
             "label_y": "Total Number of Contributors",
-            "title": "Active Contributors Across Languages from 2008-3-2019-3",
+            "title": "Active Contributors All Languages 2008-3-2019-3",
             "x_categories": [
                 "Python",
                 "C#",

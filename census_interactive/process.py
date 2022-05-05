@@ -30,19 +30,19 @@ def load_contributor(lang, dat_path, store_path):
 
     # Format column data of contributors by gender
     all_female = {}
-    all_female["name"] = "All female"
+    all_female["name"] = "All women"
     all_female["type"] = "column"
     all_female["data"] = list(dat["female_all"] / 1000)
     all_female["color"] = "#de2d26"
 
     all_male = {}
-    all_male["name"] = "All male"
+    all_male["name"] = "All Men"
     all_male["type"] = "column"
     all_male["data"] = list((dat["female_all"] + dat["male_all"]) / 1000)
     all_male["color"] = "#f29d4b"
 
     all_unknown = {}
-    all_unknown["name"] = "All unknown"
+    all_unknown["name"] = "All Unknown"
     all_unknown["type"] = "column"
     all_unknown["data"] = list(dat["all_all"] / 1000)
     all_unknown["color"] = "blanchedalmond"
@@ -102,7 +102,7 @@ def load_contributor(lang, dat_path, store_path):
     title = "Active Contributors in "  + lang_title + " Public Projects"
     label_x = 'Time (quarter)'
     label_y = 'Number of Contributors (thousand)'
-    label_y_secondary = "Female Ratio = F/(F + M)"
+    label_y_secondary = "Women Ratio = F/(F + M)"
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all_unknown, all_male, all_female, among_all, among_core]
@@ -137,19 +137,19 @@ def load_commit(lang, dat_path, store_path):
     
     # Format column data of contributors by gender
     all_female = {}
-    all_female["name"] = "All female"
+    all_female["name"] = "All Women"
     all_female["type"] = "column"
     all_female["data"] = list(dat["female_commit"] / 1000)
     all_female["color"] = "#de2d26"
 
     all_male = {}
-    all_male["name"] = "All male"
+    all_male["name"] = "All Men"
     all_male["type"] = "column"
     all_male["data"] = list((dat["female_commit"] + dat["male_commit"]) / 1000)
     all_male["color"] = "#f29d4b"
 
     all_unknown = {}
-    all_unknown["name"] = "All unknown"
+    all_unknown["name"] = "All Unknown"
     all_unknown["type"] = "column"
     all_unknown["data"] = list(dat["all_commit"] / 1000)
     all_unknown["color"] = "blanchedalmond"
@@ -194,7 +194,7 @@ def load_commit(lang, dat_path, store_path):
     title = "Commits in "+ lang_title +" Public Projects" 
     label_x = 'Time (quarter)'
     label_y = 'Commit Numbers (thousand)'
-    label_y_secondary = "Female Commit Ratio = F/(F + M)"
+    label_y_secondary = "Women Commit Ratio = F/(F + M)"
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all_unknown, all_male, all_female, ratio_female]
@@ -235,7 +235,7 @@ def load_project(lang, dat_path, store_path):
     all["color"] = "#f29d4b"
 
     has_female = {}
-    has_female["name"] = "Has female"
+    has_female["name"] = "Has Women"
     has_female["type"] = "column"
     has_female["data"] = list(dat[lang+"_fem"] / 1000)
     has_female["color"] = "#de2d26"
@@ -250,7 +250,7 @@ def load_project(lang, dat_path, store_path):
 
     # Format line data of contributors
     ratio_female = {}
-    ratio_female["name"] = "Female ratio"
+    ratio_female["name"] = "Women Ratio"
     ratio_female["type"] = "spline"
     ratio_female["data"] = list(ratio)
     ratio_female["color"] = "darkblue"
@@ -276,7 +276,7 @@ def load_project(lang, dat_path, store_path):
     title = "Active Public Projects in "+ lang_title +" Ecosystem" 
     label_x = 'Time (quarter)'
     label_y = 'Active Public Project Numbers (thousand)'
-    label_y_secondary = "Female Participated Project Ratio"
+    label_y_secondary = "Women Participated Project Ratio"
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all, has_female, ratio_female]
@@ -317,7 +317,13 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
     colors = ["#f29d4b", "#de2d26"]
     for compare in ['female', compare_opt]:
         add_data = dict()
-        add_data["name"] = compare.capitalize()
+        # Change male or female to men or women
+        if compare == 'male':
+            add_data["name"] = 'Men'
+        elif compare == 'female':
+            add_data["name"] = 'Women'
+        else:
+            add_data["name"] = 'All'
         add_data["type"] = "column" 
         add_data["color"] = colors.pop()
         add_data["data"] = []
@@ -336,7 +342,7 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
     # Retrieve time range
     start_date = _format_date(dat["win"].iloc[0])
     end_date = _format_date(dat["win"].iloc[-1])
-    date_range = start_date + "-" + end_date
+    date_range = start_date + " to " + end_date
 
     # Graph setup information
 
@@ -406,8 +412,14 @@ def load_contributor_pie(lang, dat_path, store_path, compare_opt, year_opt):
     out_dict["data"].append(female_data)
     out_dict["data"].append(compare_data)
     
+
     # Set Title
-    out_dict["title"] = "Female vs. " + compare_opt.capitalize() + " for " + lang.capitalize()
+    if compare_opt.lower() == "male":
+        # Change male to men in title
+        comparison_title = "Men"
+    else:
+        comparison_title = "All"
+    out_dict["title"] = "Women vs. " + comparison_title + " for " + lang.capitalize()
 
     if year_opt == "single":
         # Select most recent year
