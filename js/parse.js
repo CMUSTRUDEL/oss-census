@@ -61,8 +61,8 @@ function parseBarData(cat, compareOpt) {
     obj.title = data_bar[cat][compareKey]["title"];
     obj.label_x = data_bar[cat][compareKey]["label_x"];
     obj.label_y = data_bar[cat][compareKey]["label_y"];
-    obj.label_y_secondary = data_bar[cat][compareKey]["label_y_secondary"];
     obj.data = data_bar[cat][compareKey]["data"];
     obj.x_categories = data_bar[cat][compareKey]["x_categories"];
     obj.height_ratio = data_bar[cat][compareKey]["height_ratio"];
+    console.log("Finished parsing Single Bar graph data")
 }

@@ -14,22 +14,12 @@ function graphBar() {
         },
         categories: obj.x_categories
     },
-    yAxis: [
-        {
-            title: {
-                text: obj.label_y
-            }
+    yAxis: {
+        title: {
+            text: obj.label_y
         },
-        { // Secondary yAxis
-            title: {
-                text: obj.label_y_secondary,
-            },
-            labels: {
-                format: '{value}',
-            },
-            opposite: true
-        }
-    ],
+        ceiling: 1350000
+    },
     legend: {
         align: 'right',
         x: -150,
