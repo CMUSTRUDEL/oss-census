@@ -1,26 +1,37 @@
 var obj = data["Contributor"]["Ruby"]
 var one_contributor = new Highcharts.chart('all_cont', {
-  chart: {
-      type: 'column',
-      height: obj["height_ratio"] + '%'
-  },
-  title: {
-      text: 'A. ' + obj["title"],
-      style: {
-        fontSize: 14
-      }
-  },
-  xAxis: {
-      title: {
-          text: obj["label_x"]
-      },
-      categories: obj["x_categories"]
-  },
-  yAxis: {
-      title: {
-          text: obj["label_y"]
-      }
+    chart: {
+        type: 'column',
+        height: obj["height_ratio"] + '%'
     },
+    title: {
+        text: 'A. ' + obj["title"],
+        style: {
+        fontSize: 14
+        }
+    },
+    xAxis: {
+        title: {
+            text: obj["label_x"]
+        },
+        categories: obj["x_categories"]
+    },
+    yAxis: [
+        {
+            title: {
+                text: obj["label_y"]
+            }
+        },
+        { // Secondary yAxis
+            title: {
+                text: obj["label_y_secondary"],
+            },
+            labels: {
+                format: '{value}',
+            },
+            opposite: true
+        }
+    ],
     legend: {
         layout: 'vertical',
         align: 'left',

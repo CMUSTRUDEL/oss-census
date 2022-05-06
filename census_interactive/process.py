@@ -320,6 +320,7 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
         # Change male or female to men or women
         if compare == 'male':
             add_data["name"] = 'Men'
+            add_data["yAxis"] = 1
         elif compare == 'female':
             add_data["name"] = 'Women'
         else:
@@ -348,7 +349,8 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
 
     title = "Active Contributors All Languages "+date_range
     label_x = 'Languages'
-    label_y = 'Total Number of Contributors'
+    label_y = 'Total Number of Women'
+    label_y_secondary = 'Total Number of Men'
     height_ratio = (7 / 13 * 100) # 16:9 ratio
     
     # write data to js file that creates variables referenced in script.js file
@@ -356,6 +358,7 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
     out_dict['title'] = title
     out_dict['label_x'] = label_x 
     out_dict['label_y'] = label_y
+    out_dict['label_y_secondary'] = label_y_secondary
     out_dict['x_categories'] = langs
     out_dict['height_ratio'] = height_ratio
     out_dict['data'] = data

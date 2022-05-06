@@ -14049,7 +14049,8 @@ var data = {
             ],
             "height_ratio": 53.84615384615385,
             "label_x": "Languages",
-            "label_y": "Total Number of Contributors",
+            "label_y": "Total Number of Women",
+            "label_y_secondary": "Total Number of Men",
             "title": "Active Contributors All Languages 2008-3 to 2019-3",
             "x_categories": [
                 "Python",
@@ -14116,12 +14117,14 @@ var data = {
                         594045
                     ],
                     "name": "Men",
-                    "type": "column"
+                    "type": "column",
+                    "yAxis": 1
                 }
             ],
             "height_ratio": 53.84615384615385,
             "label_x": "Languages",
-            "label_y": "Total Number of Contributors",
+            "label_y": "Total Number of Women",
+            "label_y_secondary": "Total Number of Men",
             "title": "Active Contributors All Languages 2008-3 to 2019-3",
             "x_categories": [
                 "Python",
