@@ -400,7 +400,16 @@ def load_contributor_pie(dat_path, store_path, year_opt):
         # Length correlated with % of Women 
         add_data["z"] = round((total_women / total * 100), 2)
 
-        data.append(add_data)
+        if not data:
+            data.append(add_data)
+        else:
+            for i in range(len(data)):
+                if data[i]["z"] >= add_data["z"]:
+                    data.insert(i, add_data)
+                    break
+                elif i == len(data) - 1:
+                    data.append(add_data)
+        
     
 
     # Graph setup info
