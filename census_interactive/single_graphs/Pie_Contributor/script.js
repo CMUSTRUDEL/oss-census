@@ -15,6 +15,12 @@ function graphPie(year_opt) {
                 'Ecosystem Size (# Contributors): <b>{point.y}</b><br/>' +
                 'Percent Women (%): <b>{point.z}</b><br/>'
         },
-        series: [{ obj.data }]
+        series: [{  
+            minPointSize: 10,
+            innerSize: '20%',
+            zMin: 0,
+            name: 'Languages',
+            data: obj.data 
+        }] 
     });
 }

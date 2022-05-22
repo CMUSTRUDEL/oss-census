@@ -378,14 +378,7 @@ def load_contributor_pie(dat_path, store_path, year_opt):
             'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C', 'All']
     
          
-    data = dict()
-    # Change male or female to men or women
-    data["minPointSize"] = 10
-    data["innerSize"] = '20%'
-    data["zMin"] = 0
-    data["name"] = 'Languages' 
-    data["data"] = []
-
+    data = []
     # Data collection begins in 1/2008
     year_start = int(year_opt) - 2008
 
@@ -407,7 +400,7 @@ def load_contributor_pie(dat_path, store_path, year_opt):
         # Length correlated with % of Women 
         add_data["z"] = round((total_women / total * 100), 2)
 
-        data["data"].append(add_data)
+        data.append(add_data)
     
 
     # Graph setup info

@@ -1,16 +1,17 @@
 /* Functions to add, update, and delete HTML for viewing single graphs */
 
 function update() {
-    var selectLang = document.getElementById('language-select');
     var selectCat = document.getElementById('category-select');
     var selectGraph = document.getElementById('graph-select');
+    var selectCompare = document.getElementById('compare-select')
     // TODO: Add year select menu
     var selectYear = '2008';
 
-    localStorage.setItem("language", selectLang.options[selectLang.selectedIndex].value);
     localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
     localStorage.setItem("year", selectYear);
     localStorage.setItem("graph", selectGraph.options[selectGraph.selectedIndex].value);
+    localStorage.setItem("compare", selectCompare.options[selectCompare.selectedIndex].value);
+
 } 
 
 
@@ -18,10 +19,12 @@ function showGraph() {
     let cat;
     let yearOpt;
     let graphOpt;
+    let compareOpt;
 
     cat = localStorage.getItem("category");
     yearOpt = localStorage.getItem("year");
     graphOpt = localStorage.getItem("graph")
+    compareOpt = localStorage.getItem("compare")
 
     if (cat == "" || cat == null) {
         alert('Please select a category');

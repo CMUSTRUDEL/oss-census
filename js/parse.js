@@ -30,7 +30,7 @@ function parseData(cat, lang) {
 function parseSingleData(cat, yearOpt, compareOpt, graphOpt) {
     if (graphOpt == "pie") {
         // Pie graph parsing
-        parsePieData(cat, yearOpt, compareOpt)
+        parsePieData(cat, yearOpt)
     }
     else if (graphOpt == "bar") {
         // Bar graph parsing
@@ -41,16 +41,13 @@ function parseSingleData(cat, yearOpt, compareOpt, graphOpt) {
     }
 }
 
-function parsePieData(cat, yearOpt, compareOpt) {
+function parsePieData(cat, yearOpt) {
     console.log("Parsing Single Pie graph data...");
 
-    yearKey = yearOpt;
-    compareKey = compareOpt+'_female';
-
     // obj data variable stored in data.js, taken into function for single graphs
-    obj.title = data_pie[cat][yearKey]["title"];
-    obj.label_x = data_pie[cat][yearKey]["subtitle"];
-    obj.data = data_pie[cat][yearKey]["data"];
+    obj.title = data_pie[cat][yearOpt]["title"];
+    obj.subtitle = data_pie[cat][yearOpt]["subtitle"];
+    obj.data = data_pie[cat][yearOpt]["data"];
 }
 
 function parseBarData(cat, compareOpt) {
