@@ -297,14 +297,13 @@ def load_project(lang, dat_path, store_path):
 
 ## Single Graph functions ##
 
-def load_contributor_bar(dat_path, store_path, compare_opt):
+def load_contributor_bar(dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
     All active project count by window: './project/'
 
     :string dat_path: CSV data path
     :string store_path: path to Contributor graph settings
-    :string compare_opt: "male" or "all" gender(s) that is compared against data for females
     :return: None
     """ 
 
@@ -314,7 +313,7 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
  
     data = []
     colors = ["#f29d4b", "#de2d26"]
-    for compare in ['female', compare_opt]:
+    for compare in ['female', 'male']:
         add_data = dict()
         # Change male or female to men or women
         if compare == 'male':

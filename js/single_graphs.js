@@ -3,15 +3,12 @@
 function update() {
     var selectCat = document.getElementById('category-select');
     var selectGraph = document.getElementById('graph-select');
-    var selectCompare = document.getElementById('compare-select')
     // TODO: Add year select menu
     var selectYear = '2008';
 
     localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
     localStorage.setItem("year", selectYear);
     localStorage.setItem("graph", selectGraph.options[selectGraph.selectedIndex].value);
-    localStorage.setItem("compare", selectCompare.options[selectCompare.selectedIndex].value);
-
 } 
 
 
@@ -19,12 +16,10 @@ function showGraph() {
     let cat;
     let yearOpt;
     let graphOpt;
-    let compareOpt;
 
     cat = localStorage.getItem("category");
     yearOpt = localStorage.getItem("year");
     graphOpt = localStorage.getItem("graph")
-    compareOpt = localStorage.getItem("compare")
 
     if (cat == "" || cat == null) {
         alert('Please select a category');
@@ -41,7 +36,7 @@ function showGraph() {
     // Show proper graph, hide others
     if (cat == "contributor" ) {
         // Update JSON object referenced for graphs
-        parseSingleData("Contributor", yearOpt, compareOpt, graphOpt)
+        parseSingleData("Contributor", yearOpt, graphOpt)
 
         for (let i = 0; i < graphOpts.length; i++) {
             let opt = graphOpts[i];

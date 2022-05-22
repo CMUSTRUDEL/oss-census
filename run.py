@@ -12,7 +12,6 @@ def main():
     with open ("config.yaml", 'r') as stream:
         config = yaml.safe_load(stream)
     langs = [] if config["languages"] is None else config["languages"]
-    compare_options = [] if config["comparison"] is None else config["comparison"]
     ##########################################
 
 
@@ -93,19 +92,20 @@ def main():
     # Focus on Contributor for bar graphs
     data_bar["Contributor"] = dict()
     dat_path = './census_interactive/data/raw/contributor_by_win/'
-    for compare_option in compare_options:
-        compare_option = compare_option.lower()
 
-        # Updates processed JSON file
-        load_contributor_bar(dat_path, store_path, compare_option)
+    # Updates processed JSON file
+    load_contributor_bar(dat_path, store_path)
 
-        # Save graph data to overall JSON data
-        with open(store_path+'/'+'all_bar'+'.json') as json_file:
-            add_data = json.load(json_file)
-        data_bar["Contributor"][compare_option+'_female'] = add_data
+    # Save graph data to overall JSON data
+    with open(store_path+'/'+'all_bar'+'.json') as json_file:
+        add_data = json.load(json_file)
+    data_bar["Contributor"]['male_female'] = add_data
 
 
-    # Combine all JSON to one dictionary in js/
+
+
+    ## Combine all JSON to one dictionary in js/
+
     with open('./js/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
         out_file.write('var data_pie = %s;' % json.dumps(data_pie,indent=4, sort_keys=True))
