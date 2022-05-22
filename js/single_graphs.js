@@ -3,45 +3,31 @@
 function update() {
     var selectLang = document.getElementById('language-select');
     var selectCat = document.getElementById('category-select');
-    var selectCompare = document.getElementById('compare-select');
     var selectGraph = document.getElementById('graph-select');
-    // Year set to 'all', as it is of less interest to select most recent year
-    var selectYear = 'all';
-    // var selectGraph = document.getElementById('graph-select');
-
-
+    // TODO: Add year select menu
+    var selectYear = '2008';
 
     localStorage.setItem("language", selectLang.options[selectLang.selectedIndex].value);
     localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
     localStorage.setItem("year", selectYear);
-    localStorage.setItem("compare", selectCompare.options[selectCompare.selectedIndex].value);
     localStorage.setItem("graph", selectGraph.options[selectGraph.selectedIndex].value);
 } 
 
 
 function showGraph() {
     let cat;
-    let lang;
     let yearOpt;
     let graphOpt;
 
     cat = localStorage.getItem("category");
-    lang = localStorage.getItem("language");
     yearOpt = localStorage.getItem("year");
-    compareOpt = localStorage.getItem("compare");
     graphOpt = localStorage.getItem("graph")
 
-    if (lang == "" || lang == null) {
-        alert('Please select a language');
-    }
-    else if (cat == "" || cat == null) {
+    if (cat == "" || cat == null) {
         alert('Please select a category');
     }
     else if (yearOpt == "" || yearOpt == null) {
         alert('Please select a year option');
-    }
-    else if (compareOpt == "" || compareOpt == null) {
-        alert('Please select a compare option');
     }
     else if (graphOpt == "" || graphOpt == null) {
         alert('Please select a graph option');
@@ -52,7 +38,7 @@ function showGraph() {
     // Show proper graph, hide others
     if (cat == "contributor" ) {
         // Update JSON object referenced for graphs
-        parseSingleData("Contributor", lang, yearOpt, compareOpt, graphOpt)
+        parseSingleData("Contributor", yearOpt, compareOpt, graphOpt)
 
         for (let i = 0; i < graphOpts.length; i++) {
             let opt = graphOpts[i];

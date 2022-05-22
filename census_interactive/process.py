@@ -302,7 +302,6 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
     Stores formatted JavaScript variables for graph from:
     All active project count by window: './project/'
 
-    :string lang: programming language
     :string dat_path: CSV data path
     :string store_path: path to Contributor graph settings
     :string compare_opt: "male" or "all" gender(s) that is compared against data for females
@@ -364,76 +363,97 @@ def load_contributor_bar(dat_path, store_path, compare_opt):
 
 
 
-def load_contributor_pie(lang, dat_path, store_path, compare_opt, year_opt):
+def load_contributor_pie(dat_path, store_path, year_opt):
     """
-    :string lang: programming language
-    :string dat_path: CSV pandas data
+    Stores formatted JavaScript variables for graph from:
+    All active project count by window: './project/'
+
+    :string dat_path: CSV data path
     :string store_path: path to Contributor graph settings
-    :string compare_opt: "male" or "all" gender(s) that is compared against data for females
-    :string year_opt: "single" or "all" years considered. Taking in a value of single will
-                         automatically select most recent year
+    :string year_opt: Year data is examined for
     :return: None
     """ 
-    lang = lang.lower()
-    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
-    max_win = 45
-    dat = dat[dat['win']<=max_win]
 
-    if year_opt == "single":
-        # Single year
-        female_total = list(dat["female_all"])[-1]
-        male_total = list(dat["male_all"])[-1]
-        all_total = list(dat["all_all"])[-1]
-    else: 
-        # Combine all year data
-        female_total = sum(list(dat["female_all"]))
-        male_total = sum(list(dat["male_all"]))
-        all_total = sum(list(dat["all_all"]))
-
-    # Set num_comparison to value of data for "all" if compared against female data
-    if compare_opt == "all":
-        num_comparison = all_total
-    else:
-        num_comparison = male_total
-    num_contributors = female_total + num_comparison
-
-    # Format column data of contributors by gender
-    female_data = {}
-    female_data["name"] = "Female"
-    # Take most recent year of contributors at index -1
-    female_data["y"] = 100 * (female_total / num_contributors)
+    langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++',
+            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C', 'All']
     
-    compare_data = {}
-    compare_data["name"] = compare_opt.capitalize()
-    # Take most recent year of contributors at index -1
-    compare_data["y"] = 100 * (num_comparison / num_contributors)
-    
-    out_dict = {"data": [] }
-    out_dict["data"].append(female_data)
-    out_dict["data"].append(compare_data)
+         
+    data = dict()
+    # Change male or female to men or women
+    data["minPointSize"] = 10
+    data["innerSize"] = '20%'
+    data["zMin"] = 0
+    data["name"] = 'Languages' 
+    data["data"] = []
+
+    # Data collection begins in 1/2008
+    year_start = int(year_opt) - 2008
+
+
+    for lang in langs:
+        # Retrieve data from language specific csv
+        dat = pd.read_csv(dat_path+lang+'.csv', error_bad_lines=False, 
+                        warn_bad_lines=False, index_col=False)
+        max_win = 45
+        dat = dat[dat['win']<=max_win]
+   
+        add_data = {}
+        add_data["name"] = lang.capitalize()
+        # Year index moves in 3 month intervals start in 2008
+        total_women = sum(list(dat["female"+"_all"])[year_start:year_start+4])
+        total = sum(list(dat["all"+"_all"])[year_start:year_start+4])
+        # Width correlates with ecosystem size
+        add_data["y"] = total
+        # Length correlated with % of Women 
+        add_data["z"] = round((total_women / total * 100), 2)
+
+        data["data"].append(add_data)
     
 
-    # Set Title
-    if compare_opt.lower() == "male":
-        # Change male to men in title
-        comparison_title = "Men"
-    else:
-        comparison_title = "All"
-    out_dict["title"] = "Women vs. " + comparison_title + " for " + lang.capitalize()
-
-    if year_opt == "single":
-        # Select most recent year
-        year = dat["win"].iloc[-1]
-        out_dict["subtitle"] = _format_date(year)
-    else:
-        # Select All Years in range
-        start_date = _format_date(dat["win"].iloc[0])
-        end_date = _format_date(dat["win"].iloc[-1])
-        out_dict["subtitle"] = start_date + " to " + end_date
-
-    with open(store_path + '/' + lang + '.json', 'w') as out_file:
+    # Graph setup info
+    title = "Contributors compared by Ecosystem Size and % Women"
+    subtitle = str(year_opt)
+    
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['subtitle'] = subtitle
+    out_dict['data'] = data
+    with open(store_path+'/'+'all_pie'+'.json', 'w') as out_file:
         json.dump(out_dict, out_file)
 
+
+
+# def load_commit_bar(dat_path, store_path, compare_opt):
+#     """
+#     Stores formatted JavaScript variables for graph from:
+#     All active project count by window: './project/'
+
+#     :string dat_path: CSV data path
+#     :string store_path: path to Contributor graph settings
+#     :string compare_opt: "male" or "all" gender(s) that is compared against data for females
+#     :return: None
+#     """ 
+
+#     return
+
+
+# def load_project_bar(dat_path, store_path, compare_opt):
+#     """
+#     Stores formatted JavaScript variables for graph from:
+#     All active project count by window: './project/'
+
+#     :string dat_path: CSV data path
+#     :string store_path: path to Contributor graph settings
+#     :string compare_opt: "male" or "all" gender(s) that is compared against data for females
+#     :return: None
+#     """ 
+
+#     return
+
+
+
+## Private Functions ##
 
 def _format_date(year):
     # Format year and month of dataframe value "{}-{}".format(year,month)

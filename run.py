@@ -61,32 +61,28 @@ def main():
     ## Single Contributor Graph Data 
 
     ########################## SINGLE GRAPH SETTINGS ###########################
-    # Single graph x axis options, syntax YEAROPTION_years
-    year_options = ["all_years", "single_years"]
+    # Single graph x axis options, syntax YEAR#
+    year_opts = [] if config["years"] is None else config["years"]
+
     ############################################################################
     
     ## Pie Graph ##
-
+    
     store_path = './census_interactive/data/processed/contributor'
     data_pie = dict()   
     
-    # Focus on Contributor for pie graphs
+    # Focus on Contributor for bar graphs
     data_pie["Contributor"] = dict()
-    for year_option in year_options:
-        data_pie["Contributor"][year_option] = dict()
-        for lang in langs:
-            dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
-            data_pie["Contributor"][year_option][lang] = dict()
-            for compare_option in compare_options:
-                compare_option = compare_option.lower()
+    dat_path = './census_interactive/data/raw/contributor_by_win/'
 
-                # Updates processed JSON file
-                load_contributor_pie(lang, dat_path, store_path, compare_option, year_option)
+    for year_opt in year_opts:
+        # Updates processed JSON file
+        load_contributor_pie(dat_path, store_path, year_opt)
 
-                # Save graph data to overall JSON data
-                with open(store_path+'/'+lang+'.json') as json_file:
-                    add_data = json.load(json_file)
-                    data_pie["Contributor"][year_option][lang][compare_option+"_female"] = add_data
+        # Save graph data to overall JSON data
+        with open(store_path+'/'+'all_pie'+'.json') as json_file:
+            add_data = json.load(json_file)
+        data_pie["Contributor"][year_opt] = add_data
 
     
     ## Bar Graph ##
@@ -94,7 +90,7 @@ def main():
     store_path = './census_interactive/data/processed/contributor'
     data_bar = dict()   
     
-    # Focus on Contributor for pie graphs
+    # Focus on Contributor for bar graphs
     data_bar["Contributor"] = dict()
     dat_path = './census_interactive/data/raw/contributor_by_win/'
     for compare_option in compare_options:

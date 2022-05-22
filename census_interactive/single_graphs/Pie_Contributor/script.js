@@ -1,10 +1,7 @@
 function graphPie(year_opt) {
-    new Highcharts.chart('pie-cont-'+year_opt, {
+    new Highcharts.chart('pie-cont', {
         chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
+            type: 'variablepie'
         },
         title: {
             text: obj.title
@@ -13,23 +10,11 @@ function graphPie(year_opt) {
             text: obj.subtitle
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            headerFormat: '',
+            pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+                'Ecosystem Size (# Contributors): <b>{point.y}</b><br/>' +
+                'Percent Women (%): <b>{point.z}</b><br/>'
         },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                }
-            }
-        },
-        series: [{ data: obj.data}]
+        series: [{ obj.data }]
     });
 }
