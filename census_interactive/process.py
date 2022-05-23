@@ -379,7 +379,7 @@ def load_contributor_pie(dat_path, store_path, year_opt):
          
     data = []
     # Data collection begins in 1/2008
-    year_start = int(year_opt) - 2008
+    year_start = (int(year_opt) - 2008) * 4
 
 
     for lang in langs:
