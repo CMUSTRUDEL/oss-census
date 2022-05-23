@@ -72,10 +72,10 @@ function parseStackData(cat) {
     console.log("Parsing Single Stack graph data...");
 
     // obj data variable stored in data.js, taken into function for single graphs
-    obj.title = data_bar[cat]["title"];
-    obj.label_y = data_bar[cat]["label_y"];
-    obj.data = data_bar[cat]["data"];
-    obj.x_categories = data_bar[cat]["x_categories"];
-    obj.height_ratio = data_bar[cat]["height_ratio"];
+    obj.title = data_stack[cat]["title"];
+    obj.label_y = data_stack[cat]["label_y"];
+    obj.data = data_stack[cat]["data"];
+    obj.x_categories = data_stack[cat]["x_categories"];
+    obj.height_ratio = data_stack[cat]["height_ratio"];
     console.log("Finished parsing Single Stack Area graph data")
 }

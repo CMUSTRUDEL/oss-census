@@ -449,9 +449,10 @@ def load_contributor_stack(dat_path, store_path):
 
         # Format column data of contributors by gender
         add_data = {}
-        add_data["data"] = list((dat["female_all"] / dat["all_all"]) * 100)
+        percent_women = (dat["female_all"] / dat["all_all"]) * 100
+        add_data["data"] = list(round(percent_women, 2))
         add_data["name"] = lang
-        
+
         data.append(add_data)
 
 

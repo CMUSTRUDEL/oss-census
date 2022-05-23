@@ -53,7 +53,6 @@ function showGraph() {
         // Reloads graph from script.js function call
         graphPie(yearOpt);
         graphBar();
-
         graphStack();
     }
     else {
