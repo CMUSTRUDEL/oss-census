@@ -31,7 +31,7 @@ function showGraph() {
         alert('Please select a graph option');
     }
 
-    let graphOpts = ['bar', 'pie']; 
+    let graphOpts = ['bar', 'pie', 'stack']; 
   
     // Show proper graph, hide others
     if (cat == "contributor" ) {
@@ -51,15 +51,10 @@ function showGraph() {
             }
         }
         // Reloads graph from script.js function call
-        if (graphOpt == "pie") {
-            graphPie(yearOpt);
-        }
-        else if (graphOpt == "bar") {
-            graphBar();
-        }
-        else {
-            error("Invalid graph option chosen");
-        }
+        graphPie(yearOpt);
+        graphBar();
+
+        graphStack();
     }
     else {
         alert("Only Contributor graphs available at this time");

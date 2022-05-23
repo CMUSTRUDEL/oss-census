@@ -103,6 +103,24 @@ def main():
 
 
 
+    ## Stacked Area Graph ##
+
+    store_path = './census_interactive/data/processed/contributor'
+    data_stack = dict()   
+    
+    # Focus on Contributor for bar graphs
+    data_stack["Contributor"] = dict()
+    dat_path = './census_interactive/data/raw/contributor_by_win/'
+
+    # Updates processed JSON file
+    load_contributor_stack(dat_path, store_path)
+
+    # Save graph data to overall JSON data
+    with open(store_path+'/'+'all_stack'+'.json') as json_file:
+        add_data = json.load(json_file)
+    data_stack["Contributor"] = add_data
+
+
 
     ## Combine all JSON to one dictionary in js/
 
@@ -110,6 +128,7 @@ def main():
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
         out_file.write('var data_pie = %s;' % json.dumps(data_pie,indent=4, sort_keys=True))
         out_file.write('var data_bar = %s;' % json.dumps(data_bar,indent=4, sort_keys=True))
+        out_file.write('var data_stack = %s;' % json.dumps(data_stack,indent=4, sort_keys=True))
 
 
 if __name__== "__main__" :

@@ -308,7 +308,7 @@ def load_contributor_bar(dat_path, store_path):
     """ 
 
     langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++',
-            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C', 'All']
+            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C']
     
  
     data = []
@@ -374,9 +374,8 @@ def load_contributor_pie(dat_path, store_path, year_opt):
     """ 
 
     langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++',
-            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C', 'All']
+            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C']
     
-         
     data = []
     # Data collection begins in 1/2008
     year_start = (int(year_opt) - 2008) * 4
@@ -422,6 +421,73 @@ def load_contributor_pie(dat_path, store_path, year_opt):
     out_dict['data'] = data
     with open(store_path+'/'+'all_pie'+'.json', 'w') as out_file:
         json.dump(out_dict, out_file)
+
+
+
+def load_contributor_stack(dat_path, store_path):
+    """
+    Stores formatted JavaScript variables for graph from:
+    All active contributor by gender by window: './contributor/all/'
+    Core active contributor by gender by window: './contributor/core/'
+
+    :string dat_path: CSV pandas data
+    :string store_path: path to Contributor graph settings
+    :return: None
+    """ 
+
+    langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++',
+            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C']
+    data = []
+
+    for lang in langs:
+        # Retrieve data from language specific csv
+        dat = pd.read_csv(dat_path+lang+'.csv', error_bad_lines=False, 
+                        warn_bad_lines=False, index_col=False)
+
+        max_win = 45
+        dat = dat[dat['win']<=max_win]
+
+        # Format column data of contributors by gender
+        add_data = {}
+        add_data["data"] = list((dat["female_all"] / dat["all_all"]) * 100)
+        add_data["name"] = lang
+        
+        data.append(add_data)
+
+
+    # Change window to date
+    wins = dat["win"]
+    x = []
+    for win in wins:
+        time = 3 * win
+        year = 2008 + math.floor(time/12)
+        month = time - math.floor(time/12)*12
+        if not month:
+            month = 12
+        x.append("{}-{}".format(year,month))
+    wins = x
+
+    # Retrieve time range
+    start_date = _format_date(dat["win"].iloc[0])
+    end_date = _format_date(dat["win"].iloc[-1])
+    date_range = start_date + " to " + end_date
+
+
+    # Graph setup information
+    title = "Percentage of Women Across Languages " + date_range
+    label_y = 'Women in Projects (%)'
+    x_categories = wins
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
+
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['label_y'] = label_y
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path+'/'+'all_stack'+'.json', 'w') as out_file:
+            json.dump(out_dict, out_file)
 
 
 
