@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSS Census</title>
+    <meta name="author" content="Justin">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-bebas {
+            font-family: bebas-neue, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 4.5px;
+        }
+        .font-family-karla {
+            font-family: karla;
+        }
+        .h-200{
+            height: 600px;
+        }
+        .h-128{
+			height: 450px;
+		}
+		.h-100{
+			height: 400px;
+		}
+        .w-100{
+			height: 400px;
+		}
+        .w-128{
+			height: 450px;
+		}
+        .bg-primary{
+			background: #732867;
+		}
+        .bg-midbar{
+            background: #ECE4E3;
+        }
+        .text-primary{
+            color: #732867;
+        }
+        .text-paragraph{
+            font-size: 1.4rem; /* 24px */
+            line-height: 1.75rem; /* 32px */
+        }
+    </style>
+
+    <!-- Graph 1 CSS and Script links -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    
+</head>
+
+
+
+<div class="bg-white font-family-karla">
+    <!-- Top Bar Nav -->
+    <nav class="w-full bg-white py-2 shadow-lg">
+        <div class="mx-auto px-4">
+            <div class="flex justify-between">
+
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img src="../img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
+                </a>
+                <div class="top-0 right-0 flex flex-wrap items-center justify-between">
+                    <nav>
+                        <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="index.html">Home</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="data.html">Data</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="quick_facts.html">Quick Facts</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="overview.html">Overview</a></li>
+                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="ecosystem.html">Ecosystems</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="comparison.html">Comparisons</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</html>
