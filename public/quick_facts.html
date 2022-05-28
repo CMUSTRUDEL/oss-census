@@ -51,6 +51,22 @@
             font-size: 1.4rem; /* 24px */
             line-height: 1.75rem; /* 32px */
         }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: 5px; /* 5px rounded corners */
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+        }
     </style>
 
     <!-- Graph 1 CSS and Script links -->
@@ -68,6 +84,7 @@
 
 <div class="bg-white font-family-karla">
     <!-- Top Bar Nav -->
+    <!-- TODO: Remove second nav tag -->
     <nav class="w-full bg-white py-2 shadow-lg">
         <div class="mx-auto px-4">
             <div class="flex justify-between">
@@ -76,6 +93,8 @@
                 <a href="#" class="flex items-center">
                     <img src="../img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
                 </a>
+
+                <!-- Nav -->
                 <div class="top-0 right-0 flex flex-wrap items-center justify-between">
                     <nav>
                         <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
@@ -89,8 +108,39 @@
                         </ul>
                     </nav>
                 </div>
+
             </div>
         </div>
     </nav>
+
+    <div class="card">
+        <div class="container">
+
+            <!-- Dropdown for Topic Selection -->
+            <label for="topic-select" class="font-bold"></label>
+            <select name="topic" id="topic-select" onchange="update()" class="form-select appearance-none 
+                block
+                w-full
+                px-2
+                py-1
+                my-3
+                text-base
+                text-center
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding bg-no-repeat
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                <option value="" selected disabled hidden> Select a Topic </option>
+                <option value="Largest Ecosystem">Largest Ecosystem</option>
+                <option value="Highest Women Percentage">Highest Women Percentage</option>
+            </select>
+        </div>
+    </div>
+
 </div>
 </html>
