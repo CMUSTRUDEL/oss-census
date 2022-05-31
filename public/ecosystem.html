@@ -14,6 +14,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
+        .font-family-quicksand1 {
+            font-family: quicksand, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 2.5rem;
+            transform: scaleY(0.8);
+            transform: scaleX(1.2);
+            transform-origin: 0 0;
+
+        }
         .font-family-bebas {
             font-family: bebas-neue, sans-serif;
             font-weight: 700;
@@ -50,6 +60,9 @@
         .text-paragraph{
             font-size: 1.4rem; /* 24px */
             line-height: 1.75rem; /* 32px */
+        }
+        .text-primary3{
+            color: #F29D4B
         }
     </style>
 
@@ -92,5 +105,74 @@
             </div>
         </div>
     </nav>
+
+    <div class="w-full p-16">
+        <div class="font-bold text-primary uppercase text-7xl font-family-bebas">
+            <center>Data By Ecosystem</center>
+        </div>
+        <br>
+        <span class="pt-2 font-bold text-primary uppercase text-3xl font-family-quicksand1">
+            <center>
+                View Data For a 
+                <span class = "text-primary3">Selected Ecosystem</span>
+                For All Years
+            </center>
+        </span>
+    </div>
+
+    <div class = "w-full flex flex-col items-center">
+        <div>
+            <label for="ecosystem-select" class="font-bold"></label>
+            <select name="ecosystem" id="ecosystem-select" onchange="update()" class="form-select appearance-none 
+                block
+                shadow-lg
+                w-full
+                px-2
+                py-1
+                my-3
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding bg-no-repeat
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                <option value="" selected disabled hidden> --Select an Ecosystem-- </option>
+                <option value="Python">Python</option>
+                <option value="C#">C#</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="Go">Go</option>
+                <option value="Ruby">Ruby</option>
+                <option value="PHP">PHP</option>
+            </select>
+        </div>
+
+        <div class="w-1/2 h-full pt-16">
+            <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
+                <button class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-3xl">Projects</button>
+                <button class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-3xl">Contributors</button>
+                <button class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-3xl">Commits</button>
+            </div>
+            <img src="../img/OverviewGraph1.png" alt="Graph1" class="h-full w-full" />
+        </div>
+    </div>
+
+    <footer class="w-full border-t bg-white mt-8">
+       
+        <div class="w-full container mx-auto flex flex-col items-center">
+            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+                <a href="#" class="uppercase px-3">About Us</a>
+                <a href="#" class="uppercase px-3">Privacy Policy</a>
+                <a href="#" class="uppercase px-3">Terms & Conditions</a>
+                <a href="#" class="uppercase px-3">Contact Us</a>
+            </div>
+            <div class="uppercase pb-6">&copy; myblog.com</div>
+        </div>
+    </footer>
 </div>
 </html>
