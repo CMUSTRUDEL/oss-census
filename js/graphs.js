@@ -25,8 +25,7 @@ function showGraph() {
     for (let num = 1; num < numRows + 1; num++) {
         cat = localStorage.getItem("category");
         lang = localStorage.getItem("language-" + String(num));
-        console.log(lang)
-        console.log("LANGUAGE")
+
         if (lang == "" || lang == null) {
             alert('Please select a language');
             noEmptyOptions = false;
