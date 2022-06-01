@@ -423,7 +423,6 @@ def load_contributor_pie(dat_path, store_path, year_opt):
         json.dump(out_dict, out_file)
 
 
-
 def load_contributor_stack(dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
