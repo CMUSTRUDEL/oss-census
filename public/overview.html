@@ -82,7 +82,8 @@
 
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    
+    <!-- JS tab switch functions -->
+    <script src="js/graphs.js"></script>    
 </head>
 
 
@@ -137,7 +138,8 @@
                 <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('cont')">Contributors</button>
                 <button id="cont-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('comm')">Commits</button>
             </div>
-            <img src="../img/OverviewGraph1.png" alt="Graph1" class="h-full" />
+            <img id="cont" src="../img/GraphContributorAll.png" style="display: none" alt="Graph1" class="h-full w-full" />
+            <img id="comm" src="../img/GraphCommitAll.png" style="display: none" alt="Graph1" class="h-full w-full" />
         </div>
         <div class = "flex flex-col w-2/5">
             <img src="../img/Number1.png" alt="Number1" class="w-1/12 h-1/12 pb-4" />
