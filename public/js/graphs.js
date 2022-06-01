@@ -11,7 +11,7 @@ function changeGraph() {
     type = localStorage.getItem("type");
 
  
-    types = ["cont", "comm", "proj"];
+    types = ["cont", "comm"];
 
     for (let i = 0; i < 3; i++) {
         currType = types[i];
