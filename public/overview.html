@@ -139,8 +139,37 @@
                 <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('cont')">Contributors</button>
                 <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('comm')">Commits</button>
             </div>
-            <img id="cont" src="../img/GraphContributorAll.png" style="display: show" alt="Graph1" class="h-full w-full" />
-            <img id="comm" src="../img/GraphCommitAll.png" style="display: none" alt="Graph1" class="h-full w-full" />
+            
+            <!-- Interactive charts -->
+            <div id="cont" alt="Graph1" style="display: show" class="flex-col items-center w-full h-full">                
+                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                    <figure class="highcharts-figure">
+                        <div id="cont-1"></div>
+                        <!-- JS file link -->
+                        <script src="js/data.js"></script>
+                        <script src="js/parse.js"></script>
+                        <script src="js/visualizations/graphContributor.js"></script>
+                        <script> 
+                            parseData("Contributor", "All");
+                            graphContributor("1");
+                        </script>
+                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                    </figure>
+                </a>
+            </div>
+      
+            <div id="comm" alt="Graph1" style="display: none" class="flex-col items-center w-full h-full">
+                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                    <figure class="highcharts-figure">
+                        <div id="comm-1"></div> 
+                        <!-- JS file link -->
+                        <script src="js/data.js"></script>
+                        <script src="js/parse.js"></script>
+                        <script src="js/visualizations/graphCommit.js"></script>
+                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                    </figure>
+                </a>
+            </div>
         </div>
         <div class = "flex flex-col w-2/5">
             <img src="../img/Number1.png" alt="Number1" class="w-1/12 h-1/12 pb-4" />
