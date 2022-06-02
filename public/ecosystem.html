@@ -59,7 +59,10 @@
         }
         .text-paragraph{
             font-size: 1.4rem; /* 24px */
-            line-height: 1.75rem; /* 32px */
+            line-height: 2rem; /* 32px */
+        }
+        .margin-top {
+            margin-top: 40px;
         }
         .text-primary3{
             color: #F29D4B
@@ -87,7 +90,7 @@
             <div class="flex justify-between">
 
                 <!-- Logo -->
-                <a href="#" class="flex items-center">
+                <a href="index.html" class="flex items-center">
                     <img src="../img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
                 </a>
                 <div class="top-0 right-0 flex flex-wrap items-center justify-between">
@@ -142,27 +145,37 @@
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
                 <option value="" selected disabled hidden> --Select an Ecosystem-- </option>
-                <option value="Python">Python</option>
-                <option value="C#">C#</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="Java">Java</option>
-                <option value="C++">C++</option>
+                <option value="Atom">Atom</option>
+                <option value="Bower">Bower</option>
+                <option value="CPAN">CPAN</option>
+                <option value="CRAN">CRAN</option>
+                <option value="Cargo">Cargo</option>
+                <option value="Clojars">Clojars</option>
+                <option value="CocoaPods">CocoaPods</option>
                 <option value="Go">Go</option>
-                <option value="Ruby">Ruby</option>
-                <option value="PHP">PHP</option>
+                <option value="Hackage">Hackage</option>
+                <option value="Hex">Hex</option>
+                <option value="Maven">Maven</option>
+                <option value="Meteor">Meteor</option>
+                <option value="NPM">NPM</option>
+                <option value="NuGet">NuGet</option>
+                <option value="Packagist">Packagist</option>
+                <option value="PlatformIO">PlatformIO</option>
+                <option value="Pub">Pub</option>
+                <option value="Puppet">Puppet</option>
+                <option value="Pypi">Pypi</option>
+                <option value="Rubygems">Rubygems</option>
             </select>
         </div>
 
         <div class="w-1/2 h-full pt-16">
             <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
-                <button class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-3xl" onclick="updateGraph('proj')">Projects</button>
-                <button class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-3xl"  onclick="updateGraph('cont')">Contributors</button>
-                <button class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-3xl"  onclick="updateGraph('comm')">Commits</button>
+                <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('cont')">Contributors</button>
+                <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('comm')">Commits</button>
             </div>
 
-            <img id="cont" src="../img/OverviewGraph1.png" style="display: none" alt="Graph1" class="h-full w-full" />
-            <img id="proj" src="../img/OverviewGraph2.png" style="display: show" alt="Graph1" class="h-full w-full" />
-            <img id="comm" src="../img/OverviewGraph3.png" style="display: none" alt="Graph1" class="h-full w-full" />
+            <img id="cont" src="../img/GraphContributorAll.png" style="display: show" alt="Graph1" class="h-full w-full" />
+            <img id="comm" src="../img/GraphCommitAll.png" style="display: none" alt="Graph1" class="h-full w-full" />
         </div>
     </div>
 
