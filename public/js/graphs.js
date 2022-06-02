@@ -5,6 +5,7 @@ function updateGraph(type) {
 
     // Update HTML
     changeGraph();
+    
 }
 
 function changeGraph() {
@@ -13,10 +14,21 @@ function changeGraph() {
  
     types = ["cont", "comm"];
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
         currType = types[i];
         currHTML = document.getElementById(currType);
         currButton = document.getElementById(currType+"-button");
+
+        if (type == "cont") {
+            // TODO: update lang here
+            parseData("Contributor", "All")
+            graphContributor("1") 
+        }
+        else {
+            parseData("Commit", "All")
+            graphCommit("1") 
+        }
+
 
         if (currType == type) {
             // display selected graph type
