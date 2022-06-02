@@ -35,7 +35,7 @@
         .font-family-karla {
             font-family: karla;
         }
-        .h-200{
+       .h-200{
             height: 600px;
         }
         .h-128{
@@ -67,7 +67,7 @@
         }
         .text-paragraph{
             font-size: 1.4rem; /* 24px */
-            line-height: 1.75rem; /* 32px */
+            line-height: 2rem; /* 32px */
         }
         .h-buttonheight {
             height: 14%;
@@ -82,7 +82,8 @@
 
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    
+    <!-- JS tab switch functions -->
+    <script src="js/graphs.js"></script>    
 </head>
 
 
@@ -94,7 +95,7 @@
             <div class="flex justify-between">
 
                 <!-- Logo -->
-                <a href="#" class="flex items-center">
+                <a href="index.html" class="flex items-center">
                     <img src="../img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
                 </a>
                 <div class="top-0 right-0 flex flex-wrap items-center justify-between">
@@ -114,30 +115,32 @@
         </div>
     </nav>
 
-        <article class="flex flex-row md:flex-row pl-24">
-            <div class ="flex flex-col">
-                <div class="items-center">
-                    <p class = "font-family-bebas mt-24 text-primary text-7xl pb-2">Census Overview</p>
-                </div>               
-                <p class = "w-10/12 mt-4 md:mt-4 text-3xl font-family-quicksand1 uppercase text-primary2 font-light tracking-wider leading-relaxed">
-                    Interact and explore data concerning
-                    <span class = "text-primary3">all ecosystems</span>
-                    for
-                    <span class = "text-primary3">all years</span>
-                </p> 
-            </div>
-            <img src="../img/BarGraphImg.png" alt="BarGraphImg" class="ml-auto pr-32 h-100 w-100 pt-10"/>
+    
+    <article class="flex flex-row md:flex-row pl-24">
+        <div class ="flex flex-col">
+            <div class="items-center">
+                <p class = "font-family-bebas mt-24 text-primary text-7xl pb-2">Census Overview</p>
+            </div>               
+            <p class = "w-10/12 mt-4 md:mt-4 text-3xl font-family-quicksand1 uppercase text-primary2 font-light tracking-wider leading-relaxed">
+                Interact and explore data concerning
+                <span class = "text-primary3">all ecosystems</span>
+                for
+                <span class = "text-primary3">all years</span>
+            </p> 
+        </div>
+        <img src="../img/BarGraphImg.png" alt="BarGraphImg" class="ml-auto pr-32 h-100 w-100 pt-10"/>
 
-        </article>
+    </article>
 
 
     <div class = "flex flex-row w-full h-max pl-24 py-12 bg-midbar">
         <div class="flex flex-col w-1/2 h-full mr-16">
             <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
-                <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl">Contributors</button>
-                <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl">Commits</button>
+                <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('cont')">Contributors</button>
+                <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('comm')">Commits</button>
             </div>
-            <img src="../img/OverviewGraph1.png" alt="Graph1" class="h-full" />
+            <img id="cont" src="../img/GraphContributorAll.png" style="display: show" alt="Graph1" class="h-full w-full" />
+            <img id="comm" src="../img/GraphCommitAll.png" style="display: none" alt="Graph1" class="h-full w-full" />
         </div>
         <div class = "flex flex-col w-2/5">
             <img src="../img/Number1.png" alt="Number1" class="w-1/12 h-1/12 pb-4" />
