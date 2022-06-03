@@ -1,6 +1,5 @@
 function updateGraph(type) {
-    var selectGraph = document.getElementById(type);
-    
+    // Save button associated graph type to localstorage 
     localStorage.setItem("type", type);
 
     // Update HTML
