@@ -82,7 +82,10 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-    <script src="../js/graphs.js"></script>
+    <script src="js/graphs.js"></script>
+    <script src="js/visualizations/graphCommit.js"></script>
+    <script src="js/visualizations/graphContributor.js"></script>
+
 
 
     <!-- Font Awesome -->
@@ -241,40 +244,14 @@
                         type="button"
                         data-mdb-ripple="true"
                         data-mdb-ripple-color="light"
-                        class="w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
+                        class="animate-pulse w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
                     >Generate
                     </button>
 
                 </div>
             </div>
             <!-- Buttons -->
-            <div class="my-auto mb-5 space-x-1">
-                <!-- Button should generate graphs for all selected -->
-                <button
-                    onclick="addRow()"
-                    type="button"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                    class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >Add
-                </button> 
-                <button
-                    onclick="showGraph()"
-                    type="button"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                    class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
-                >Generate
-                </button>
-                <button
-                    onclick="removeRow()"
-                    type="button"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                    class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
-                >Delete
-                </button>            
-            </div>  
+              
         </div>     
         
         
