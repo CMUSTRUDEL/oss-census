@@ -235,3 +235,50 @@ function removeGraph() {
    
     element.removeChild(child);
 }
+
+
+/* Functions to add, update, and delete HTML for viewing single graphs */
+
+function updateYear() {
+    var selectYear = document.getElementById('year-select');
+
+    localStorage.setItem("year", selectYear.options[selectYear.selectedIndex].value);
+} 
+
+
+function showGraphSingle() {
+    let cat;
+    let yearOpt;
+    let langOpt;
+
+    cat = localStorage.getItem("category");
+    yearOpt = localStorage.getItem("year");
+    langOpt = localStorage.getItem("lang");
+  
+    // Only contributor graphs available
+    if (cat != "contributor" ) {
+        alert("Only Contributor graphs available at this time");
+    }
+
+    if ((yearOpt.toLowerCase() == "all") && (langOpt.toLowerCase() == "all")) {
+        // Display stack graph
+        document.getElementById("stack").setAttribute("style", "display:show");
+        document.getElementById("bar").setAttribute("style", "display:none");
+    }
+    else if (langOpt.toLowerCase() == "all") {
+        // Display polar chart
+        document.getElementById("stack").setAttribute("style", "display:none");
+        document.getElementById("bar").setAttribute("style", "display:show");
+    }
+    else {
+        document.getElementById("stack").setAttribute("style", "display:none");
+        document.getElementById("bar").setAttribute("style", "display:none");
+    }
+
+    // Update JSON object referenced for graphs
+    parseSingleData("Contributor", yearOpt, graphOpt)
+
+    // Reloads graph from script.js function call
+    graphPie(yearOpt);
+    graphStack();
+}

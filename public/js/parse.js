@@ -55,19 +55,6 @@ function parsePieData(cat, yearOpt) {
     console.log("Finished parsing Single Pie graph data")
 }
 
-function parseBarData(cat) {
-    console.log("Parsing Single Bar graph data...");
-
-    // obj data variable stored in data.js, taken into function for single graphs
-    obj.title = data_bar[cat]['male_female']["title"];
-    obj.label_x = data_bar[cat]['male_female']["label_x"];
-    obj.label_y = data_bar[cat]['male_female']["label_y"];
-    obj.data = data_bar[cat]['male_female']["data"];
-    obj.x_categories = data_bar[cat]['male_female']["x_categories"];
-    obj.height_ratio = data_bar[cat]['male_female']["height_ratio"];
-    console.log("Finished parsing Single Bar graph data")
-}
-
 function parseStackData(cat) {
     console.log("Parsing Single Stack graph data...");
 
