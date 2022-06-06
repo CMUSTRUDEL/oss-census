@@ -11,9 +11,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
 
+
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
+        .font-family-quicksand1 {
+            font-family: quicksand, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 2.5rem;
+
+        }
         .font-family-bebas {
             font-family: bebas-neue, sans-serif;
             font-weight: 700;
@@ -33,14 +41,20 @@
 			height: 400px;
 		}
         .w-100{
-			height: 400px;
+			width: 400px;
 		}
         .w-128{
-			height: 450px;
+			width: 450px;
 		}
         .bg-primary{
 			background: #732867;
 		}
+        .bg-primary2{
+            background: #FF9119
+        }
+        .bg-primary2:hover{
+            background: #E46623
+        }
         .bg-midbar{
             background: #ECE4E3;
         }
@@ -54,6 +68,12 @@
         .text-primary3{
             color: #F29D4B
         }
+        .bg-delete1{
+            background-color: #922B3E
+        }
+        .bg-delete2:hover {
+            background-color: #6D0325
+        }
     </style>
 
     <!-- Graph 1 CSS and Script links -->
@@ -61,6 +81,9 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script src="../js/graphs.js"></script>
+
 
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
@@ -86,8 +109,8 @@
                             <li><a class="text-gray-500 hover:text-gray-200 px-4" href="data.html">Data</a></li>
                             <li><a class="text-gray-500 hover:text-gray-200 px-4" href="quick_facts.html">Quick Facts</a></li>
                             <li><a class="text-gray-500 hover:text-gray-200 px-4" href="overview.html">Overview</a></li>
-                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="ecosystem.html">Ecosystems</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="comparison.html">Comparisons</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="ecosystem.html">Ecosystems</a></li>
+                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="comparison.html">Comparisons</a></li>
                             <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
                         </ul>
                     </nav>
@@ -95,5 +118,216 @@
             </div>
         </div>
     </nav>
+
+    <!-- Text Header -->
+    <center>
+    <header class="w-full container mx-auto">
+        <div class="flex flex-col items-center py-12">
+            <a class="font-bold text-primary uppercase text-7xl font-family-bebas" href="#">
+                Graph Comparison
+            </a>
+            <a class="pt-2 font-bold text-primary uppercase text-3xl font-family-quicksand1">
+                Freely choose any constraints to generate and compare graphs
+            </a>
+        </div>
+    </header>
+    </center>
+    
+    <!-- Graph Comparison -->
+    <div class="flex flex-col items-center justify-center mx-auto px-10">
+        <div class="w-full mx-auto" style="justify-content: space-evenly">
+            <div class="flex flex-col items-center justify-center mx-auto pb-8">
+                <!-- Dropdown for category selection -->
+                <label for="category-select" class="font-bold">Choose a Category:</label>
+                <select name="category" id="category-select" onchange="update('1')" class="form-select appearance-none 
+                    block
+                    w-100
+                    px-2
+                    py-1
+                    my-1
+                    text-center
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                    <option value="" selected disabled hidden>--Select--</option>
+                    <option value="contributor">Contributors</option>
+                    <option value="commit">Commits</option>
+                    <option value="project">Project</option>
+                    <!-- <option value="all">All</option> -->
+                </select>
+            </div>
+            <div class="w-full mx-auto mb-3" style="justify-content: space-evenly">
+                <div class="flex flex-col items-center">
+                    <label for="language-select-1" class="font-bold">Choose Languages:</label>
+                    <div id="query" class="flex flex-row space-x-4">
+                        <div class="flex flex-row items-center space-x-4">
+                            <!-- Dropdown for language selection -->
+                            <select name="language-1" id="language-select-1" onchange="update('1')" class="form-select appearance-none 
+                                block
+                                w-full
+                                px-2
+                                py-1
+                                my-3
+                                text-base
+                                text-center
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                                <option value="" selected disabled hidden>--Select--</option>
+                                <option value="Python">Python</option>
+                                <option value="C#">C#</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Java">Java</option>
+                                <option value="Go">Go</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="C++">C++</option>
+                                <option value="TypeScript">TypeScript</option>
+                                <option value="PHP">PHP</option>
+                                <option value="C">C</option>
+                                <option value="HTML">HTML</option>
+                                <option value="CSS">CSS</option>
+                                <option value="Jupyter">Jupyter</option>
+                                <option value="Shell">Shell</option>
+                                <option value="Objective-C">Objective-C</option>
+                                <option value="All">All</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                    <div class="flex flex-row items-center space-x-4 pb-12">
+
+                    <button
+                    onclick="addRow()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-flex items-center px-4 py-2 justify-center text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-indigo-700 hover:bg-indigo-800">
+                    <svg class="h-5 w-5 mr-2 fill-current" viewBox="0 0 20 20">
+                        <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd">
+                        </path>
+                    </svg>
+                    Add
+                  </button>
+
+                <button
+                    onclick="removeRow()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-flex items-center px-4 py-2 bg-delete1 bg-delete2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md">
+	                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+	                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+	                    </svg>
+                Delete
+                </button>
+                </div>
+                <button
+                    onclick="showGraph()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
+                >Generate
+                </button>
+                
+
+                </div>
+            </div>
+            <!-- Buttons -->
+            <div class="my-auto mb-5 space-x-1">
+                <!-- Button should generate graphs for all selected -->
+                <button
+                    onclick="addRow()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                >Add
+                </button> 
+                <button
+                    onclick="showGraph()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out"
+                >Generate
+                </button>
+                <button
+                    onclick="removeRow()"
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
+                >Delete
+                </button>            
+            </div>  
+        </div>     
+        
+        
+
+        <!-- Visualizations table with two columns -->
+        <div class="grid grid-cols-2 gap-6 w-full">
+            <div id="visualizations-left" class="flex flex-col text-center">
+                <!-- Graph 1 -->
+                <div class="mx-auto w-full">
+                    <div id="contributor-1"  style="display: none" class="flex-col items-center w-full my-3">                
+                        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure">
+                                <div id="cont-1"></div>
+                                <!-- JS file link -->
+                                <script src="../js/data.js"></script>
+                                <script src="../js/parse.js"></script>
+                                <script src="../census_interactive/graphs/Graph_Contributor/script.js"></script>
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>
+              
+                    <div id="commit-1" style="display: none" class="flex-col items-center my-3 w-full">
+                        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure">
+                                <div id="comm-1"></div> 
+                                <!-- JS file link -->
+                               
+                                <script src="../js/data.js"></script>
+                                <script src="../js/parse.js"></script>
+                                <script src="../census_interactive/graphs/Graph_Commit/script.js"></script>
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>
+
+                    <div id="project-1" style="display: none" class="flex-col items-center my-3 w-full">
+                        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure">
+                                <div id="proj-1"></div>
+                                <!-- JS file link -->
+                                <script src="../js/data.js"></script>
+                                <script src="../js/parse.js"></script>
+                                <script src="../census_interactive/graphs/Graph_Project/script.js"></script>
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>   
+                </div>
+            </div>
+            <div id="visualizations-right" class="flex flex-col text-center">
+            </div>
+        </div>
+    </div>
 </div>
 </html>
