@@ -54,6 +54,27 @@
         .margin-top {
             margin-top: 40px;
         }
+        
+        #gender {
+            animation: fadein 2s;
+            -moz-animation: fadein 2s; /* Firefox */
+            -webkit-animation: fadein 2s; /* Safari and Chrome */
+            -o-animation: fadein 2s; /* Opera */
+        }
+        #hands {
+            animation: fadein 2s;
+            -moz-animation: fadein 2s; /* Firefox */
+            -webkit-animation: fadein 2s; /* Safari and Chrome */
+            -o-animation: fadein 2s; /* Opera */
+        }
+        @keyframes fadein {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
     </style>
 
     <!-- Graph 1 CSS and Script links -->
@@ -89,6 +110,8 @@
                             <li><a class="text-gray-500 hover:text-gray-200 px-4" href="ecosystem.html">Ecosystems</a></li>
                             <li><a class="text-gray-500 hover:text-gray-200 px-4" href="comparison.html">Comparisons</a></li>
                             <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="references.html">References</a></li>
+
                         </ul>
                     </nav>
                 </div>
@@ -144,7 +167,7 @@
                     </div>               
                     <p class = "w-10/12 mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as The Heartbleed Bug could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.</p> 
                 </div>
-                <img src="../img/Hands.png" alt="Hands" class="h-100 w-100 object-right mr-24 pt-10"/>
+                <img src="../img/Hands.png" alt="Hands" id="hands" class="h-100 w-100 object-right mr-24 pt-10"/>
 
             </article>
 
@@ -189,7 +212,7 @@
 
     <div class="flex pt-2 items-center overflow-hidden pb-12">
         <article class="flex flex-row md:flex-row max-w-10xl">
-            <img src="../img/Gender_Img.png" alt="Hands" class="h-100 w-100 object-left ml-24 mr-36 pt-10"/>
+            <img src="../img/Gender_Img.png" alt="gender" id="gender" class="h-100 w-100 object-left ml-24 mr-36 pt-10"/>
             <div class ="flex flex-col text-right pr-24 w-11/12">
                 <p class = "font-family-bebas margin-top text-purple-900 text-5xl">Gender Inference</p>
                 <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as The Heartbleed Bug could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.</p> 

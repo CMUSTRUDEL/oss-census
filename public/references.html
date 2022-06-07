@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSS Census</title>
+    <meta name="author" content="Justin">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        .font-family-bebas {
+            font-family: bebas-neue, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 4.5px;
+        }
+        .font-family-quicksand1 {
+            font-family: quicksand, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 2.5rem;
+            transform: scaleY(0.8);
+            transform: scaleX(1.2);
+            transform-origin: 0 0;
+
+        }
+        .font-family-karla {
+            font-family: karla;
+        }
+        .h-200{
+            height: 600px;
+        }
+        .h-128{
+			height: 450px;
+		}
+		.h-100{
+			height: 400px;
+		}
+        .w-100{
+			height: 400px;
+		}
+        .w-128{
+			height: 450px;
+		}
+        .bg-primary{
+			background: #732867;
+		}
+        .bg-midbar{
+            background: #ECE4E3;
+        }
+        .text-primary{
+            color: #732867;
+        }
+        .text-primary2{
+            color: #8F5881
+        }
+        .text-paragraph{
+            font-size: 1.4rem; /* 24px */
+            line-height: 2rem; /* 32px */
+        }
+        .margin-top {
+            margin-top: 40px;
+        }
+    </style>
+
+    <!-- Graph 1 CSS and Script links -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    
+</head>
+
+
+
+<div class="bg-white font-family-karla">
+    <!-- Top Bar Nav -->
+    <nav class="w-full bg-white py-2 shadow-lg">
+        <div class="mx-auto px-4">
+            <div class="flex justify-between">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="../img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
+                </a>
+                <div class="top-0 right-0 flex flex-wrap items-center justify-between">
+                    <nav>
+                        <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="index.html">Home</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="data.html">Data</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="quick_facts.html">Quick Facts</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="overview.html">Overview</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="ecosystem.html">Ecosystems</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="comparison.html">Comparisons</a></li>
+                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
+                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="references.html">References</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-full px-96 mb-24">
+        <header class="mt-12 font-bold text-primary uppercase text-7xl font-family-bebas">
+            Bibliography
+        </header>
+        <div class="mt-12">
+            <a class="font-bold font-family-quicksand1 uppercase text-3xl text-primary2">Overview</a>
+            <div class="flex flex-col gap-4">
+                <div>
+                    <a class="font-bold">‘Patches don’t have gender’: What is not open in open source software</a><br>
+                    <a>Nafus, D. (2012). ‘Patches don’t have gender’: What is not open in open source software. New Media & Society, 14(4), 669-683.</a>
+                </div>
+                <div>
+                    <a class="font-bold">Including Everyone, Everywhere: Understanding Opportunities and Challenges of Geographic Gender-Inclusion in OSS</a><br>
+                    <a>Prana, G. A. A., Ford, D., Rastogi, A., Lo, D., Purandare, R., & Nagappan, N. (2021). Including everyone, everywhere: Understanding opportunities and challenges of geographic gender-inclusion in oss. IEEE Transactions on Software Engineering.</a>
+                </div>
+                <div>
+                    <a class="font-bold">“Diversity and inclusion in open source software (oss) projects: Where do we stand?</a><br>
+                    <a>Bosu, A., & Sultana, K. Z. (2019, September). Diversity and inclusion in open source software (OSS) projects: Where do we stand?. In 2019 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (pp. 1-11). IEEE.</a>
+                </div>
+                <div>
+                    <a class="font-bold">“FLOSS Participants' Perceptions About Gender and Inclusiveness: A Survey</a><br>
+                    <a>Lee, A., & Carver, J. C. (2019, May). FLOSS participants' perceptions about gender and inclusiveness: a survey. In 2019 IEEE/ACM 41st International Conference on Software Engineering (ICSE) (pp. 677-687). IEEE.</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <a class="font-bold font-family-quicksand1 uppercase text-3xl text-primary2">Benefits of Diversity</a>
+            <div class="flex flex-col gap-4">
+                <div>
+                    <a class="font-bold">Gender and tenure diversity in github teams</a><br>
+                    <a>B. Vasilescu, D. Posnett, B. Ray, M. G. van den Brand, A. Serebrenik, P. Devanbu, and V. Filkov, “Gender and tenure diversity in github teams,” in Proceedings of the 33rd annual ACM conference on human factors in computing systems, 2015, pp. 3789–3798.</a>
+                </div>
+                <div>
+                    <a class="font-bold">The effects of diversity in global, distributed collectives: A study of open source project success</a><br>
+                    <a>Daniel, S., Agarwal, R., & Stewart, K. J. (2013). The effects of diversity in global, distributed collectives: A study of open source project success. Information Systems Research, 24(2), 312-333.</a>
+                </div>
+                <div>
+                    <a class="font-bold">Gendered patterns of politeness in free/libre open source software development</a><br>
+                    <a>Moon, E. (2013, January). Gendered patterns of politeness in free/libre open source software development. In 2013 46th Hawaii International Conference on System Sciences (pp. 3168-3177). IEEE.</a>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+
+</div>
+
+</html>
