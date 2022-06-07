@@ -76,21 +76,26 @@
         }
     </style>
 
-    <!-- Graph 1 CSS and Script links -->
+    <!-- Highchart Imports -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
 
+<<<<<<< HEAD
+    <!-- JS Function Imports -->
+    <script src="js/graphs.js"></script>
+=======
     <script src="js/graphs.js"></script>
     <script src="js/visualizations/graphCommit.js"></script>
     <script src="js/visualizations/graphContributor.js"></script>
 
 
+>>>>>>> gh-pages-revise
 
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    
 </head>
 
 
@@ -207,12 +212,47 @@
                                 <option value="Objective-C">Objective-C</option>
                                 <option value="All">All</option>
                             </select>
-                        </div>
-                        
+                        </div>                  
+                    </div>
+
+                    <label for="year-select" class="font-bold">Choose Year:</label>
+                        <div class="flex flex-row items-center">
+                            <!-- Dropdown for language selection -->
+                            <select name="year" id="year-select" onchange="updateYear()" class="form-select appearance-none 
+                                block
+                                w-full
+                                px-2
+                                py-1
+                                my-3
+                                text-base
+                                text-center
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="All" selected>All</option>
+                            </select>
                     </div>
 
                     <div class="flex flex-row items-center space-x-4 pb-12">
-
                         <button
                         onclick="addRow()"
                         type="button"
@@ -250,13 +290,16 @@
 
                 </div>
             </div>
+<<<<<<< HEAD
+=======
             <!-- Buttons -->
               
+>>>>>>> gh-pages-revise
         </div>     
         
         
 
-        <!-- Visualizations table with two columns -->
+        <!-- Visualizations comparisons with two columns -->
         <div class="grid grid-cols-2 gap-6 w-full">
             <div id="visualizations-left" class="flex flex-col text-center">
                 <!-- Graph 1 -->
@@ -287,23 +330,39 @@
                             </figure>
                         </a>
                     </div>
-
-                    <div id="project-1" style="display: none" class="flex-col items-center my-3 w-full">
-                        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                            <figure class="highcharts-figure">
-                                <div id="proj-1"></div>
-                                <!-- JS file link -->
-                                <script src="../js/data.js"></script>
-                                <script src="../js/parse.js"></script>
-                                <script src="../census_interactive/graphs/Graph_Project/script.js"></script>
-                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                            </figure>
-                        </a>
-                    </div>   
                 </div>
             </div>
             <div id="visualizations-right" class="flex flex-col text-center">
             </div>
+        </div>
+
+        <!-- Graph visualization -->
+        <div class="mx-auto my-1 w-full">
+            <div id="pie"  style="display: none" class="flex-col items-center w-full my-3">                
+                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                    <figure class="highcharts-figure">
+                        <div id="pie-cont"></div>
+                        <!-- JS file link -->
+                        <script src="js/data.js"></script>
+                        <script src="js/parse.js"></script>
+                        <script src="../census_interactive/single_graphs/Pie_Contributor/script.js"></script>
+                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                    </figure>
+                </a>
+            </div> 
+
+            <div id="stack"  style="display: none" class="flex-col items-center w-full my-3">                
+                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                    <figure class="highcharts-figure">
+                        <div id="stack-cont"></div>
+                        <!-- JS file link -->
+                        <script src="js/data.js"></script>
+                        <script src="js/parse.js"></script>
+                        <script src="../census_interactive/single_graphs/Stack_Contributor/script.js"></script>
+                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                    </figure>
+                </a>
+            </div>   
         </div>
     </div>
 </div>
