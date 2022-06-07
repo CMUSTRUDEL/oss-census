@@ -83,16 +83,14 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
 
-<<<<<<< HEAD
-    <!-- JS Function Imports -->
-    <script src="js/graphs.js"></script>
-=======
-    <script src="js/graphs.js"></script>
-    <script src="js/visualizations/graphCommit.js"></script>
-    <script src="js/visualizations/graphContributor.js"></script>
 
+    <!-- JS Graphs -->
+    <script src="js/comparison_graphs.js"></script>
+    <script src="js/single_graphs.js"></script>   
 
->>>>>>> gh-pages-revise
+    <script src="js/visualizations/graph_contributor.js"></script>
+    <script src="js/visualizations/graph_commit.js"></script>
+
 
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
@@ -147,7 +145,7 @@
             <div class="flex flex-col items-center justify-center mx-auto pb-8">
                 <!-- Dropdown for category selection -->
                 <label for="category-select" class="font-bold">Choose a Category:</label>
-                <select name="category" id="category-select" onchange="update('1')" class="form-select appearance-none 
+                <select name="category" id="category-select" onchange="updateDropdown(1)" class="form-select appearance-none 
                     block
                     w-100
                     px-2
@@ -177,7 +175,7 @@
                     <div id="query" class="flex flex-row space-x-4">
                         <div class="flex flex-row items-center space-x-4">
                             <!-- Dropdown for language selection -->
-                            <select name="language-1" id="language-select-1" onchange="update('1')" class="form-select appearance-none 
+                            <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="form-select appearance-none 
                                 block
                                 w-full
                                 px-2
@@ -290,11 +288,8 @@
 
                 </div>
             </div>
-<<<<<<< HEAD
-=======
             <!-- Buttons -->
               
->>>>>>> gh-pages-revise
         </div>     
         
         
@@ -309,9 +304,8 @@
                             <figure class="highcharts-figure">
                                 <div id="cont-1"></div>
                                 <!-- JS file link -->
-                                <script src="../js/data.js"></script>
-                                <script src="../js/parse.js"></script>
-                                <script src="../census_interactive/graphs/Graph_Contributor/script.js"></script>
+                                <script src="js/data.js"></script>
+                                <script src="js/parse.js"></script>
                                 <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                             </figure>
                         </a>
@@ -323,9 +317,8 @@
                                 <div id="comm-1"></div> 
                                 <!-- JS file link -->
                                
-                                <script src="../js/data.js"></script>
-                                <script src="../js/parse.js"></script>
-                                <script src="../census_interactive/graphs/Graph_Commit/script.js"></script>
+                                <script src="js/data.js"></script>
+                                <script src="js/parse.js"></script>
                                 <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                             </figure>
                         </a>
@@ -345,7 +338,6 @@
                         <!-- JS file link -->
                         <script src="js/data.js"></script>
                         <script src="js/parse.js"></script>
-                        <script src="../census_interactive/single_graphs/Pie_Contributor/script.js"></script>
                         <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                     </figure>
                 </a>
@@ -358,7 +350,6 @@
                         <!-- JS file link -->
                         <script src="js/data.js"></script>
                         <script src="js/parse.js"></script>
-                        <script src="../census_interactive/single_graphs/Stack_Contributor/script.js"></script>
                         <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                     </figure>
                 </a>

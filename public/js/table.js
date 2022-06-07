@@ -1,19 +1,21 @@
 
-function update() {
+// this is a reference omegalul
 
-    var selectTopic = document.getElementById('topic-select');
+// function update() {
 
-    // Store selected dropdown value in key
-    localStorage.setItem("topic", selectTopic.options[selectTopic.selectedIndex].value);
-    changeSelected()
-} 
+//     var selectTopic = document.getElementById('topic-select');
 
-function changeSelected() {
-    table = document.getElementById('table');
-    topic = localStorage.getItem("topic");
+//     // Store selected dropdown value in key
+//     localStorage.setItem("topic", selectTopic.options[selectTopic.selectedIndex].value);
+//     changeSelected()
+// } 
 
-    if (topic == "Largest Ecosystem") {
-        table.setAttribute("style", "display:show");
-    }
-}
+// function changeSelected() {
+//     table = document.getElementById('table');
+//     topic = localStorage.getItem("topic");
+
+//     if (topic == "Largest Ecosystem") {
+//         table.setAttribute("style", "display:show");
+//     }
+// }
 

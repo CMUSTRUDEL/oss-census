@@ -80,10 +80,19 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+    
+
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    <!-- JS tab switch functions -->
-    <script src="js/graphs.js"></script>    
+    
+    <!-- JS graph and tab switch functions -->
+    <script src="js/comparison_graphs.js"></script>   
+
+    <script src="js/data.js"></script>
+    <script src="js/parse.js"></script>
+    <script src="js/visualizations/graph_contributor.js"></script> 
+    <script src="js/visualizations/graph_commit.js"></script>
+
 </head>
 
 
@@ -136,8 +145,8 @@
     <div class = "flex flex-row w-full h-max pl-24 py-12 bg-midbar">
         <div class="flex flex-col w-1/2 h-full mr-16">
             <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
-                <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('cont')">Contributors</button>
-                <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateGraph('comm')">Commits</button>
+                <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('cont')">Contributors</button>
+                <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('comm')">Commits</button>
             </div>
             
             <!-- Interactive charts -->
@@ -146,9 +155,6 @@
                     <figure class="highcharts-figure">
                         <div id="cont-1"></div>
                         <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="js/visualizations/graphContributor.js"></script>
                         <script> 
                             parseData("Contributor", "All");
                             graphContributor("1");
@@ -163,9 +169,6 @@
                     <figure class="highcharts-figure">
                         <div id="comm-1"></div> 
                         <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="js/visualizations/graphCommit.js"></script>
                         <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                     </figure>
                 </a>
