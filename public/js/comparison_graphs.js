@@ -85,6 +85,10 @@ function showGraph() {
         // Graph visualizations comparing all languages
         showGraphSingle();
     }
+    else {
+        document.getElementById("stack").setAttribute("style", "display:none");
+        document.getElementById("pie").setAttribute("style", "display:none");
+    }
 }
 
 function addRow() {

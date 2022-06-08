@@ -36,9 +36,7 @@ function showGraphSingle() {
         graphPie(yearOpt);
     }
     else {
-        // Only contributor graphs available
-        document.getElementById("stack").setAttribute("style", "display:none");
-        document.getElementById("pie").setAttribute("style", "display:none");
+        error("Single graph display unidentified issue")
     }
 }
 
