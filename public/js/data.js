@@ -12611,6 +12611,894 @@ var data = {
             "subtitle": "2008",
             "title": "Contributors compared by Ecosystem Size and % Women"
         },
+        "2009": {
+            "data": [
+                {
+                    "name": "Puppet",
+                    "y": 21,
+                    "z": 0.0
+                },
+                {
+                    "name": "Pub",
+                    "y": 1,
+                    "z": 0.0
+                },
+                {
+                    "name": "Platformio",
+                    "y": 22,
+                    "z": 0.0
+                },
+                {
+                    "name": "Hex",
+                    "y": 69,
+                    "z": 0.0
+                },
+                {
+                    "name": "Cargo",
+                    "y": 18,
+                    "z": 0.0
+                },
+                {
+                    "name": "Cran",
+                    "y": 128,
+                    "z": 0.0
+                },
+                {
+                    "name": "Atom",
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 344,
+                    "z": 0.58
+                },
+                {
+                    "name": "Go",
+                    "y": 315,
+                    "z": 0.95
+                },
+                {
+                    "name": "Nuget",
+                    "y": 1125,
+                    "z": 0.98
+                },
+                {
+                    "name": "Packagist",
+                    "y": 2038,
+                    "z": 1.08
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 7412,
+                    "z": 1.43
+                },
+                {
+                    "name": "All",
+                    "y": 20984,
+                    "z": 1.61
+                },
+                {
+                    "name": "Pypi",
+                    "y": 3716,
+                    "z": 1.72
+                },
+                {
+                    "name": "Clojars",
+                    "y": 399,
+                    "z": 1.75
+                },
+                {
+                    "name": "Maven",
+                    "y": 3442,
+                    "z": 1.8
+                },
+                {
+                    "name": "Hackage",
+                    "y": 431,
+                    "z": 1.86
+                },
+                {
+                    "name": "Npm",
+                    "y": 2566,
+                    "z": 1.99
+                },
+                {
+                    "name": "Bower",
+                    "y": 1078,
+                    "z": 2.23
+                },
+                {
+                    "name": "Cpan",
+                    "y": 803,
+                    "z": 2.99
+                },
+                {
+                    "name": "Meteor",
+                    "y": 95,
+                    "z": 5.26
+                }
+            ],
+            "subtitle": "2009",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2010": {
+            "data": [
+                {
+                    "name": "Pub",
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "name": "Cargo",
+                    "y": 29,
+                    "z": 0.0
+                },
+                {
+                    "name": "Cran",
+                    "y": 212,
+                    "z": 0.0
+                },
+                {
+                    "name": "Atom",
+                    "y": 1,
+                    "z": 0.0
+                },
+                {
+                    "name": "Packagist",
+                    "y": 3759,
+                    "z": 1.04
+                },
+                {
+                    "name": "Nuget",
+                    "y": 2247,
+                    "z": 1.29
+                },
+                {
+                    "name": "Hex",
+                    "y": 194,
+                    "z": 1.55
+                },
+                {
+                    "name": "Npm",
+                    "y": 6422,
+                    "z": 1.67
+                },
+                {
+                    "name": "Hackage",
+                    "y": 714,
+                    "z": 1.68
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 13094,
+                    "z": 1.71
+                },
+                {
+                    "name": "All",
+                    "y": 39566,
+                    "z": 1.71
+                },
+                {
+                    "name": "Bower",
+                    "y": 3902,
+                    "z": 1.74
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 899,
+                    "z": 1.78
+                },
+                {
+                    "name": "Maven",
+                    "y": 6687,
+                    "z": 1.81
+                },
+                {
+                    "name": "Pypi",
+                    "y": 6820,
+                    "z": 2.02
+                },
+                {
+                    "name": "Clojars",
+                    "y": 1314,
+                    "z": 2.21
+                },
+                {
+                    "name": "Go",
+                    "y": 840,
+                    "z": 2.26
+                },
+                {
+                    "name": "Meteor",
+                    "y": 187,
+                    "z": 2.67
+                },
+                {
+                    "name": "Cpan",
+                    "y": 1131,
+                    "z": 2.92
+                },
+                {
+                    "name": "Puppet",
+                    "y": 63,
+                    "z": 4.76
+                },
+                {
+                    "name": "Platformio",
+                    "y": 41,
+                    "z": 9.76
+                }
+            ],
+            "subtitle": "2010",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2011": {
+            "data": [
+                {
+                    "name": "Pub",
+                    "y": 1,
+                    "z": 0.0
+                },
+                {
+                    "name": "Cargo",
+                    "y": 70,
+                    "z": 0.0
+                },
+                {
+                    "name": "Atom",
+                    "y": 1,
+                    "z": 0.0
+                },
+                {
+                    "name": "Packagist",
+                    "y": 9519,
+                    "z": 1.1
+                },
+                {
+                    "name": "Hackage",
+                    "y": 1178,
+                    "z": 1.1
+                },
+                {
+                    "name": "Hex",
+                    "y": 425,
+                    "z": 1.18
+                },
+                {
+                    "name": "Nuget",
+                    "y": 5582,
+                    "z": 1.29
+                },
+                {
+                    "name": "Npm",
+                    "y": 19110,
+                    "z": 1.55
+                },
+                {
+                    "name": "Clojars",
+                    "y": 2355,
+                    "z": 1.61
+                },
+                {
+                    "name": "Bower",
+                    "y": 11699,
+                    "z": 1.67
+                },
+                {
+                    "name": "Maven",
+                    "y": 14532,
+                    "z": 1.7
+                },
+                {
+                    "name": "All",
+                    "y": 83740,
+                    "z": 1.72
+                },
+                {
+                    "name": "Meteor",
+                    "y": 579,
+                    "z": 1.73
+                },
+                {
+                    "name": "Cran",
+                    "y": 289,
+                    "z": 1.73
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 25134,
+                    "z": 1.84
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 3034,
+                    "z": 1.85
+                },
+                {
+                    "name": "Pypi",
+                    "y": 13216,
+                    "z": 1.87
+                },
+                {
+                    "name": "Go",
+                    "y": 2133,
+                    "z": 2.02
+                },
+                {
+                    "name": "Puppet",
+                    "y": 246,
+                    "z": 2.03
+                },
+                {
+                    "name": "Platformio",
+                    "y": 130,
+                    "z": 3.85
+                },
+                {
+                    "name": "Cpan",
+                    "y": 1598,
+                    "z": 3.88
+                }
+            ],
+            "subtitle": "2011",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2012": {
+            "data": [
+                {
+                    "name": "Cargo",
+                    "y": 170,
+                    "z": 0.59
+                },
+                {
+                    "name": "Hex",
+                    "y": 745,
+                    "z": 1.21
+                },
+                {
+                    "name": "Puppet",
+                    "y": 1122,
+                    "z": 1.25
+                },
+                {
+                    "name": "Nuget",
+                    "y": 12067,
+                    "z": 1.36
+                },
+                {
+                    "name": "Packagist",
+                    "y": 22309,
+                    "z": 1.45
+                },
+                {
+                    "name": "Clojars",
+                    "y": 4412,
+                    "z": 1.47
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 7865,
+                    "z": 1.56
+                },
+                {
+                    "name": "Npm",
+                    "y": 42917,
+                    "z": 1.58
+                },
+                {
+                    "name": "Bower",
+                    "y": 25754,
+                    "z": 1.63
+                },
+                {
+                    "name": "Meteor",
+                    "y": 2096,
+                    "z": 1.72
+                },
+                {
+                    "name": "Maven",
+                    "y": 28072,
+                    "z": 1.77
+                },
+                {
+                    "name": "All",
+                    "y": 165897,
+                    "z": 1.77
+                },
+                {
+                    "name": "Hackage",
+                    "y": 2121,
+                    "z": 1.79
+                },
+                {
+                    "name": "Go",
+                    "y": 5894,
+                    "z": 1.87
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 42935,
+                    "z": 1.9
+                },
+                {
+                    "name": "Pypi",
+                    "y": 25360,
+                    "z": 1.96
+                },
+                {
+                    "name": "Platformio",
+                    "y": 374,
+                    "z": 2.94
+                },
+                {
+                    "name": "Pub",
+                    "y": 163,
+                    "z": 3.07
+                },
+                {
+                    "name": "Cpan",
+                    "y": 1996,
+                    "z": 3.11
+                },
+                {
+                    "name": "Cran",
+                    "y": 594,
+                    "z": 3.37
+                },
+                {
+                    "name": "Atom",
+                    "y": 112,
+                    "z": 4.46
+                }
+            ],
+            "subtitle": "2012",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2013": {
+            "data": [
+                {
+                    "name": "Hex",
+                    "y": 1216,
+                    "z": 1.15
+                },
+                {
+                    "name": "Puppet",
+                    "y": 3088,
+                    "z": 1.36
+                },
+                {
+                    "name": "Cargo",
+                    "y": 328,
+                    "z": 1.52
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 15472,
+                    "z": 1.54
+                },
+                {
+                    "name": "Nuget",
+                    "y": 23446,
+                    "z": 1.58
+                },
+                {
+                    "name": "Packagist",
+                    "y": 44920,
+                    "z": 1.71
+                },
+                {
+                    "name": "Go",
+                    "y": 16992,
+                    "z": 1.79
+                },
+                {
+                    "name": "Clojars",
+                    "y": 6823,
+                    "z": 1.86
+                },
+                {
+                    "name": "Platformio",
+                    "y": 694,
+                    "z": 1.87
+                },
+                {
+                    "name": "Bower",
+                    "y": 53670,
+                    "z": 1.87
+                },
+                {
+                    "name": "Npm",
+                    "y": 86797,
+                    "z": 1.88
+                },
+                {
+                    "name": "Hackage",
+                    "y": 2868,
+                    "z": 1.95
+                },
+                {
+                    "name": "All",
+                    "y": 298041,
+                    "z": 1.97
+                },
+                {
+                    "name": "Maven",
+                    "y": 50218,
+                    "z": 1.99
+                },
+                {
+                    "name": "Atom",
+                    "y": 339,
+                    "z": 2.06
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 62161,
+                    "z": 2.14
+                },
+                {
+                    "name": "Meteor",
+                    "y": 6853,
+                    "z": 2.16
+                },
+                {
+                    "name": "Pypi",
+                    "y": 43300,
+                    "z": 2.25
+                },
+                {
+                    "name": "Pub",
+                    "y": 726,
+                    "z": 3.03
+                },
+                {
+                    "name": "Cran",
+                    "y": 1288,
+                    "z": 3.18
+                },
+                {
+                    "name": "Cpan",
+                    "y": 2759,
+                    "z": 3.33
+                }
+            ],
+            "subtitle": "2013",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2014": {
+            "data": [
+                {
+                    "name": "Hex",
+                    "y": 2013,
+                    "z": 1.19
+                },
+                {
+                    "name": "Puppet",
+                    "y": 5070,
+                    "z": 1.44
+                },
+                {
+                    "name": "Nuget",
+                    "y": 35799,
+                    "z": 1.7
+                },
+                {
+                    "name": "Clojars",
+                    "y": 9321,
+                    "z": 1.7
+                },
+                {
+                    "name": "Atom",
+                    "y": 3525,
+                    "z": 1.73
+                },
+                {
+                    "name": "Platformio",
+                    "y": 1257,
+                    "z": 1.83
+                },
+                {
+                    "name": "Packagist",
+                    "y": 68554,
+                    "z": 1.84
+                },
+                {
+                    "name": "Go",
+                    "y": 38519,
+                    "z": 2.02
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 23675,
+                    "z": 2.02
+                },
+                {
+                    "name": "Meteor",
+                    "y": 13489,
+                    "z": 2.12
+                },
+                {
+                    "name": "Hackage",
+                    "y": 4334,
+                    "z": 2.12
+                },
+                {
+                    "name": "Npm",
+                    "y": 145724,
+                    "z": 2.21
+                },
+                {
+                    "name": "Maven",
+                    "y": 74904,
+                    "z": 2.24
+                },
+                {
+                    "name": "Bower",
+                    "y": 83565,
+                    "z": 2.26
+                },
+                {
+                    "name": "All",
+                    "y": 452917,
+                    "z": 2.26
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 69922,
+                    "z": 2.6
+                },
+                {
+                    "name": "Pypi",
+                    "y": 63379,
+                    "z": 2.63
+                },
+                {
+                    "name": "Pub",
+                    "y": 1333,
+                    "z": 2.63
+                },
+                {
+                    "name": "Cargo",
+                    "y": 1723,
+                    "z": 2.84
+                },
+                {
+                    "name": "Cpan",
+                    "y": 3068,
+                    "z": 2.97
+                },
+                {
+                    "name": "Cran",
+                    "y": 2574,
+                    "z": 4.12
+                }
+            ],
+            "subtitle": "2014",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2015": {
+            "data": [
+                {
+                    "name": "Puppet",
+                    "y": 6085,
+                    "z": 1.59
+                },
+                {
+                    "name": "Platformio",
+                    "y": 2435,
+                    "z": 1.77
+                },
+                {
+                    "name": "Clojars",
+                    "y": 11791,
+                    "z": 1.81
+                },
+                {
+                    "name": "Packagist",
+                    "y": 91412,
+                    "z": 1.93
+                },
+                {
+                    "name": "Atom",
+                    "y": 7770,
+                    "z": 1.94
+                },
+                {
+                    "name": "Nuget",
+                    "y": 47731,
+                    "z": 1.96
+                },
+                {
+                    "name": "Hackage",
+                    "y": 5179,
+                    "z": 1.97
+                },
+                {
+                    "name": "Hex",
+                    "y": 3634,
+                    "z": 2.06
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 35443,
+                    "z": 2.14
+                },
+                {
+                    "name": "Meteor",
+                    "y": 19357,
+                    "z": 2.22
+                },
+                {
+                    "name": "Go",
+                    "y": 63442,
+                    "z": 2.25
+                },
+                {
+                    "name": "Cargo",
+                    "y": 4825,
+                    "z": 2.42
+                },
+                {
+                    "name": "Maven",
+                    "y": 98947,
+                    "z": 2.45
+                },
+                {
+                    "name": "All",
+                    "y": 628956,
+                    "z": 2.49
+                },
+                {
+                    "name": "Bower",
+                    "y": 110499,
+                    "z": 2.51
+                },
+                {
+                    "name": "Pub",
+                    "y": 1911,
+                    "z": 2.56
+                },
+                {
+                    "name": "Npm",
+                    "y": 220059,
+                    "z": 2.59
+                },
+                {
+                    "name": "Cpan",
+                    "y": 3256,
+                    "z": 2.73
+                },
+                {
+                    "name": "Pypi",
+                    "y": 85646,
+                    "z": 2.82
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 73175,
+                    "z": 2.99
+                },
+                {
+                    "name": "Cran",
+                    "y": 4312,
+                    "z": 4.15
+                }
+            ],
+            "subtitle": "2015",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2016": {
+            "data": [
+                {
+                    "name": "Puppet",
+                    "y": 5874,
+                    "z": 1.77
+                },
+                {
+                    "name": "Platformio",
+                    "y": 3959,
+                    "z": 1.77
+                },
+                {
+                    "name": "Packagist",
+                    "y": 107750,
+                    "z": 2.0
+                },
+                {
+                    "name": "Hex",
+                    "y": 6501,
+                    "z": 2.11
+                },
+                {
+                    "name": "Hackage",
+                    "y": 5165,
+                    "z": 2.11
+                },
+                {
+                    "name": "Cargo",
+                    "y": 7589,
+                    "z": 2.12
+                },
+                {
+                    "name": "Atom",
+                    "y": 8553,
+                    "z": 2.13
+                },
+                {
+                    "name": "Nuget",
+                    "y": 54960,
+                    "z": 2.16
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 47713,
+                    "z": 2.35
+                },
+                {
+                    "name": "Clojars",
+                    "y": 12820,
+                    "z": 2.36
+                },
+                {
+                    "name": "Go",
+                    "y": 72321,
+                    "z": 2.5
+                },
+                {
+                    "name": "Pub",
+                    "y": 1964,
+                    "z": 2.7
+                },
+                {
+                    "name": "All",
+                    "y": 768685,
+                    "z": 2.73
+                },
+                {
+                    "name": "Meteor",
+                    "y": 15384,
+                    "z": 2.76
+                },
+                {
+                    "name": "Bower",
+                    "y": 107349,
+                    "z": 2.77
+                },
+                {
+                    "name": "Maven",
+                    "y": 110201,
+                    "z": 2.78
+                },
+                {
+                    "name": "Npm",
+                    "y": 293952,
+                    "z": 2.88
+                },
+                {
+                    "name": "Pypi",
+                    "y": 107400,
+                    "z": 3.05
+                },
+                {
+                    "name": "Cpan",
+                    "y": 2922,
+                    "z": 3.05
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 69744,
+                    "z": 3.31
+                },
+                {
+                    "name": "Cran",
+                    "y": 5969,
+                    "z": 4.29
+                }
+            ],
+            "subtitle": "2016",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
         "2017": {
             "data": [
                 {
@@ -12831,6 +13719,117 @@ var data = {
                 }
             ],
             "subtitle": "2018",
+            "title": "Contributors compared by Ecosystem Size and % Women"
+        },
+        "2019": {
+            "data": [
+                {
+                    "name": "Platformio",
+                    "y": 1650,
+                    "z": 1.76
+                },
+                {
+                    "name": "Packagist",
+                    "y": 31059,
+                    "z": 2.18
+                },
+                {
+                    "name": "Nuget",
+                    "y": 17283,
+                    "z": 2.26
+                },
+                {
+                    "name": "Pub",
+                    "y": 2869,
+                    "z": 2.37
+                },
+                {
+                    "name": "Cpan",
+                    "y": 504,
+                    "z": 2.38
+                },
+                {
+                    "name": "Hex",
+                    "y": 2092,
+                    "z": 2.39
+                },
+                {
+                    "name": "Puppet",
+                    "y": 980,
+                    "z": 2.45
+                },
+                {
+                    "name": "Atom",
+                    "y": 938,
+                    "z": 2.45
+                },
+                {
+                    "name": "Cocoapods",
+                    "y": 12014,
+                    "z": 2.61
+                },
+                {
+                    "name": "Go",
+                    "y": 25670,
+                    "z": 2.77
+                },
+                {
+                    "name": "Cargo",
+                    "y": 5949,
+                    "z": 3.03
+                },
+                {
+                    "name": "Hackage",
+                    "y": 1417,
+                    "z": 3.11
+                },
+                {
+                    "name": "Clojars",
+                    "y": 2699,
+                    "z": 3.15
+                },
+                {
+                    "name": "All",
+                    "y": 262382,
+                    "z": 3.19
+                },
+                {
+                    "name": "Meteor",
+                    "y": 1166,
+                    "z": 3.34
+                },
+                {
+                    "name": "Maven",
+                    "y": 25964,
+                    "z": 3.37
+                },
+                {
+                    "name": "Npm",
+                    "y": 109115,
+                    "z": 3.38
+                },
+                {
+                    "name": "Bower",
+                    "y": 14609,
+                    "z": 3.59
+                },
+                {
+                    "name": "Pypi",
+                    "y": 48861,
+                    "z": 3.6
+                },
+                {
+                    "name": "Rubygems",
+                    "y": 13638,
+                    "z": 3.77
+                },
+                {
+                    "name": "Cran",
+                    "y": 2545,
+                    "z": 6.95
+                }
+            ],
+            "subtitle": "2019",
             "title": "Contributors compared by Ecosystem Size and % Women"
         }
     }

@@ -14,8 +14,9 @@ var obj = JSON.parse(obj);
 /* Parsing Functions */
 
 function parseData(cat, lang) {
-    console.log("Parsing Data...")
-    console.log(cat, lang)
+    console.log("Parsing Data...");
+    console.log(cat, lang);
+
     // data variable stored in data.js
     obj.title = data[cat][lang]["title"];
     obj.label_x = data[cat][lang]["label_x"];
@@ -47,7 +48,7 @@ function parseSingleData(cat, yearOpt, graphOpt) {
 
 function parsePieData(cat, yearOpt) {
     console.log("Parsing Single Pie graph data...");
-
+    console.log(cat, yearOpt)
     // obj data variable stored in data.js, taken into function for single graphs
     obj.title = data_pie[cat][yearOpt]["title"];
     obj.subtitle = data_pie[cat][yearOpt]["subtitle"];

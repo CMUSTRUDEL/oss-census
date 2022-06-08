@@ -1,9 +1,17 @@
+function updateTabAll(type) {
+    // Save button associated graph type to localstorage 
+    localStorage.setItem("type", type);
+
+    // Update HTML
+    changeGraph("All");
+}
+
 function updateTab(type) {
     // Save button associated graph type to localstorage 
     localStorage.setItem("type", type);
 
     // Update HTML
-    changeGraph();
+    changeGraph(null);
 }
 
 function updateEco(type) {
@@ -13,12 +21,18 @@ function updateEco(type) {
     localStorage.setItem("ecosystem", selectEco.options[selectEco.selectedIndex].value);
 
     // Update HTML
-    changeGraph();
+    changeGraph(null);
 }
 
-function changeGraph() {
+function changeGraph(default_ecosystem) {
     type = localStorage.getItem("type");
-    ecosystem = localStorage.getItem("ecosystem");
+
+    if (default_ecosystem == null) {
+        ecosystem = localStorage.getItem("ecosystem")
+    }
+    else {
+        ecosystem = default_ecosystem
+    }
  
     types = ["cont", "comm"];
 

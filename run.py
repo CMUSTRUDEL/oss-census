@@ -12,6 +12,8 @@ def main():
     with open ("config.yaml", 'r') as stream:
         config = yaml.safe_load(stream)
     langs = [] if config["languages"] is None else config["languages"]
+    # Alphabetize langs list
+    langs.sort()
     ##########################################
 
 
@@ -21,7 +23,7 @@ def main():
     # Contributor 
     data["Contributor"] = dict()
     for lang in langs:
-        dat_path = './census_interactive/data/raw/contributor_by_win/'+lang+'.csv'
+        dat_path = './census_interactive/data/raw/final_gender_contrib/'+lang+'.csv'
         store_path = './census_interactive/data/processed/contributor'
         load_contributor(lang, dat_path, store_path)
 
@@ -33,7 +35,7 @@ def main():
     # Commits
     data["Commit"] = dict()
     for lang in langs:  
-        dat_path = './census_interactive/data/raw/commits_by_win/'+lang+'.csv'
+        dat_path = './census_interactive/data/raw/final_gender_commit/'+lang+'.csv'
         store_path = './census_interactive/data/processed/commit'
         load_commit(lang, dat_path, store_path)
 
@@ -43,17 +45,19 @@ def main():
             data["Commit"][lang] = add_data
 
 
-    # Project 
-    data["Project"] = dict()
-    for lang in langs:
-        dat_path = './census_interactive/data/raw/final_proj_by_win/full.csv'
-        store_path = './census_interactive/data/processed/project'
-        load_project(lang, dat_path, store_path)
+    # # Project 
+    # No longer examined as of 5/31/2022
 
-        # Save graph data to overall JSON data
-        with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
-            add_data = json.load(json_file)
-            data["Project"][lang] = add_data
+    # data["Project"] = dict()
+    # for lang in langs:
+    #     dat_path = './census_interactive/data/raw/final_proj_by_win/full.csv'
+    #     store_path = './census_interactive/data/processed/project'
+    #     load_project(lang, dat_path, store_path)
+
+    #     # Save graph data to overall JSON data
+    #     with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
+    #         add_data = json.load(json_file)
+    #         data["Project"][lang] = add_data
             
 
 
@@ -72,11 +76,11 @@ def main():
     
     # Focus on Contributor for bar graphs
     data_pie["Contributor"] = dict()
-    dat_path = './census_interactive/data/raw/contributor_by_win/'
+    dat_path = './census_interactive/data/raw/final_gender_contrib/'
 
     for year_opt in year_opts:
         # Updates processed JSON file
-        load_contributor_pie(dat_path, store_path, year_opt)
+        load_contributor_pie(dat_path, store_path, langs, year_opt)
 
         # Save graph data to overall JSON data
         with open(store_path+'/'+'all_pie'+'.json') as json_file:
@@ -91,10 +95,10 @@ def main():
     
     # Focus on Contributor for bar graphs
     data_bar["Contributor"] = dict()
-    dat_path = './census_interactive/data/raw/contributor_by_win/'
+    dat_path = './census_interactive/data/raw/final_gender_contrib/'
 
     # Updates processed JSON file
-    load_contributor_bar(dat_path, store_path)
+    load_contributor_bar(dat_path, store_path, langs)
 
     # Save graph data to overall JSON data
     with open(store_path+'/'+'all_bar'+'.json') as json_file:
@@ -110,10 +114,10 @@ def main():
     
     # Focus on Contributor for bar graphs
     data_stack["Contributor"] = dict()
-    dat_path = './census_interactive/data/raw/contributor_by_win/'
+    dat_path = './census_interactive/data/raw/final_gender_contrib/'
 
     # Updates processed JSON file
-    load_contributor_stack(dat_path, store_path)
+    load_contributor_stack(dat_path, store_path, langs)
 
     # Save graph data to overall JSON data
     with open(store_path+'/'+'all_stack'+'.json') as json_file:
@@ -124,7 +128,7 @@ def main():
 
     ## Combine all JSON to one dictionary in js/
 
-    with open('./js/data.js', 'w') as out_file:
+    with open('./public/js/data.js', 'w') as out_file:
         out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
         out_file.write('var data_pie = %s;' % json.dumps(data_pie,indent=4, sort_keys=True))
         out_file.write('var data_bar = %s;' % json.dumps(data_bar,indent=4, sort_keys=True))

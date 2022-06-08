@@ -297,21 +297,19 @@ def load_project(lang, dat_path, store_path):
 
 ## Single Graph functions ##
 
-def load_contributor_bar(dat_path, store_path):
+def load_contributor_bar(dat_path, store_path, langs):
     """
     Stores formatted JavaScript variables for graph from:
     All active project count by window: './project/'
 
     :string dat_path: CSV data path
     :string store_path: path to Contributor graph settings
+    :list langs: alphabetized list of languages used
     :return: None
     """ 
 
-    langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++',
-            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C']
-    
- 
     data = []
+    
     colors = ["#f29d4b", "#de2d26"]
     for compare in ['female', 'male']:
         add_data = dict()
@@ -360,10 +358,16 @@ def load_contributor_bar(dat_path, store_path):
     with open(store_path+'/'+'all_bar'+'.json', 'w') as out_file:
         json.dump(out_dict, out_file)
 
+    # Save data to CSV for additional data analysis 
+    csv_data = pd.DataFrame.from_dict(out_dict['data']).explode('data')
+    csv_data.to_csv(store_path+'/'+'all_bar'+'.csv')
 
 
-def load_contributor_pie(dat_path, store_path, year_opt):
+
+def load_contributor_pie(dat_path, store_path, langs, year_opt):
     """
+    Polar-chart styled pie chart
+
     Stores formatted JavaScript variables for graph from:
     All active project count by window: './project/'
 
@@ -373,9 +377,6 @@ def load_contributor_pie(dat_path, store_path, year_opt):
     :return: None
     """ 
 
-    langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++',
-            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C']
-    
     data = []
     # Data collection begins in 1/2008
     year_start = (int(year_opt) - 2008) * 4
@@ -393,10 +394,11 @@ def load_contributor_pie(dat_path, store_path, year_opt):
         # Year index moves in 3 month intervals start in 2008
         total_women = sum(list(dat["female"+"_all"])[year_start:year_start+4])
         total = sum(list(dat["all"+"_all"])[year_start:year_start+4])
+
         # Width correlates with ecosystem size
         add_data["y"] = total
         # Length correlated with % of Women 
-        add_data["z"] = round((total_women / total * 100), 2)
+        add_data["z"] = 0 if not total else round((total_women / total * 100), 2)
 
         if not data:
             data.append(add_data)
@@ -422,8 +424,12 @@ def load_contributor_pie(dat_path, store_path, year_opt):
     with open(store_path+'/'+'all_pie'+'.json', 'w') as out_file:
         json.dump(out_dict, out_file)
 
+    # Save data to CSV for additional data analysis 
+    csv_data = pd.DataFrame.from_dict(out_dict['data'])
+    csv_data.to_csv(store_path+'/'+'all_pie'+'.csv')
 
-def load_contributor_stack(dat_path, store_path):
+
+def load_contributor_stack(dat_path, store_path, langs):
     """
     Stores formatted JavaScript variables for graph from:
     All active contributor by gender by window: './contributor/all/'
@@ -431,11 +437,10 @@ def load_contributor_stack(dat_path, store_path):
 
     :string dat_path: CSV pandas data
     :string store_path: path to Contributor graph settings
+    :list langs: alphabetized list of languages used
     :return: None
     """ 
 
-    langs = ['Python', 'C#', 'JavaScript', 'Java', 'Go', 'Ruby', 'C++',
-            'TypeScript', 'PHP', 'C', 'HTML', 'CSS', 'Jupyter', 'Shell', 'Objective-C']
     data = []
 
     for lang in langs:
@@ -489,6 +494,9 @@ def load_contributor_stack(dat_path, store_path):
     with open(store_path+'/'+'all_stack'+'.json', 'w') as out_file:
             json.dump(out_dict, out_file)
 
+    # Save data to CSV for additional data analysis 
+    csv_data = pd.DataFrame(data=out_dict['data']).explode('data')
+    csv_data.to_csv(store_path+'/'+'all_stack'+'.csv')
 
 
 # def load_commit_bar(dat_path, store_path, compare_opt):
