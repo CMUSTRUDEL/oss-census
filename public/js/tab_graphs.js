@@ -1,4 +1,3 @@
-
 function updateTab(type) {
     // Save button associated graph type to localstorage 
     localStorage.setItem("type", type);
@@ -7,9 +6,19 @@ function updateTab(type) {
     changeGraph();
 }
 
+function updateEco(type) {
+    var selectEco = document.getElementById('ecosystem-select');
+
+    // Save button associated graph type to localstorage 
+    localStorage.setItem("ecosystem", selectEco.options[selectEco.selectedIndex].value);
+
+    // Update HTML
+    changeGraph();
+}
+
 function changeGraph() {
     type = localStorage.getItem("type");
-
+    ecosystem = localStorage.getItem("ecosystem");
  
     types = ["cont", "comm"];
 
@@ -20,11 +29,11 @@ function changeGraph() {
 
         if (type == "cont") {
             // TODO: update lang here
-            parseData("Contributor", "All")
+            parseData("Contributor", ecosystem)
             graphContributor("1") 
         }
         else {
-            parseData("Commit", "All")
+            parseData("Commit", ecosystem)
             graphCommit("1") 
         }
 
