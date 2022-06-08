@@ -7,63 +7,25 @@ maxGraphs = 10
 function updateDropdown(graph_num) {
     // Takes integer representing graph number
 
+    var selectYear = document.getElementById('year-select');
     var selectLang = document.getElementById('language-select-' + String(graph_num));
     // Only one category toggled at a time
     var selectCat = document.getElementById('category-select');
 
+    localStorage.setItem("year", selectYear.options[selectYear.selectedIndex].value);
     localStorage.setItem("language-" + String(graph_num), selectLang.options[selectLang.selectedIndex].value);
     localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
 } 
 
 
-function updateTab(type) {
-    // Save button associated graph type to localstorage 
-    localStorage.setItem("type", type);
-
-    // Update HTML
-    changeGraph();
-}
-
-function changeGraph() {
-    type = localStorage.getItem("type");
-
- 
-    types = ["cont", "comm"];
-
-    for (let i = 0; i < 2; i++) {
-        currType = types[i];
-        currHTML = document.getElementById(currType);
-        currButton = document.getElementById(currType+"-button");
-
-        if (type == "cont") {
-            // TODO: update lang here
-            parseData("Contributor", "All")
-            graphContributor("1") 
-        }
-        else {
-            parseData("Commit", "All")
-            graphCommit("1") 
-        }
-
-
-        if (currType == type) {
-            // display selected graph type
-            currHTML.setAttribute("style", "display:show");
-            currButton.setAttribute("class", "w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl")
-        }
-        else {
-            currHTML.setAttribute("style", "display:none");
-            currButton.setAttribute("class", "w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl")
-        }
-    }
-}
-
 function showGraph() {
     let cat;
     let lang;
     let noEmptyOptions = true;
+    
+    let langOpt = localStorage.getItem("language-1");
 
-
+    // Ensure all dropdowns are selected
     for (let num = 1; num < numRows + 1; num++) {
         cat = localStorage.getItem("category");
         lang = localStorage.getItem("language-" + String(num));
@@ -81,22 +43,28 @@ function showGraph() {
     let cont;
     let comm;
 
-    // Only generate graphs if all options are selected
+    // Only generate graphs if all options are selected, language cannot be "All"
     if (noEmptyOptions) {
         for (let num = 1; num < numRows + 1; num++) {
             cat = localStorage.getItem("category");
             lang = localStorage.getItem("language-" + String(num));
-            // Store category
+
+            // Retrieve category HTML
             cont = document.getElementById("contributor-" + String(num));
             comm = document.getElementById("commit-" + String(num));
         
-            // Show contributor graph, hide others
-            if (cat == "contributor" ) {
+            // Show commit or contributor graph
+            if (langOpt == "All") {
+                // Hide these graphs if comparison on languages to be displayed
+                comm.setAttribute("style", "display:none");
+                cont.setAttribute("style", "display:none");
+            }
+            else if (cat == "contributor" ) {
                 // Update JSON object referenced for graphs
                 parseData("Contributor", lang)
                 comm.setAttribute("style", "display:none");
                 cont.setAttribute("style", "display:show");
-    
+            
                 // Reloads graph with updated data vars
                 graphContributor(String(num))
             }
@@ -112,8 +80,11 @@ function showGraph() {
             }
         }
     }
-
-    showGraphSingle()
+    
+    if (langOpt == "All") {
+        // Graph visualizations comparing all languages
+        showGraphSingle();
+    }
 }
 
 function addRow() {
@@ -132,7 +103,7 @@ function addRow() {
     div.innerHTML = `
         <div class="flex flex-row items-center space-x-4">
             <!-- Dropdown for language selection -->
-            <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="update(` + String(numRows) + `)" class="form-select appearance-none 
+            <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="updateDropdown(` + String(numRows) + `)" class="form-select appearance-none 
                 block
                 w-full
                 px-2
@@ -150,21 +121,26 @@ function addRow() {
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
                 <option value="" selected disabled hidden>--Select--</option>
-                <option value="Python">Python</option>
-                <option value="C#">C#</option>
-                <option value="JavaScript">JavaScript</option>
-                <option value="Java">Java</option>
+                <option value="Atom">Atom</option>
+                <option value="Bower">Bower</option>
+                <option value="Cargo">Cargo</option>
+                <option value="Clojars">Clojars</option>
+                <option value="CocoaPods">CocoaPods</option>
+                <option value="CPAN">CPAN</option>
+                <option value="CRAN">CRAN</option>
                 <option value="Go">Go</option>
-                <option value="Ruby">Ruby</option>
-                <option value="C++">C++</option>
-                <option value="TypeScript">TypeScript</option>
-                <option value="PHP">PHP</option>
-                <option value="C">C</option>
-                <option value="HTML">HTML</option>
-                <option value="CSS">CSS</option>
-                <option value="Jupyter">Jupyter</option>
-                <option value="Shell">Shell</option>
-                <option value="Objective-C">Objective-C</option>
+                <option value="Hackage">Hackage</option>
+                <option value="Hex">Hex</option>
+                <option value="Maven">Maven</option>
+                <option value="Meteor">Meteor</option>
+                <option value="NPM">NPM</option>
+                <option value="NuGet">NuGet</option>
+                <option value="Packagist">Packagist</option>
+                <option value="PlatformIO">PlatformIO</option>
+                <option value="Pub">Pub</option>
+                <option value="Puppet">Puppet</option>
+                <option value="PyPi">PyPi</option>
+                <option value="RubyGems">RubyGems</option>
                 <option value="All">All</option>
             </select>
         </div>
@@ -203,9 +179,6 @@ function addGraph() {
                 <figure class="highcharts-figure">
                     <div id="cont-`+ String(numRows) + `"></div>
                     <!-- JS file link -->
-                    <script src="js/data.js"></script>
-                    <script src="js/parse.js"></script>
-                    <script src="census_interactive/graphs/Graph_Contributor/script.js"></script>
                     <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                 </figure>
             </a>
@@ -216,26 +189,10 @@ function addGraph() {
                 <figure class="highcharts-figure">
                     <div id="comm-`+ String(numRows) + `"></div> 
                     <!-- JS file link -->
-                    <script src="js/data.js"></script>
-                    <script src="js/parse.js"></script>
-                    <script src="census_interactive/graphs/Graph_Commit/script.js"></script>
                     <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                 </figure>
             </a>
         </div>
-
-        <div id="project-`+ String(numRows) + `" style="display: none" class="flex-col items-center my-3 w-full">
-            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                <figure class="highcharts-figure">
-                    <div id="proj-`+ String(numRows) + `"></div>
-                    <!-- JS file link -->
-                    <script src="js/data.js"></script>
-                    <script src="js/parse.js"></script>
-                    <script src="census_interactive/graphs/Graph_Project/script.js"></script>
-                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                </figure>
-            </a>
-        </div>   
     </div>
     `
     if (numRows % 2 == 0) {

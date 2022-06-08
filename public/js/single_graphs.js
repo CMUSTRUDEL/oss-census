@@ -2,13 +2,6 @@
 
 /* Functions to add, update, and delete HTML for viewing single graphs */
 
-function updateYear() {
-    var selectYear = document.getElementById('year-select');
-
-    localStorage.setItem("year", selectYear.options[selectYear.selectedIndex].value);
-} 
-
-
 function showGraphSingle() {
     let cat;
     let yearOpt;
@@ -16,37 +9,37 @@ function showGraphSingle() {
 
     cat = localStorage.getItem("category");
     yearOpt = localStorage.getItem("year");
-    langOpt = localStorage.getItem("lang");
+    langOpt = localStorage.getItem("language-1");
   
-    // Only contributor graphs available
-    if (cat != "contributor" ) {
+    if ((langOpt == 'All') && (cat != "contributor" )) {
         alert("Only Contributor graphs available at this time");
     }
 
-    if ((yearOpt == "all") && (langOpt == "all")) {
+    if ((yearOpt == "All") && (langOpt == "All")) {
         // Display stack graph
         document.getElementById("stack").setAttribute("style", "display:show");
         document.getElementById("pie").setAttribute("style", "display:none");
 
         // Update JSON object referenced for graphs
-        parseSingleData("Contributor", yearOpt, "stack")
+        parseSingleData("Contributor", yearOpt, "stack");
+        // Function taken from visualizations GRAPH.js
+        graphStack();
     }
-    else if (langOpt == "all") {
+    else if (langOpt == "All") {
         // Display polar chart
         document.getElementById("stack").setAttribute("style", "display:none");
         document.getElementById("pie").setAttribute("style", "display:show");
 
         // Update JSON object referenced for graphs
-        parseSingleData("Contributor", yearOpt, "pie")
+        parseSingleData("Contributor", yearOpt, "pie");
+        // Function taken from visualizations GRAPH.js
+        graphPie(yearOpt);
     }
     else {
+        // Only contributor graphs available
         document.getElementById("stack").setAttribute("style", "display:none");
         document.getElementById("pie").setAttribute("style", "display:none");
     }
-
-    // Reloads graph from script.js function call
-    graphPie(yearOpt);
-    graphStack();
 }
 
 

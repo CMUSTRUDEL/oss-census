@@ -77,8 +77,14 @@
 
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    <!-- JS tab switch functions -->
+    
+    <!-- JS tab switch and graph functions -->
     <script src="js/comparison_graphs.js"></script>
+    <script src="js/tab_graphs.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/parse.js"></script>
+    <script src="js/visualizations/graph_contributor.js"></script>
+    <script src="js/visualizations/graph_commit.js"></script>
 </head>
 
 
@@ -180,9 +186,6 @@
                     <figure class="highcharts-figure">
                         <div id="cont-1"></div>
                         <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="js/visualizations/graph_contributor.js"></script>
                         <script> 
                             parseData("Contributor", "All");
                             graphContributor("1");
@@ -197,9 +200,6 @@
                     <figure class="highcharts-figure">
                         <div id="comm-1"></div> 
                         <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="js/visualizations/graph_commit.js"></script>
                         <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
                     </figure>
                 </a>

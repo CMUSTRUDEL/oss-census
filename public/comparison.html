@@ -92,6 +92,8 @@
 
     <script src="js/visualizations/graph_contributor.js"></script>
     <script src="js/visualizations/graph_commit.js"></script>
+    <script src="js/visualizations/graph_pie.js"></script>
+    <script src="js/visualizations/graph_stack.js"></script>
 
 
     <!-- Font Awesome -->
@@ -167,7 +169,6 @@
                     <option value="" selected disabled hidden>--Select--</option>
                     <option value="contributor">Contributors</option>
                     <option value="commit">Commits</option>
-                    <option value="project">Project</option>
                     <!-- <option value="all">All</option> -->
                 </select>
             </div>
@@ -223,7 +224,7 @@
                     <label for="year-select" class="font-bold">Choose Year:</label>
                         <div class="flex flex-row items-center">
                             <!-- Dropdown for language selection -->
-                            <select name="year" id="year-select" onchange="updateYear()" class="form-select appearance-none 
+                            <select name="year" id="year-select" onchange="updateDropdown(1)" class="form-select appearance-none 
                                 block
                                 w-full
                                 px-2
