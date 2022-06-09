@@ -35,6 +35,10 @@ Executing the `run.py` script invokes calls to the process.py functions for spec
 
 
 # Everything Else
+**.html** files can be tested locally best via localhost through Python command
+```
+python -m http.server
+```
 **js/graphs** defines `onclick` and `onchange` event functions for updating, adding, and deleting data. Variable data is stored via localStorage.
 
 **js/parse** defines the JSON storage structure and a function to access each graph's data given a category and language.
