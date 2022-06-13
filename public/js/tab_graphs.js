@@ -1,20 +1,13 @@
-function updateTabAll(type) {
+function updateTab(type, ecosystem) {
+    console.log("HI friend");
     // Save button associated graph type to localstorage 
     localStorage.setItem("type", type);
 
     // Update HTML
-    changeGraph("All");
+    changeGraph(ecosystem);
 }
 
-function updateTab(type) {
-    // Save button associated graph type to localstorage 
-    localStorage.setItem("type", type);
-
-    // Update HTML
-    changeGraph(null);
-}
-
-function updateEco(type) {
+function updateEco() {
     var selectEco = document.getElementById('ecosystem-select');
 
     // Save button associated graph type to localstorage 
@@ -34,6 +27,11 @@ function changeGraph(default_ecosystem) {
         ecosystem = default_ecosystem
     }
  
+    // Check if a user hasn't selected ecosystem or default wasn't provided 
+    if (ecosystem == null) {
+        alert("Please select an Ecosystem");
+    }
+
     types = ["cont", "comm"];
 
     for (let i = 0; i < 2; i++) {

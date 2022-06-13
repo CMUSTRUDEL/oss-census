@@ -14,7 +14,7 @@ var obj = JSON.parse(obj);
 /* Parsing Functions */
 
 function parseData(cat, lang) {
-    console.log("Parsing Data...");
+    console.log("Parsing Data....");
     console.log(cat, lang);
 
     // data variable stored in data.js
