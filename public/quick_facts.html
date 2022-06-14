@@ -14,6 +14,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
+        li#quick-facts  { color: purple; font-weight: bold;} 
+
         .font-family-bebas {
             font-family: bebas-neue, sans-serif;
             font-weight: 700;
@@ -104,6 +106,9 @@
         }
     </style>
 
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
     <!-- Graph 1 CSS and Script links -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -118,152 +123,125 @@
 </head>
 
 
+    <body id="quick-facts">
+    <div class="bg-white font-family-karla">
+        <!-- Top Bar Nav -->
+        <div id="navigation"></div>
+        <script> 
+            $(function(){
+                $("#navigation").load("nav.html"); 
+            });
+        </script> 
 
-<div class="bg-white font-family-karla">
-    <!-- Top Bar Nav -->
-    <!-- TODO: Remove second nav tag -->
-    <nav class="w-full bg-white py-2 shadow-lg">
-        <div class="mx-auto px-4">
-            <div class="flex justify-between">
+        <div class="w-full p-16">
+            <a class="mt-24 font-bold text-primary uppercase text-7xl font-family-bebas">
+                <center>Quick Facts of Census Data</center>
+            </a>
+        </div>
 
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center">
-                    <img src="img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
-                </a>
+        <div class="px-14 pb-24">
+            <div class="container">
 
-                <!-- Nav -->
-                <div class="top-0 right-0 flex flex-wrap items-center justify-between">
-                    <nav>
-                        <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="index.html">Home</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="data.html">Data</a></li>
-                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="quick_facts.html">Quick Facts</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="overview.html">Overview</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="ecosystem.html">Ecosystems</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="comparison.html">Comparisons</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="references.html">References</a></li>
+                <!-- Dropdown for Topic Selection -->
+                <label for="topic-select" class="font-bold"></label>
+                <select name="topic" id="topic-select" onchange="update()" class="form-select appearance-none 
+                    block
+                    shadow-lg
+                    w-2/5
+                    px-2
+                    py-1
+                    my-3
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                    <option value="" selected disabled hidden> --Select a Topic-- </option>
+                    <option value="Largest Ecosystem">Largest Ecosystem</option>
+                    <option value="Community Highest Women Percentage">Community with highest women percentage</option>
+                    <option value="Community Lowest Women Percentage">Community with lowest women percentage</option>
+                    <option value="Women Percentage All 2008">Women's % among all contributors in 2008</option>
+                    <option value="Women Percentage Core 2008">Women's % among core contributors in 2008</option>
+                    <option value="Women Percentage All 2021">Women's % among all contributors in 2021</option>
+                    <option value="Women Percentage Core 2021">Women's % among core contributors in 2021</option>
+                    <option value="Community Highest Hazard">Community with highest hazard ratio</option>
+                </select>
 
-                        </ul>
-                    </nav>
+                <p id="table" style="display: none">Largest Ecosystem</p>
+
+                <table id="BigTable" class="table-auto w-full mt-8 rounded">
+                    <thead>
+                    <tr class="text-left headerPadding">
+                        <th>Topic</th>
+                        <th>OSS</th>
+                        <th>Public</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="tablePadding">
+                        <td>Largest Ecosystem</td>
+                        <td>npm</td>
+                        <td>JavaScript</td>
+                    </tr>
+                    
+                    <tr class="tablePadding">
+                        <td>Community with highest women percentage</td>
+                        <td>CRAN</td>
+                        <td>HTML</td>
+                    </tr>
+                    <tr class="tablePadding">
+                        <td>Community with lowest women percentage</td>
+                        <td>C</td>
+                        <td>CPAN</td>
+                    </tr>
+                    <tr class="tablePadding">
+                        <td>Women's % among all contributors in 2008</td>
+                        <td>2.25%</td>
+                        <td>3.64%</td>
+                    </tr>
+                    <tr class="tablePadding">
+                        <td>Women's % among core contributors in 2008</td>
+                        <td>2.13%</td>
+                        <td>3.69%</td>
+                    </tr>
+                    <tr class="tablePadding">
+                        <td>Women's % among all contributors in 2021</td>
+                        <td>4.87%</td>
+                        <td>6.87%</td>
+                    </tr>
+                    <tr class="tablePadding">
+                        <td>Women's % among core contributors in 2021</td>
+                        <td>5.27%</td>
+                        <td>7.09%</td>
+                    </tr>
+                    <tr class="tablePadding">
+                        <td>Community with highest hazard ratio</td>
+                        <td>PyPI</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <footer class="w-full border-t bg-white">
+        
+            <div class="w-full container mx-auto flex flex-col items-center">
+                <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+                    <a href="#" class="uppercase px-3">About Us</a>
+                    <a href="#" class="uppercase px-3">Privacy Policy</a>
+                    <a href="#" class="uppercase px-3">Terms & Conditions</a>
+                    <a href="#" class="uppercase px-3">Contact Us</a>
                 </div>
-
+                <div class="uppercase pb-6">&copy; myblog.com</div>
             </div>
-        </div>
-    </nav>
-
-    <div class="w-full p-16">
-        <a class="mt-24 font-bold text-primary uppercase text-7xl font-family-bebas">
-            <center>Quick Facts of Census Data</center>
-        </a>
+        </footer>
     </div>
-
-    <div class="px-14 pb-24">
-        <div class="container">
-
-            <!-- Dropdown for Topic Selection -->
-            <label for="topic-select" class="font-bold"></label>
-            <select name="topic" id="topic-select" onchange="update()" class="form-select appearance-none 
-                block
-                shadow-lg
-                w-2/5
-                px-2
-                py-1
-                my-3
-                text-base
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding bg-no-repeat
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                <option value="" selected disabled hidden> --Select a Topic-- </option>
-                <option value="Largest Ecosystem">Largest Ecosystem</option>
-                <option value="Community Highest Women Percentage">Community with highest women percentage</option>
-                <option value="Community Lowest Women Percentage">Community with lowest women percentage</option>
-                <option value="Women Percentage All 2008">Women's % among all contributors in 2008</option>
-                <option value="Women Percentage Core 2008">Women's % among core contributors in 2008</option>
-                <option value="Women Percentage All 2021">Women's % among all contributors in 2021</option>
-                <option value="Women Percentage Core 2021">Women's % among core contributors in 2021</option>
-                <option value="Community Highest Hazard">Community with highest hazard ratio</option>
-            </select>
-
-            <p id="table" style="display: none">Largest Ecosystem</p>
-
-            <table id="BigTable" class="table-auto w-full mt-8 rounded">
-                <thead>
-                  <tr class="text-left headerPadding">
-                    <th>Topic</th>
-                    <th>OSS</th>
-                    <th>Public</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="tablePadding">
-                    <td>Largest Ecosystem</td>
-                    <td>npm</td>
-                    <td>JavaScript</td>
-                  </tr>
-                  
-                  <tr class="tablePadding">
-                    <td>Community with highest women percentage</td>
-                    <td>CRAN</td>
-                    <td>HTML</td>
-                  </tr>
-                  <tr class="tablePadding">
-                    <td>Community with lowest women percentage</td>
-                    <td>C</td>
-                    <td>CPAN</td>
-                  </tr>
-                  <tr class="tablePadding">
-                    <td>Women's % among all contributors in 2008</td>
-                    <td>2.25%</td>
-                    <td>3.64%</td>
-                  </tr>
-                  <tr class="tablePadding">
-                    <td>Women's % among core contributors in 2008</td>
-                    <td>2.13%</td>
-                    <td>3.69%</td>
-                  </tr>
-                <tr class="tablePadding">
-                    <td>Women's % among all contributors in 2021</td>
-                    <td>4.87%</td>
-                    <td>6.87%</td>
-                  </tr>
-                  <tr class="tablePadding">
-                    <td>Women's % among core contributors in 2021</td>
-                    <td>5.27%</td>
-                    <td>7.09%</td>
-                  </tr>
-                  <tr class="tablePadding">
-                    <td>Community with highest hazard ratio</td>
-                    <td>PyPI</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-
-        </div>
-    </div>
-
-    <footer class="w-full border-t bg-white">
-       
-        <div class="w-full container mx-auto flex flex-col items-center">
-            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-                <a href="#" class="uppercase px-3">About Us</a>
-                <a href="#" class="uppercase px-3">Privacy Policy</a>
-                <a href="#" class="uppercase px-3">Terms & Conditions</a>
-                <a href="#" class="uppercase px-3">Contact Us</a>
-            </div>
-            <div class="uppercase pb-6">&copy; myblog.com</div>
-        </div>
-    </footer>
-
-
-</div>
-
-
+</body>
 </html>

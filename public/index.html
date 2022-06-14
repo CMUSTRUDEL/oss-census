@@ -14,6 +14,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
+        li#index  { color:purple; font-weight: bold;} 
+
         .font-family-bebas {
             font-family: bebas-neue, sans-serif;
             font-weight: 700;
@@ -107,6 +109,9 @@
         }
     </style>
 
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
     <!-- Graph 1 CSS and Script links -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -119,161 +124,134 @@
 </head>
 
 
+    <body id="index">
+    <div class="bg-white font-family-karla">
+        <!-- Top Bar Nav -->
+        <div id="navigation"></div>
+        <script> 
+            $(function(){
+                $("#navigation").load("nav.html"); 
+            });
+        </script> 
 
-<div class="bg-white font-family-karla w-full h-full">
-    <!-- Top Bar Nav -->
-    <nav class="w-full bg-white py-2 shadow-lg">
-        <div class="mx-auto px-4">
-            <div class="flex justify-between">
+        <!-- Text Header -->
 
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center">
-                    <img src="img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
-                </a>
-                <div class="top-0 right-0 flex flex-wrap items-center justify-between">
-                    <nav>
-                        <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
-                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="index.html">Home</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="data.html">Data</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="quick_facts.html">Quick Facts</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="overview.html">Overview</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="ecosystem.html">Ecosystems</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="comparison.html">Comparisons</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="references.html">References</a></li>
-
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Text Header -->
-
-    <div 
-        class="w-full h-full pb-8 bg-contain" 
-        style="background-image: url('img/MainPageImage1.png');">
-        <header class="w-full container mx-auto">
-            <div class="flex flex-col items-center pb-16 pt-16">
-                <div class="flex flex-row">
-                    <a class="font-bold text-white uppercase text-mainHeader font-family-bebas">
-                        Visualize&nbsp;
+        <div 
+            class="w-full h-128 bg-contain" 
+            style="background-image: url('img/MainPageImage1.png');">
+            <header class="w-full container mx-auto">
+                <div class="flex flex-col items-center py-16">
+                    <div class="flex flex-row">
+                        <a class="font-bold text-white uppercase text-6xl font-family-bebas">
+                            Visualize&nbsp;
+                        </a>
+                        <a class="font-bold text-primary uppercase text-6xl font-family-bebas">
+                            Gender Demography&nbsp;
+                        </a>
+                        <a class="font-bold text-white uppercase text-6xl font-family-bebas">
+                            Across
+                        </a>
+                    </div>
+                    <a class="font-bold text-white uppercase text-6xl font-family-bebas">
+                        The Open Source Software Community
                     </a>
-                    <a class="font-bold text-primary uppercase text-mainHeader font-family-bebas">
-                        Gender&nbsp;
-                    </a>
-                    <a class="font-bold text-primary uppercase text-mainHeader font-family-bebas">
-                        Demography&nbsp;
-                    </a>
-                    <a class="font-bold text-white uppercase text-mainHeader font-family-bebas">
-                        Across
-                    </a>
-                </div>
-                <a class="font-bold text-white uppercase text-mainHeader font-family-bebas whitespace-nowrap">
-                    The Open-Source Software Community
-                </a>
-                <br>
-                <div class="flex flex-col items-center font-bold text-white uppercase text-mainHeader2 font-family-karla">
-                    <span>
-                        Understand the underlying inequalities in the movement
-                    </span>
-                    <span>
-                        that is changing the face of technology
-                    </span>
-                </div>
+                    <br>
+                    <div class="flex flex-col items-center font-bold text-white uppercase text-2xl font-family-karla">
+                        <span>
+                            Understand the underlying inequalities in the movement
+                        </span>
+                        <span>
+                            that is changing the face of technology
+                        </span>
+                    </div>
+                    <br><br>
+                    <button class="w-64 h-16 bg-primary hover:bg-purple-400 text-white text-2xl font-semibold py-2 px-4 rounded shadow font-family-karla"
+                            onclick="location.href='data.html'">
+                        Explore Data
+                    </button>
                 
-            
-            </div>
-        </header>
-    </div>
-    
-        <div class="flex pt-2 pl-24 items-center overflow-hidden">
-            <article class="flex flex-row md:flex-row max-w-8xl">
-                <div class ="flex flex-col">
-                    <div class="items-center">
-                        <p class = "font-family-bebas mt-10 text-purple-900 text-sideHeader">The Problem</p>
-                    </div>               
-                    <p class = "w-10/12 mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
-                        Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as 
-                        <a href="https://heartbleed.com/" class="text-blue-700">"The Heartbleed Bug" </a>
-                        could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.
-                    </p> 
                 </div>
-                <img src="img/Hands.png" alt="Hands" id="hands" class="h-100 w-100 object-right mr-24 pt-10"/>
 
-            </article>
+            </header>
+        </div>
+        
+            <div class="flex pt-2 pl-24 items-center overflow-hidden">
+                <article class="flex flex-row md:flex-row max-w-8xl">
+                    <div class ="flex flex-col">
+                        <div class="items-center">
+                            <p class = "font-family-bebas mt-10 text-purple-900 text-5xl">The Problem</p>
+                        </div>               
+                        <p class = "w-10/12 mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as The Heartbleed Bug could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.</p> 
+                    </div>
+                    <img src="img/Hands.png" alt="Hands" id="hands" class="h-100 w-100 object-right mr-24 pt-10"/>
 
-        </div>
-    
-    <div class="w-full h-full bg-midbar">
-        <div class="flex flex-col items-center pt-10">
-            <span class="font-bold text-primary text-sideHeader">
-                OUR MISSION
-            </span>
-            <span class="font-light text-primary text-sideHeader2 mt-4">
-                This website presents a census on gender diversity, one of 
-            </span>
-            <span class="font-light text-primary text-sideHeader2">
-                the many diversity measures, in the OSS community. 
-            </span>
-            <span class="font-bold text-primary text-sideHeader2 pt-4">
-                Through this site, you can find the following information:
-            </span>
-        </div>
-        <div class="px-32">
-            <div class="grid grid-cols-4 justify-center gap-x-16 py-16">
+                </article>
+
+            </div>
+        
+        <div class="w-full h-200 bg-midbar">
+            <div class="flex flex-col items-center pt-10">
+                <span class="font-bold text-primary text-5xl">
+                    OUR MISSION
+                </span>
+                <span class="font-light text-primary text-2xl mt-4">
+                    This website presents a census on gender diversity, one of 
+                </span>
+                <span class="font-light text-primary text-2xl">
+                    the many diversity measures, in the OSS community. 
+                </span>
+                <span class="font-bold text-primary text-2xl pt-4">
+                    Through this site, you can find the following information:
+                </span>
+            </div>
+            <div class="grid grid-cols-4 justify-center gap-x-24 pt-12 px-16">
                 <a class="flex flex-col content-center" href="comparison.html">
                     <img src="img/People-Standing.png" alt="Hands" class="h-32 w-30 self-center"/>
-                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center text-icons pt-4">The general trend of gender distribution in OSS as a whole</p>
+                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4">The general trend of gender distribution in OSS as a whole</p>
                 </a>
                 <a class="flex flex-col content-center" href="ecosystem.html">
                         <img src="img/Computer-Cog.png" alt="Hands" class="h-32 w-30 self-center"/>
-                        <p class="w-8/12 tracking-wider text-center leading-relaxed self-center text-icons pt-4">A decomposition of the entire population into ecosystems</p>
+                        <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4">A decomposition of the entire population into ecosystems</p>
                 </a>
                 <a class="flex flex-col content-center" href="overview.html">
                     <img src="img/DataImg.png" alt="Hands" class="h-32 w-30 self-center"/>
-                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center text-icons pt-4">A longitudinal analysis to reflect how women's participation has changed with time
+                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4">A longitudinal analysis to reflect how women's participation has changed with time
                     </p>
                 </a>
                 <a class="flex flex-col content-center" href="overview.html">
                     <img src="img/Clipboard.png" alt="Hands" class="h-32 w-30 self-center"/>
-                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center text-icons pt-4">A comprehensive report of statistics on core vs. all (tentative wording)
+                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4">A comprehensive report of statistics on core vs. all (tentative wording)
                     </p>
                 </a>
             </div>
         </div>
-    </div>
 
-    <div class="flex pt-2 items-center overflow-hidden pb-12">
-        <article class="flex flex-row md:flex-row max-w-10xl">
-            <img src="img/Gender_Img.png" alt="gender" id="gender" class="h-100 w-100 object-left margins-image pt-10"/>
-            <div class ="flex flex-col text-right pr-24 w-11/12">
-                <p class = "font-family-bebas margin-top text-purple-900 text-sideHeader">Gender Inference</p>
-                <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
-                    We used computational approaches to infer binary gender from names. In this study, we chose to use 
-                    <a href="https://namsor.app/" class="text-blue-700">NamSor </a>
-                    an automatic tool that can infer gender based on one’s name and cultural background, for its high accuracy among similar tools**. We acknowledge that binary gender does not reflect the current perception of gender. Moreover, name-based inference has limitations. However, our results can still provide insights into the gender diversity status quo in OSS. Future researchers could use the results to conduct more targeted studies.
-                </p> 
-            </div>
+        <div class="flex pt-2 items-center overflow-hidden pb-12">
+            <article class="flex flex-row md:flex-row max-w-10xl">
+                <img src="img/Gender_Img.png" alt="gender" id="gender" class="h-100 w-100 object-left ml-24 mr-36 pt-10"/>
+                <div class ="flex flex-col text-right pr-24 w-11/12">
+                    <p class = "font-family-bebas margin-top text-purple-900 text-5xl">Gender Inference</p>
+                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as The Heartbleed Bug could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.</p> 
+                </div>
 
-        </article>
+            </article>
 
-    </div>
-
-
-    <footer class="w-full border-t bg-white">
-       
-        <div class="w-full container mx-auto flex flex-col items-center">
-            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-                <a href="#" class="uppercase px-3">About Us</a>
-                <a href="#" class="uppercase px-3">Privacy Policy</a>
-                <a href="#" class="uppercase px-3">Terms & Conditions</a>
-                <a href="#" class="uppercase px-3">Contact Us</a>
-            </div>
-            <div class="uppercase pb-6">&copy; myblog.com</div>
         </div>
-    </footer>
-   
-</div>
+
+
+
+        <footer class="w-full border-t bg-white">
+        
+            <div class="w-full container mx-auto flex flex-col items-center">
+                <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+                    <a href="#" class="uppercase px-3">About Us</a>
+                    <a href="#" class="uppercase px-3">Privacy Policy</a>
+                    <a href="#" class="uppercase px-3">Terms & Conditions</a>
+                    <a href="#" class="uppercase px-3">Contact Us</a>
+                </div>
+                <div class="uppercase pb-6">&copy; myblog.com</div>
+            </div>
+        </footer>
+    </div>
+</body>
 </html>

@@ -14,6 +14,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
+        li#ecosystem  { color:purple; font-weight: bold;} 
+
         .font-family-quicksand1 {
             font-family: quicksand, sans-serif;
             font-weight: 500;
@@ -69,6 +71,9 @@
         }
     </style>
 
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
     <!-- Graph 1 CSS and Script links -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -88,122 +93,120 @@
 </head>
 
 
+<body>
+    <div class="bg-white font-family-karla">
+        <!-- Top Bar Nav -->
+        <div id="navigation"></div>
+        <script> 
+            $(function(){
+                $("#navigation").load("nav.html"); 
+            });
+        </script> 
 
-<div class="bg-white font-family-karla">
-    <!-- Top Bar Nav -->
-    <nav class="w-full bg-white py-2 shadow-lg">
-        <div class="mx-auto px-4">
-            <div class="flex justify-between">
 
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center">
-                    <img src="img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
-                </a>
-                <div class="top-0 right-0 flex flex-wrap items-center justify-between">
-                    <nav>
-                        <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="index.html">Home</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="data.html">Data</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="quick_facts.html">Quick Facts</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="overview.html">Overview</a></li>
-                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="ecosystem.html">Ecosystems</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="comparison.html">Comparisons</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="references.html">References</a></li>
+        <div class="w-full p-16">
+            <div class="font-bold text-primary uppercase text-7xl font-family-bebas">
+                <center>Data By Ecosystem</center>
+            </div>
+            <br>
+            <span class="pt-2 font-bold text-primary uppercase text-3xl font-family-quicksand1">
+                <center>
+                    View Data For a 
+                    <span class = "text-primary3">Selected Ecosystem</span>
+                    For All Years
+                </center>
+            </span>
+        </div>
 
-                        </ul>
-                    </nav>
+        <div class = "w-full flex flex-col items-center">
+            <div>
+                <label for="ecosystem-select" class="font-bold"></label>
+                <select name="ecosystem" id="ecosystem-select" onchange="updateEco()" class="form-select appearance-none 
+                    block
+                    shadow-lg
+                    w-full
+                    px-2
+                    py-1
+                    my-3
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                    <option value="" selected disabled hidden> --Select an Ecosystem-- </option>
+                    <option value="Atom">Atom</option>
+                    <option value="Bower">Bower</option>
+                    <option value="CPAN">CPAN</option>
+                    <option value="CRAN">CRAN</option>
+                    <option value="Cargo">Cargo</option>
+                    <option value="Clojars">Clojars</option>
+                    <option value="CocoaPods">CocoaPods</option>
+                    <option value="Go">Go</option>
+                    <option value="Hackage">Hackage</option>
+                    <option value="Hex">Hex</option>
+                    <option value="Maven">Maven</option>
+                    <option value="Meteor">Meteor</option>
+                    <option value="NPM">NPM</option>
+                    <option value="NuGet">NuGet</option>
+                    <option value="Packagist">Packagist</option>
+                    <option value="PlatformIO">PlatformIO</option>
+                    <option value="Pub">Pub</option>
+                    <option value="Puppet">Puppet</option>
+                    <option value="Pypi">Pypi</option>
+                    <option value="Rubygems">Rubygems</option>
+                </select>
+            </div>
+
+            <div class="w-1/2 h-full pt-16">
+                <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
+                    <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('cont')">Contributors</button>
+                    <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('comm')">Commits</button>
+                </div>
+
+                <!-- Interactive charts -->
+                <div id="cont" alt="Graph1" style="display: show" class="flex-col items-center w-full h-full">                
+                    <a href="#" class="hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure">
+                            <div id="cont-1"></div>
+                            <!-- JS file link -->
+                            <script> 
+                                parseData("Contributor", "All");
+                                graphContributor("1");
+                            </script>
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+        
+                <div id="comm" alt="Graph1" style="display: none" class="flex-col items-center w-full h-full">
+                    <a href="#" class="hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure">
+                            <div id="comm-1"></div> 
+                            <!-- JS file link -->
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <div class="w-full p-16">
-        <div class="font-bold text-primary uppercase text-7xl font-family-bebas">
-            <center>Data By Ecosystem</center>
-        </div>
-        <br>
-        <span class="pt-2 font-bold text-primary uppercase text-3xl font-family-quicksand1">
-            <center>
-                View Data For a 
-                <span class = "text-primary3">Selected Ecosystem</span>
-                For All Years
-            </center>
-        </span>
+        <footer class="w-full border-t bg-white mt-8">
+        
+            <div class="w-full container mx-auto flex flex-col items-center">
+                <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
+                    <a href="#" class="uppercase px-3">About Us</a>
+                    <a href="#" class="uppercase px-3">Privacy Policy</a>
+                    <a href="#" class="uppercase px-3">Terms & Conditions</a>
+                    <a href="#" class="uppercase px-3">Contact Us</a>
+                </div>
+                <div class="uppercase pb-6">&copy; myblog.com</div>
+            </div>
+        </footer>
     </div>
-
-    <div class = "w-full flex flex-col items-center">
-        <div>
-            <label for="ecosystem-select" class="font-bold"></label>
-            <select name="ecosystem" id="ecosystem-select" onchange="updateEco()" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-label="Default select">
-                <option value="" selected disabled hidden> Select an Ecosystem </option>
-                <option value="Atom">Atom</option>
-                <option value="Bower">Bower</option>
-                <option value="CPAN">CPAN</option>
-                <option value="CRAN">CRAN</option>
-                <option value="Cargo">Cargo</option>
-                <option value="Clojars">Clojars</option>
-                <option value="CocoaPods">CocoaPods</option>
-                <option value="Go">Go</option>
-                <option value="Hackage">Hackage</option>
-                <option value="Hex">Hex</option>
-                <option value="Maven">Maven</option>
-                <option value="Meteor">Meteor</option>
-                <option value="NPM">NPM</option>
-                <option value="NuGet">NuGet</option>
-                <option value="Packagist">Packagist</option>
-                <option value="PlatformIO">PlatformIO</option>
-                <option value="Pub">Pub</option>
-                <option value="Puppet">Puppet</option>
-                <option value="Pypi">Pypi</option>
-                <option value="Rubygems">Rubygems</option>
-            </select>
-        </div>
-
-        <div class="w-1/2 h-full pt-16">
-            <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
-                <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('cont')">Contributors</button>
-                <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('comm')">Commits</button>
-            </div>
-
-            <!-- Interactive charts -->
-            <div id="cont" alt="Graph1" style="display: show" class="flex-col items-center w-full h-full">                
-                <a href="#" class="hover:opacity-75 my-4 md:w-3/3">
-                    <figure class="highcharts-figure">
-                        <div id="cont-1"></div>
-                        <!-- JS file link -->
-                        <script> 
-                            parseData("Contributor", "All");
-                            graphContributor("1");
-                        </script>
-                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                    </figure>
-                </a>
-            </div>
-      
-            <div id="comm" alt="Graph1" style="display: none" class="flex-col items-center w-full h-full">
-                <a href="#" class="hover:opacity-75 my-4 md:w-3/3">
-                    <figure class="highcharts-figure">
-                        <div id="comm-1"></div> 
-                        <!-- JS file link -->
-                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                    </figure>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <footer class="w-full border-t bg-white mt-8">
-       
-        <div class="w-full container mx-auto flex flex-col items-center">
-            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-                <a href="#" class="uppercase px-3">About Us</a>
-                <a href="#" class="uppercase px-3">Privacy Policy</a>
-                <a href="#" class="uppercase px-3">Terms & Conditions</a>
-                <a href="#" class="uppercase px-3">Contact Us</a>
-            </div>
-            <div class="uppercase pb-6">&copy; myblog.com</div>
-        </div>
-    </footer>
-</div>
+</body>
 </html>

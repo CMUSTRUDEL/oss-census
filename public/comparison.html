@@ -11,9 +11,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
 
-
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+        li#comparison  { color: purple; font-weight: bold;} 
 
         .font-family-quicksand1 {
             font-family: quicksand, sans-serif;
@@ -76,6 +77,9 @@
         }
     </style>
 
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
     <!-- Highchart Imports -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -95,234 +99,248 @@
     <script src="js/visualizations/graph_pie.js"></script>
     <script src="js/visualizations/graph_stack.js"></script>
 
-
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
 
 
+<body id="comparison">
+    <div class="bg-white font-family-karla">
+        <!-- Top Bar Nav -->
+        <div id="navigation">
+        </div>
+        <script> 
+            $(function(){
+              $("#navigation").load("nav.html"); 
+            });
+        </script> 
 
-<div class="bg-white font-family-karla">
-    <!-- Top Bar Nav -->
-    <nav class="w-full bg-white py-2 shadow-lg">
-        <div class="mx-auto px-4">
-            <div class="flex justify-between">
-            
-
-                <!-- Logo -->
-                <a href="#" class="flex items-center">
-                    <img src="img/CensusLogo.png" alt="Logo" class="object-scale-down h-14 w-14" />
+        <!-- Text Header -->
+        <center>
+        <header class="w-full container mx-auto">
+            <div class="flex flex-col items-center py-12">
+                <a class="font-bold text-primary uppercase text-7xl font-family-bebas" href="#">
+                    Graph Comparison
                 </a>
-                <div class="top-0 right-0 flex flex-wrap items-center justify-between">
-                    <nav>
-                        <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="index.html">Home</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="data.html">Data</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="quick_facts.html">Quick Facts</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="overview.html">Overview</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="ecosystem.html">Ecosystems</a></li>
-                            <li><a class="text-purple-800 hover:text-purple-200 px-4" href="comparison.html">Comparisons</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="what-to-do.html">What To Do</a></li>
-                            <li><a class="text-gray-500 hover:text-gray-200 px-4" href="references.html">References</a></li>
-
-                        </ul>
-                    </nav>
+                <a class="pt-2 font-bold text-primary uppercase text-3xl font-family-quicksand1">
+                    Freely choose any constraints to generate and compare graphs
+                </a>
+            </div>
+        </header>
+        </center>
+        
+        <!-- Graph Comparison -->
+        <div class="flex flex-col items-center justify-center mx-auto px-10">
+            <div class="w-full mx-auto" style="justify-content: space-evenly">
+                <div class="flex flex-col items-center justify-center mx-auto pb-8">
+                    <!-- Dropdown for category selection -->
+                    <label for="category-select" class="font-bold">Choose a Category:</label>
+                    <select name="category" id="category-select" onchange="updateDropdown(1)" class="form-select appearance-none 
+                        block
+                        w-100
+                        px-2
+                        py-1
+                        my-1
+                        text-center
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                        <option value="" selected disabled hidden>--Select--</option>
+                        <option value="contributor">Contributors</option>
+                        <option value="commit">Commits</option>
+                        <!-- <option value="all">All</option> -->
+                    </select>
                 </div>
-            </div>
-        </div>
-    </nav>
+                <div class="w-full mx-auto mb-3" style="justify-content: space-evenly">
+                    <div class="flex flex-col items-center">
+                        <label for="language-select-1" class="font-bold">Choose Languages:</label>
+                        <div id="query" class="flex flex-row space-x-4">
+                            <div class="flex flex-row items-center space-x-4">
+                                <!-- Dropdown for language selection -->
+                                <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="form-select appearance-none 
+                                    block
+                                    w-full
+                                    px-2
+                                    py-1
+                                    my-3
+                                    text-base
+                                    text-center
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding bg-no-repeat
+                                    border border-solid border-gray-300
+                                    rounded
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                                    <option value="" selected disabled hidden>--Select--</option>
+                                    <option value="Atom">Atom</option>
+                                    <option value="Bower">Bower</option>
+                                    <option value="Cargo">Cargo</option>
+                                    <option value="Clojars">Clojars</option>
+                                    <option value="CocoaPods">CocoaPods</option>
+                                    <option value="CPAN">CPAN</option>
+                                    <option value="CRAN">CRAN</option>
+                                    <option value="Go">Go</option>
+                                    <option value="Hackage">Hackage</option>
+                                    <option value="Hex">Hex</option>
+                                    <option value="Maven">Maven</option>
+                                    <option value="Meteor">Meteor</option>
+                                    <option value="NPM">NPM</option>
+                                    <option value="NuGet">NuGet</option>
+                                    <option value="Packagist">Packagist</option>
+                                    <option value="PlatformIO">PlatformIO</option>
+                                    <option value="Pub">Pub</option>
+                                    <option value="Puppet">Puppet</option>
+                                    <option value="Pypi">PyPi</option>
+                                    <option value="RubyGems">RubyGems</option>
+                                    <option value="All">All</option>
+                                </select>
+                            </div>                  
+                        </div>
 
-    <!-- Text Header -->
-    <center>
-    <header class="w-full container mx-auto">
-        <div class="flex flex-col items-center py-12">
-            <a class="font-bold text-primary uppercase text-7xl font-family-bebas" href="#">
-                Graph Comparison
-            </a>
-            <a class="pt-2 font-bold text-primary uppercase text-3xl font-family-quicksand1">
-                Freely choose any constraints to generate and compare graphs
-            </a>
-        </div>
-    </header>
-    </center>
-    
-    
-    <!-- Graph Comparison -->
-    <div class="flex flex-col items-center justify-center mx-auto px-10">
-        <div class="w-full mx-auto" style="justify-content: space-evenly">
-            <div class="flex flex-col items-center justify-center mx-auto pb-8">
-                <!-- Dropdown for category selection -->
-                <label for="category-select" class="font-bold">Choose a Category:</label>
-                <select name="category" id="category-select" onchange="updateDropdown(1)" class="inline-flex justify-center w-1/6 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-label="Default select">
-                    <option value="" selected disabled hidden>Select</option>
-                    <option value="contributor">Contributors</option>
-                    <option value="commit">Commits</option>
-                    <!-- <option value="all">All</option> -->
-                </select>
-            </div>
-            <div class="w-full mx-auto mb-3" style="justify-content: space-evenly">
-                <div class="flex flex-col items-center">
-                    <label for="language-select-1" class="font-bold">Choose Languages:</label>
-                    <div id="query" class="flex flex-row space-x-4">
-                        <div class="flex flex-row items-center space-x-4">
-                            <!-- Dropdown for language selection -->
-                            <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-label="Default select">
-                                <option value="" selected disabled hidden>--Select--</option>
-                                <option value="Atom">Atom</option>
-                                <option value="Bower">Bower</option>
-                                <option value="Cargo">Cargo</option>
-                                <option value="Clojars">Clojars</option>
-                                <option value="CocoaPods">CocoaPods</option>
-                                <option value="CPAN">CPAN</option>
-                                <option value="CRAN">CRAN</option>
-                                <option value="Go">Go</option>
-                                <option value="Hackage">Hackage</option>
-                                <option value="Hex">Hex</option>
-                                <option value="Maven">Maven</option>
-                                <option value="Meteor">Meteor</option>
-                                <option value="NPM">NPM</option>
-                                <option value="NuGet">NuGet</option>
-                                <option value="Packagist">Packagist</option>
-                                <option value="PlatformIO">PlatformIO</option>
-                                <option value="Pub">Pub</option>
-                                <option value="Puppet">Puppet</option>
-                                <option value="Pypi">PyPi</option>
-                                <option value="RubyGems">RubyGems</option>
-                                <option value="All">All</option>
-                            </select>
-                        </div>                  
-                    </div>
+                        <label for="year-select" class="font-bold">Choose Year:</label>
+                            <div class="flex flex-row items-center">
+                                <!-- Dropdown for language selection -->
+                                <select name="year" id="year-select" onchange="updateDropdown(1)" class="form-select appearance-none 
+                                    block
+                                    w-full
+                                    px-2
+                                    py-1
+                                    my-3
+                                    text-base
+                                    text-center
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding bg-no-repeat
+                                    border border-solid border-gray-300
+                                    rounded
+                                    transition
+                                    ease-in-out
+                                    m-0
+                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="All" selected>All</option>
+                                </select>
+                        </div>
 
-                    <div class="flex flex-row items-center space-x-4 pb-12 pt-4">
-                        <button
-                        onclick="addRow()"
-                        type="button"
-                        data-mdb-ripple="true"
-                        data-mdb-ripple-color="light"
-                        class="inline-flex items-center px-4 py-2 justify-center text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-indigo-700 hover:bg-indigo-800">
-                        <svg class="h-5 w-5 mr-2 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd">
-                            </path>
-                        </svg>
-                        Add
-                        </button>
-
-                        <button
-                            onclick="removeRow()"
+                        <div class="flex flex-row items-center space-x-4 pb-12">
+                            <button
+                            onclick="addRow()"
                             type="button"
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="light"
-                            class="inline-flex items-center px-4 py-2 bg-delete1 bg-delete2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                </svg>
-                        Delete
-                        </button>
-                    </div>
+                            class="inline-flex items-center px-4 py-2 justify-center text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-indigo-700 hover:bg-indigo-800">
+                            <svg class="h-5 w-5 mr-2 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd">
+                                </path>
+                            </svg>
+                            Add
+                            </button>
 
-                    <label for="year-select" class="font-bold">Choose Year:</label>
-                        <div class="flex flex-row items-center">
-                            <!-- Dropdown for language selection -->
-                            <select name="year" id="year-select" onchange="updateDropdown(1)" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-label="Default select">
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                                <option value="2018">2018</option>
-                                <option value="2019">2019</option>
-                                <option value="All" selected>All</option>
-                            </select>
+                            <button
+                                onclick="removeRow()"
+                                type="button"
+                                data-mdb-ripple="true"
+                                data-mdb-ripple-color="light"
+                                class="inline-flex items-center px-4 py-2 bg-delete1 bg-delete2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                            Delete
+                            </button>
                         </div>
 
-                
-
-                    <button
-                        onclick="showGraph()"
-                        type="button"
-                        data-mdb-ripple="true"
-                        data-mdb-ripple-color="light"
-                        class="w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla mt-12">
-                        Generate
-                    </button>
-
-                </div>
-
-            </div>
-            <!-- Buttons -->
-
-        </div>     
-        
-
-
-        <!-- Visualizations comparisons with two columns -->
-        <div class="grid grid-cols-2 gap-6 w-full">
-            <div id="visualizations-left" class="flex flex-col text-center">
-                <!-- Graph 1 -->
-                <div class="mx-auto w-full">
-                    <div id="contributor-1"  style="display: none" class="flex-col items-center w-full my-3">                
-                        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                            <figure class="highcharts-figure">
-                                <div id="cont-1"></div>
-                                <!-- JS file link -->
-
-                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                            </figure>
-                        </a>
+                        <button
+                            onclick="showGraph()"
+                            type="button"
+                            data-mdb-ripple="true"
+                            data-mdb-ripple-color="light"
+                            class="animate-pulse w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
+                        >Generate
+                        </button>
                     </div>
-              
-                    <div id="commit-1" style="display: none" class="flex-col items-center my-3 w-full">
-                        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                            <figure class="highcharts-figure">
-                                <div id="comm-1"></div> 
-                                <!-- JS file link -->
- 
-                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div id="visualizations-right" class="flex flex-col text-center">
-            </div>
-            <script src="js/comparison_graphs.js"></script>
-
+                </div>                
+            </div>     
             
-        </div>
+            
+            <!-- Visualizations comparisons with two columns -->
+            <div class="grid grid-cols-2 gap-6 w-full">
+                <div id="visualizations-left" class="flex flex-col text-center">
+                    <!-- Graph 1 -->
+                    <div class="mx-auto w-full">
+                        <div id="contributor-1"  style="display: none" class="flex-col items-center w-full my-3">                
+                            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                                <figure class="highcharts-figure">
+                                    <div id="cont-1"></div>
+                                    <!-- JS file link -->
+
+                                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                                </figure>
+                            </a>
+                        </div>
+                
+                        <div id="commit-1" style="display: none" class="flex-col items-center my-3 w-full">
+                            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                                <figure class="highcharts-figure">
+                                    <div id="comm-1"></div> 
+                                    <!-- JS file link -->
     
+                                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="visualizations-right" class="flex flex-col text-center">
+                </div>
+            </div>
 
-        <!-- Graph visualization -->
-        <div class="mx-auto my-1 w-full">
-            <div id="pie"  style="display: none" class="flex-col items-center w-full my-3">                
-                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                    <figure class="highcharts-figure">
-                        <div id="pie-cont"></div>
-                        <!-- JS file link -->
-                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                    </figure>
-                </a>
-            </div> 
 
-            <div id="stack"  style="display: none" class="flex-col items-center w-full my-3">                
-                <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                    <figure class="highcharts-figure">
-                        <div id="stack-cont"></div>
-                        <!-- JS file link -->
-                        <script src="js/data.js"></script>
-                        <script src="js/parse.js"></script>
-                        <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                    </figure>
-                </a>
-            </div>   
+            <!-- Graph visualization -->
+            <div class="mx-auto my-1 w-full">
+                <div id="pie"  style="display: none" class="flex-col items-center w-full my-3">                
+                    <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure">
+                            <div id="pie-cont"></div>
+                            <!-- JS file link -->
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div> 
+
+                <div id="stack"  style="display: none" class="flex-col items-center w-full my-3">                
+                    <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure">
+                            <div id="stack-cont"></div>
+                            <!-- JS file link -->
+                            <script src="js/data.js"></script>
+                            <script src="js/parse.js"></script>
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>   
+            </div>
         </div>
     </div>
- 
-
-</div>
-
+</body>
 </html>
