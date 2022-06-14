@@ -74,23 +74,7 @@
                 <div class="flex flex-col items-center justify-center mx-auto pb-8">
                     <!-- Dropdown for category selection -->
                     <label for="category-select" class="font-bold">Choose a Category:</label>
-                    <select name="category" id="category-select" onchange="updateDropdown(1)" class="form-select appearance-none 
-                        block
-                        w-100
-                        px-2
-                        py-1
-                        my-1
-                        text-center
-                        text-base
-                        font-normal
-                        text-gray-700
-                        bg-white bg-clip-padding bg-no-repeat
-                        border border-solid border-gray-300
-                        rounded
-                        transition
-                        ease-in-out
-                        m-0
-                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                    <select name="category" id="category-select" onchange="updateDropdown(1)" class="inline-flex justify-center w-1/4 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
                         <option value="" selected disabled hidden>--Select--</option>
                         <option value="contributor">Contributors</option>
                         <option value="commit">Commits</option>
@@ -103,23 +87,7 @@
                         <div id="query" class="flex flex-row space-x-4">
                             <div class="flex flex-row items-center space-x-4">
                                 <!-- Dropdown for language selection -->
-                                <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="form-select appearance-none 
-                                    block
-                                    w-full
-                                    px-2
-                                    py-1
-                                    my-3
-                                    text-base
-                                    text-center
-                                    font-normal
-                                    text-gray-700
-                                    bg-white bg-clip-padding bg-no-repeat
-                                    border border-solid border-gray-300
-                                    rounded
-                                    transition
-                                    ease-in-out
-                                    m-0
-                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                                <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
                                     <option value="" selected disabled hidden>--Select--</option>
                                     <option value="Atom">Atom</option>
                                     <option value="Bower">Bower</option>
@@ -146,43 +114,7 @@
                             </div>                  
                         </div>
 
-                        <label for="year-select" class="font-bold">Choose Year:</label>
-                            <div class="flex flex-row items-center">
-                                <!-- Dropdown for language selection -->
-                                <select name="year" id="year-select" onchange="updateDropdown(1)" class="form-select appearance-none 
-                                    block
-                                    w-full
-                                    px-2
-                                    py-1
-                                    my-3
-                                    text-base
-                                    text-center
-                                    font-normal
-                                    text-gray-700
-                                    bg-white bg-clip-padding bg-no-repeat
-                                    border border-solid border-gray-300
-                                    rounded
-                                    transition
-                                    ease-in-out
-                                    m-0
-                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                                    <option value="2008">2008</option>
-                                    <option value="2009">2009</option>
-                                    <option value="2010">2010</option>
-                                    <option value="2011">2011</option>
-                                    <option value="2012">2012</option>
-                                    <option value="2013">2013</option>
-                                    <option value="2014">2014</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="All" selected>All</option>
-                                </select>
-                        </div>
-
-                        <div class="flex flex-row items-center space-x-4 pb-12">
+                        <div class="flex flex-row items-center space-x-4 pb-4 pt-4">
                             <button
                             onclick="addRow()"
                             type="button"
@@ -209,12 +141,34 @@
                             </button>
                         </div>
 
+
+                        <label for="year-select" class="font-bold pt-4">Choose Year:</label>
+                            <div class="flex flex-row items-center pb-8">
+                                <!-- Dropdown for language selection -->
+                                <select name="year" id="year-select" onchange="updateDropdown(1)" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="All" selected>All</option>
+                                </select>
+                        </div>
+
+
                         <button
                             onclick="showGraph()"
                             type="button"
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="light"
-                            class="animate-pulse w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
+                            class="w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
                         >Generate
                         </button>
                     </div>
