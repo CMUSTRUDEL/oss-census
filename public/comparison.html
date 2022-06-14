@@ -30,7 +30,7 @@
     <!-- JS Graphs -->
     <script src="js/data.js"></script>
     <script src="js/parse.js"></script>
-    <script src="js/comparison_graphs.js"></script>
+    <script src="js/comparison_graphs.js" defer></script>
     <script src="js/single_graphs.js"></script>   
 
     <script src="js/visualizations/graph_contributor.js"></script>
@@ -217,15 +217,11 @@
                             class="animate-pulse w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
                         >Generate
                         </button>
-
                     </div>
-                </div>
-                <!-- Buttons -->
-                
+                </div>                
             </div>     
             
             
-
             <!-- Visualizations comparisons with two columns -->
             <div class="grid grid-cols-2 gap-6 w-full">
                 <div id="visualizations-left" class="flex flex-col text-center">
@@ -257,6 +253,7 @@
                 <div id="visualizations-right" class="flex flex-col text-center">
                 </div>
             </div>
+
 
             <!-- Graph visualization -->
             <div class="mx-auto my-1 w-full">
