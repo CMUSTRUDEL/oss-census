@@ -1,5 +1,3 @@
-
-
 /* Functions to add, update, and delete HTML for viewing single graphs */
 
 function showGraphSingle() {

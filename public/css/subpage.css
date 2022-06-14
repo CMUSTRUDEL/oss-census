@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+.font-family-quicksand1 {
+    font-family: quicksand, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 2.5rem;
+
+}
+.font-family-bebas {
+    font-family: bebas-neue, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 4.5px;
+}
+.font-family-karla {
+    font-family: karla;
+}
+.h-200{
+    height: 600px;
+}
+.h-128{
+    height: 450px;
+}
+.h-100{
+    height: 400px;
+}
+.w-100{
+    width: 400px;
+}
+.w-128{
+    width: 450px;
+}
+.bg-primary{
+    background: #732867;
+}
+.bg-primary2{
+    background: #FF9119
+}
+.bg-primary2:hover{
+    background: #E46623
+}
+.bg-midbar{
+    background: #ECE4E3;
+}
+.text-primary{
+    color: #732867;
+}
+.text-paragraph{
+    font-size: 1.4rem; /* 24px */
+    line-height: 1.75rem; /* 32px */
+}
+.text-primary3{
+    color: #F29D4B
+}
+.bg-delete1{
+    background-color: #922B3E
+}
+.bg-delete2:hover {
+    background-color: #6D0325
+}
+
+.text-primary3{
+    color: #F29D4B
+}
+.text-paragraph{
+    font-size: 1.4rem; /* 24px */
+    line-height: 2rem; /* 32px */
+}
+.h-buttonheight {
+    height: 14%;
+}
+.margin-top {
+    margin-top: 40px;
+}
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+table {
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px;
+}
+
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+th {
+    background-color: rgb(232, 232, 232);
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+    border-left: none;
+}
+tr.tablePadding>td {
+    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+tr.headerPadding>th {
+    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+td, th {
+    border: 1px solid #ccc;
+    /* border-width border-style border-color */
+}
+
