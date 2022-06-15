@@ -124,7 +124,7 @@ function addRow() {
                 ease-in-out
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                <option value="" selected disabled hidden>--Select--</option>
+                <option value="" selected disabled hidden>Select ▼</option>
                 <option value="Atom">Atom</option>
                 <option value="Bower">Bower</option>
                 <option value="Cargo">Cargo</option>
