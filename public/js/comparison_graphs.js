@@ -15,6 +15,11 @@ function updateDropdown(graph_num) {
     localStorage.setItem("year", selectYear.options[selectYear.selectedIndex].value);
     localStorage.setItem("language-" + String(graph_num), selectLang.options[selectLang.selectedIndex].value);
     localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
+
+    // Automatically select "All" for year dropdown if language is not "All"
+    if (selectLang.options[selectLang.selectedIndex].value != "All") {
+        selectYear.selectedIndex = "0";
+    }
 } 
 
 
