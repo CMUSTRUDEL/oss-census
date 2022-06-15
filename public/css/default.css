@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
+
 li#index  { color:purple; font-weight: bold;} 
 
 .font-family-bebas {
@@ -56,7 +57,7 @@ li#index  { color:purple; font-weight: bold;}
 
 .text-sideHeader2{
     font-size: 1.5vw;
-    line-height: 1.4vw;
+    line-height: 1.8vw;
 }
 
 .text-icons{
@@ -70,7 +71,25 @@ li#index  { color:purple; font-weight: bold;}
 
 .margins-image {
     margin-right: 5vw;
-    margin-left: 4vw;
+}
+
+.padding-header {
+    padding-top: 4vw;
+    padding-bottom: 3vw;
+}
+
+.main-margin {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+.nav-margin {
+    margin-right: 6vw;
+    margin-left: 6vw;
+}
+
+.text-nav {
+    font-size: .8vw;
+    line-height: .5vw;
 }
 
 #gender {
