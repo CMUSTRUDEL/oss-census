@@ -43,8 +43,8 @@
 </head>
 
 
-<body id="comparison">
-    <div class="bg-white font-family-karla">
+<body id="comparison w-full h-full">
+    <div class="bg-white font-family-karla w-full h-full">
         <!-- Top Bar Nav -->
         <div id="navigation">
         </div>
@@ -69,156 +69,106 @@
         </center>
         
         <!-- Graph Comparison -->
-        <div class="flex flex-col items-center justify-center mx-auto px-10">
-            <div class="w-full mx-auto" style="justify-content: space-evenly">
-                <div class="flex flex-col items-center justify-center mx-auto pb-8">
+        <div class="flex flex-col items-center justify-center mx-auto px-10 w-full h-full">
+            <div class="w-full h-full mx-auto" style="justify-content: space-evenly">
+                <div class="flex flex-col items-center pb-8 w-full h-full">
                     <!-- Dropdown for category selection -->
                     <label for="category-select" class="font-bold">Choose a Category:</label>
-                    <select name="category" id="category-select" onchange="updateDropdown(1)" class="form-select appearance-none 
-                        block
-                        w-100
-                        px-2
-                        py-1
-                        my-1
-                        text-center
-                        text-base
-                        font-normal
-                        text-gray-700
-                        bg-white bg-clip-padding bg-no-repeat
-                        border border-solid border-gray-300
-                        rounded
-                        transition
-                        ease-in-out
-                        m-0
-                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
+                    <select name="category" id="category-select" onchange="updateDropdown(1)" class="inline-flex justify-center w-1/6 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
                         <option value="" selected disabled hidden>--Select--</option>
                         <option value="contributor">Contributors</option>
                         <option value="commit">Commits</option>
                         <!-- <option value="all">All</option> -->
                     </select>
                 </div>
-                <div class="w-full mx-auto mb-3" style="justify-content: space-evenly">
-                    <div class="flex flex-col items-center">
-                        <label for="language-select-1" class="font-bold">Choose Languages:</label>
-                        <div id="query" class="flex flex-row space-x-4">
-                            <div class="flex flex-row items-center space-x-4">
-                                <!-- Dropdown for language selection -->
-                                <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="form-select appearance-none 
-                                    block
-                                    w-full
-                                    px-2
-                                    py-1
-                                    my-3
-                                    text-base
-                                    text-center
-                                    font-normal
-                                    text-gray-700
-                                    bg-white bg-clip-padding bg-no-repeat
-                                    border border-solid border-gray-300
-                                    rounded
-                                    transition
-                                    ease-in-out
-                                    m-0
-                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                                    <option value="" selected disabled hidden>--Select--</option>
-                                    <option value="Atom">Atom</option>
-                                    <option value="Bower">Bower</option>
-                                    <option value="Cargo">Cargo</option>
-                                    <option value="Clojars">Clojars</option>
-                                    <option value="CocoaPods">CocoaPods</option>
-                                    <option value="CPAN">CPAN</option>
-                                    <option value="CRAN">CRAN</option>
-                                    <option value="Go">Go</option>
-                                    <option value="Hackage">Hackage</option>
-                                    <option value="Hex">Hex</option>
-                                    <option value="Maven">Maven</option>
-                                    <option value="Meteor">Meteor</option>
-                                    <option value="NPM">NPM</option>
-                                    <option value="NuGet">NuGet</option>
-                                    <option value="Packagist">Packagist</option>
-                                    <option value="PlatformIO">PlatformIO</option>
-                                    <option value="Pub">Pub</option>
-                                    <option value="Puppet">Puppet</option>
-                                    <option value="Pypi">PyPi</option>
-                                    <option value="RubyGems">RubyGems</option>
-                                    <option value="All">All</option>
-                                </select>
-                            </div>                  
-                        </div>
+                <div class="flex flex-col items-center mx-auto w-full h-full">
+                    <label for="language-select-1" class="font-bold">Choose Languages:</label>
+                    <div id="query" class="flex flex-row justify-center space-x-4 w-full h-full">
+                            <!-- Dropdown for language selection -->
+                            <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="inline-flex justify-center w-1/6 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                                <option value="" selected disabled hidden>--Select--</option>
+                                <option value="Atom">Atom</option>
+                                <option value="Bower">Bower</option>
+                                <option value="Cargo">Cargo</option>
+                                <option value="Clojars">Clojars</option>
+                                <option value="CocoaPods">CocoaPods</option>
+                                <option value="CPAN">CPAN</option>
+                                <option value="CRAN">CRAN</option>
+                                <option value="Go">Go</option>
+                                <option value="Hackage">Hackage</option>
+                                <option value="Hex">Hex</option>
+                                <option value="Maven">Maven</option>
+                                <option value="Meteor">Meteor</option>
+                                <option value="NPM">NPM</option>
+                                <option value="NuGet">NuGet</option>
+                                <option value="Packagist">Packagist</option>
+                                <option value="PlatformIO">PlatformIO</option>
+                                <option value="Pub">Pub</option>
+                                <option value="Puppet">Puppet</option>
+                                <option value="Pypi">PyPi</option>
+                                <option value="RubyGems">RubyGems</option>
+                                <option value="All">All</option>
+                            </select>
+                    </div>
 
-                        <label for="year-select" class="font-bold">Choose Year:</label>
-                            <div class="flex flex-row items-center">
-                                <!-- Dropdown for language selection -->
-                                <select name="year" id="year-select" onchange="updateDropdown(1)" class="form-select appearance-none 
-                                    block
-                                    w-full
-                                    px-2
-                                    py-1
-                                    my-3
-                                    text-base
-                                    text-center
-                                    font-normal
-                                    text-gray-700
-                                    bg-white bg-clip-padding bg-no-repeat
-                                    border border-solid border-gray-300
-                                    rounded
-                                    transition
-                                    ease-in-out
-                                    m-0
-                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                                    <option value="2008">2008</option>
-                                    <option value="2009">2009</option>
-                                    <option value="2010">2010</option>
-                                    <option value="2011">2011</option>
-                                    <option value="2012">2012</option>
-                                    <option value="2013">2013</option>
-                                    <option value="2014">2014</option>
-                                    <option value="2015">2015</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2017">2017</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="All" selected>All</option>
-                                </select>
-                        </div>
-
-                        <div class="flex flex-row items-center space-x-4 pb-12">
-                            <button
-                            onclick="addRow()"
-                            type="button"
-                            data-mdb-ripple="true"
-                            data-mdb-ripple-color="light"
-                            class="inline-flex items-center px-4 py-2 justify-center text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-indigo-700 hover:bg-indigo-800">
-                            <svg class="h-5 w-5 mr-2 fill-current" viewBox="0 0 20 20">
-                                <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd">
-                                </path>
-                            </svg>
-                            Add
-                            </button>
-
-                            <button
-                                onclick="removeRow()"
-                                type="button"
-                                data-mdb-ripple="true"
-                                data-mdb-ripple-color="light"
-                                class="inline-flex items-center px-4 py-2 bg-delete1 bg-delete2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                    </svg>
-                            Delete
-                            </button>
-                        </div>
+                    <div class="flex flex-row justify-center space-x-4 pb-4 pt-4">
+                        <button
+                        onclick="addRow()"
+                        type="button"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                        class="inline-flex items-center px-4 py-2 justify-center text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-indigo-700 hover:bg-indigo-800">
+                        <svg class="h-5 w-5 mr-2 fill-current" viewBox="0 0 20 20">
+                            <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" fill-rule="evenodd">
+                            </path>
+                        </svg>
+                        Add
+                        </button>
 
                         <button
-                            onclick="showGraph()"
+                            onclick="removeRow()"
                             type="button"
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="light"
-                            class="animate-pulse w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
-                        >Generate
+                            class="inline-flex items-center px-4 py-2 bg-delete1 bg-delete2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                        Delete
                         </button>
                     </div>
-                </div>                
+
+
+                    <label for="year-select" class="font-bold pt-4">Choose Year:</label>
+                        <div class="flex flex-row justify-center pb-8 w-full">
+                            <!-- Dropdown for language selection -->
+                            <select name="year" id="year-select" onchange="updateDropdown(1)" class="inline-flex justify-center w-1/6 rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                                <option value="2008">2008</option>
+                                <option value="2009">2009</option>
+                                <option value="2010">2010</option>
+                                <option value="2011">2011</option>
+                                <option value="2012">2012</option>
+                                <option value="2013">2013</option>
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="All" selected>All</option>
+                            </select>
+                    </div>
+
+
+                    <button
+                        onclick="showGraph()"
+                        type="button"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                        class="w-2/12 h-1/12 bg-primary2 bg-primary3 text-white text-xl font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla"
+                    >Generate
+                    </button>
+                </div>
             </div>     
             
             
@@ -280,6 +230,12 @@
                 </div>   
             </div>
         </div>
+        <footer id="footer" class="pt-24"></footer>
+        <script> 
+            $(function(){
+                $("#footer").load("footer.html"); 
+            });
+        </script> 
     </div>
 </body>
 </html>
