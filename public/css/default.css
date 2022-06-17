@@ -65,6 +65,11 @@ li#index  { color:purple; font-weight: bold;}
     line-height: 1.4vw; /* 32px */
 }
 
+.icons-dimensions{
+    height:8vw;
+    width:7.5vw;
+}
+
 .margin-top {
     margin-top: 40px;
 }
@@ -97,12 +102,21 @@ li#index  { color:purple; font-weight: bold;}
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
+    height: 25vw;
+    width: 40vw;
 }
 #hands {
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
+    height: 28vw;
+    width: 30vw;
+}
+
+#logo {
+    height: 3.5vw;
+    width: 3.5vw;
 }
 @keyframes fadein {
     from {

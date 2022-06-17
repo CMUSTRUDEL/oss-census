@@ -88,7 +88,7 @@
                             <a href="https://heartbleed.com/" class="text-purple-800">"The Heartbleed Bug"</a>
                             could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.</p> 
                     </div>
-                    <img src="img/Hands.png" alt="Hands" id="hands" class="h-100 w-100 object-right pt-10"/>
+                    <img src="img/Hands.png" alt="Hands" id="hands" class="object-right pt-10"/>
 
                 </article>
 
@@ -111,20 +111,20 @@
             </div>
             <div class="grid grid-cols-4 justify-center gap-x-24 pt-12 main-margin">
                 <a class="flex flex-col content-center" href="comparison.html">
-                    <img src="img/People-Standing.png" alt="Hands" class="h-32 w-30 self-center"/>
+                    <img src="img/People-Standing.png" alt="Hands" class="icons-dimensions self-center"/>
                     <p class="w-2/3 h-2/3 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">The general trend of gender distribution in OSS as a whole</p>
                 </a>
                 <a class="flex flex-col content-center" href="ecosystem.html">
-                        <img src="img/Computer-Cog.png" alt="Hands" class="h-32 w-30 self-center"/>
+                        <img src="img/Computer-Cog.png" alt="Hands" class="icons-dimensions self-center"/>
                         <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A decomposition of the entire population into ecosystems</p>
                 </a>
                 <a class="flex flex-col content-center" href="overview.html">
-                    <img src="img/DataImg.png" alt="Hands" class="h-32 w-30 self-center"/>
+                    <img src="img/DataImg.png" alt="Hands" class="icons-dimensions self-center"/>
                     <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A longitudinal analysis to reflect how women's participation has changed with time
                     </p>
                 </a>
                 <a class="flex flex-col content-center" href="overview.html">
-                    <img src="img/Clipboard.png" alt="Hands" class="h-32 w-30 self-center"/>
+                    <img src="img/Clipboard.png" alt="Hands" class="icons-dimensions self-center"/>
                     <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A comprehensive report of statistics on core vs. all (tentative wording)
                     </p>
                 </a>
@@ -133,13 +133,13 @@
 
         <div class="flex pt-2 items-center overflow-hidden pb-12 main-margin">
             <article class="flex flex-row md:flex-row max-w-10xl">
-                <img src="img/Gender_Img.png" alt="gender" id="gender" class="h-100 w-100 object-left margins-image pt-10"/>
+                <img src="img/Gender_Img.png" alt="gender" id="gender" class="object-left margins-image pt-10"/>
                 <div class ="flex flex-col text-right w-11/12">
                     <p class = "font-family-bebas margin-top text-purple-900 text-sideHeader">Gender Inference</p>
                     <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed pb-16">
                         We used computational approaches to infer binary gender from names. In this study, we chose to use 
-                        <a href="https://namsor.app/" class="text-purple-700">NamSor</a>
-                        , an automatic tool that can infer gender based on one’s name and cultural background, for its high accuracy among similar tools**. We acknowledge that binary gender does not reflect the current perception of gender. Moreover, name-based inference has limitations. However, our results can still provide insights into the gender diversity status quo in OSS. Future researchers could use the results to conduct more targeted studies.
+                        <a href="https://namsor.app/" class="text-purple-700">NamSor,</a>
+                        an automatic tool that can infer gender based on one’s name and cultural background, for its high accuracy among similar tools**. We acknowledge that binary gender does not reflect the current perception of gender. Moreover, name-based inference has limitations. However, our results can still provide insights into the gender diversity status quo in OSS. Future researchers could use the results to conduct more targeted studies.
                     </p> 
                     <p class="font-family-karla text-xs text-left">
                         * &nbsp; Please see our annotated bibliography<br>
@@ -153,19 +153,13 @@
         </div>
 
 
+        <footer id="footer"></footer>
+        <script> 
+            $(function(){
+                $("#footer").load("footer.html"); 
+            });
+        </script> 
 
-        <footer class="w-full border-t bg-white">
-        
-            <div class="w-full container mx-auto flex flex-col items-center">
-                <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-                    <a href="#" class="uppercase px-3">About Us</a>
-                    <a href="#" class="uppercase px-3">Privacy Policy</a>
-                    <a href="#" class="uppercase px-3">Terms & Conditions</a>
-                    <a href="#" class="uppercase px-3">Contact Us</a>
-                </div>
-                <div class="uppercase pb-6">&copy; myblog.com</div>
-            </div>
-        </footer>
     </div>
 </body>
 </html>
