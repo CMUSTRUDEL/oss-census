@@ -15,11 +15,6 @@ function updateDropdown(graph_num) {
     localStorage.setItem("year", selectYear.options[selectYear.selectedIndex].value);
     localStorage.setItem("language-" + String(graph_num), selectLang.options[selectLang.selectedIndex].value);
     localStorage.setItem("category", selectCat.options[selectCat.selectedIndex].value);
-
-    // Automatically select "All" for year dropdown if language is not "All"
-    if (selectLang.options[selectLang.selectedIndex].value != "All") {
-        selectYear.selectedIndex = "0";
-    }
 } 
 
 
@@ -112,24 +107,8 @@ function addRow() {
     div.innerHTML = `
         <div class="flex flex-row items-center space-x-4">
             <!-- Dropdown for language selection -->
-            <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="updateDropdown(` + String(numRows) + `)" class="form-select appearance-none 
-                block
-                w-full
-                px-2
-                py-1
-                my-3
-                text-base
-                text-center
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding bg-no-repeat
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                <option value="" selected disabled hidden>Select ▼</option>
+            <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="updateDropdown(` + String(numRows) + `)" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                <option value="" selected disabled hidden>--Select--</option>
                 <option value="Atom">Atom</option>
                 <option value="Bower">Bower</option>
                 <option value="Cargo">Cargo</option>

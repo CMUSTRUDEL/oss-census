@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
+
 li#index  { color:purple; font-weight: bold;} 
 
 .font-family-bebas {
@@ -35,12 +36,65 @@ li#index  { color:purple; font-weight: bold;}
 .text-primary{
     color: #732867;
 }
+/* text sizing */
+
 .text-paragraph{
-    font-size: 1.4rem; /* 24px */
-    line-height: 2rem; /* 32px */
+    font-size: 1.2vw;
+    line-height: 1.8vw; /* 32px */
 }
+.text-mainHeader{
+    font-size: 5.5vw;
+    line-height: 5vw;
+}
+.text-mainHeader2{
+    font-size: 2vw;
+    line-height: 2.3vw;
+}
+.text-sideHeader{
+    font-size: 3vw;
+    line-height: 2.5vw;
+}
+
+.text-sideHeader2{
+    font-size: 1.5vw;
+    line-height: 1.8vw;
+}
+
+.text-icons{
+    font-size: 1vw;
+    line-height: 1.4vw; /* 32px */
+}
+
+.icons-dimensions{
+    height:8vw;
+    width:7.5vw;
+}
+
 .margin-top {
     margin-top: 40px;
+}
+
+.margins-image {
+    margin-right: 5vw;
+}
+
+.padding-header {
+    padding-top: 4vw;
+    padding-bottom: 3vw;
+}
+
+.main-margin {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+.nav-margin {
+    margin-right: 6vw;
+    margin-left: 6vw;
+}
+
+.text-nav {
+    font-size: .8vw;
+    line-height: .5vw;
 }
 
 #gender {
@@ -48,12 +102,21 @@ li#index  { color:purple; font-weight: bold;}
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
+    height: 25vw;
+    width: 40vw;
 }
 #hands {
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
+    height: 28vw;
+    width: 30vw;
+}
+
+#logo {
+    height: 3.5vw;
+    width: 3.5vw;
 }
 @keyframes fadein {
     from {

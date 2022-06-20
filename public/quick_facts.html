@@ -71,7 +71,7 @@
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select">
-                    <option value="" selected disabled hidden>Select a Topic ▼</option>
+                    <option value="" selected disabled hidden> --Select a Topic-- </option>
                     <option value="Largest Ecosystem">Largest Ecosystem</option>
                     <option value="Community Highest Women Percentage">Community with highest women percentage</option>
                     <option value="Community Lowest Women Percentage">Community with lowest women percentage</option>
@@ -140,18 +140,12 @@
             </div>
         </div>
 
-        <footer class="w-full border-t bg-white">
-        
-            <div class="w-full container mx-auto flex flex-col items-center">
-                <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-                    <a href="#" class="uppercase px-3">About Us</a>
-                    <a href="#" class="uppercase px-3">Privacy Policy</a>
-                    <a href="#" class="uppercase px-3">Terms & Conditions</a>
-                    <a href="#" class="uppercase px-3">Contact Us</a>
-                </div>
-                <div class="uppercase pb-6">&copy; myblog.com</div>
-            </div>
-        </footer>
+        <footer id="footer" class="pt-24"></footer>
+        <script> 
+            $(function(){
+                $("#footer").load("footer.html"); 
+            });
+        </script> 
     </div>
 </body>
 </html>
