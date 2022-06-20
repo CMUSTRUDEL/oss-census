@@ -74,15 +74,6 @@
     margin-top: 40px;
 }
 
-.nav-margin {
-    margin-right: 6vw;
-    margin-left: 6vw;
-}
-
-.text-nav {
-    font-size: .8vw;
-    line-height: .5vw;
-}
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -135,7 +126,10 @@ td, th {
     /* border-width border-style border-color */
 }
 
-#logo {
-    height: 3.5vw;
-    width: 3.5vw;
+.dropdowns {
+    border:5px; 
+    border-style:dotted; 
+    border-color:purple; 
+    border-radius: 25px;
+    padding: 1em;
 }

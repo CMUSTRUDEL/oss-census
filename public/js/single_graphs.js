@@ -11,6 +11,7 @@ function showGraphSingle() {
   
     if ((langOpt == 'All') && (cat != "contributor" )) {
         alert("Only Contributor graphs available at this time");
+        document.getElementById("category-select").selectedIndex = "1";
     }
 
     if ((yearOpt == "All") && (langOpt == "All")) {
