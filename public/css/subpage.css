@@ -139,3 +139,10 @@ td, th {
     height: 3.5vw;
     width: 3.5vw;
 }
+.dropdowns {
+    border:5px; 
+    border-style:dotted; 
+    border-color:purple; 
+    border-radius: 25px;
+    padding: 1em;
+} 
