@@ -155,3 +155,11 @@ td, th {
     width: 4vw;
     margin-top: 1vw;
 }
+.dropdowns {
+    border:5px; 
+    border-style:dotted; 
+    border-color:purple; 
+    border-radius: 25px;
+    padding: 1em;
+} 
+

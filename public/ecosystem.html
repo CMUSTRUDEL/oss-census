@@ -64,10 +64,26 @@
         </div>
 
         <div class = "w-full flex flex-col items-center">
-            <div>
-                <label for="ecosystem-select" class="font-bold"></label>
-                <select name="ecosystem" id="ecosystem-select" onchange="updateEco()" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" aria-expanded="true" aria-haspopup="true" aria-label="Default select">
-                    <option value="" selected disabled hidden> --Select an Ecosystem-- </option>
+            <div class="flex flex-col items-center justify-center w-1/2 mx-auto mb-6">
+                <label for="ecosystem-select" class="font-bold">Choose an Ecosystem:</label>
+                <select name="ecosystem" id="ecosystem-select" onchange="updateEco()" class="
+                    block
+                    w-1/3
+                    px-2
+                    py-1
+                    text-center
+                    my-3
+                    text-base
+                    text-center
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding bg-no-repeat
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"                    aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                    <option value="" selected disabled hidden> --Select-- </option>
                     <option value="Atom">Atom</option>
                     <option value="Bower">Bower</option>
                     <option value="CPAN">CPAN</option>
