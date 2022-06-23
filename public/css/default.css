@@ -30,6 +30,9 @@ li#index  { color:purple; font-weight: bold;}
 .bg-primary{
     background: #732867;
 }
+.bg-footer{
+    background: #F1F1F1;
+}
 .bg-midbar{
     background: #ECE4E3;
 }
@@ -118,6 +121,17 @@ li#index  { color:purple; font-weight: bold;}
     height: 3.5vw;
     width: 3.5vw;
 }
+
+#logo2 {
+    height: 3.5vw;
+    width: 9vw;
+    margin-right: 2vw;
+}
+#logo3 {
+    height: 7vw;
+    width: 4vw;
+}
+
 @keyframes fadein {
     from {
         opacity:0;
