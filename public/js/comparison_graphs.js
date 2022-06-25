@@ -110,49 +110,47 @@ function addRow() {
     div.className = 'row';
     div.id = 'row-' + String(numRows)
     div.innerHTML = `
-        <div class="flex flex-row items-center space-x-4">
-            <!-- Dropdown for language selection -->
-            <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="updateDropdown(` + String(numRows) + `)" class="  
-                block
-                w-1/3
-                px-2
-                py-1
-                my-3
-                text-base
-                text-center
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding bg-no-repeat
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"                 aria-expanded="true" aria-haspopup="true" aria-label="Default select">
-                <option value="" selected disabled hidden>--Select--</option>
-                <option value="Atom">Atom</option>
-                <option value="Bower">Bower</option>
-                <option value="Cargo">Cargo</option>
-                <option value="Clojars">Clojars</option>
-                <option value="CocoaPods">CocoaPods</option>
-                <option value="CPAN">CPAN</option>
-                <option value="CRAN">CRAN</option>
-                <option value="Go">Go</option>
-                <option value="Hackage">Hackage</option>
-                <option value="Hex">Hex</option>
-                <option value="Maven">Maven</option>
-                <option value="Meteor">Meteor</option>
-                <option value="NPM">NPM</option>
-                <option value="NuGet">NuGet</option>
-                <option value="Packagist">Packagist</option>
-                <option value="PlatformIO">PlatformIO</option>
-                <option value="Pub">Pub</option>
-                <option value="Puppet">Puppet</option>
-                <option value="PyPi">PyPi</option>
-                <option value="RubyGems">RubyGems</option>
-                <option value="All">All</option>
-            </select>
-        </div>
+        <!-- Dropdown for language selection -->
+        <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="updateDropdown(` + String(numRows) + `)" class="  
+            block
+            w-full
+            px-2
+            py-1
+            my-3
+            text-base
+            text-center
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding bg-no-repeat
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            aria-expanded="true" aria-haspopup="true" aria-label="Default select">                 aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+            <option value="" selected disabled hidden>--Select--</option>
+            <option value="Atom">Atom</option>
+            <option value="Bower">Bower</option>
+            <option value="Cargo">Cargo</option>
+            <option value="Clojars">Clojars</option>
+            <option value="CocoaPods">CocoaPods</option>
+            <option value="CPAN">CPAN</option>
+            <option value="CRAN">CRAN</option>
+            <option value="Go">Go</option>
+            <option value="Hackage">Hackage</option>
+            <option value="Hex">Hex</option>
+            <option value="Maven">Maven</option>
+            <option value="Meteor">Meteor</option>
+            <option value="NPM">NPM</option>
+            <option value="NuGet">NuGet</option>
+            <option value="Packagist">Packagist</option>
+            <option value="PlatformIO">PlatformIO</option>
+            <option value="Pub">Pub</option>
+            <option value="Puppet">Puppet</option>
+            <option value="PyPi">PyPi</option>
+            <option value="RubyGems">RubyGems</option>
+            <option value="All">All</option>
+        </select>
     `;
   
     document.getElementById('query').appendChild(div);
