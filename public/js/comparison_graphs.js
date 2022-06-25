@@ -113,7 +113,7 @@ function addRow() {
         <!-- Dropdown for language selection -->
         <select name="language-` + String(numRows) + `" id="language-select-` + String(numRows) + `" onchange="updateDropdown(` + String(numRows) + `)" class="  
             block
-            w-1/3
+            w-full
             px-2
             py-1
             my-3
