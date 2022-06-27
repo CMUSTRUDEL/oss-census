@@ -46,6 +46,9 @@
             $(function(){
                 $("#navigation").load("nav.html"); 
             });
+            $(function(){
+                $("#dataDescription").load("data_description.html"); 
+            });
         </script> 
 
 
@@ -137,6 +140,21 @@
                         </figure>
                     </a>
                 </div>
+
+                <div id="dataDescription"></div>
+                
+
+                <p>
+                    <br>
+                    We use OSS libraries from Libraries.io for our data source.
+                    <b>Extracting the list of OSS infrastructural projects.</b> For
+                    Libraries.io, we downloaded the dump of January 12, 2020,
+                    from the website. In this study, we consider a GITHUB project
+                    registered at Libraries.io as an OSS project. Among the 38
+                    package managers hosted on Libraries.io, we picked the 20
+                    largest ones to conduct our analysis. We consider each package
+                    manager as an ecosystem.
+                </p>
             </div>
         </div>
 
