@@ -34,10 +34,16 @@ li#index  { color:purple; font-weight: bold;}
     background: #F1F1F1;
 }
 .bg-midbar{
-    background: #ECE4E3;
+    background: #F4F1E9;
 }
 .text-primary{
-    color: #732867;
+    color: #2F3E46;
+}
+.text-primary2{
+    color: #52796F;
+}
+.text-primary3{
+    color: #354F52;
 }
 /* text sizing */
 
@@ -126,6 +132,8 @@ li#index  { color:purple; font-weight: bold;}
     height: 3.5vw;
     width: 9vw;
     margin-right: 2vw;
+    margin-top: 2vw;
+
 }
 #logo3 {
     height: 7vw;
