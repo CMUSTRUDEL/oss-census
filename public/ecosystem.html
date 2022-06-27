@@ -40,8 +40,7 @@
 
 <body>
     <div class="bg-white font-family-karla">
-        <!-- Top Bar Nav -->
-        <div id="navigation"></div>
+        <!-- Load HTML from other pages, identified by id -->
         <script> 
             $(function(){
                 $("#navigation").load("nav.html"); 
@@ -52,6 +51,10 @@
         </script> 
 
 
+        <!-- Top Bar Nav -->
+        <div id="navigation"></div>
+
+        <!-- Header -->
         <div class="w-full p-16">
             <div class="font-bold text-primary uppercase text-7xl font-family-bebas">
                 <center>Data By Ecosystem</center>
@@ -66,6 +69,7 @@
             </span>
         </div>
 
+        <!-- Select Ecosystem Dropdown -->
         <div class = "w-full flex flex-col items-center">
             <div class="flex flex-col items-center justify-center w-1/2 mx-auto mb-6">
                 <label for="ecosystem-select" class="font-bold">Choose an Ecosystem:</label>
@@ -110,6 +114,7 @@
                 </select>
             </div>
 
+            <!-- Tab graph switch -->
             <div class="w-1/2 h-full pt-16">
                 <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
                     <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('cont', null)">Contributors</button>
@@ -141,22 +146,40 @@
                     </a>
                 </div>
 
-                <p>
-                    <br>
-                    We use OSS libraries from Libraries.io for our data source, 
-                    <button onclick="showDataDescription()"><b>extracting a list of OSS infrastructural projects.</b>
-                    </button> For
-                    Libraries.io, we downloaded the dump of January 12, 2020,
-                    from the website. In this study, we consider a GITHUB project
-                    registered at Libraries.io as an OSS project. Among the 38
-                    package managers hosted on Libraries.io, we picked the 20
-                    largest ones to conduct our analysis. We consider each package
-                    manager as an ecosystem.
-                </p>
+                <!-- Data source description -->
+                <div class="dropdowns mt-8">
+                    <h2 class="font-medium leading-tight text-1xl mt-0 mb-2 text-black-800">
+                        <i>Data Sources</i>
+                    </h2>
+                    <p>
+                        We use OSS libraries from Libraries.io for our data source, 
+                        <button onclick="showDataDescription()"><b>extracting a list of OSS infrastructural projects.</b>
+                        </button> For
+                        Libraries.io, we downloaded the dump of January 12, 2020,
+                        from the website. In this study, we consider a GITHUB project
+                        registered at Libraries.io as an OSS project. Among the 38
+                        package managers hosted on Libraries.io, we picked the 20
+                        largest ones to conduct our analysis. We consider each package
+                        manager as an ecosystem.
+                    </p>
 
-                <div id="dataDescription"></div>
-
+                    <div id="dataDescription"></div>
+                </div>
             </div>
+
+            <!-- Scroll to bottom button -->
+            <button
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+                class="inline-block p-3 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out hidden bottom-5 right-5 fixed"
+                id="btn-to-bottom"
+                onclick="scrollToBottom()"
+            >
+            Read about Data Sources
+            </button>
+            <script src="js/scroll.js"></script>
+
         </div>
 
         <footer id="footer" class="pt-24"></footer>
