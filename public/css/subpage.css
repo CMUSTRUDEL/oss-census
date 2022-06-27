@@ -34,6 +34,9 @@
 .bg-primary{
     background: #732867;
 }
+.bg-footer{
+    background: #F1F1F1;
+}
 .bg-primary2{
     background: #FF9119
 }
@@ -138,6 +141,19 @@ td, th {
 #logo {
     height: 3.5vw;
     width: 3.5vw;
+}
+
+#logo2 {
+    height: 3.5vw;
+    width: 9vw;
+    margin-top: 2vw;
+    margin-right: 2vw;
+}
+
+#logo3 {
+    height: 7vw;
+    width: 4vw;
+    margin-top: 2vw;
 }
 .dropdowns {
     border:5px; 
