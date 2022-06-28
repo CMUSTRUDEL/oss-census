@@ -56,18 +56,21 @@
     line-height: 1.75rem; /* 32px */
 }
 .text-primary3{
-    color: #F29D4B
+    color: #F29D4B;
 }
+
+.text-primary4 {
+    color: #7E2D00;
+}
+
 .bg-delete1{
     background-color: #922B3E
 }
+
 .bg-delete2:hover {
     background-color: #6D0325
 }
 
-.text-primary3{
-    color: #F29D4B
-}
 .text-paragraph{
     font-size: 1.4rem; /* 24px */
     line-height: 2rem; /* 32px */
@@ -159,7 +162,6 @@ td, th {
 #logo3 {
     height: 7vw;
     width: 4vw;
-    margin-top: 2vw;
 }
 .dropdowns {
     border:5px; 
