@@ -31,9 +31,11 @@
 .w-128{
     width: 450px;
 }
+
 .bg-primary{
-    background: #732867;
+    background: #2F3E46;
 }
+
 .bg-footer{
     background: #F1F1F1;
 }
@@ -136,6 +138,10 @@ tr.headerPadding>th {
 td, th {
     border: 1px solid #ccc;
     /* border-width border-style border-color */
+}
+
+.h-gradient{
+    height: 40vw;
 }
 
 #logo {
