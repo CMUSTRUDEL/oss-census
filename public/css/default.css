@@ -78,6 +78,10 @@ li#index  { color:purple; font-weight: bold;}
     height:8vw;
     width:7.5vw;
 }
+.icons-dimensions2{
+    height:8vw;
+    width:6.5vw;
+}   
 
 .margin-top {
     margin-top: 40px;
@@ -90,6 +94,11 @@ li#index  { color:purple; font-weight: bold;}
 .padding-header {
     padding-top: 4vw;
     padding-bottom: 3vw;
+}
+
+.padding-mid {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
 }
 
 .main-margin {
