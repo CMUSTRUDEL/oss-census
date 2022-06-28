@@ -53,7 +53,7 @@ function changeGraph(default_ecosystem) {
         if (currType == type) {
             // display selected graph type
             currHTML.setAttribute("style", "display:show");
-            currButton.setAttribute("class", "w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl")
+            currButton.setAttribute("class", "w-full h-full bg-primary hover:bg-green-900 text-white text-lg font-semibold rounded-t-2xl")
         }
         else {
             currHTML.setAttribute("style", "display:none");

@@ -30,11 +30,20 @@ li#index  { color:purple; font-weight: bold;}
 .bg-primary{
     background: #732867;
 }
+.bg-footer{
+    background: #F1F1F1;
+}
 .bg-midbar{
-    background: #ECE4E3;
+    background: #F4F1E9;
 }
 .text-primary{
-    color: #732867;
+    color: #2F3E46;
+}
+.text-primary2{
+    color: #52796F;
+}
+.text-primary3{
+    color: #354F52;
 }
 /* text sizing */
 
@@ -69,6 +78,10 @@ li#index  { color:purple; font-weight: bold;}
     height:8vw;
     width:7.5vw;
 }
+.icons-dimensions2{
+    height:8vw;
+    width:6.5vw;
+}   
 
 .margin-top {
     margin-top: 40px;
@@ -81,6 +94,11 @@ li#index  { color:purple; font-weight: bold;}
 .padding-header {
     padding-top: 4vw;
     padding-bottom: 3vw;
+}
+
+.padding-mid {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
 }
 
 .main-margin {
@@ -118,6 +136,19 @@ li#index  { color:purple; font-weight: bold;}
     height: 3.5vw;
     width: 3.5vw;
 }
+
+#logo2 {
+    height: 3.5vw;
+    width: 9vw;
+    margin-right: 2vw;
+    margin-top: 2vw;
+
+}
+#logo3 {
+    height: 7vw;
+    width: 4vw;
+}
+
 @keyframes fadein {
     from {
         opacity:0;
