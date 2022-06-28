@@ -101,47 +101,49 @@
                 
                     <label for="language-select-1" class="font-bold">Choose Languages:</label>
                     <div id="query" class="flex flex-row justify-center space-x-4 w-full h-full">
-                        <!-- Dropdown for language selection -->
-                        <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="
-                            block
-                            w-1/3
-                            px-2
-                            py-1
-                            my-3
-                            text-base
-                            text-center
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding bg-no-repeat
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            aria-expanded="true" aria-haspopup="true" aria-label="Default select">
-                            <option value="" selected disabled hidden>--Select--</option>
-                            <option value="Atom">Atom</option>
-                            <option value="Bower">Bower</option>
-                            <option value="Cargo">Cargo</option>
-                            <option value="Clojars">Clojars</option>
-                            <option value="CocoaPods">CocoaPods</option>
-                            <option value="CPAN">CPAN</option>
-                            <option value="CRAN">CRAN</option>
-                            <option value="Go">Go</option>
-                            <option value="Hackage">Hackage</option>
-                            <option value="Hex">Hex</option>
-                            <option value="Maven">Maven</option>
-                            <option value="Meteor">Meteor</option>
-                            <option value="NPM">NPM</option>
-                            <option value="NuGet">NuGet</option>
-                            <option value="Packagist">Packagist</option>
-                            <option value="PlatformIO">PlatformIO</option>
-                            <option value="Pub">Pub</option>
-                            <option value="Puppet">Puppet</option>
-                            <option value="Pypi">PyPi</option>
-                            <option value="RubyGems">RubyGems</option>
-                            <option value="All">All</option>
-                        </select>
+                        <div id="row-1">
+                            <!-- Dropdown for language selection -->
+                            <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="
+                                block
+                                w-full
+                                px-2
+                                py-1
+                                my-3
+                                text-base
+                                text-center
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                                <option value="" selected disabled hidden>--Select--</option>
+                                <option value="Atom">Atom</option>
+                                <option value="Bower">Bower</option>
+                                <option value="Cargo">Cargo</option>
+                                <option value="Clojars">Clojars</option>
+                                <option value="CocoaPods">CocoaPods</option>
+                                <option value="CPAN">CPAN</option>
+                                <option value="CRAN">CRAN</option>
+                                <option value="Go">Go</option>
+                                <option value="Hackage">Hackage</option>
+                                <option value="Hex">Hex</option>
+                                <option value="Maven">Maven</option>
+                                <option value="Meteor">Meteor</option>
+                                <option value="NPM">NPM</option>
+                                <option value="NuGet">NuGet</option>
+                                <option value="Packagist">Packagist</option>
+                                <option value="PlatformIO">PlatformIO</option>
+                                <option value="Pub">Pub</option>
+                                <option value="Puppet">Puppet</option>
+                                <option value="Pypi">PyPi</option>
+                                <option value="RubyGems">RubyGems</option>
+                                <option value="All">All</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="flex flex-row justify-center space-x-4 pb-4 pt-4">
