@@ -8,7 +8,6 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-  console.log(document.body.scrollTop)
   if (document.body.scrollTop < 20 || document.documentElement.scrollTop < 20) {
     scrollButton.style.display = 'block';
   } else {
