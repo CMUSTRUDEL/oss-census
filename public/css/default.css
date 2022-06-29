@@ -9,6 +9,22 @@ li#index  { color:purple; font-weight: bold;}
     font-style: normal;
     letter-spacing: 4.5px;
 }
+
+
+.lato-regular {
+    font-family: lato,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-bold {
+    font-family: lato,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
 .font-family-karla {
     font-family: karla;
 }
@@ -37,13 +53,13 @@ li#index  { color:purple; font-weight: bold;}
     background: #F4F1E9;
 }
 .text-primary{
-    color: #2F3E46;
+    color: #325334;
 }
 .text-primary2{
     color: #52796F;
 }
 .text-primary3{
-    color: #354F52;
+    color: #6F8A6B;
 }
 /* text sizing */
 
@@ -140,10 +156,10 @@ li#index  { color:purple; font-weight: bold;}
 #logo2 {
     height: 3.5vw;
     width: 9vw;
-    margin-right: 2vw;
     margin-top: 2vw;
-
+    margin-right: 2vw;
 }
+
 #logo3 {
     height: 7vw;
     width: 4vw;
