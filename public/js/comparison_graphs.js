@@ -24,6 +24,8 @@ function updateDropdown(graph_num) {
 
 
 function showGraph() {
+    // Shows specific graphs by altering appropriate 'display' style element
+
     let cat;
     let lang;
     let noEmptyOptions = true;
@@ -60,7 +62,6 @@ function showGraph() {
         
             // Show commit or contributor graph
             if (langOpt == "All") {
-                // Hide these graphs if comparison on languages to be displayed
                 comm.setAttribute("style", "display:none");
                 cont.setAttribute("style", "display:none");
             }
@@ -175,6 +176,8 @@ function removeRow() {
 
 
 function addGraph() {
+    // Adds HTML for new graph and selects appropriate column
+    
     const div = document.createElement('div');  
     div.className = 'graph';
     div.id = 'graph-' + String(numRows)
