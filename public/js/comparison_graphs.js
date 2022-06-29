@@ -18,6 +18,11 @@ function updateDropdown(graph_num) {
 
     // Automatically select "All" for year dropdown if language is not "All"
     if (selectLang.options[selectLang.selectedIndex].value != "All") {
+        // Warning message if user does not select All Years for individual lanugage
+        if (selectYear.options[selectYear.selectedIndex].value != "All"
+         && selectYear.selectedIndex != "0"){
+            alert("Individual Ecosystems can only be graphed across 'All' Years")
+        }
         selectYear.selectedIndex = "0";
     }
 } 
@@ -130,6 +135,7 @@ function addRow() {
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             aria-expanded="true" aria-haspopup="true" aria-label="Default select">                 aria-expanded="true" aria-haspopup="true" aria-label="Default select">
             <option value="" selected disabled hidden>--Select--</option>
+            <option value="All">All</option>
             <option value="Atom">Atom</option>
             <option value="Bower">Bower</option>
             <option value="Cargo">Cargo</option>
@@ -150,7 +156,6 @@ function addRow() {
             <option value="Puppet">Puppet</option>
             <option value="PyPi">PyPi</option>
             <option value="RubyGems">RubyGems</option>
-            <option value="All">All</option>
         </select>
     `;
   
