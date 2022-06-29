@@ -383,6 +383,10 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
 
 
     for lang in langs:
+        # Omit "All" language for polar chart
+        if lang.lower() == "all":
+            continue
+
         # Retrieve data from language specific csv
         dat = pd.read_csv(dat_path+lang+'.csv', error_bad_lines=False, 
                         warn_bad_lines=False, index_col=False)
