@@ -42,3 +42,11 @@ function showGraphSingle() {
 }
 
 
+function showGraphPercent() {
+    // Graphs Percent area graph
+    yearOpt = "All";
+    // Percent area graph requires same vars as stack area
+    graphOpt = "percent";
+    parseSingleData("Contributor", yearOpt, graphOpt);
+    graphPercent();
+}

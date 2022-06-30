@@ -38,8 +38,12 @@ function parseSingleData(cat, yearOpt, graphOpt) {
         parseBarData(cat) 
     }
     else if (graphOpt == "stack") {
-        // Bar graph parsing
+        // Stack area graph parsing
         parseStackData(cat) 
+    }
+    else if (graphOpt == "percent") {
+        // Stack percent area parsing
+        parsePercentData(cat)
     }
     else {
         error("Invalid graph option passed to parser...");
@@ -66,4 +70,16 @@ function parseStackData(cat) {
     obj.x_categories = data_stack[cat]["x_categories"];
     obj.height_ratio = data_stack[cat]["height_ratio"];
     console.log("Finished parsing Single Stack Area graph data")
+}
+
+function parsePercentData(cat) {
+    console.log("Parsing Percent graph data...");
+
+    // obj data variable stored in data.js, taken into function for single graphs
+    obj.title = data_percent[cat]["title"];
+    obj.label_y = data_percent[cat]["label_y"];
+    obj.data = data_percent[cat]["data"];
+    obj.x_categories = data_percent[cat]["x_categories"];
+    obj.height_ratio = data_percent[cat]["height_ratio"];
+    console.log("Finished parsing Percent Area graph data")
 }
