@@ -2,14 +2,7 @@ function graphContributor(graph_id) {
     new Highcharts.chart('cont-' + graph_id, {
     chart: {
         type: 'column',
-        height: obj.height_ratio + '%',
-        events: {
-            click: function (event) {
-                // Redraw same chart (placeholder for another)
-                var tempScrollTop = $(window).scrollTop();
-                $(window).scrollTop(tempScrollTop);
-            }
-        }
+        height: obj.height_ratio + '%'
     },
     title: {
         text: obj.title
