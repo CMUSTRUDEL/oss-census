@@ -407,8 +407,9 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
         if not data:
             data.append(add_data)
         else:
-            for i in range(len(data)):
-                if data[i]["z"] >= add_data["z"]:
+            # Add length value in order smallest to largest
+            for i, lang_data in enumerate(data):
+                if lang_data["z"] >= add_data["z"]:
                     data.insert(i, add_data)
                     break
                 elif i == len(data) - 1:
@@ -505,35 +506,6 @@ def load_contributor_stack(dat_path, store_path, langs):
     # Save data to CSV for additional data analysis 
     csv_data = pd.DataFrame(data=out_dict['data']).explode('data')
     csv_data.to_csv(store_path+'/'+'all_stack'+'.csv')
-
-
-# def load_commit_bar(dat_path, store_path, compare_opt):
-#     """
-#     Stores formatted JavaScript variables for graph from:
-#     All active project count by window: './project/'
-
-#     :string dat_path: CSV data path
-#     :string store_path: path to Contributor graph settings
-#     :string compare_opt: "male" or "all" gender(s) that is compared against data for females
-#     :return: None
-#     """ 
-
-#     return
-
-
-# def load_project_bar(dat_path, store_path, compare_opt):
-#     """
-#     Stores formatted JavaScript variables for graph from:
-#     All active project count by window: './project/'
-
-#     :string dat_path: CSV data path
-#     :string store_path: path to Contributor graph settings
-#     :string compare_opt: "male" or "all" gender(s) that is compared against data for females
-#     :return: None
-#     """ 
-
-#     return
-
 
 
 ## Private Functions ##
