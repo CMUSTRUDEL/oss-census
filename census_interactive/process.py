@@ -407,8 +407,9 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
         if not data:
             data.append(add_data)
         else:
-            for i in range(len(data)):
-                if data[i]["z"] >= add_data["z"]:
+            # Add length value in order smallest to largest
+            for i, lang_data in enumerate(data):
+                if lang_data["z"] >= add_data["z"]:
                     data.insert(i, add_data)
                     break
                 elif i == len(data) - 1:
@@ -448,6 +449,10 @@ def load_contributor_stack(dat_path, store_path, langs):
     data = []
 
     for lang in langs:
+        # Omit "All" language for stack area chart
+        if lang.lower() == "all":
+            continue
+
         # Retrieve data from language specific csv
         dat = pd.read_csv(dat_path+lang+'.csv', error_bad_lines=False, 
                         warn_bad_lines=False, index_col=False)
@@ -503,33 +508,83 @@ def load_contributor_stack(dat_path, store_path, langs):
     csv_data.to_csv(store_path+'/'+'all_stack'+'.csv')
 
 
-# def load_commit_bar(dat_path, store_path, compare_opt):
-#     """
-#     Stores formatted JavaScript variables for graph from:
-#     All active project count by window: './project/'
 
-#     :string dat_path: CSV data path
-#     :string store_path: path to Contributor graph settings
-#     :string compare_opt: "male" or "all" gender(s) that is compared against data for females
-#     :return: None
-#     """ 
+def load_contributor_percent(dat_path, store_path):
+    """
+    Stores formatted JavaScript variables for graph from:
+    All active contributor by gender by window: './contributor/all/'
+    Core active contributor by gender by window: './contributor/core/'
 
-#     return
+    :string dat_path: CSV pandas data
+    :string store_path: path to Contributor graph settings
+    :list langs: alphabetized list of languages used
+    :return: None
+    """ 
+
+    data = []
+
+    # Retrieve data from language specific csv
+    dat = pd.read_csv(dat_path+'All.csv', error_bad_lines=False, 
+                    warn_bad_lines=False, index_col=False)
+
+    max_win = 45
+    dat = dat[dat['win']<=max_win]
+
+    # Format column data of contributors by gender
+    female_data = {}
+    female_data["data"] = list(dat["female_all"])
+    female_data["name"] = "Female"
+
+    male_data = {}
+    male_data["data"] = list(dat["male_all"])
+    male_data["name"] = "Male"
+
+    unknown_data = {}
+    unknown_data["data"] = list(dat["unknown_all"])
+    unknown_data["name"] = "Unknown"
+
+    data.append(unknown_data)
+    data.append(male_data)
+    data.append(female_data)
+    
+
+    # Change window to date
+    wins = dat["win"]
+    x = []
+    for win in wins:
+        time = 3 * win
+        year = 2008 + math.floor(time/12)
+        month = time - math.floor(time/12)*12
+        if not month:
+            month = 12
+        x.append("{}-{}".format(year,month))
+    wins = x
+
+    # Retrieve time range
+    start_date = _format_date(dat["win"].iloc[0])
+    end_date = _format_date(dat["win"].iloc[-1])
+    date_range = start_date + " to " + end_date
 
 
-# def load_project_bar(dat_path, store_path, compare_opt):
-#     """
-#     Stores formatted JavaScript variables for graph from:
-#     All active project count by window: './project/'
+    # Graph setup information
+    title = "Percentage of Contributors by Gender " + date_range
+    label_y = 'Percent'
+    x_categories = wins
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
 
-#     :string dat_path: CSV data path
-#     :string store_path: path to Contributor graph settings
-#     :string compare_opt: "male" or "all" gender(s) that is compared against data for females
-#     :return: None
-#     """ 
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['label_y'] = label_y
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path+'/'+'all_percent'+'.json', 'w') as out_file:
+            json.dump(out_dict, out_file)
 
-#     return
-
+    # Save data to CSV for additional data analysis 
+    csv_data = pd.DataFrame(data=out_dict['data']).explode('data')
+    csv_data.to_csv(store_path+'/'+'all_percent'+'.csv')    
 
 
 ## Private Functions ##

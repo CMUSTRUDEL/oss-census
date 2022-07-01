@@ -1,10 +1,7 @@
-import math
-import numpy as np
-import pandas as pd
-import webbrowser, os
 import yaml
-from census_interactive.process import *
 import json
+from census_interactive.process import *
+
 
 # Launch visualizations
 def main():
@@ -43,23 +40,6 @@ def main():
         with open('./census_interactive/data/processed/commit/'+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Commit"][lang] = add_data
-
-
-    # # Project 
-    # No longer examined as of 5/31/2022
-
-    # data["Project"] = dict()
-    # for lang in langs:
-    #     dat_path = './census_interactive/data/raw/final_proj_by_win/full.csv'
-    #     store_path = './census_interactive/data/processed/project'
-    #     load_project(lang, dat_path, store_path)
-
-    #     # Save graph data to overall JSON data
-    #     with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
-    #         add_data = json.load(json_file)
-    #         data["Project"][lang] = add_data
-            
-
 
     ## Single Contributor Graph Data 
 
@@ -106,7 +86,6 @@ def main():
     data_bar["Contributor"]['male_female'] = add_data
 
 
-
     ## Stacked Area Graph ##
 
     store_path = './census_interactive/data/processed/contributor'
@@ -125,6 +104,23 @@ def main():
     data_stack["Contributor"] = add_data
 
 
+    ## Percent Area Graph ##
+
+    store_path = './census_interactive/data/processed/contributor'
+    data_percent = dict()   
+    
+    # Focus on Contributor for bar graphs
+    data_percent["Contributor"] = dict()
+    dat_path = './census_interactive/data/raw/final_gender_contrib/'
+
+    # Updates processed JSON file
+    load_contributor_percent(dat_path, store_path)
+
+    # Save graph data to overall JSON data
+    with open(store_path+'/'+'all_percent'+'.json') as json_file:
+        add_data = json.load(json_file)
+    data_percent["Contributor"] = add_data
+
 
     ## Combine all JSON to one dictionary in js/
 
@@ -133,7 +129,7 @@ def main():
         out_file.write('var data_pie = %s;' % json.dumps(data_pie,indent=4, sort_keys=True))
         out_file.write('var data_bar = %s;' % json.dumps(data_bar,indent=4, sort_keys=True))
         out_file.write('var data_stack = %s;' % json.dumps(data_stack,indent=4, sort_keys=True))
-
+        out_file.write('var data_percent = %s;' % json.dumps(data_percent,indent=4, sort_keys=True))
 
 if __name__== "__main__" :
     main()    

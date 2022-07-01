@@ -3,7 +3,6 @@ function graphContributor(graph_id) {
     chart: {
         type: 'column',
         height: obj.height_ratio + '%'
-    
     },
     title: {
         text: obj.title
@@ -60,4 +59,5 @@ function graphContributor(graph_id) {
     },
     series: obj.data
     });
+
 }
