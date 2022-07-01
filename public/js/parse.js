@@ -65,6 +65,7 @@ function parseStackData(cat) {
 
     // obj data variable stored in data.js, taken into function for single graphs
     obj.title = data_stack[cat]["title"];
+    obj.subtitle = data_stack[cat]["subtitle"];
     obj.label_y = data_stack[cat]["label_y"];
     obj.data = data_stack[cat]["data"];
     obj.x_categories = data_stack[cat]["x_categories"];
@@ -77,6 +78,7 @@ function parsePercentData(cat) {
 
     // obj data variable stored in data.js, taken into function for single graphs
     obj.title = data_percent[cat]["title"];
+    obj.subtitle = data_stack[cat]["subtitle"];
     obj.label_y = data_percent[cat]["label_y"];
     obj.data = data_percent[cat]["data"];
     obj.x_categories = data_percent[cat]["x_categories"];

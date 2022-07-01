@@ -7,6 +7,9 @@ function graphPercent() {
         title: {
             text:  obj.title
         },
+        subtitle: {
+            text: obj.subtitle
+        },
         accessibility: {
             point: {
                 valueDescriptionFormat: '{index}. {point.category}, {point.y:,.0f} people, {point.percentage:.1f}%.'

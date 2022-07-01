@@ -13967,7 +13967,7 @@ var data = {
             "height_ratio": 46.15384615384615,
             "label_x": "Languages",
             "label_y": "Total Number of Contributors",
-            "title": "Active Contributors All Languages 2008-3 to 2019-3",
+            "title": "Active Contributors All Languages 2008-3 - 2019-3",
             "x_categories": [
                 "All",
                 "Atom",
@@ -14999,7 +14999,8 @@ var data = {
         ],
         "height_ratio": 69.23076923076923,
         "label_y": "Women in Projects (%)",
-        "title": "Percentage of Women Across Languages 2008-3 to 2019-3",
+        "subtitle": "2008-3 - 2019-3",
+        "title": "Percentage of Women Across Languages ",
         "x_categories": [
             "2008-3",
             "2008-6",
@@ -15204,7 +15205,8 @@ var data = {
         ],
         "height_ratio": 69.23076923076923,
         "label_y": "Percent",
-        "title": "Percentage of Contributors by Gender 2008-3 to 2019-3",
+        "subtitle": "2008-3 - 2019-3",
+        "title": "% OSS Contributors by Gender ",
         "x_categories": [
             "2008-3",
             "2008-6",

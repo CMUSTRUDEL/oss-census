@@ -20,13 +20,11 @@ def load_contributor(lang, dat_path, store_path):
     Core active contributor by gender by window: './contributor/core/'
 
     :string lang: programming language
-    :string dat_path: CSV pandas data
+    :string dat_path: CSV data file path
     :string store_path: path to Contributor graph settings
     :return: None
     """ 
-    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
-    max_win = 45
-    dat = dat[dat['win']<=max_win]
+    dat = _convert_csv_to_df(dat_path)
 
     # Format column data of contributors by gender
     all_female = {}
@@ -89,12 +87,7 @@ def load_contributor(lang, dat_path, store_path):
     wins = dat["win"]
     x = []
     for win in wins:
-        time = 3 * win
-        year = 2008 + math.floor(time/12)
-        month = time - math.floor(time/12)*12
-        if not month:
-            month = 12
-        x.append("{}-{}".format(year,month))
+        x.append(_format_date(win))
     wins = x
 
     # Graph setup information
@@ -127,13 +120,11 @@ def load_commit(lang, dat_path, store_path):
     Commit count by gender by window: './commit/graph'
 
     :string lang: programming language
-    :string dat_path: CSV data path
+    :string dat_path: CSV data file path
     :string store_path: path to Contributor graph settings
     :return: None
     """ 
-    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
-    max_win = 45
-    dat = dat[dat['win']<=max_win]
+    dat = _convert_csv_to_df(dat_path)
     
     # Format column data of contributors by gender
     all_female = {}
@@ -180,12 +171,7 @@ def load_commit(lang, dat_path, store_path):
     wins = dat["win"]
     x = []
     for win in wins:
-        time = 3 * win
-        year = 2008 + math.floor(time/12)
-        month = time - math.floor(time/12)*12
-        if not month:
-            month = 12
-        x.append("{}-{}".format(year,month))
+        x.append(_format_date(win))
     wins = x
 
     # Graph setup information
@@ -212,89 +198,6 @@ def load_commit(lang, dat_path, store_path):
         json.dump(out_dict, out_file)
 
 
-
-def load_project(lang, dat_path, store_path):
-    """
-    Stores formatted JavaScript variables for graph from:
-    All active project count by window: './project/'
-
-    :string lang: programming language
-    :string dat_path: CSV data path
-    :string store_path: path to Contributor graph settings
-    :return: None
-    """ 
-    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
-    max_win = 45
-    dat = dat[dat['win']<=max_win]
-
-    # Format column data of contributors by gender
-    all = {}
-    all["name"] = "All"
-    all["type"] = "column"
-    all["data"] = list(dat[lang+"_all"] / 1000)
-    all["color"] = "#f29d4b"
-
-    has_female = {}
-    has_female["name"] = "Has Women"
-    has_female["type"] = "column"
-    has_female["data"] = list(dat[lang+"_fem"] / 1000)
-    has_female["color"] = "#de2d26"
-
-    
-    # Plot ratio line for female in all commits
-    ratio = dat[lang+"_fem"] / dat[lang+"_all"]
-    for win in dat["win"]:
-        win = win - 1
-        if dat[lang+"_all"][win] <= 5:
-            ratio[win] = 0
-
-    # Format line data of contributors
-    ratio_female = {}
-    ratio_female["name"] = "Women Ratio"
-    ratio_female["type"] = "spline"
-    ratio_female["data"] = list(ratio)
-    ratio_female["color"] = "darkblue"
-    ratio_female["yAxis"] = 1
-    ratio_female["marker"] = { 
-        "fillColor": '#FFFFFF',
-        "radius": 5,
-        "lineWidth": 2,
-        "lineColor": 'darkblue'
-    } 
-
-
-    # Change window to date
-    wins = dat["win"]
-    x = []
-    for win in wins:
-        x.append(_format_date(win))
-    wins = x
-
-    # Graph setup information
-    lang_title = lang
-
-    title = "Active Public Projects in "+ lang_title +" Ecosystem" 
-    label_x = 'Time (quarter)'
-    label_y = 'Active Public Project Numbers (thousand)'
-    label_y_secondary = "Women Participated Project Ratio"
-    x_categories = wins
-    height_ratio = (9 / 13 * 100) # 16:9 ratio
-    data = [all, has_female, ratio_female]
-    
-    # write data to js file that creates variables referenced in script.js file
-    out_dict = dict()
-    out_dict['title'] = title
-    out_dict['label_x'] = label_x 
-    out_dict['label_y'] = label_y
-    out_dict['label_y_secondary'] = label_y_secondary
-    out_dict['x_categories'] = x_categories
-    out_dict['height_ratio'] = height_ratio
-    out_dict['data'] = data
-    with open(store_path + '/' + lang + '.json', 'w') as out_file:
-        json.dump(out_dict, out_file)
-
-
-
 ## Single Graph functions ##
 
 def load_contributor_bar(dat_path, store_path, langs):
@@ -302,7 +205,7 @@ def load_contributor_bar(dat_path, store_path, langs):
     Stores formatted JavaScript variables for graph from:
     All active project count by window: './project/'
 
-    :string dat_path: CSV data path
+    :string dat_path: folder of CSV data path
     :string store_path: path to Contributor graph settings
     :list langs: alphabetized list of languages used
     :return: None
@@ -326,10 +229,7 @@ def load_contributor_bar(dat_path, store_path, langs):
 
         # Combine all year data
         for lang in langs:
-            dat = pd.read_csv(dat_path+lang+'.csv', error_bad_lines=False, 
-                            warn_bad_lines=False, index_col=False)
-            max_win = 45
-            dat = dat[dat['win']<=max_win]
+            dat = _convert_csv_to_df(dat_path+lang+'.csv')
             total = sum(list(dat[compare+"_all"]))
             add_data["data"].append(total)
 
@@ -338,7 +238,7 @@ def load_contributor_bar(dat_path, store_path, langs):
     # Retrieve time range
     start_date = _format_date(dat["win"].iloc[0])
     end_date = _format_date(dat["win"].iloc[-1])
-    date_range = start_date + " to " + end_date
+    date_range = start_date + " - " + end_date
 
     # Graph setup information
 
@@ -355,12 +255,12 @@ def load_contributor_bar(dat_path, store_path, langs):
     out_dict['x_categories'] = langs
     out_dict['height_ratio'] = height_ratio
     out_dict['data'] = data
-    with open(store_path+'/'+'all_bar'+'.json', 'w') as out_file:
+    with open(store_path+'all_bar'+'.json', 'w') as out_file:
         json.dump(out_dict, out_file)
 
     # Save data to CSV for additional data analysis 
     csv_data = pd.DataFrame.from_dict(out_dict['data']).explode('data')
-    csv_data.to_csv(store_path+'/'+'all_bar'+'.csv')
+    csv_data.to_csv(store_path+'all_bar'+'.csv')
 
 
 
@@ -371,7 +271,7 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
     Stores formatted JavaScript variables for graph from:
     All active project count by window: './project/'
 
-    :string dat_path: CSV data path
+    :string dat_path: folder of CSV data path
     :string store_path: path to Contributor graph settings
     :string year_opt: Year data is examined for
     :return: None
@@ -388,10 +288,7 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
             continue
 
         # Retrieve data from language specific csv
-        dat = pd.read_csv(dat_path+lang+'.csv', error_bad_lines=False, 
-                        warn_bad_lines=False, index_col=False)
-        max_win = 45
-        dat = dat[dat['win']<=max_win]
+        dat = _convert_csv_to_df(dat_path+lang+'.csv')
    
         add_data = {}
         add_data["name"] = lang.capitalize()
@@ -426,12 +323,12 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
     out_dict['title'] = title
     out_dict['subtitle'] = subtitle
     out_dict['data'] = data
-    with open(store_path+'/'+'all_pie'+'.json', 'w') as out_file:
+    with open(store_path+'all_pie'+'.json', 'w') as out_file:
         json.dump(out_dict, out_file)
 
     # Save data to CSV for additional data analysis 
     csv_data = pd.DataFrame.from_dict(out_dict['data'])
-    csv_data.to_csv(store_path+'/'+'all_pie'+'.csv')
+    csv_data.to_csv(store_path+'all_pie'+'.csv')
 
 
 def load_contributor_stack(dat_path, store_path, langs):
@@ -440,7 +337,7 @@ def load_contributor_stack(dat_path, store_path, langs):
     All active contributor by gender by window: './contributor/all/'
     Core active contributor by gender by window: './contributor/core/'
 
-    :string dat_path: CSV pandas data
+    :string dat_path: folder of CSV data path
     :string store_path: path to Contributor graph settings
     :list langs: alphabetized list of languages used
     :return: None
@@ -454,11 +351,7 @@ def load_contributor_stack(dat_path, store_path, langs):
             continue
 
         # Retrieve data from language specific csv
-        dat = pd.read_csv(dat_path+lang+'.csv', error_bad_lines=False, 
-                        warn_bad_lines=False, index_col=False)
-
-        max_win = 45
-        dat = dat[dat['win']<=max_win]
+        dat = _convert_csv_to_df(dat_path+lang+'.csv')
 
         # Format column data of contributors by gender
         add_data = {}
@@ -473,22 +366,18 @@ def load_contributor_stack(dat_path, store_path, langs):
     wins = dat["win"]
     x = []
     for win in wins:
-        time = 3 * win
-        year = 2008 + math.floor(time/12)
-        month = time - math.floor(time/12)*12
-        if not month:
-            month = 12
-        x.append("{}-{}".format(year,month))
+        x.append(_format_date(win))
     wins = x
 
     # Retrieve time range
-    start_date = _format_date(dat["win"].iloc[0])
-    end_date = _format_date(dat["win"].iloc[-1])
-    date_range = start_date + " to " + end_date
+    start_date = wins[0]
+    end_date = wins[-1]
+    date_range = start_date + " - " + end_date
 
 
     # Graph setup information
-    title = "Percentage of Women Across Languages " + date_range
+    title = "Percentage of Women Across Languages "
+    subtitle = date_range
     label_y = 'Women in Projects (%)'
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
@@ -496,16 +385,17 @@ def load_contributor_stack(dat_path, store_path, langs):
     # write data to js file that creates variables referenced in script.js file
     out_dict = dict()
     out_dict['title'] = title
+    out_dict['subtitle'] = subtitle
     out_dict['label_y'] = label_y
     out_dict['x_categories'] = x_categories
     out_dict['height_ratio'] = height_ratio
     out_dict['data'] = data
-    with open(store_path+'/'+'all_stack'+'.json', 'w') as out_file:
+    with open(store_path+'all_stack'+'.json', 'w') as out_file:
             json.dump(out_dict, out_file)
 
     # Save data to CSV for additional data analysis 
     csv_data = pd.DataFrame(data=out_dict['data']).explode('data')
-    csv_data.to_csv(store_path+'/'+'all_stack'+'.csv')
+    csv_data.to_csv(store_path+'all_stack'+'.csv')
 
 
 
@@ -515,7 +405,7 @@ def load_contributor_percent(dat_path, store_path):
     All active contributor by gender by window: './contributor/all/'
     Core active contributor by gender by window: './contributor/core/'
 
-    :string dat_path: CSV pandas data
+    :string dat_path: folder of CSV data path
     :string store_path: path to Contributor graph settings
     :list langs: alphabetized list of languages used
     :return: None
@@ -524,11 +414,7 @@ def load_contributor_percent(dat_path, store_path):
     data = []
 
     # Retrieve data from language specific csv
-    dat = pd.read_csv(dat_path+'All.csv', error_bad_lines=False, 
-                    warn_bad_lines=False, index_col=False)
-
-    max_win = 45
-    dat = dat[dat['win']<=max_win]
+    dat = _convert_csv_to_df(dat_path+'All.csv')
 
     # Format column data of contributors by gender
     female_data = {}
@@ -552,22 +438,18 @@ def load_contributor_percent(dat_path, store_path):
     wins = dat["win"]
     x = []
     for win in wins:
-        time = 3 * win
-        year = 2008 + math.floor(time/12)
-        month = time - math.floor(time/12)*12
-        if not month:
-            month = 12
-        x.append("{}-{}".format(year,month))
+        x.append(_format_date(win))
     wins = x
 
     # Retrieve time range
-    start_date = _format_date(dat["win"].iloc[0])
-    end_date = _format_date(dat["win"].iloc[-1])
-    date_range = start_date + " to " + end_date
+    start_date = wins[0]
+    end_date = wins[-1]
+    date_range = start_date + " - " + end_date
 
 
     # Graph setup information
-    title = "Percentage of Contributors by Gender " + date_range
+    title = "% OSS Contributors by Gender "
+    subtitle =  date_range
     label_y = 'Percent'
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
@@ -575,27 +457,104 @@ def load_contributor_percent(dat_path, store_path):
     # write data to js file that creates variables referenced in script.js file
     out_dict = dict()
     out_dict['title'] = title
+    out_dict['subtitle'] = subtitle
     out_dict['label_y'] = label_y
     out_dict['x_categories'] = x_categories
     out_dict['height_ratio'] = height_ratio
     out_dict['data'] = data
-    with open(store_path+'/'+'all_percent'+'.json', 'w') as out_file:
+    with open(store_path+'all_percent'+'.json', 'w') as out_file:
             json.dump(out_dict, out_file)
 
     # Save data to CSV for additional data analysis 
     csv_data = pd.DataFrame(data=out_dict['data']).explode('data')
-    csv_data.to_csv(store_path+'/'+'all_percent'+'.csv')    
+    csv_data.to_csv(store_path+'all_percent'+'.csv')    
+
+
+
+def load_contributor_dumbbell(dat_path, store_path, langs):
+    """
+    Stores formatted JavaScript variables for graph from:
+    All active contributor by gender by window: './contributor/all/'
+    Core active contributor by gender by window: './contributor/core/'
+
+    :string dat_path: path to CSV data
+    :string store_path: path to Contributor graph settings
+    :list langs: alphabetized list of languages used
+    :return: None
+    """ 
+
+    data = []
+
+    for lang in langs:
+        # Omit "All" language
+        if lang.lower() == "all":
+            continue
+
+        # Retrieve data from language specific csv
+        dat = _convert_csv_to_df(dat_path+lang+'.csv')
+
+        # Format column data of contributors by gender
+        add_data = {}
+        percent_women = (dat["female_all"] / dat["all_all"]) * 100
+        # Round to second decimal
+        percent_women = round(percent_women, 2)
+        add_data["low"] = percent_women.min()
+        add_data["high"] = percent_women.max()
+        add_data["name"] = lang
+
+        # Order dumbell lines in order least to greatest min value
+        if not data:
+            data.append(add_data)
+        for i, lang_data in enumerate(data):
+            if lang_data["low"] >= add_data["low"]:
+                data.insert(i, add_data)
+                break
+            elif i == len(data) - 1:
+                data.append(add_data)
+
+    # Retrieve time range
+    start_date = _format_date(dat["win"].iloc[0])
+    end_date = _format_date(dat["win"].iloc[-1])
+    date_range = start_date + " - " + end_date
+
+
+    # Graph setup information
+    title = "Min and Max % Women across Ecosystems"
+    subtitle = date_range
+    label_y = 'Percentage of Women (%)'
+    height_ratio = (9 / 13 * 100) # 16:9 ratio
+
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = title
+    out_dict['subtitle'] = subtitle
+    out_dict['label_y'] = label_y
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path+'all_dumbbell'+'.json', 'w') as out_file:
+            json.dump(out_dict, out_file)
 
 
 ## Private Functions ##
 
-def _format_date(year):
-    # Format year and month of dataframe value "{}-{}".format(year,month)
+def _format_date(period):
+    # Assumed there are four 3-month periods in each year 
+    # Format year and month of dataframe value "year-month"
 
-    time = 3 * year
+    time = 3 * period
     year = 2008 + math.floor(time/12)
     month = time - math.floor(time/12)*12
     if not month:
         month = 12
 
-    return "{}-{}".format(year,month)
+    return f"{year}-{month}"
+
+
+def _convert_csv_to_df(dat_path):
+    # Converts OSS public data CSV to dataframe
+    # Default max 45 rows
+    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
+    max_win = 45
+    dat = dat[dat['win']<=max_win]
+
+    return dat
