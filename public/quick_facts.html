@@ -46,6 +46,7 @@
     <script src="js/visualizations/graph_contributor.js"></script> 
     <script src="js/visualizations/graph_commit.js"></script>
     <script src="js/visualizations/graph_percent.js"></script>
+    <script src="js/visualizations/graph_dumbbell.js"></script>
 </head>
 
 
@@ -173,9 +174,16 @@
                 <div class="absolute z-0 blob5">
                     <img src="img/NumberBlob3.png" alt="Blob"/>
                 </div>
+                <!-- Dumbbell Graph -->
                 <div class="flex flex-col w-1/2 h-full mr-16">
-                    <img src="img/OverviewGraph3.png" alt="Graph1" class="h-full" />
-                </div>
+                    <div class="flex-col items-center w-full my-3">                
+                        <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure" onclick="return false;">
+                                <div id="dumbbell"></div>
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>                   </div>
                 <div class = "flex flex-col w-2/5">
                     <div class="text-2xl text-justify pr-24">
                         The graph shows the percentage of women contributors at its maximum and minimum in each ecosystem. Some ecosystems have a higher percentage of women contributors than others. 

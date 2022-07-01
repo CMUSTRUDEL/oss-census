@@ -133,6 +133,6 @@ def main():
         out_file.write(f'var data_bar = {json.dumps(data_bar,indent=4, sort_keys=True)};')
         out_file.write(f'var data_stack = {json.dumps(data_stack,indent=4, sort_keys=True)};')
         out_file.write(f'var data_percent = {json.dumps(data_percent,indent=4, sort_keys=True)};')
-
+        out_file.write(f'var data_dumbbell = {json.dumps(data_dumbbell,indent=4, sort_keys=True)};')
 if __name__== "__main__" :
     main()    
