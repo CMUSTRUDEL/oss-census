@@ -47,6 +47,8 @@ python -m http.server
 
 **js/parse.js** defines the JSON storage structure and a function to access each graph's data given a category and language.
 
+**js/single_graphs.js** calls appropriate JS function defined in js/GRAPHNAME.js to parse each chart data and generate chart
+
 **config.yaml** lists all data that would like to be processed. If only specific ecosystem's (or "language's") CSV files are updated for example, we may not want to wait for everything to update. The following are the maximum options that can be applied:
 ```
 languages:

@@ -281,7 +281,6 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
     # Data collection begins in 1/2008
     year_start = (int(year_opt) - 2008) * 4
 
-
     for lang in langs:
         # Omit "All" language for polar chart
         if lang.lower() == "all":
@@ -519,7 +518,7 @@ def load_contributor_dumbbell(dat_path, store_path, langs):
 
 
     # Graph setup information
-    title = "Min and Max % Women across Ecosystems"
+    title = "Min and Max % Women in Ecosystems 2008-2019"
     subtitle = date_range
     label_y = 'Percentage of Women (%)'
     height_ratio = (9 / 13 * 100) # 16:9 ratio

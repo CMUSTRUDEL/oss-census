@@ -7,21 +7,15 @@ function graphDumbbell() {
         legend: {
             enabled: false
         },
-
-        subtitle: {
-            text: obj.subtitle
-        },
-
         title: {
             text: obj.title
         },
-
         tooltip: {
             shared: true
         },
 
         xAxis: {
-            type: 'category'
+            type: 'category',
         },
 
         yAxis: {

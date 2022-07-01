@@ -50,3 +50,12 @@ function showGraphPercent() {
     parseSingleData("Contributor", yearOpt, graphOpt);
     graphPercent();
 }
+
+function showGraphDumbbell() {
+    // Graphs Percent area graph
+    yearOpt = "All";
+    // Percent area graph requires same vars as stack area
+    graphOpt = "dumbbell";
+    parseSingleData("Contributor", yearOpt, graphOpt);
+    graphDumbbell();
+}

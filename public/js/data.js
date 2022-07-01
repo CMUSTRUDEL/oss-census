@@ -15377,6 +15377,6 @@ var data = {
         "height_ratio": 69.23076923076923,
         "label_y": "Percentage of Women (%)",
         "subtitle": "2008-3 - 2019-3",
-        "title": "Min and Max % Women across Ecosystems"
+        "title": "Min and Max % Women in Ecosystems 2008-2019"
     }
 };
