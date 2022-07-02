@@ -146,6 +146,22 @@
 
         <div class="flex pt-2 items-center overflow-hidden pb-12 main-margin">
             <article class="flex flex-row md:flex-row max-w-10xl">
+                <div class ="flex flex-col text-right w-11/12">
+                    <p class = "font-family-bebas margin-top text-primary3 text-sideHeader">Data Source and Pre-processing</p>
+                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        We used two datasets:</p>
+                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        1. Registered OSS libraries (denoted as <span class="font-bold">OSS</span> in this website). We downloaded the list of registered OSS libraries (released in Jan 2020) from <a href="https://libraries.io/data" class="text-green-600">libraries.io</a>. Then we retrieved these projects' commit history from <a href="https://worldofcode.org/" class="text-green-600">World of Code</a>.</p>
+                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        2. Public repositories on GitHub (denoted as <span class="font-bold">Public</span> in this website). We used data from <a href="https://ghtorrent.org/" class="text-green-600">GHTorrent</a>, which consists of all GitHub activities until Mar 2021. Because GitHub projects may contain projects for personal or educational use, we excluded projects with fewer than four people as a heuristic. 
+                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        Before counting the number of contributors, we performed <a href="https://dl.acm.org/doi/pdf/10.1145/3379597.3387466" class="text-green-600">identity merging</a> and <a href="https://dl.acm.org/doi/pdf/10.1145/3379597.3387478" class="text-green-600">bot removal</a>.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="flex pt-2 items-center overflow-hidden pb-12 main-margin">
+            <article class="flex flex-row md:flex-row max-w-10xl">
                 <img src="img/Gender_Img.png" alt="gender" id="gender" class="object-left margins-image pt-10"/>
                 <div class ="flex flex-col text-right w-11/12">
                     <p class = "font-family-bebas margin-top text-primary3 text-sideHeader">Gender Inference</p>
@@ -162,10 +178,10 @@
 
                     </p>
                 </div>
-
             </article>
-
         </div>
+
+        
 
         <div class="flex pt-2 items-center overflow-hidden pb-12 main-margin">
             <article class="flex flex-row md:flex-row max-w-10xl">
