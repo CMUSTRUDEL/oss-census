@@ -118,23 +118,24 @@
                 </span>
             </div>
             <div class="grid grid-cols-4 justify-center gap-x-24 py-12 main-margin">
-                <a class="flex flex-col content-center" href="comparison.html">
-                    <img src="img/People-Standing.png" alt="Hands" class="icons-dimensions self-center"/>
-                    <p class="w-2/3 h-2/3 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">The general trend of gender distribution in OSS as a whole</p>
-                </a>
-                <a class="flex flex-col content-center" href="ecosystem.html">
-                        <img src="img/Computer-Cog.png" alt="Hands" class="icons-dimensions self-center"/>
-                        <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A decomposition of the entire population into ecosystems</p>
-                </a>
                 <a class="flex flex-col content-center" href="overview.html">
                     <img src="img/DataImg.png" alt="Hands" class="icons-dimensions self-center"/>
-                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A chronological analysis to reflect how women's participation has changed with time
+                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A chronological analysis of the gender distribution
                     </p>
+                </a>
+
+                <a class="flex flex-col content-center" href="ecosystem.html">
+                        <img src="img/Computer-Cog.png" alt="Hands" class="icons-dimensions self-center"/>
+                        <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A decomposition of gender distribution in 32 ecosystems</p>
                 </a>
                 <a class="flex flex-col content-center" href="overview.html">
                     <img src="img/Clipboard.png" alt="Hands" class="icons-dimensions2 self-center"/>
-                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">A comprehensive report of statistics on core vs. all (tentative wording)
+                    <p class="w-8/12 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">Statistics of gender representation based on roles.
                     </p>
+                </a>
+                <a class="flex flex-col content-center" href="comparison.html">
+                    <img src="img/People-Standing.png" alt="Hands" class="icons-dimensions self-center"/>
+                    <p class="w-2/3 h-2/3 tracking-wider text-center leading-relaxed self-center pt-4 text-icons">An interface for free exploration of the census data</p>
                 </a>
             </div>
         </div>
@@ -149,7 +150,7 @@
                         <a href="https://namsor.app/" class="text-green-600">NamSor,</a>
                         an automatic tool that can infer gender based on one’s name and cultural background, for its high accuracy among similar tools**.</p>
                     <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed"><span class="text-green-600">We acknowledge that binary gender does not reflect the current perception of gender</span>. Moreover, name-based inference has limitations.</p>
-                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed mb-4">However, our results can still provide insights into the gender diversity status quo in OSS. Future researchers could use the results to conduct more targeted studies.
+                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed mb-4">However, our results can still provide insights into the gender diversity status in OSS. Future researchers could use the results to conduct more targeted studies.
                     </p> 
                     <p class="font-family-karla text-xs text-left">
                         * &nbsp; Please see our annotated bibliography<br>
@@ -160,6 +161,40 @@
 
             </article>
 
+        </div>
+
+        <div class="flex pt-2 items-center overflow-hidden pb-12 main-margin">
+            <article class="flex flex-row md:flex-row max-w-10xl">
+                <div class ="flex flex-col text-right w-11/12">
+                    <p class = "font-family-bebas margin-top text-primary3 text-sideHeader">Data Analysis</p>
+                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        We analyzed OSS contributor community data from several different perspectives:</p>
+                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        <b class="text-green-600">Chronological trend</b>: We aggregated data by years and visualize how the gender distribution has changed with time.
+                    </p> 
+                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        <b class="text-green-600">OSS Ecosystems</b>: An OSS ecosystem constitutes interdependent OSS libraries. Our analysis considered each package manager registered at <a href="www.libraries.io" class="text-green-600">libraries.io</a> as one ecosystem. We aggregated data based on ecosystems and visualized how gender distribution varies across different ecosystems.
+                    </p> 
+                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        <b class="text-green-600">Role of a contributor</b>: We divide contributors roughly into two categories: <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8870179&casa_token=zeXxx_ecz5UAAAAA:mpOzo_72wLc-WCK19YPPtFfNShNxq0TEvOoqNFXAKFHSyhos6apVjzBV42iPTmoZbDMquMWvaQ&tag=1" class="text-green-600">core and peripheral</a>. We identified core contributors in the following way:
+                        For each ecosystem, we first identified projects whose number of commits ranked top 10% of the ecosystem;
+                        Then, within each of the top projects, we identified each project's core developers as those who made more than 10% of the commits within that three-month window. We analyzed and compared gender distributions among core contributors and all contributors.
+                    </p> 
+                </div>
+            </article>
+        </div>
+
+        <div class="flex pt-2 items-center overflow-hidden pb-12 main-margin">
+            <article class="flex flex-row md:flex-row max-w-10xl">
+                <div class ="flex flex-col text-right w-11/12">
+                    <p class = "font-family-bebas margin-top text-primary3 text-sideHeader">Annotated Bibliography</p>
+                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
+                        Before us, numerous of scholars have worked on the problem of gender diversity in OSS, and broadly, STEM (<span class="font-bold">S</span>cience, <span class="font-bold">T</span>echnology, <span class="font-bold">E</span>ngineering, and <span class="font-bold">M</span>ath) fields.
+                        Along with our analysis, we compiled a list of prior works that reported gender representation across the years.
+                        We grouped prior studies by their data collection methods, such as survey or data mining, and their samples, such as the entire OSS population or sub-population of specific ecosystems or projects.
+                    </p> 
+                </div>
+            </article>
         </div>
 
 
