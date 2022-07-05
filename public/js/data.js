@@ -13967,7 +13967,7 @@ var data = {
             "height_ratio": 46.15384615384615,
             "label_x": "Languages",
             "label_y": "Total Number of Contributors",
-            "title": "Active Contributors All Languages 2008-3 to 2019-3",
+            "title": "Active Contributors All Languages 2008-3 - 2019-3",
             "x_categories": [
                 "All",
                 "Atom",
@@ -14999,7 +14999,8 @@ var data = {
         ],
         "height_ratio": 69.23076923076923,
         "label_y": "Women in Projects (%)",
-        "title": "Percentage of Women Across Languages 2008-3 to 2019-3",
+        "subtitle": "2008-3 - 2019-3",
+        "title": "Percentage of Women Across Languages ",
         "x_categories": [
             "2008-3",
             "2008-6",
@@ -15204,7 +15205,8 @@ var data = {
         ],
         "height_ratio": 69.23076923076923,
         "label_y": "Percent",
-        "title": "Percentage of Contributors by Gender 2008-3 to 2019-3",
+        "subtitle": "2008-3 - 2019-3",
+        "title": "% OSS Contributors by Gender ",
         "x_categories": [
             "2008-3",
             "2008-6",
@@ -15252,5 +15254,129 @@ var data = {
             "2019-12",
             "2019-3"
         ]
+    }
+};var data_dumbbell = {
+    "Contributor": {
+        "data": [
+            {
+                "high": 7.69,
+                "low": 0.0,
+                "name": "Puppet"
+            },
+            {
+                "high": 4.71,
+                "low": 0.0,
+                "name": "Pub"
+            },
+            {
+                "high": 20.0,
+                "low": 0.0,
+                "name": "PlatformIO"
+            },
+            {
+                "high": 2.24,
+                "low": 0.0,
+                "name": "Packagist"
+            },
+            {
+                "high": 9.09,
+                "low": 0.0,
+                "name": "Meteor"
+            },
+            {
+                "high": 3.7,
+                "low": 0.0,
+                "name": "Hex"
+            },
+            {
+                "high": 3.12,
+                "low": 0.0,
+                "name": "Hackage"
+            },
+            {
+                "high": 6.67,
+                "low": 0.0,
+                "name": "Go"
+            },
+            {
+                "high": 2.8,
+                "low": 0.0,
+                "name": "CocoaPods"
+            },
+            {
+                "high": 3.19,
+                "low": 0.0,
+                "name": "Clojars"
+            },
+            {
+                "high": 3.9,
+                "low": 0.0,
+                "name": "Cargo"
+            },
+            {
+                "high": 6.95,
+                "low": 0.0,
+                "name": "CRAN"
+            },
+            {
+                "high": 14.29,
+                "low": 0.0,
+                "name": "Atom"
+            },
+            {
+                "high": 14.29,
+                "low": 0.0,
+                "name": "Atom"
+            },
+            {
+                "high": 2.32,
+                "low": 0.41,
+                "name": "NuGet"
+            },
+            {
+                "high": 3.83,
+                "low": 1.07,
+                "name": "Bower"
+            },
+            {
+                "high": 3.83,
+                "low": 1.07,
+                "name": "Bower"
+            },
+            {
+                "high": 3.43,
+                "low": 1.21,
+                "name": "NPM"
+            },
+            {
+                "high": 4.15,
+                "low": 1.28,
+                "name": "Rubygems"
+            },
+            {
+                "high": 3.65,
+                "low": 1.31,
+                "name": "Pypi"
+            },
+            {
+                "high": 3.42,
+                "low": 1.48,
+                "name": "Maven"
+            },
+            {
+                "high": 4.56,
+                "low": 2.0,
+                "name": "CPAN"
+            },
+            {
+                "high": 4.56,
+                "low": 2.0,
+                "name": "CPAN"
+            }
+        ],
+        "height_ratio": 69.23076923076923,
+        "label_y": "Percentage of Women (%)",
+        "subtitle": "2008-3 - 2019-3",
+        "title": "Min and Max % Women in Ecosystems 2008-2019"
     }
 };
