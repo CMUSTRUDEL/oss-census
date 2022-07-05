@@ -43,6 +43,11 @@ function graphPercent() {
                     lineWidth: 1,
                     lineColor: '#ffffff'
                 }
+            },
+            series: {
+                marker: {
+                    enabled: false
+                }
             }
         },
         series: obj.data

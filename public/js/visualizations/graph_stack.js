@@ -21,7 +21,8 @@ function graphStack() {
             labels: {
                 formatter: function () {
                     return this.value;
-                }
+                },
+                enabled: false
             }
         },
         tooltip: {
@@ -36,6 +37,11 @@ function graphStack() {
                 marker: {
                     lineWidth: 1,
                     lineColor: '#666666'
+                }
+            },
+            series: {
+                marker: {
+                    enabled: false
                 }
             }
         },

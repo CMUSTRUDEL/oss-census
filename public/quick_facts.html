@@ -104,13 +104,44 @@
                 <div class="absolute z-0 blob3">
                     <img src="img/NumberBlob1.png" alt="Blob"/>
                 </div>
-                <div class="flex flex-col w-1/2 h-full mr-16">
+                <!-- Graph 1 Percent Area -->
+                <div class="flex flex-col w-1/2 h-full mr-16">  
+                    <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure" onclick="return false;">
+                            <div id="percent"></div>
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+                <div class = "flex flex-col w-2/5">
+                    <div class="text-2xl text-justify pr-24">
+                        Starting with women percentage of 
+                        <span class="text-blurb1 font-bold">2.13% among core contributors</span>
+                        in year xxxx and 
+                        <span class="text-blurb1 font-bold">2.25% among all contributors</span>
+                        , the number has been steadily growing between 2008 and 2021. Moreover, we found that, between 2014 and 2021, the women percentage among cores has surpassed the percentage among all, leaving a slight but constant 
+                        <span class="text-blurb1 font-bold">margin of 0.3%.</span>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class = "flex flex-row w-full h-max pl-40 py-32">
+                <div class = "flex flex-col w-2/5">
+                    <div class="text-2xl text-justify">
+                        It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.
+                    </div>
+                </div>
+                <div class="absolute z-0 blob4">
+                    <img src="img/NumberBlob2.png" alt="Blob"/>
+                </div>
+                <!-- Graph 2 Stacked Line Plot -->
+                <div class="flex flex-col w-1/2 h-full mr-24 m-auto">
                     <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
                         <button id="cont-button" class="w-full h-full bg-primary hover:bg-green-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('cont', 'All')">Contributors</button>
                         <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('comm', 'All')">Commits</button>
                     </div>
 
-                    <!-- Interactive charts -->
                     <div id="cont" alt="Graph1" style="display: show" class="flex-col items-center w-full h-full">                
                         <a href="#" class="hover:opacity-75 my-4 md:w-3/3">
                             <figure class="highcharts-figure" onclick="return false;">
@@ -135,44 +166,13 @@
                         </a>
                     </div>
                 </div>
-                <div class = "flex flex-col w-2/5">
-                    <div class="text-2xl text-justify pr-24">
-                        Starting with women percentage of 
-                        <span class="text-blurb1 font-bold">2.13% among core contributors</span>
-                        in year xxxx and 
-                        <span class="text-blurb1 font-bold">2.25% among all contributors</span>
-                        , the number has been steadily growing between 2008 and 2021. Moreover, we found that, between 2014 and 2021, the women percentage among cores has surpassed the percentage among all, leaving a slight but constant 
-                        <span class="text-blurb1 font-bold">margin of 0.3%.</span>
-                        
-                    </div>
-                </div>
-            </div>
-    
-            <div class = "flex flex-row w-full h-max pl-40 py-32">
-                <div class = "flex flex-col w-2/5">
-                    <div class="text-2xl text-justify">
-                        It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.
-                    </div>
-                </div>
-                <div class="absolute z-0 blob4">
-                    <img src="img/NumberBlob2.png" alt="Blob"/>
-                </div>
-                <!-- Percent Area Graph -->
-                <div class="flex flex-col w-1/2 h-full mr-24 m-auto">
-                    <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                        <figure class="highcharts-figure" onclick="return false;">
-                            <div id="percent"></div>
-                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
-                        </figure>
-                    </a>
-                </div>
             </div>
 
             <div class = "flex flex-row w-full h-max pl-24 py-32">
                 <div class="absolute z-0 blob5">
                     <img src="img/NumberBlob3.png" alt="Blob"/>
                 </div>
-                <!-- Dumbbell Graph -->
+                <!-- Graph 3 Dumbbell -->
                 <div class="flex flex-col w-1/2 h-full mr-16">
                     <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                         <figure class="highcharts-figure" onclick="return false;">
