@@ -149,12 +149,18 @@
                 <!-- Data source description -->
                 <div class="dropdowns mt-8">
                     <h2 class="font-medium leading-tight text-1xl mt-0 mb-2 text-black-800">
-                        <i class="font-bold">Data Source</i>
+                        <i>Data Sources</i>
                     </h2>
                     <p>
-                       We downloaded the list of registered OSS libraries (released in Jan 2020) from libraries.io. We consider each package manager as one ecosystem. Then we retrieved these projects' commit history from World of Code.</p>
-
-<p>Before counting the number of contributors, we performed identity merging and bot removal.
+                        We use OSS libraries from Libraries.io for our data source, 
+                        <button onclick="showDataDescription()"><b>extracting a list of OSS infrastructural projects.</b>
+                        </button> For
+                        Libraries.io, we downloaded the dump of January 12, 2020,
+                        from the website. In this study, we consider a GITHUB project
+                        registered at Libraries.io as an OSS project. Among the 38
+                        package managers hosted on Libraries.io, we picked the 20
+                        largest ones to conduct our analysis. We consider each package
+                        manager as an ecosystem.
                     </p>
 
                     <div id="dataDescription"></div>
