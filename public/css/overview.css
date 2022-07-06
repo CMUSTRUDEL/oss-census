@@ -2,6 +2,7 @@
     font-size: 5.5vw;
 }
 
+
 .text-size-subtitle {
     font-size: 2vw;
     line-height: 3vw;
@@ -32,28 +33,70 @@
 
 .blob3 {
     left: 45vw;
-    top: 99vw;
+    top: -2.5vw;
     height: 15vw;
     width: 15vw;
     z-index: -1;
+    animation: bounce1 10s infinite alternate;
 }
 
 .blob4 {
     right: 25vw;
-    top: 147vw;
+    top: -2.5vw;
     height: 15vw;
     width: 15vw;
     z-index: -1;
+    animation: bounce2 10s forwards infinite alternate;
+
 }
 
 .blob5 {
     right: 50vw;
-    top: 178vw;
+    top: -2.5vw;
     height: 15vw;
     width: 15vw;
     z-index: -1;
+    animation: bounce2 10s forwards infinite alternate;
+
 }
 
 .text-blurb1{
     color: #77AC87;
+}
+
+.paragraph-size {
+    font-size: 1.4vw;
+    line-height: 1.8vw;
+}
+
+@keyframes bounce1 {
+    0% {
+        transform: translateX(0);
+        transform: translateY(0);
+
+    }
+    33% {
+        transform: translateX(-10%);
+        transform: translateY(-5%);
+    }
+    66% {
+        transform: translateX(10%);
+        transform: translateY(5%);
+    }
+}
+
+@keyframes bounce2 {
+    0% {
+        transform: translateX(0);
+        transform: translateY(0);
+
+    }
+    33% {
+        transform: translateX(-10%);
+        transform: translateY(-5%);
+    }
+    66% {
+        transform: translateX(10%);
+        transform: translateY(5%);
+    }
 }
