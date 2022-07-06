@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+
+li#index  { color:purple; font-weight: bold;} 
+
+.font-family-bebas {
+    font-family: bebas-neue, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 4.5px;
+}
+
+
+.lato-regular {
+    font-family: lato,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-bold {
+    font-family: lato,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+.font-family-karla {
+    font-family: karla;
+}
+.h-200{
+    height: 600px;
+}
+.h-128{
+    height: 450px;
+}
+.h-100{
+    height: 400px;
+}
+.w-100{
+    height: 400px;
+}
+.w-128{
+    height: 450px;
+}
+.bg-primary{
+    background: #732867;
+}
+.bg-footer{
+    background: #F1F1F1;
+}
+.bg-midbar{
+    background: #F4F1E9;
+}
+.text-primary{
+    color: #325334;
+}
+.text-primary2{
+    color: #52796F;
+}
+.text-primary3{
+    color: #6F8A6B;
+}
+/* text sizing */
+
+.text-paragraph{
+    font-size: 1.2vw;
+    line-height: 1.8vw; /* 32px */
+}
+.text-mainHeader{
+    font-size: 5.5vw;
+    line-height: 5vw;
+}
+.text-mainHeader2{
+    font-size: 2vw;
+    line-height: 2.3vw;
+}
+.text-sideHeader{
+    font-size: 3vw;
+    line-height: 2.5vw;
+}
+
+.text-sideHeader2{
+    font-size: 1.5vw;
+    line-height: 1.8vw;
+}
+
+.text-icons{
+    font-size: 1vw;
+    line-height: 1.4vw; /* 32px */
+}
+
+.icons-dimensions{
+    height:8vw;
+    width:7.5vw;
+}
+.icons-dimensions2{
+    height:8vw;
+    width:6.5vw;
+}   
+
+.margin-top {
+    margin-top: 40px;
+}
+
+.margins-image {
+    margin-right: 5vw;
+}
+
+.padding-header {
+    padding-top: 4vw;
+    padding-bottom: 3vw;
+}
+
+.padding-mid {
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+}
+
+.main-margin {
+    margin-right: 10vw;
+    margin-left: 10vw;
+}
+.nav-margin {
+    margin-right: 6vw;
+    margin-left: 6vw;
+}
+
+.text-nav {
+    font-size: .8vw;
+    line-height: .5vw;
+}
+
+#gender {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+    height: 25vw;
+    width: 40vw;
+}
+#hands {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+    height: 28vw;
+    width: 30vw;
+}
+
+#logo {
+    height: 3.5vw;
+    width: 3.5vw;
+}
+
+#logo2 {
+    height: 3.5vw;
+    width: 9vw;
+    margin-top: 2vw;
+    margin-right: 2vw;
+}
+
+#logo3 {
+    height: 7vw;
+    width: 4vw;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}

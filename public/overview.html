@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSS Census</title>
+    <meta name="author" content="Justin">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
+
+    <link rel="stylesheet" href="css/subpage.css">
+    <style>
+        li#overview  { color:purple; font-weight: bold;} 
+    </style>
+   
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- Graph 1 CSS and Script links -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+     
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    
+    <!-- JS graph and tab switch functions -->
+    <script src="js/comparison_graphs.js"></script>   
+    <script src="js/tab_graphs.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/parse.js"></script>
+    <script src="js/visualizations/graph_contributor.js"></script> 
+    <script src="js/visualizations/graph_commit.js"></script>
+
+</head>
+
+
+    <body id="overview">
+    <div class="bg-white font-family-karla">
+        <!-- Top Bar Nav -->
+        <div id="navigation"></div>
+        <script> 
+            $(function(){
+                $("#navigation").load("nav.html"); 
+            });
+        </script> 
+        
+        <article class="flex flex-row md:flex-row pl-24">
+            <div class ="flex flex-col">
+                <div class="items-center">
+                    <p class = "font-family-bebas mt-24 text-primary text-7xl pb-2">Census Overview</p>
+                </div>               
+                <p class = "w-10/12 mt-4 md:mt-4 text-3xl font-family-quicksand1 uppercase text-primary2 font-light tracking-wider leading-relaxed">
+                    Interact and explore data concerning
+                    <span class = "text-primary3">all ecosystems</span>
+                    for
+                    <span class = "text-primary3">all years</span>
+                </p> 
+            </div>
+            <img src="img/BarGraphImg.png" alt="BarGraphImg" class="ml-auto pr-32 h-5/12 w-5/12 pt-10"/>
+
+        </article>
+
+
+        <div class = "flex flex-row w-full h-max pl-24 py-12 bg-midbar">
+            <div class="flex flex-col w-1/2 h-full mr-16">
+                <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
+                    <button id="cont-button" class="w-full h-full bg-primary hover:bg-purple-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('cont', 'All')">Contributors</button>
+                    <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('comm', 'All')">Commits</button>
+                </div>
+                
+                <!-- Interactive charts -->
+                <div id="cont" alt="Graph1" style="display: show" class="flex-col items-center w-full h-full">                
+                    <a href="#" class="hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure" onclick="return false;">
+                            <div id="cont-1"></div>
+                            <!-- JS file link -->
+                            <script> 
+                                parseData("Contributor", "All");
+                                graphContributor("1");
+                            </script>
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+        
+                <div id="comm" alt="Graph1" style="display: none" class="flex-col items-center w-full h-full">
+                    <a href="#" class="hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure" onclick="return false;">
+                            <div id="comm-1"></div> 
+                            <!-- JS file link -->
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <div class = "flex flex-col w-2/5">
+                <img src="img/Number1.png" alt="Number1" class="w-1/12 h-1/12 pb-4" />
+                <div class="text-2xl text-justify pr-24">
+                    In the beginning (2008), 
+                    <span class="text-primary font-bold">female contributors took up less than 3% of all active contributor population</span>
+                    and number of commits.
+                    <br><br>By the end of our data, 
+                    <span class="text-primary font-bold">female participation has increased for all three aspects.</span>
+                    Female ratio grew to 
+                    <span class="text-primary font-bold">7.96%</span>
+                    among all and
+                    <span class="text-primary font-bold">6.0%</span>
+                    among core contributors; the ratio of female-authored commits reached
+                    <span class="text-primary font-bold">10.98%;</span>
+                    and as many as
+                    <span class="text-primary font-bold">19.3%</span>
+                    projects had at least one female contributor. 
+                </div>
+
+            </div>
+        </div>
+
+        <div class = "flex flex-row w-full h-max pl-40 py-12">
+            <div class = "flex flex-col w-2/5">
+                <img src="img/Number2.png" alt="Number1" class="w-1/12 h-1/12 pb-4" />
+                <div class="text-2xl text-justify">
+                    In the beginning (2008), female contributors took up less than 3% of all active contributor population and number of commits.
+                    <br><br>By the end of our data, female participation has increased for all three aspects. Female ratio grew to 7.96% among all and 6.0% among core contributors; the ratio of female-authored commits reached 10.98%; and as many as 19.3% projects had at least one female contributor. 
+                </div>
+
+            </div>
+            <div class="flex flex-col w-1/2 h-full mr-24 m-auto">
+                <img src="img/OverviewGraph2.png" alt="Graph1" class="h-full" />
+            </div>
+            
+        </div>
+        <div class = "flex flex-row w-full h-max pl-24 py-12 bg-midbar">
+            <div class="flex flex-col w-1/2 h-full mr-16">
+                <img src="img/OverviewGraph3.png" alt="Graph1" class="h-full" />
+            </div>
+            <div class = "flex flex-col w-2/5">
+                <img src="img/Number3.png" alt="Number1" class="w-1/12 h-1/12 pb-4" />
+                <div class="text-2xl text-justify pr-24">
+                    In the beginning (2008), female contributors took up less than 3% of all active contributor population and number of commits.
+                    <br><br>By the end of our data, female participation has increased for all three aspects. Female ratio grew to 7.96% among all and 6.0% among core contributors; the ratio of female-authored commits reached 10.98%; and as many as 19.3% projects had at least one female contributor. 
+                </div>
+
+            </div>
+            
+            
+        </div>
+
+        <footer id="footer" class="pt-24"></footer>
+        <script> 
+            $(function(){
+                $("#footer").load("footer.html"); 
+            });
+        </script> 
+    </div>
+</body>
+</html>

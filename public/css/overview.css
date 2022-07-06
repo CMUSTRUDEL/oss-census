@@ -1,0 +1,59 @@
+.text-size-title {
+    font-size: 5.5vw;
+}
+
+.text-size-subtitle {
+    font-size: 2vw;
+    line-height: 3vw;
+    transform: scaleX(1.25);
+    transform-origin: 0 0;
+
+}
+
+.text-size-small {
+    font-size: 1.8vw;
+    line-height: 2.5vw;
+}
+
+.table-padding {
+    padding-top: 5vw;
+    padding-bottom: 7vw;
+}
+
+.blob1-position {
+    left: 10vw;
+    top: 50vw;
+}
+
+.blob2-position {
+    right: 10vw;
+    top: 75vw;
+}
+
+.blob3 {
+    left: 45vw;
+    top: 99vw;
+    height: 15vw;
+    width: 15vw;
+    z-index: -1;
+}
+
+.blob4 {
+    right: 25vw;
+    top: 147vw;
+    height: 15vw;
+    width: 15vw;
+    z-index: -1;
+}
+
+.blob5 {
+    right: 50vw;
+    top: 178vw;
+    height: 15vw;
+    width: 15vw;
+    z-index: -1;
+}
+
+.text-blurb1{
+    color: #77AC87;
+}
