@@ -8,6 +8,7 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
+  // Show button at specific scroll values on page
   if (document.body.scrollTop < 20 || document.documentElement.scrollTop < 20) {
     scrollButton.style.display = 'block';
   } else {
@@ -16,5 +17,6 @@ function scrollFunction() {
 }
 
 function scrollToBottom(){
+  // Automatically scroll to bottom
   window.scrollTo(0, document.body.scrollHeight);
 }

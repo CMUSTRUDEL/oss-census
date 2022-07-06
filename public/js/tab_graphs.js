@@ -8,6 +8,8 @@ function updateTab(type, ecosystem) {
 }
 
 function updateEco() {
+    // Updates Ecosystem localstorage variable from Ecosystem page dropdown
+
     var selectEco = document.getElementById('ecosystem-select');
 
     // Save button associated graph type to localstorage 
@@ -18,6 +20,8 @@ function updateEco() {
 }
 
 function changeGraph(default_ecosystem) {
+    // Displays div and generates graph based on tab and dropdown selection
+
     type = localStorage.getItem("type");
 
     if (default_ecosystem == null) {

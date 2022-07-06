@@ -1,10 +1,13 @@
-import math
-import numpy as np
-import pandas as pd
-import webbrowser, os
-import yaml
-from census_interactive.process import *
 import json
+import yaml
+from census_interactive.process import (load_commit, load_contributor, 
+    load_contributor_bar, load_contributor_dumbbell, load_contributor_percent,
+    load_contributor_pie, load_contributor_stack)
+
+CONTRIBUTOR_STORE_PATH = './census_interactive/data/processed/contributor/'
+COMMIT_STORE_PATH = './census_interactive/data/processed/commit/'
+CONTRIBUTOR_RETRIEVE_PATH = './census_interactive/data/raw/final_gender_contrib/'
+COMMIT_RETRIEVE_PATH = './census_interactive/data/raw/final_gender_commit/'
 
 # Launch visualizations
 def main():
@@ -23,42 +26,24 @@ def main():
     # Contributor 
     data["Contributor"] = dict()
     for lang in langs:
-        dat_path = './census_interactive/data/raw/final_gender_contrib/'+lang+'.csv'
-        store_path = './census_interactive/data/processed/contributor'
-        load_contributor(lang, dat_path, store_path)
+        dat_path = CONTRIBUTOR_RETRIEVE_PATH+lang+'.csv'
+        load_contributor(lang, dat_path, CONTRIBUTOR_STORE_PATH)
 
         # Save graph data to overall JSON data
-        with open('./census_interactive/data/processed/contributor/'+lang+'.json') as json_file:
+        with open(CONTRIBUTOR_STORE_PATH+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Contributor"][lang] = add_data
 
     # Commits
     data["Commit"] = dict()
     for lang in langs:  
-        dat_path = './census_interactive/data/raw/final_gender_commit/'+lang+'.csv'
-        store_path = './census_interactive/data/processed/commit'
-        load_commit(lang, dat_path, store_path)
+        dat_path = COMMIT_RETRIEVE_PATH+lang+'.csv'
+        load_commit(lang, dat_path, COMMIT_STORE_PATH)
 
         # Save graph data to overall JSON data
-        with open('./census_interactive/data/processed/commit/'+lang+'.json') as json_file:
+        with open(COMMIT_STORE_PATH+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Commit"][lang] = add_data
-
-
-    # # Project 
-    # No longer examined as of 5/31/2022
-
-    # data["Project"] = dict()
-    # for lang in langs:
-    #     dat_path = './census_interactive/data/raw/final_proj_by_win/full.csv'
-    #     store_path = './census_interactive/data/processed/project'
-    #     load_project(lang, dat_path, store_path)
-
-    #     # Save graph data to overall JSON data
-    #     with open('./census_interactive/data/processed/project/'+lang+'.json') as json_file:
-    #         add_data = json.load(json_file)
-    #         data["Project"][lang] = add_data
-            
 
 
     ## Single Contributor Graph Data 
@@ -66,74 +51,88 @@ def main():
     ########################## SINGLE GRAPH SETTINGS ###########################
     # Single graph x axis options, syntax YEAR#
     year_opts = [] if config["years"] is None else config["years"]
-
     ############################################################################
     
     ## Pie Graph ##
     
-    store_path = './census_interactive/data/processed/contributor'
     data_pie = dict()   
-    
+
     # Focus on Contributor for bar graphs
     data_pie["Contributor"] = dict()
-    dat_path = './census_interactive/data/raw/final_gender_contrib/'
-
     for year_opt in year_opts:
         # Updates processed JSON file
-        load_contributor_pie(dat_path, store_path, langs, year_opt)
-
+        load_contributor_pie( CONTRIBUTOR_RETRIEVE_PATH, CONTRIBUTOR_STORE_PATH, 
+                            langs, year_opt)
         # Save graph data to overall JSON data
-        with open(store_path+'/'+'all_pie'+'.json') as json_file:
+        with open(CONTRIBUTOR_STORE_PATH+'all_pie'+'.json') as json_file:
             add_data = json.load(json_file)
         data_pie["Contributor"][year_opt] = add_data
 
     
     ## Bar Graph ##
 
-    store_path = './census_interactive/data/processed/contributor'
-    data_bar = dict()   
-    
+    data_bar = dict()  
+
     # Focus on Contributor for bar graphs
     data_bar["Contributor"] = dict()
-    dat_path = './census_interactive/data/raw/final_gender_contrib/'
-
     # Updates processed JSON file
-    load_contributor_bar(dat_path, store_path, langs)
-
+    load_contributor_bar( CONTRIBUTOR_RETRIEVE_PATH, CONTRIBUTOR_STORE_PATH, langs)
     # Save graph data to overall JSON data
-    with open(store_path+'/'+'all_bar'+'.json') as json_file:
+    with open(CONTRIBUTOR_STORE_PATH+'all_bar'+'.json') as json_file:
         add_data = json.load(json_file)
     data_bar["Contributor"]['male_female'] = add_data
 
 
-
     ## Stacked Area Graph ##
 
-    store_path = './census_interactive/data/processed/contributor'
     data_stack = dict()   
     
     # Focus on Contributor for bar graphs
     data_stack["Contributor"] = dict()
-    dat_path = './census_interactive/data/raw/final_gender_contrib/'
-
     # Updates processed JSON file
-    load_contributor_stack(dat_path, store_path, langs)
-
+    load_contributor_stack( CONTRIBUTOR_RETRIEVE_PATH, CONTRIBUTOR_STORE_PATH, langs)
     # Save graph data to overall JSON data
-    with open(store_path+'/'+'all_stack'+'.json') as json_file:
+    with open(CONTRIBUTOR_STORE_PATH+'all_stack'+'.json') as json_file:
         add_data = json.load(json_file)
     data_stack["Contributor"] = add_data
 
 
+    ## Percent Area Graph ##
+
+    data_percent = dict()   
+    
+    # Focus on Contributor for bar graphs
+    data_percent["Contributor"] = dict()
+    # Updates processed JSON file
+    load_contributor_percent( CONTRIBUTOR_RETRIEVE_PATH, CONTRIBUTOR_STORE_PATH)
+    # Save graph data to overall JSON data
+    with open(CONTRIBUTOR_STORE_PATH+'all_percent'+'.json') as json_file:
+        add_data = json.load(json_file)
+    data_percent["Contributor"] = add_data
+
+
+    ## Dumbbell Graph ##
+
+    data_dumbbell = dict()   
+    
+    # Focus on Contributor for bar graphs
+    data_dumbbell["Contributor"] = dict()
+    # Updates processed JSON file
+    load_contributor_dumbbell(CONTRIBUTOR_RETRIEVE_PATH, CONTRIBUTOR_STORE_PATH, langs)
+    # Save graph data to overall JSON data
+    with open(CONTRIBUTOR_STORE_PATH+'all_dumbbell'+'.json') as json_file:
+        add_data = json.load(json_file)
+    data_dumbbell["Contributor"] = add_data
+
 
     ## Combine all JSON to one dictionary in js/
 
-    with open('./public/js/data.js', 'w') as out_file:
-        out_file.write('var data = %s;' % json.dumps(data,indent=4, sort_keys=True))
-        out_file.write('var data_pie = %s;' % json.dumps(data_pie,indent=4, sort_keys=True))
-        out_file.write('var data_bar = %s;' % json.dumps(data_bar,indent=4, sort_keys=True))
-        out_file.write('var data_stack = %s;' % json.dumps(data_stack,indent=4, sort_keys=True))
-
-
+    with open('./public/js/data.js', 'w', encoding="utf-8") as out_file:
+        out_file.write(f'var data = {json.dumps(data,indent=4, sort_keys=True)};')
+        out_file.write(f'var data_pie = {json.dumps(data_pie,indent=4, sort_keys=True)};')
+        out_file.write(f'var data_bar = {json.dumps(data_bar,indent=4, sort_keys=True)};')
+        out_file.write(f'var data_stack = {json.dumps(data_stack,indent=4, sort_keys=True)};')
+        out_file.write(f'var data_percent = {json.dumps(data_percent,indent=4, sort_keys=True)};')
+        out_file.write(f'var data_dumbbell = {json.dumps(data_dumbbell,indent=4, sort_keys=True)};')
 if __name__== "__main__" :
     main()    

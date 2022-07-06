@@ -1,6 +1,7 @@
 /* Functions to add, update, and delete HTML for viewing single graphs */
 
 function showGraphSingle() {
+    // Display div for stack or pie graph
     let cat;
     let yearOpt;
     let langOpt;
@@ -41,3 +42,20 @@ function showGraphSingle() {
 }
 
 
+function showGraphPercent() {
+    // Graphs Percent area graph
+    yearOpt = "All";
+    // Percent area graph requires same vars as stack area
+    graphOpt = "percent";
+    parseSingleData("Contributor", yearOpt, graphOpt);
+    graphPercent();
+}
+
+function showGraphDumbbell() {
+    // Graphs Percent area graph
+    yearOpt = "All";
+    // Percent area graph requires same vars as stack area
+    graphOpt = "dumbbell";
+    parseSingleData("Contributor", yearOpt, graphOpt);
+    graphDumbbell();
+}

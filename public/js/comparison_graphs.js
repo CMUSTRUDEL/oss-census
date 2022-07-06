@@ -18,12 +18,19 @@ function updateDropdown(graph_num) {
 
     // Automatically select "All" for year dropdown if language is not "All"
     if (selectLang.options[selectLang.selectedIndex].value != "All") {
+        // Warning message if user does not select All Years for individual lanugage
+        if (selectYear.options[selectYear.selectedIndex].value != "All"
+         && selectYear.selectedIndex != "0"){
+            alert("Individual Ecosystems can only be graphed across 'All' Years")
+        }
         selectYear.selectedIndex = "0";
     }
 } 
 
 
 function showGraph() {
+    // Shows specific graphs by altering appropriate 'display' style element
+
     let cat;
     let lang;
     let noEmptyOptions = true;
@@ -60,7 +67,6 @@ function showGraph() {
         
             // Show commit or contributor graph
             if (langOpt == "All") {
-                // Hide these graphs if comparison on languages to be displayed
                 comm.setAttribute("style", "display:none");
                 cont.setAttribute("style", "display:none");
             }
@@ -129,6 +135,7 @@ function addRow() {
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             aria-expanded="true" aria-haspopup="true" aria-label="Default select">                 aria-expanded="true" aria-haspopup="true" aria-label="Default select">
             <option value="" selected disabled hidden>--Select--</option>
+            <option value="All">All</option>
             <option value="Atom">Atom</option>
             <option value="Bower">Bower</option>
             <option value="Cargo">Cargo</option>
@@ -149,7 +156,6 @@ function addRow() {
             <option value="Puppet">Puppet</option>
             <option value="PyPi">PyPi</option>
             <option value="RubyGems">RubyGems</option>
-            <option value="All">All</option>
         </select>
     `;
   
@@ -175,6 +181,8 @@ function removeRow() {
 
 
 function addGraph() {
+    // Adds HTML for new graph and selects appropriate column
+    
     const div = document.createElement('div');  
     div.className = 'graph';
     div.id = 'graph-' + String(numRows)
@@ -183,7 +191,7 @@ function addGraph() {
     <div class="mx-auto my-3 w-full"> 
         <div id="contributor-`+ String(numRows) + `" style="display: none" class="flex-col items-center w-full my-3">                
             <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                <figure class="highcharts-figure">
+                <figure class="highcharts-figure" onclick="return false;">
                     <div id="cont-`+ String(numRows) + `"></div>
                     <!-- JS file link -->
                     <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
@@ -193,7 +201,7 @@ function addGraph() {
     
         <div id="commit-`+ String(numRows) + `" style="display: none" class="flex-col items-center my-3 w-full">
             <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
-                <figure class="highcharts-figure">
+                <figure class="highcharts-figure" onclick="return false;">
                     <div id="comm-`+ String(numRows) + `"></div> 
                     <!-- JS file link -->
                     <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
