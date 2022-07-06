@@ -10,6 +10,10 @@ li#index  { color:purple; font-weight: bold;}
     letter-spacing: 4.5px;
 }
 
+#mainImage {
+    height: 40vw;
+    width: 100%;
+}
 
 .lato-regular {
     font-family: lato,sans-serif;
@@ -19,10 +23,9 @@ li#index  { color:purple; font-weight: bold;}
 
 .lato-bold {
     font-family: lato,sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-style: normal;
 }
-
 
 
 .font-family-karla {
@@ -52,9 +55,8 @@ li#index  { color:purple; font-weight: bold;}
 .bg-midbar{
     background: #F4F1E9;
 }
-.text-primary{
-    color: #325334;
-}
+
+
 .text-primary2{
     color: #52796F;
 }
@@ -131,6 +133,10 @@ li#index  { color:purple; font-weight: bold;}
     line-height: .5vw;
 }
 
+.letter-spacing {
+    letter-spacing: .2vw;
+}
+
 #gender {
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
@@ -148,20 +154,24 @@ li#index  { color:purple; font-weight: bold;}
     width: 30vw;
 }
 
+/* for footer and header */
+
 #logo {
     height: 3.5vw;
     width: 3.5vw;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
 }
 
 #logo2 {
-    height: 3.5vw;
-    width: 9vw;
+    height: 3vw;
+    width: 8vw;
     margin-top: 2vw;
     margin-right: 2vw;
 }
 
 #logo3 {
-    height: 7vw;
+    height: 6vw;
     width: 4vw;
 }
 
@@ -173,3 +183,70 @@ li#index  { color:purple; font-weight: bold;}
         opacity:1;
     }
 }
+
+
+
+
+.text-primary {
+    cursor: pointer;
+    /* Fallback: Set a background color. */
+    background-color: #FD9A23;
+    
+    /* Create the gradient. */
+     background-image: linear-gradient(
+          45deg,
+          #FD9A23 25%, 
+          #FAB124 25%, 
+          #FAB124 50%, 
+          #FCCF3F 50%, 
+          #FCCF3F 75%, 
+          #FFE078 75%
+          );
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+    /* Animate the text when loading the element. */
+      /* This animates it on page load and when hovering out. */
+      animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+  
+  }
+  
+  .text-primary:hover{
+      animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+  }
+  
+  
+  /* Move the background and make it smaller. */
+  /* Animation shown when entering the page and after the hover animation. */
+  @keyframes rainbow-text-simple-animation-rev {
+      0% {
+          background-size: 650%;
+      }
+      40% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 100%;
+      }
+  }
+  
+  /* Move the background and make it larger. */
+  /* Animation shown when hovering over the text. */
+  @keyframes rainbow-text-simple-animation {
+      0% {
+          background-size: 100%;
+      }
+      80% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 650%;
+      }
+  }

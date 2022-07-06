@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
     <!-- Lato Font-->
     <link rel="stylesheet" href="https://use.typekit.net/koo5qlj.css">
+    
 
     <link rel="stylesheet" href="css/default.css">
 
     <style>
-        li#index  { color: green; font-weight: bold;} 
+        li#index  { color: #2E6A5E; font-weight: bold;} 
     </style>
 
     <!-- JS Query for Navbar -->
@@ -47,19 +48,16 @@
         <!-- Text Header -->
 
         <div 
-            class="w-full h-full bg-contain" 
-            style="background-image: url('img/MainImage2.png');">
+            class="w-full h-full bg-cover bg-no-repeat bg-fixed" 
+            style="background-image: url('img/MainImage5.png');">
             <header class="w-full container mx-auto">
                 <div class="flex flex-col items-center padding-header">
                     <div class="flex flex-row">
                         <a class="font-bold text-white uppercase text-mainHeader font-family-bebas">
                             Visualize&nbsp;
                         </a>
-                        <a class="font-bold text-primary uppercase text-mainHeader font-family-bebas">
-                            Gender&nbsp;
-                        </a>
-                        <a class="font-bold text-primary uppercase text-mainHeader font-family-bebas">
-                            Demography&nbsp;
+                        <a class="font-bold text-primary uppercase text-mainHeader font-family-bebas whitespace-nowrap">
+                            Gender Demography&nbsp;
                         </a>
                         <a class="font-bold text-white uppercase text-mainHeader font-family-bebas">
                             Across
@@ -85,30 +83,33 @@
         </div>
     
         <!-- Description of 'The Problem' -->
-        <div class="flex pt-2 items-center overflow-hidden main-margin">
-            <article class="flex flex-row md:flex-row max-w-8xl">
-                <div class ="flex flex-col">
-                    <div class="items-center">
-                        <p class = "font-family-bebas mt-10 text-primary3 text-sideHeader">The Problem</p>
-                    </div>               
-                    <p class = "w-11/12 mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as 
-                        <a href="https://heartbleed.com/" class="text-green-600">"The Heartbleed Bug"</a>
-                        could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.</p> 
-                </div>
-                <img src="img/Hands.png" alt="Hands" id="hands" class="object-right pt-10"/>
-            </article>
-        </div>
+        
+            <div class="flex pt-2 items-center overflow-hidden main-margin">
+                <article class="flex flex-row md:flex-row max-w-8xl">
+                    <div class ="flex flex-col">
+                        <div class="items-center">
+                            <p class = "lato-bold mt-10 text-primary3 text-sideHeader">The Problem</p>
+                        </div>               
+                        <p class = "w-11/12 mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as 
+                            <a href="https://heartbleed.com/" class="text-green-600">"The Heartbleed Bug"</a>
+                            could occur. Because of this, maintaining OSS is undoubtedly crucial. However, several obstacles hinder OSS’s sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture.</p> 
+                    </div>
+                    <img src="img/Hands.png" alt="Hands" id="hands" class="object-right pt-10"/>
+
+                </article>
+
+            </div>
         
         <!-- Description of 'Mission' -->
         <div class="w-full h-full bg-midbar padding-mid">
             <div class="flex flex-col items-center">
-                <span class="font-bold text-primary3 text-sideHeader">
+                <span class="lato-bold text-primary3 text-sideHeader pb-2 letter-spacing">
                     OUR MISSION
                 </span>
-                <span class="font-light text-primary2 text-sideHeader2 mt-4">
+                <span class="text-primary2 text-sideHeader2 mt-4">
                     This website presents a census on gender diversity, one of 
                 </span>
-                <span class="font-light text-primary2 text-sideHeader2">
+                <span class="text-primary2 text-sideHeader2">
                     the many diversity measures, in the OSS community. 
                 </span>
                 <span class="text-primary2 text-sideHeader2 pt-4">
@@ -141,7 +142,7 @@
             <article class="flex flex-row md:flex-row max-w-10xl">
                 <img src="img/Gender_Img.png" alt="gender" id="gender" class="object-left margins-image pt-10"/>
                 <div class ="flex flex-col text-right w-11/12">
-                    <p class = "font-family-bebas margin-top text-primary3 text-sideHeader">Gender Inference</p>
+                    <p class = "lato-bold margin-top text-primary3 text-sideHeader">Gender Inference</p>
                     <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed pb-16">
                         We used computational approaches to infer binary gender from names. In this study, we chose to use 
                         <a href="https://namsor.app/" class="text-green-600">NamSor,</a>
