@@ -34,7 +34,7 @@ function showGraphSingle() {
         // Update JSON object referenced for graphs
         parseSingleData("Contributor", yearOpt, "pie");
         // Function taken from visualizations GRAPH.js
-        graphPie(yearOpt);
+        graphPie();
     }
     else {
         error("Single graph display unidentified issue")
@@ -58,4 +58,12 @@ function showGraphDumbbell() {
     graphOpt = "dumbbell";
     parseSingleData("Contributor", yearOpt, graphOpt);
     graphDumbbell();
+}
+
+function showGraphPolar() {
+    yearOpt = "2019";
+    // Update JSON object referenced for graphs
+    parseSingleData("Contributor", yearOpt, "pie");
+    // Function taken from visualizations GRAPH.js
+    graphPie();
 }

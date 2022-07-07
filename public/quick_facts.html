@@ -14,6 +14,7 @@
     <!-- Lato Font-->
     <link rel="stylesheet" href="https://use.typekit.net/koo5qlj.css">
 
+    <link rel="icon" type="image/jpg" href="img/CensusLogo2.png">
     <link rel="stylesheet" href="css/subpage.css">
     <link rel="stylesheet" href="css/overview.css">
 
@@ -31,6 +32,7 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
     
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
@@ -47,10 +49,11 @@
     <script src="js/visualizations/graph_commit.js"></script>
     <script src="js/visualizations/graph_percent.js"></script>
     <script src="js/visualizations/graph_dumbbell.js"></script>
+    <script src="js/visualizations/graph_pie.js"></script>
 </head>
 
     <!-- onload ensure charts are generated -->
-    <body id="quick-facts w-full h-full" onload="showGraphPercent(); showGraphDumbbell()"lo>
+    <body id="quick-facts w-full h-full" onload="showGraphPercent(); showGraphDumbbell();showGraphPolar()">
         <div class="font-family-karla w-full h-full">
             <!-- Top Bar Nav -->
             <div id="navigation"></div>
@@ -99,7 +102,7 @@
             </div>
                 
 
-
+            <!-- Row 1 -->
             <div class = "flex flex-row w-full h-max pl-24 py-32 relative">
                 <div class="absolute z-0 blob3">
                     <img src="img/NumberBlob1.png" alt="Blob"/>
@@ -125,10 +128,12 @@
                     </div>
                 </div>
             </div>
-    
-            <div class = "flex flex-row w-full h-max pl-40 py-32">
+
+
+            <!-- Row 2 -->
+            <div class = "flex flex-row w-full h-max pl-40 py-32 relative">
                 <div class = "flex flex-col w-2/5">
-                    <div class="text-2xl text-justify">
+                    <div class="text-2xl text-justify pr-24">
                         It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.
                     </div>
                 </div>
@@ -166,35 +171,9 @@
                         </a>
                     </div>
                 </div>
-                <div class = "flex flex-col w-2/5">
-                    <div class="paragraph-size text-justify pr-24">
-                        Starting with women percentage of 
-                        <span class="text-blurb1 font-bold">2.13% among core contributors</span>
-                        in year xxxx and 
-                        <span class="text-blurb1 font-bold">2.25% among all contributors</span>
-                        , the number has been steadily growing between 2008 and 2021. Moreover, we found that, between 2014 and 2021, the women percentage among cores has surpassed the percentage among all, leaving a slight but constant 
-                        <span class="text-blurb1 font-bold">margin of 0.3%.</span>
-                        
-                    </div>
-                </div>
             </div>
-    
-              <div class = "flex flex-row w-full h-max pl-40 py-32 relative">
-                <div class = "flex flex-col w-2/5">
-                    <div class="paragraph-size text-justify">
-                        It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.
-                    </div>
-    
-                </div>
-                <div class="absolute z-0 blob4">
-                    <img src="img/NumberBlob2.png" alt="Blob"/>
-                </div>
-                <div class="flex flex-col w-1/2 h-full mr-24 m-auto">
-                    <img src="img/OverviewGraph2.png" alt="Graph1" class="h-full" />
-                </div>
-            </div>
-            <div class = "flex flex-row w-full h-max pl-24 py-32 relative">
 
+            <div class = "flex flex-row w-full h-max pl-24 py-32 relative">
                 <div class="absolute z-0 blob5">
                     <img src="img/NumberBlob3.png" alt="Blob"/>
                 </div>
@@ -208,11 +187,33 @@
                     </a>
                 </div>
                 <div class = "flex flex-col w-2/5">
-                    <div class="paragraph-size text-justify pr-24">
+                    <div class="text-2xl text-justify pr-24">
                         The graph shows the percentage of women contributors at its maximum and minimum in each ecosystem. Some ecosystems have a higher percentage of women contributors than others. 
                     </div>
                 </div>
             </div>
+
+            <!-- Row 4 -->
+            <div class = "flex flex-row w-full h-max pl-24 py-32 relative">
+                <div class = "flex flex-col w-2/5">
+                    <div class="text-2xl text-justify pr-24">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+                        </p>
+                    </div>
+                </div>
+                <!-- Polar Chart -->
+                <div class="flex flex-col w-1/2 h-full mr-16">  
+                    <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure" onclick="return false;">
+                            <div id="pie-cont"></div>
+                            <!-- JS file link -->
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            
 
             <footer id="footer" class="pt-24"></footer>
             <script> 
