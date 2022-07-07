@@ -1,4 +1,4 @@
-function graphPie(year_opt) {
+function graphPie() {
     new Highcharts.chart('pie-cont', {
         chart: {
             type: 'variablepie'
