@@ -58,19 +58,100 @@ function graph() {
     }
 
     // Graph Polar or Stack charts comparing all languages
-    if (langOpt == "All") {
-        showAllLangs();
-    }
+    handleAllLangs(langOpt);
     // Display Commit or Contributor graphs
+    handleSingleCategory();
+    handleMultipleCategories(langOpt);
+
+}
+
+
+// Functions to Hide/Display Contributor and Commit Graphs
+
+function handleSingleCategory() {
+    // Display one commit or contributor graph
+
+    cat = localStorage.getItem("category");
+    // Default to first dropdown selection
+    lang = localStorage.getItem("language-1");
+
+    // Retrieve category HTML
+    cont = document.getElementById("contributor-single");
+    comm = document.getElementById("commit-single");
+
+    // Hide Single graphs if multiple to be displayed
+    if (numRows > 1) {
+        setDisplay(cont, comm, "none", "none");
+        return 
+    }
+
+    // Show Commit or Contributor graphs
+    if (cat == "contributor" ) {
+        // Update JSON object referenced for graphs
+        parseData("Contributor", lang)
+        setDisplay(cont, comm, "show", "none");
+        // Reloads graph with updated data vars
+        graphContributor("0")
+    }
     else {
-        // Handle single graph
-        if (numRows == 1) {
-            handleSingleCategory(langOpt)
-        }
-        // Handle multiple column graphs
-        handleMultipleCategories(langOpt);
+        parseData("Commit", lang)
+        setDisplay(cont, comm, "none", "show");
+        // Reloads graph with updated data vars
+        graphCommit("0")            
     }
 }
+
+function handleMultipleCategories(langOpt) {
+    // Display multiple contributor and/or commit graphs across 2 columns
+    let cont;
+    let comm;
+
+    if ((langOpt == 'All') || (numRows == 1) ) {
+        // Hide comparison columns if single graphs displayed
+
+        cont = document.getElementById("contributor-1");
+        comm = document.getElementById("commit-1");
+        setDisplay(cont, comm, "none", "none");
+        return
+    }
+    
+    for (let num = 1; num < numRows + 1; num++) {
+        cat = localStorage.getItem("category");
+        lang = localStorage.getItem("language-" + String(num));
+    
+        // Retrieve category HTML
+        cont = document.getElementById("contributor-" + String(num));
+        comm = document.getElementById("commit-" + String(num));
+    
+        // Show Contributor graph
+        if (cat == "contributor" ) {
+            // Update JSON object referenced for graphs
+            parseData("Contributor", lang)
+            setDisplay(cont, comm, "show", "none");
+        
+            // Reloads graph with updated data vars
+            graphContributor(String(num))
+        }
+        // Show Commit Graph
+        else {
+            parseData("Commit", lang)
+            setDisplay(cont, comm, "none", "show");
+
+            // Reloads graph with updated data vars
+            graphCommit(String(num))            
+        }
+    }
+}
+
+function setDisplay(selectOne, selectTwo, statusOne, statusTwo ) {
+    // Selected HTML display set to either "show" or "none" status
+    selectOne.setAttribute("style", `display:${statusOne}`);
+    selectTwo.setAttribute("style", `display:${statusTwo}`);
+}
+
+
+
+// Functions to handle Multiple Graphs on page
 
 function addRow() {
     // Add query row
@@ -149,7 +230,6 @@ function removeRow() {
     removeGraph();
 }
 
-
 function addGraph() {
     // Adds HTML for new graph and selects appropriate column
     
@@ -190,6 +270,7 @@ function addGraph() {
 
 }
 
+
 function removeGraph() {
     let element;
     let child; 
@@ -205,90 +286,4 @@ function removeGraph() {
     }
    
     element.removeChild(child);
-}
-
-
-function showSingleCategory(langOpt) {
-    // Display one commit or contributor graph
-
-    cat = localStorage.getItem("category");
-    // Default to first dropdown selection
-    lang = localStorage.getItem("language-1");
-
-    // Retrieve category HTML
-    cont = document.getElementById("contributor-single");
-    comm = document.getElementById("commit-single");
-
-    // Show Commit or Contributor graphs
-    if (langOpt == "All") {        
-        hideSingleCategories();
-    }
-    else if (cat == "contributor" ) {
-        // Update JSON object referenced for graphs
-        parseData("Contributor", lang)
-        comm.setAttribute("style", "display:none");
-        cont.setAttribute("style", "display:show");
-    
-        // Reloads graph with updated data vars
-        graphContributor(String(num))
-    }
-    else {
-        parseData("Commit", lang)
-
-        cont.setAttribute("style", "display:none");
-        comm.setAttribute("style", "display:show");
-
-        // Reloads graph with updated data vars
-        graphCommit(String(num))            
-    }
-}
-
-
-function showMultipleCategories(langOpt) {
-    // Display multiple contributor and/or commit graphs across 2 columns
-    let cont;
-    let comm;
-
-    for (let num = 1; num < numRows + 1; num++) {
-        cat = localStorage.getItem("category");
-        lang = localStorage.getItem("language-" + String(num));
-    
-        // Retrieve category HTML
-        cont = document.getElementById("contributor-" + String(num));
-        comm = document.getElementById("commit-" + String(num));
-    
-        // Show/Hide Commit or Contributor graphs
-        if (langOpt == "All") {
-            comm.setAttribute("style", "display:none");
-            cont.setAttribute("style", "display:none");
-        }
-        // Show Contributor graph
-        else if (cat == "contributor" ) {
-            // Update JSON object referenced for graphs
-            parseData("Contributor", lang)
-            comm.setAttribute("style", "display:none");
-            cont.setAttribute("style", "display:show");
-        
-            // Reloads graph with updated data vars
-            graphContributor(String(num))
-        }
-        // Show Commit Graph
-        else {
-            parseData("Commit", lang)
-    
-            cont.setAttribute("style", "display:none");
-            comm.setAttribute("style", "display:show");
-    
-            // Reloads graph with updated data vars
-            graphCommit(String(num))            
-        }
-    }
-}
-
-function hideSingleCategories() {
-    cont = document.getElementById("contributor-single");
-    comm = document.getElementById("commit-single");
-
-    comm.setAttribute("style", "display:none");
-    cont.setAttribute("style", "display:none");
 }
