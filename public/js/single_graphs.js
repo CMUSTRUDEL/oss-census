@@ -1,6 +1,6 @@
 /* Functions to add, update, and delete HTML for viewing single graphs */
 
-function showGraphSingle() {
+function showAllLangs() {
     // Display div for stack or pie graph
     let cat;
     let yearOpt;
@@ -40,7 +40,6 @@ function showGraphSingle() {
         error("Single graph display unidentified issue")
     }
 }
-
 
 function showGraphPercent() {
     // Graphs Percent area graph

@@ -28,7 +28,7 @@ function updateDropdown(graph_num) {
 } 
 
 
-function showGraph() {
+function graph() {
     // Shows specific graphs by altering appropriate 'display' style element
 
     let cat;
@@ -52,53 +52,23 @@ function showGraph() {
         }
     }
 
-    let cont;
-    let comm;
-
-    // Only generate graphs if all options are selected, language cannot be "All"
-    if (noEmptyOptions) {
-        for (let num = 1; num < numRows + 1; num++) {
-            cat = localStorage.getItem("category");
-            lang = localStorage.getItem("language-" + String(num));
-
-            // Retrieve category HTML
-            cont = document.getElementById("contributor-" + String(num));
-            comm = document.getElementById("commit-" + String(num));
-        
-            // Show commit or contributor graph
-            if (langOpt == "All") {
-                comm.setAttribute("style", "display:none");
-                cont.setAttribute("style", "display:none");
-            }
-            else if (cat == "contributor" ) {
-                // Update JSON object referenced for graphs
-                parseData("Contributor", lang)
-                comm.setAttribute("style", "display:none");
-                cont.setAttribute("style", "display:show");
-            
-                // Reloads graph with updated data vars
-                graphContributor(String(num))
-            }
-            // Show commit graph, hide others
-            else {
-                parseData("Commit", lang)
-    
-                cont.setAttribute("style", "display:none");
-                comm.setAttribute("style", "display:show");
-    
-                // Reloads graph with updated data vars
-                graphCommit(String(num))            
-            }
-        }
+    // Only graph if all options are selected, language cannot be "All"
+    if (!noEmptyOptions) {
+        return
     }
-    
+
+    // Graph Polar or Stack charts comparing all languages
     if (langOpt == "All") {
-        // Graph visualizations comparing all languages
-        showGraphSingle();
+        showAllLangs();
     }
+    // Display Commit or Contributor graphs
     else {
-        document.getElementById("stack").setAttribute("style", "display:none");
-        document.getElementById("pie").setAttribute("style", "display:none");
+        // Handle single graph
+        if (numRows == 1) {
+            handleSingleCategory(langOpt)
+        }
+        // Handle multiple column graphs
+        handleMultipleCategories(langOpt);
     }
 }
 
@@ -235,4 +205,90 @@ function removeGraph() {
     }
    
     element.removeChild(child);
+}
+
+
+function showSingleCategory(langOpt) {
+    // Display one commit or contributor graph
+
+    cat = localStorage.getItem("category");
+    // Default to first dropdown selection
+    lang = localStorage.getItem("language-1");
+
+    // Retrieve category HTML
+    cont = document.getElementById("contributor-single");
+    comm = document.getElementById("commit-single");
+
+    // Show Commit or Contributor graphs
+    if (langOpt == "All") {        
+        hideSingleCategories();
+    }
+    else if (cat == "contributor" ) {
+        // Update JSON object referenced for graphs
+        parseData("Contributor", lang)
+        comm.setAttribute("style", "display:none");
+        cont.setAttribute("style", "display:show");
+    
+        // Reloads graph with updated data vars
+        graphContributor(String(num))
+    }
+    else {
+        parseData("Commit", lang)
+
+        cont.setAttribute("style", "display:none");
+        comm.setAttribute("style", "display:show");
+
+        // Reloads graph with updated data vars
+        graphCommit(String(num))            
+    }
+}
+
+
+function showMultipleCategories(langOpt) {
+    // Display multiple contributor and/or commit graphs across 2 columns
+    let cont;
+    let comm;
+
+    for (let num = 1; num < numRows + 1; num++) {
+        cat = localStorage.getItem("category");
+        lang = localStorage.getItem("language-" + String(num));
+    
+        // Retrieve category HTML
+        cont = document.getElementById("contributor-" + String(num));
+        comm = document.getElementById("commit-" + String(num));
+    
+        // Show/Hide Commit or Contributor graphs
+        if (langOpt == "All") {
+            comm.setAttribute("style", "display:none");
+            cont.setAttribute("style", "display:none");
+        }
+        // Show Contributor graph
+        else if (cat == "contributor" ) {
+            // Update JSON object referenced for graphs
+            parseData("Contributor", lang)
+            comm.setAttribute("style", "display:none");
+            cont.setAttribute("style", "display:show");
+        
+            // Reloads graph with updated data vars
+            graphContributor(String(num))
+        }
+        // Show Commit Graph
+        else {
+            parseData("Commit", lang)
+    
+            cont.setAttribute("style", "display:none");
+            comm.setAttribute("style", "display:show");
+    
+            // Reloads graph with updated data vars
+            graphCommit(String(num))            
+        }
+    }
+}
+
+function hideSingleCategories() {
+    cont = document.getElementById("contributor-single");
+    comm = document.getElementById("commit-single");
+
+    comm.setAttribute("style", "display:none");
+    cont.setAttribute("style", "display:none");
 }
