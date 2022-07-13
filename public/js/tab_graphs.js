@@ -1,3 +1,5 @@
+/* Functions for updating graphs with Commit-Contributor tabs */
+
 function updateTab(type, ecosystem) {
     console.log("HI friend");
     // Save button associated graph type to localstorage 

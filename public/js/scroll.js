@@ -1,3 +1,4 @@
+/* Functions for scroll-to-bottom button */
 
 // Get the button
 let scrollButton = document.getElementById('btn-to-bottom');

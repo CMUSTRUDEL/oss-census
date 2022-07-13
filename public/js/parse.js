@@ -1,3 +1,5 @@
+/* JSON format used to access graph variables, functions to set object fields based on graph */
+
 var obj = '{"title": "", \
             "label_x": "", \
             "label_y": "", \

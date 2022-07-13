@@ -1,4 +1,4 @@
-/* Functions to add, update, and delete HTML */
+/* Functions to add, update, and delete HTML primarily on comparison page */
 
 // Global var tracks number of graphs
 numRows = 1 
