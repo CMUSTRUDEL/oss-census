@@ -37,9 +37,15 @@ python run.py
 
 Executing the `run.py` script invokes calls to the process.py functions for specified graphs in config.yaml, formatting the data into nested fields (dictionary format) per language, per graph type. The script finally updates the `data` variable in `js/data.js` with an aggregation of all the JSON files in *data/processed*, .
 
+# Update HTML
+
+**INSERT how HTML pages connect and interact**
+
 
 # Everything Else
-**.html** files can be tested locally best via localhost through Python command
+**css/** contains style code used in HTML pages. default.css is used for index.html (home) and subpage.css used for remaining pages.
+
+**.html** pages can be tested locally best via localhost through Python command
 ```
 python -m http.server
 ```
@@ -47,7 +53,7 @@ python -m http.server
 
 **js/parse.js** defines the JSON storage structure and a function to access each graph's data given a category and language.
 
-**js/single_graphs.js** calls appropriate JS function defined in js/GRAPHNAME.js to parse each chart data and generate chart
+**js/single_graphs.js** calls appropriate JS function defined in js/visualizations/GRAPHNAME.js to parse each chart data and generate chart
 
 **config.yaml** lists all data that would like to be processed. If only specific ecosystem's (or "language's") CSV files are updated for example, we may not want to wait for everything to update. The following are the maximum options that can be applied:
 ```
