@@ -15,7 +15,7 @@ var obj = data["Commit"]["All"]
 ```
 The `data` variable is located in `js/data.js`. This JS file's data is shared by `<script>` tags in our .html files. `data` stores information in JSON format (like a Python dictionary), where nested fields store array data for each graphs. 
 
-To see how we modify the data stored in this variable, read more in the next section "Update Data" and check out the `js/data.js` file.
+To see how we modify data stored in this variable, read in the next section "Update Data" and check out `js/data.js` file.
 
 
 # Update Data
