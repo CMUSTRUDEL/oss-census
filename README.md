@@ -53,7 +53,7 @@ python -m http.server
 
 **js/parse.js** defines the JSON storage structure and a function to access each graph's data given a category and language.
 
-**js/single_graphs.js** calls appropriate JS function defined in js/visualizations/GRAPHNAME.js to parse each chart data and generate chart
+**js/single_graphs.js** and **js/comparison_graphs.js** call JS functions defined in js/visualizations/GRAPHNAME.js to parse each chart data and generate chart. comparison_graphs.js also contains handlers to display multiple graphs on comparison page.
 
 **config.yaml** lists all data that would like to be processed. If only specific ecosystem's (or "language's") CSV files are updated for example, we may not want to wait for everything to update. The following are the maximum options that can be applied:
 ```
