@@ -38,9 +38,15 @@ python run.py
 Executing the `run.py` script invokes calls to the process.py functions for specified graphs in config.yaml, formatting the data into nested fields (dictionary format) per language, per graph type. The script finally updates the `data` variable in `js/data.js` with an aggregation of all the JSON files in *data/processed*, .
 
 # Update HTML
+**index.html** home page with links to jump to site pages and external sites
 
-**INSERT how HTML pages connect and interact**
+**quick_facts.html** contains interactive visualizations with brief descriptions
 
+**comparison.html** able to display multiple stacked bar charts with plot line as well as stack area and polar charts. Heavy JS support and also contains short description on graphs' data source.
+
+**references.html** annotated bibliography with table of references
+
+**footer.html** and **nav.html** shared across HTML files and called with JQuery.
 
 # Everything Else
 **css/** contains style code used in HTML pages. default.css is used for index.html (home) and subpage.css used for remaining pages.
