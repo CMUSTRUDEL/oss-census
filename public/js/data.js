@@ -5967,7 +5967,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in All Public Projects",
             "x_categories": [
                 "2008-3",
@@ -6291,7 +6291,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Atom Public Projects",
             "x_categories": [
                 "2008-3",
@@ -6615,7 +6615,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Bower Public Projects",
             "x_categories": [
                 "2008-3",
@@ -6939,7 +6939,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in CPAN Public Projects",
             "x_categories": [
                 "2008-3",
@@ -7263,7 +7263,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in CRAN Public Projects",
             "x_categories": [
                 "2008-3",
@@ -7587,7 +7587,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Cargo Public Projects",
             "x_categories": [
                 "2008-3",
@@ -7911,7 +7911,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Clojars Public Projects",
             "x_categories": [
                 "2008-3",
@@ -8235,7 +8235,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in CocoaPods Public Projects",
             "x_categories": [
                 "2008-3",
@@ -8559,7 +8559,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Go Public Projects",
             "x_categories": [
                 "2008-3",
@@ -8883,7 +8883,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Hackage Public Projects",
             "x_categories": [
                 "2008-3",
@@ -9207,7 +9207,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Hex Public Projects",
             "x_categories": [
                 "2008-3",
@@ -9531,7 +9531,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Maven Public Projects",
             "x_categories": [
                 "2008-3",
@@ -9855,7 +9855,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Meteor Public Projects",
             "x_categories": [
                 "2008-3",
@@ -10179,7 +10179,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in NPM Public Projects",
             "x_categories": [
                 "2008-3",
@@ -10503,7 +10503,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in NuGet Public Projects",
             "x_categories": [
                 "2008-3",
@@ -10827,7 +10827,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Packagist Public Projects",
             "x_categories": [
                 "2008-3",
@@ -11151,7 +11151,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in PlatformIO Public Projects",
             "x_categories": [
                 "2008-3",
@@ -11475,7 +11475,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Pub Public Projects",
             "x_categories": [
                 "2008-3",
@@ -11799,7 +11799,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Puppet Public Projects",
             "x_categories": [
                 "2008-3",
@@ -12123,7 +12123,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Pypi Public Projects",
             "x_categories": [
                 "2008-3",
@@ -12447,7 +12447,7 @@ var data = {
             "height_ratio": 69.23076923076923,
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
-            "label_y_secondary": "% Women (of total Men + Women)",
+            "label_y_secondary": "% Women (of total m + w)",
             "title": "Active Contributors in Rubygems Public Projects",
             "x_categories": [
                 "2008-3",
