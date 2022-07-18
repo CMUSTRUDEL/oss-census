@@ -547,6 +547,7 @@ def _format_date(period):
     month = time - math.floor(time/12)*12
     if not month:
         month = 12
+        year -= 1
 
     return f"{year}-{month}"
 
