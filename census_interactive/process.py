@@ -97,7 +97,7 @@ def load_contributor_stack_line(lang, dat_path, store_path):
     title = "Active Contributors in "  + lang_title + " Public Projects"
     label_x = 'Time (quarter)'
     label_y = 'Number of Contributors (thousand)'
-    label_y_secondary = "% Women (of total Men + Women)"
+    label_y_secondary = "% Women (of total m + w)"
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all_unknown, all_male, all_female, among_all, among_core]

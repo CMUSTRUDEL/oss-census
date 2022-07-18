@@ -23,7 +23,7 @@ To see how we modify data stored in this variable, read in the next section "Upd
 
 **census_interactive/data/processed** stores JSON data of each graph's CSV. It's formatted into specific fields via scripts from process.py and these fields are accessed in each graph's script.js file.
 
-**census_interactive/process.py** module contains functions named *load_CATEGORY* to format data from *data/raw*. Using this data, each function creates the appropriate axis labels, a dictionary or array (used for plotting line graphs) that are stored as JSON in *data/processed*. All functions are called in the `run.py` script and then compiled into `data.js` for each chart's JS files to access.
+**census_interactive/process.py** module contains functions named *load_CATEGORY* to format data from *data/raw*. Using this data, each function creates the appropriate axis labels, a dictionary or array (used for plotting line graphs) that are stored as JSON in *data/processed*. Run the `run.py` script after updating any of these functions to compile new data into `data.js`. Each chart's JS files access variables from `data.js`.
 
 1. Ensure proper setup by ensuring all imports are installed
 ```
