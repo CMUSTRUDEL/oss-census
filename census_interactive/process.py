@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import json
 
-def load_contributor(lang, dat_path, store_path):
+def load_contributor_stack_line(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
     All active contributor by gender by window: './contributor/all/'
@@ -47,7 +47,8 @@ def load_contributor(lang, dat_path, store_path):
 
     # Plot ratio line for female in all contributor
     male = dat["male_all"].replace(0, 1)
-    ratio_all = dat["female_all"] / (dat["female_all"] + male)
+    # Convert to percent
+    ratio_all = round((dat["female_all"] / (dat["female_all"] + male) * 100), 2)
     for win in dat["win"]:
         win = win - 1
         if dat["female_all"][win] + male[win] <= 5:
@@ -55,7 +56,8 @@ def load_contributor(lang, dat_path, store_path):
 
     # Plot ratio line for female in core contributor
     male = dat["male_core"].replace(0, 1)
-    ratio_core = dat["female_core"] / (dat["female_core"] + male)
+    # Convert to percent
+    ratio_core = round((dat["female_core"] / (dat["female_core"] + male) * 100), 2)
     for win in dat["win"]:
         win = win - 1
         if dat["female_core"][win] + male[win] <= 10:
@@ -95,7 +97,7 @@ def load_contributor(lang, dat_path, store_path):
     title = "Active Contributors in "  + lang_title + " Public Projects"
     label_x = 'Time (quarter)'
     label_y = 'Number of Contributors (thousand)'
-    label_y_secondary = "Women Ratio = F/(F + M)"
+    label_y_secondary = "% Women (of total Men + Women)"
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
     data = [all_unknown, all_male, all_female, among_all, among_core]
@@ -114,7 +116,7 @@ def load_contributor(lang, dat_path, store_path):
 
     
 
-def load_commit(lang, dat_path, store_path):
+def load_commit_stack_line(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
     Commit count by gender by window: './commit/graph'
@@ -147,20 +149,20 @@ def load_commit(lang, dat_path, store_path):
 
     # Plot ratio line for female in all commits
     male = dat["male_commit"].replace(0, 1)
-    ratio = dat["female_commit"] / (dat["female_commit"] + male)
+    ratio = round((dat["female_commit"] / (dat["female_commit"] + male) * 100), 2)
     for win in dat["win"]:
         win = win - 1
         if dat["female_commit"][win] + male[win] <= 1000:
            ratio[win] = 0
            
     # Format line data of contributors
-    ratio_female = {}
-    ratio_female["name"] = "Among core"
-    ratio_female["type"] = "spline"
-    ratio_female["data"] = list(ratio)
-    ratio_female["color"] = "darkblue"
-    ratio_female["yAxis"] = 1
-    ratio_female["marker"] = { 
+    among_core = {}
+    among_core["name"] = "Among core"
+    among_core["type"] = "spline"
+    among_core["data"] = list(ratio)
+    among_core["color"] = "darkblue"
+    among_core["yAxis"] = 1
+    among_core["marker"] = { 
         "fillColor": '#FFFFFF',
         "radius": 5,
         "lineWidth": 2,
@@ -183,7 +185,7 @@ def load_commit(lang, dat_path, store_path):
     label_y_secondary = "Women Commit Ratio = F/(F + M)"
     x_categories = wins
     height_ratio = (9 / 13 * 100) # 16:9 ratio
-    data = [all_unknown, all_male, all_female, ratio_female]
+    data = [all_unknown, all_male, all_female, among_core]
     
     # write data to js file that creates variables referenced in script.js file
     out_dict = dict()
@@ -314,7 +316,7 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
     
 
     # Graph setup info
-    title = "Contributors compared by Ecosystem Size and % Women"
+    title = "Contributors by Ecosystem Size and % Women"
     subtitle = str(year_opt)
     
     # write data to js file that creates variables referenced in script.js file
