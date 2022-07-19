@@ -1,6 +1,6 @@
 import json
 import yaml
-from census_interactive.process import (load_commit, load_contributor, 
+from census_interactive.process import (load_commit_stack_line, load_contributor_stack_line, 
     load_contributor_bar, load_contributor_dumbbell, load_contributor_percent,
     load_contributor_pie, load_contributor_stack)
 
@@ -27,7 +27,7 @@ def main():
     data["Contributor"] = dict()
     for lang in langs:
         dat_path = CONTRIBUTOR_RETRIEVE_PATH+lang+'.csv'
-        load_contributor(lang, dat_path, CONTRIBUTOR_STORE_PATH)
+        load_contributor_stack_line(lang, dat_path, CONTRIBUTOR_STORE_PATH)
 
         # Save graph data to overall JSON data
         with open(CONTRIBUTOR_STORE_PATH+lang+'.json') as json_file:
@@ -38,7 +38,7 @@ def main():
     data["Commit"] = dict()
     for lang in langs:  
         dat_path = COMMIT_RETRIEVE_PATH+lang+'.csv'
-        load_commit(lang, dat_path, COMMIT_STORE_PATH)
+        load_commit_stack_line(lang, dat_path, COMMIT_STORE_PATH)
 
         # Save graph data to overall JSON data
         with open(COMMIT_STORE_PATH+lang+'.json') as json_file:

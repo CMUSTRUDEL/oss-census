@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+@import url('https://use.typekit.net/koo5qlj.css');
 
 .font-family-quicksand1 {
     font-family: quicksand, sans-serif;
@@ -147,6 +148,8 @@ td, th {
 #logo {
     height: 3.5vw;
     width: 3.5vw;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
 }
 
 #logo2 {
@@ -166,5 +169,15 @@ td, th {
     border-color:purple; 
     border-radius: 25px;
     padding: 1em;
-} 
+}
+
+.bib-padding {
+    padding-left: 13vw;
+    padding-right: 13vw;
+}
+
+.main-header {
+    font-size: 5vw;
+}
+
 

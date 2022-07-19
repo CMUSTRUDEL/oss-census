@@ -3,12 +3,27 @@
 
 li#index  { color:purple; font-weight: bold;} 
 
-.font-family-bebas {
+
+.bebas-header {
     font-family: bebas-neue, sans-serif;
     font-weight: 700;
     font-style: normal;
     letter-spacing: 4.5px;
 }
+
+
+.bebas-regular {
+    font-family: bebas-neue, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quicksand-bold {
+    font-family: quicksand, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 
 .lato-regular {
@@ -19,30 +34,27 @@ li#index  { color:purple; font-weight: bold;}
 
 .lato-bold {
     font-family: lato,sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.lato-mid {
+    font-family: lato,sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 
 
-
 .font-family-karla {
     font-family: karla;
 }
-.h-200{
-    height: 600px;
+
+/* height and width */
+
+.h-problem {
+    height: 37vw;
 }
-.h-128{
-    height: 450px;
-}
-.h-100{
-    height: 400px;
-}
-.w-100{
-    height: 400px;
-}
-.w-128{
-    height: 450px;
-}
+
 .bg-primary{
     background: #732867;
 }
@@ -50,16 +62,29 @@ li#index  { color:purple; font-weight: bold;}
     background: #F1F1F1;
 }
 .bg-midbar{
-    background: #F4F1E9;
+    background: #F2F4E8;
 }
-.text-primary{
-    color: #325334;
+
+.bg-midbar2{
+    background: #0A253F;
 }
+
+.bg-problem {
+    background: #7F9A3C;
+}
+
+
 .text-primary2{
     color: #52796F;
 }
 .text-primary3{
     color: #6F8A6B;
+}
+.text-primary4{
+    color: #013A51;
+}
+.text-lightgray{
+    color: #5C7782;
 }
 /* text sizing */
 
@@ -67,6 +92,12 @@ li#index  { color:purple; font-weight: bold;}
     font-size: 1.2vw;
     line-height: 1.8vw; /* 32px */
 }
+
+.text-missionHeader{
+    font-size: 2vw;
+    line-height: 3vw; /* 32px */
+}
+
 .text-mainHeader{
     font-size: 5.5vw;
     line-height: 5vw;
@@ -81,27 +112,45 @@ li#index  { color:purple; font-weight: bold;}
 }
 
 .text-sideHeader2{
-    font-size: 1.5vw;
-    line-height: 1.8vw;
+    font-size: 1.7vw;
+    line-height: 2.1vw;
 }
 
 .text-icons{
     font-size: 1vw;
     line-height: 1.4vw; /* 32px */
+    padding-left: 3vw;
+}
+
+.text-iconsHeader {
+    font-size: 1.7vw;
+    line-height: 1.4vw; /* 32px */
+    color: #013A51;
+    padding-left: 3vw;
+}
+
+.text-processingHeader {
+    font-size: 3vw;
+    margin-right: 6vw;
+    line-height: 3.5vw;
 }
 
 .icons-dimensions{
     height:8vw;
     width:7.5vw;
 }
-.icons-dimensions2{
-    height:8vw;
-    width:6.5vw;
-}   
 
-.margin-top {
-    margin-top: 40px;
+
+.icons-dimensionsBalance{
+    height: 8vw;
+    width: 9vw;
 }
+
+.greenBtn {
+    height: 2vw;
+    width: 2vw;
+}
+
 
 .margins-image {
     margin-right: 5vw;
@@ -126,9 +175,32 @@ li#index  { color:purple; font-weight: bold;}
     margin-left: 6vw;
 }
 
+.section-padding {
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+}
+
+.section-padding2 {
+    padding-top: 7vw;
+    padding-bottom: 7vw;
+}
+
+.pbottom-small {
+    padding-bottom: 0.7vw;
+}
+
+.mission-margin {
+    margin-right: 15vw;
+    margin-left: 15vw;
+}
+
 .text-nav {
     font-size: .8vw;
     line-height: .5vw;
+}
+
+.letter-spacing {
+    letter-spacing: .2vw;
 }
 
 #gender {
@@ -148,20 +220,24 @@ li#index  { color:purple; font-weight: bold;}
     width: 30vw;
 }
 
+/* for footer and header */
+
 #logo {
     height: 3.5vw;
     width: 3.5vw;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
 }
 
 #logo2 {
-    height: 3.5vw;
-    width: 9vw;
+    height: 3vw;
+    width: 8vw;
     margin-top: 2vw;
     margin-right: 2vw;
 }
 
 #logo3 {
-    height: 7vw;
+    height: 6vw;
     width: 4vw;
 }
 
@@ -173,3 +249,70 @@ li#index  { color:purple; font-weight: bold;}
         opacity:1;
     }
 }
+
+
+
+
+.text-primary {
+    cursor: pointer;
+    /* Fallback: Set a background color. */
+    background-color: #FD9A23;
+    
+    /* Create the gradient. */
+     background-image: linear-gradient(
+          45deg,
+          #FD9A23 25%, 
+          #FAB124 25%, 
+          #FAB124 50%, 
+          #FCCF3F 50%, 
+          #FCCF3F 75%, 
+          #FFE078 75%
+          );
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+    /* Animate the text when loading the element. */
+      /* This animates it on page load and when hovering out. */
+      animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+  
+  }
+  
+  .text-primary:hover{
+      animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+  }
+  
+  
+  /* Move the background and make it smaller. */
+  /* Animation shown when entering the page and after the hover animation. */
+  @keyframes rainbow-text-simple-animation-rev {
+      0% {
+          background-size: 650%;
+      }
+      40% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 100%;
+      }
+  }
+  
+  /* Move the background and make it larger. */
+  /* Animation shown when hovering over the text. */
+  @keyframes rainbow-text-simple-animation {
+      0% {
+          background-size: 100%;
+      }
+      80% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 650%;
+      }
+  }
