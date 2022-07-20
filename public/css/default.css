@@ -316,3 +316,64 @@ li#index  { color:purple; font-weight: bold;}
           background-size: 650%;
       }
   }
+
+/* For library logos */
+
+#logo-grid > a {
+    background: #00CA90;
+    position: relative;
+    border-radius: 0.75vw;
+  }
+
+
+
+#logo-grid > a::before {
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+}
+
+#logo-grid > a > img {
+    position: absolute;
+    padding: 0.5vw;
+    max-width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.image__text {
+    border-radius: 0.75vw;
+    position: absolute;
+    padding: 0.5vw;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__text > * {
+    transform: translateY(1vw);
+    transition: transform 0.25s;
+}
+
+.image__text:hover{
+    opacity: 1;
+}
+
+.image__text:hover > *{
+    transform: translate(0);
+}
+
+.small_logo_text{
+    font-size: 1vw;
+    line-height: 1vw;
+}
