@@ -319,6 +319,11 @@ li#index  { color:purple; font-weight: bold;}
 
 /* For library logos */
 
+#logo-grid {
+    padding-top: 1.5vw;
+  }
+
+
 #logo-grid > a {
     background: #00CA90;
     position: relative;
@@ -374,6 +379,6 @@ li#index  { color:purple; font-weight: bold;}
 }
 
 .small_logo_text{
-    font-size: 1vw;
-    line-height: 1vw;
+    font-size: 0.8vw;
+    line-height: 0.8vw;
 }
