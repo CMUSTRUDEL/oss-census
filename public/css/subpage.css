@@ -164,11 +164,11 @@ td, th {
     width: 4vw;
 }
 .dropdowns {
-    border:5px; 
+    border: 5px; 
     border-style:dotted; 
-    border-color:purple; 
+    border-color: orange; 
     border-radius: 25px;
-    padding: 1em;
+    padding: 3em;
 }
 
 .bib-padding {
