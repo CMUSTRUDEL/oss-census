@@ -49,10 +49,16 @@
         <!-- Text Header -->
 
         <div 
-            class="w-full h-full bg-cover bg-no-repeat bg-fixed" 
-            style="background-image: url('img/MainImage5.png');">
-            <header class="w-full container mx-auto">
-                <div class="flex flex-col items-center padding-header">
+            class="w-full h-full">
+            <header class="w-full">
+                <img src="img/MainImage7.png" alt="MainImage" id="MainGradient" class="absolute w-full z-10"/>
+                <img src="img/MainCircle1.png" alt="Circle" class="absolute MainCircle1"/>
+                <img src="img/MainCircle1.png" alt="Circle" class="absolute MainCircle2"/>
+                <img src="img/MainCircle2.png" alt="Circle" class="absolute MainCircle3"/>
+
+
+
+                <div class="flex flex-col items-center padding-header relative z-20">
                     <div class="flex flex-row">
                         <a class="font-bold text-white uppercase text-mainHeader bebas-header">
                             Visualize&nbsp;
@@ -84,8 +90,8 @@
         </div>
     
         <!-- Description of 'The Problem' -->
-        
-            <div class="flex h-problem items-center overflow-hidden main-margin">
+        <div class="w-full bg-midbar3">
+            <div class="flex h-problem items-center overflow-hidden main-margin mtop-large">
                 <article class="flex flex-row md:flex-row h-full">
                     <div class ="flex flex-col justify-center">
                         <div class="items-center">
@@ -107,6 +113,7 @@
                 </article>
 
             </div>
+        </div>
         
         <!-- Description of 'Mission' -->
         <div class="w-full h-full bg-midbar padding-mid section-padding2">
@@ -114,13 +121,13 @@
                 <span class="lato-bold text-primary4 text-sideHeader pb-2 letter-spacing">
                     OUR MISSION
                 </span>
-                <span class="text-primary4 text-sideHeader2 my-4 text-center mission-margin">
+                <span class="text-lightgray text-sideHeader2 my-4 text-center mission-margin">
                     This website presents a census on gender diversity, <br> one of the many diversity measures, in the OSS community. <br> Through this site, you can find the following information:
                 </span>
             </div>
             <div class="grid grid-cols-2 gap-x-12 gap-y-16 py-12 mission-margin">
                 <a class="flex flex-row ml-auto mr-0" href="quick_facts.html">
-                    <img src="img/GenderBalanceImg.png" alt="chronological data" class="icons-dimensionsBalance"/>
+                    <img src="img/GenderBalanceImg.png" alt="chronological data" class="icons-dimensions3"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Analysis
                         </p>
@@ -133,11 +140,11 @@
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Ecosystems
                         </p>
-                        <p class="w-full tracking-wider leading-relaxed pt-4 text-icons text-lightgray">A decomposition of gender distribution in 32 ecosystems</p>
+                        <p class="w-full tracking-wider leading-relaxed pt-4 text-icons text-lightgray">An OSS ecosystem constitutes interdependent OSS libraries. We provide a decomposition of gender distribution in 32 ecosystems</p>
                     </div>
                 </a>
                 <a class="flex flex-row ml-auto mr-0" href="quick_facts.html">
-                    <img src="img/DataImg.png" alt="nodes of people" class="icons-dimensionsBalance"/>
+                    <img src="img/DataImg.png" alt="nodes of people" class="icons-dimensions2"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Data
                         </p>
@@ -154,7 +161,7 @@
                     </div>
                 </a>
                 <a class="flex flex-row ml-auto mr-0" href="references.html">
-                    <img src="img/BibliographyImg.png" alt="annotated bibliography" class="icons-dimensionsBalance"/>
+                    <img src="img/BibliographyImg.png" alt="annotated bibliography" class="icons-dimensions2"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Bibliography
                         </p>
@@ -189,6 +196,133 @@
                             <p class = "text-paragraph text-justify text-white font-light tracking-wider leading-relaxed">
                                 We downloaded the list of registered OSS libraries, released in Jan 2020, from <a href="https://libraries.io/data" class="text-green-600">libraries.io</a>. We considered each package manager as one ecosystem and then we retrieved each projects’ commit history from <a href="https://worldofcode.org/" class="text-green-600">World of Code</a>. This dataset is denoted as <span class="font-bold">OSS</span> on the website.
                             </p>
+
+                            <!-- Libraries -->
+                            <div id="logo-grid" class="grid grid-cols-10 gap-2">
+                                <a href="https://atom.io/">
+                                    <img src="img/LibLogos/Atom_logo.png" alt="Atom">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Atom</p>
+                                    </div>
+                                </a>
+                                <a href="https://bower.io/">
+                                    <img src="img/LibLogos/Bower_logo.png" alt="Bower" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Bower</p>
+                                    </div>
+                                </a>
+                                <a href="https://crates.io/">
+                                    <img src="img/LibLogos/Cargo_logo.png" alt="Cargo" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Cargo</p>
+                                    </div>
+                                </a>
+                                <a href="https://clojars.org/">
+                                    <img src="img/LibLogos/Clojars_logo.png" alt="Clojars" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Clojars</p>
+                                    </div>
+                                </a>
+                                <a href="https://cocoapods.org/">
+                                    <img src="img/LibLogos/Coco_logo.png" alt="Cocoapods" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Cocoa<br>Pods</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.cpan.org/">
+                                    <img src="img/LibLogos/CPAN_logo.png" alt="CPAN" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">CPAN</p>
+                                    </div>
+                                </a>
+                                <a href="https://cran.r-project.org/">
+                                    <img src="img/LibLogos/CRAN_logo.png" alt="CRAN" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">CRAN</p>
+                                    </div>
+                                </a>
+                                <a href="https://go.dev/">
+                                    <img src="img/LibLogos/Go_logo.png" alt="Go" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Go</p>
+                                    </div>
+                                </a>
+                                <a href="https://hackage.haskell.org/">
+                                    <img src="img/LibLogos/Hackage_logo.png" alt="Hackage" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Hackage</p>
+                                    </div>
+                                </a>
+                                <a href="https://hex.pm/">
+                                    <img src="img/LibLogos/Hex_logo.png" alt="Hex" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Hex</p>
+                                    </div>
+                                </a>
+                                <a href="https://maven.apache.org/">
+                                    <img src="img/LibLogos/Maven_logo.png" alt="Maven" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Maven</p>
+                                    </div>
+                                </a>
+                                <a href="https://atmospherejs.com/">
+                                    <img src="img/LibLogos/Meteor_logo.png" alt="Meteor" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Meteor</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.npmjs.com/">
+                                    <img src="img/LibLogos/NPM_logo.png" alt="NPM" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">NPM</p>
+                                    </div>
+                                </a>
+                                <a href="https://www.nuget.org/">
+                                    <img src="img/LibLogos/Nuget_logo.png" alt="NuGet" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">NuGet</p>
+                                    </div>
+                                </a>
+                                <a href="https://packagist.org/">
+                                    <img src="img/LibLogos/Packagist_logo.png" alt="Packagist" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Packa-<br>gist</p>
+                                    </div>
+                                </a>
+                                <a href="https://platformio.org/">
+                                    <img src="img/LibLogos/PlatformIO_logo.png" alt="PlatformIO" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Platform<br>IO</p>
+                                    </div>
+                                </a>
+                                <a href="https://pub.dev/">
+                                    <img src="img/LibLogos/Pub_logo.png" alt="Pub" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Pub</p>
+                                    </div>
+                                </a>
+                                <a href="https://puppet.com/">
+                                    <img src="img/LibLogos/Puppet_logo.png" alt="Puppet" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Puppet</p>
+                                    </div>
+                                </a>
+                                <a href="https://pypi.org/">
+                                    <img src="img/LibLogos/PyPi_logo.png" alt="PyPi" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">PyPi</p>
+                                    </div>
+                                </a>
+                                <a href="https://rubygems.org/">
+                                    <img src="img/LibLogos/RubyGems_logo.png" alt="RubyGems" class="w-full h-full object-contain">
+                                    <div class="image__text flex justify-center items-center text-center text-bold">
+                                        <p class="small_logo_text">Ruby<br>Gems</p>
+                                    </div>
+                                </a>
+                                
+                                
+
+                            </div>
                         </div>
                     </div>
                     <div class ="pt-8 flex flex-row gap-x-8">
@@ -209,7 +343,7 @@
         </div>
 
         <!-- Description of 'Gender Inference' -->
-        <div class="flex items-center overflow-hidden bg-midbar">
+        <div class="flex items-center overflow-hidden bg-midbar3">
             <article class="flex flex-row md:flex-row max-w-10xl section-padding main-margin">
                 <img src="img/Gender_Img.png" alt="gender" id="gender" class="object-left margins-image pt-10"/>
                 <div class ="flex flex-col text-right w-11/12">
@@ -229,39 +363,68 @@
                 </div>
             </article>
         </div>
-
-        <div class="flex items-center overflow-hidden main-margin section-padding">
-            <article class="flex flex-row md:flex-row">
-                <div class ="flex flex-col w-full">
-                    <p class = "lato-bold text-primary3 text-sideHeader text-center">Data Analysis</p>
-                    <p class = "mt-4 md:mt-4 text-paragraph text-center text-gray-400 font-light tracking-wider leading-relaxed">
-                        We analyzed OSS contributor community data from several different perspectives:</p>
-                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
-                        <b class="text-green-600">Chronological trend</b>: We aggregated data by years and visualize how the gender distribution has changed with time.
-                    </p> 
-                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
-                        <b class="text-green-600">OSS Ecosystems</b>: An OSS ecosystem constitutes interdependent OSS libraries. Our analysis considered each package manager registered at <a href="www.libraries.io" class="text-green-600">libraries.io</a> as one ecosystem, such as NPM and Pypi. We aggregated data based on ecosystems and visualized how gender distribution varies across different ecosystems.
-                    </p> 
-                    <p class = "mt-1 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
-                        <b class="text-green-600">Role of a contributor</b>: We divide contributors roughly into two categories: <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8870179&casa_token=zeXxx_ecz5UAAAAA:mpOzo_72wLc-WCK19YPPtFfNShNxq0TEvOoqNFXAKFHSyhos6apVjzBV42iPTmoZbDMquMWvaQ&tag=1" class="text-green-600">core and peripheral</a>. We identified core contributors in the following way:
-                        For each ecosystem, we first identified projects whose number of commits ranked top 10% of the ecosystem;
-                        Then, within each of the top projects, we identified each project's core developers as those who made more than 10% of the commits within that three-month window. We analyzed and compared gender distributions among core contributors and all contributors.
-                    </p> 
-                </div>
-            </article>
-        </div>
-
-        <div class="flex pt-2 items-center overflow-hidden pb-12 main-margin">
-            <article class="flex flex-row md:flex-row max-w-10xl">
-                <div class ="flex flex-col text-right w-11/12">
-                    <p class = "font-family-bebas margin-top text-primary3 text-sideHeader">Annotated Bibliography</p>
-                    <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
-                        Before us, numerous of scholars have worked on the problem of gender diversity in OSS, and broadly, STEM (<span class="font-bold">S</span>cience, <span class="font-bold">T</span>echnology, <span class="font-bold">E</span>ngineering, and <span class="font-bold">M</span>ath) fields.
-                        Along with our analysis, we compiled a list of prior works that reported gender representation across the years.
-                        We grouped prior studies by their data collection methods, such as survey or data mining, and their samples, such as the entire OSS population or sub-population of specific ecosystems or projects.
-                    </p> 
-                </div>
-            </article>
+        <div class="w-full bg-midbar">
+            <div class="flex items-center overflow-hidden main-margin section-padding">
+                <article class="flex flex-row md:flex-row">
+                    <div class ="flex flex-col w-full">
+                        <p class = "lato-bold text-primary4 text-sideHeader text-center pb-2 letter-spacing2">DATA ANALYSIS</p>
+                        <p class = "mt-4 md:mt-4 text-sideHeader2 text-center text-lightgray">
+                            We explored and analyzed the OSS contributor <br>community data based on several different factors</p>
+                        <div class="ptop-medium grid grid-cols-3 w-full gap-x-12 card-padding">
+                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover">
+                                <div class="flex justify-center mx-4">
+                                      <img
+                                        id="cardImg1"
+                                        class="w-auto"
+                                        src="img/CalendarGraphic.png"
+                                        alt="tailwind-card-image"
+                                      />
+                                </div>
+                                <div class="ptop-small text-orange font-bold tracking-wider leading-relaxed px-small text-sideHeader3 pb-2">
+                                    Year
+                                </div>
+                                <p class = "mt-1 text-paragraph-small text-gray-700 font-light tracking-wider leading-relaxed px-small">
+                                    We aggregated data by time and visualized how gender distribution and female participation in OSS has changed from year to year.
+                                </p>
+                            </div>
+                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover">
+                                <div class="mx-4">
+                                      <img
+                                        id="cardImg2"
+                                        class="w-auto"
+                                        src="img/PackageGraphic.png"
+                                        alt="tailwind-card-image"
+                                      />
+                                </div>
+                                <div class="ptop-small text-orange font-bold tracking-wider leading-relaxed px-small text-sideHeader3 pb-2">
+                                    OSS Ecosystems
+                                </div>
+                                <p class = "mt-1 text-paragraph-small text-gray-700 font-light tracking-wider leading-relaxed px-small">
+                                    Our analysis considered each package manager registered at <a href="www.libraries.io" class="text-green-600">libraries.io</a> as one ecosystem. We then aggregated data based on each ecosystem and visualized how gender distribution varies across different ecosystems.
+                                </p>
+                            </div>
+                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover">
+                                <div class="mx-4">
+                                      <img
+                                        id="cardImg3"
+                                        class="w-auto"
+                                        src="img/ContributorsGraphic.png"
+                                        alt="tailwind-card-image"
+                                      />
+                                </div>
+                                <div class="ptop-small text-orange font-bold tracking-wider leading-relaxed px-small text-sideHeader3 pb-2">
+                                    Contributors
+                                </div>
+                                <p class = "mt-1 text-paragraph-small text-gray-700 font-light tracking-wider leading-relaxed px-small mb-16">
+                                    We divided contributors into two categories: <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8870179&casa_token=zeXxx_ecz5UAAAAA:mpOzo_72wLc-WCK19YPPtFfNShNxq0TEvOoqNFXAKFHSyhos6apVjzBV42iPTmoZbDMquMWvaQ&tag=1" class="text-green-600">core and peripheral</a>. To identify core contributors
+                                for each ecosystem, we identified projects whose number of commits were in the top 10% of their ecosystem.
+                                Then, within each of the top projects, we identified each project's core developers as those who made more than 10% of the commits within that three-month window. We analyzed and compared gender distributions among core contributors and all contributors.
+                                </p>
+                            </div>    
+                        </div> 
+                    </div>
+                </article>
+            </div>
         </div>
 
         <footer id="footer"></footer>

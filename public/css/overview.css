@@ -1,3 +1,8 @@
+.main-margin {
+    margin-right: 6vw;
+    margin-left: 6vw;
+}
+
 .text-size-title {
     font-size: 5.5vw;
 }
@@ -42,7 +47,7 @@
 
 .blob4 {
     right: 25vw;
-    top: -2.5vw;
+    top: -4vw;
     height: 15vw;
     width: 15vw;
     z-index: -1;
@@ -51,10 +56,20 @@
 }
 
 .blob5 {
-    right: 50vw;
-    top: -2.5vw;
+    left: 20vw;
+    top: -10vw;
     height: 15vw;
     width: 15vw;
+    z-index: -1;
+    animation: bounce2 10s forwards infinite alternate;
+
+}
+
+.blob6 {
+    right: 20vw;
+    top: -10vw;
+    height: 17vw;
+    width: 17vw;
     z-index: -1;
     animation: bounce2 10s forwards infinite alternate;
 
