@@ -28,7 +28,7 @@ def load_contributor_stack_line(lang, dat_path, store_path):
 
     # Format column data of contributors by gender
     all_female = {}
-    all_female["name"] = "All women"
+    all_female["name"] = "All Women"
     all_female["type"] = "column"
     all_female["data"] = list(dat["female_all"] / 1000)
     all_female["color"] = "#de2d26"

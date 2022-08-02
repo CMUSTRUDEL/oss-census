@@ -5848,7 +5848,7 @@ var data = {
                         8.408,
                         8.362
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -6172,7 +6172,7 @@ var data = {
                         0.026,
                         0.023
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -6496,7 +6496,7 @@ var data = {
                         0.57,
                         0.524
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -6820,7 +6820,7 @@ var data = {
                         0.014,
                         0.012
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -7144,7 +7144,7 @@ var data = {
                         0.161,
                         0.177
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -7468,7 +7468,7 @@ var data = {
                         0.137,
                         0.18
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -7792,7 +7792,7 @@ var data = {
                         0.083,
                         0.085
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -8116,7 +8116,7 @@ var data = {
                         0.362,
                         0.313
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -8440,7 +8440,7 @@ var data = {
                         0.751,
                         0.71
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -8764,7 +8764,7 @@ var data = {
                         0.036,
                         0.044
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -9088,7 +9088,7 @@ var data = {
                         0.051,
                         0.05
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -9412,7 +9412,7 @@ var data = {
                         0.922,
                         0.876
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -9736,7 +9736,7 @@ var data = {
                         0.042,
                         0.039
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -10060,7 +10060,7 @@ var data = {
                         3.76,
                         3.693
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -10384,7 +10384,7 @@ var data = {
                         0.395,
                         0.391
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -10708,7 +10708,7 @@ var data = {
                         0.698,
                         0.677
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -11032,7 +11032,7 @@ var data = {
                         0.023,
                         0.029
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -11356,7 +11356,7 @@ var data = {
                         0.057,
                         0.068
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -11680,7 +11680,7 @@ var data = {
                         0.027,
                         0.024
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -12004,7 +12004,7 @@ var data = {
                         1.721,
                         1.759
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
@@ -12328,7 +12328,7 @@ var data = {
                         0.563,
                         0.514
                     ],
-                    "name": "All women",
+                    "name": "All Women %",
                     "type": "column"
                 },
                 {
