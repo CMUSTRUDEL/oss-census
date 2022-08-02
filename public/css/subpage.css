@@ -73,6 +73,15 @@
     font-size: 1.4rem; /* 24px */
     line-height: 2rem; /* 32px */
 }
+
+.text-size-subtitle {
+    font-size: 2vw;
+    line-height: 3vw;
+    transform: scaleX(1.15);
+    transform-origin: center;
+
+}
+
 .h-buttonheight {
     height: 14%;
 }
