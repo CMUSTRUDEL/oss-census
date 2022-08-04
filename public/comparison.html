@@ -60,64 +60,39 @@
         </script> 
 
         <!-- Text Header -->
-        <center>
-            <header class="w-full flex justify-center">
-                <img src="img/GraphComparisonImg.png" alt="MainImage" id="MainGradient" class="absolute w-full z-0"/>
-    
-                <div class="flex flex-col justify-center py-12 ptop-header">
-                    <a class="text-white main-header lato-bold z-10" href="#">
-                        Census Data Comparisons
-                    </a>
-                    <a class="pt-2 font-family-quicksand1 font-bold text-white uppercase text-size-subtitle z-10">
-                        Freely choose any constraints
-                    </a>
-                    <a class="font-family-quicksand1 font-bold text-white uppercase text-size-subtitle z-10">
-                        to generate and compare graphs
-                    </a>
+        <div class="w-full h-gradient bg-contain bg-no-repeat" style="background-image: url('img/GraphComparisonImg.png');">
+            <article class="flex flex-row md:flex-row pl-24">
+                <div class ="flex flex-col w-full">
+                    <div class="items-center">
+                        <p class = "lato-bold mt-24 text-white text-size-title pb-2">Graph Comparisons</p>
+                    </div>               
+                    <p class = "w-1/2 mt-4 md:mt-4 text-size-subtitle font-family-quicksand1 text-white font-light tracking-wider leading-relaxed">
+                        Freely choose any constraints to <br> 
+                        generate and compare graphs
+                    </p> 
                 </div>
-            </header>
-        </center>
-        
+    
+            </article>
+            
+        </div>
+
+        <img src="img/ComparisonLineImg.png" alt="ComparisonLine" class="line-position absolute z-0"/>
+
         <!-- Graph Comparison -->
-        <div class="flex flex-col items-center justify-center mx-auto px-10 my-6">
+        <div class="my-6">
             <div class="w-full mx-auto flex flex-col items-center" style="justify-content: space-evenly">
-                <div class="dropdowns flex flex-col items-center justify-center w-1/2 mx-auto mb-6">
+                <div class="z-10 flex flex-col items-center justify-center w-full mx-auto mb-6">
                     <!-- Dropdown for category selection -->
-                    <label for="category-select" class="font-semibold  mt-2">Choose a Category:</label>
-                    <select name="category" id="category-select" onchange="updateDropdown(1)" class="
-                        block
-                        w-1/3
-                        px-2
-                        py-1
-                        text-center
-                        my-3
-                        text-base
-                        text-center
-                        font-normal
-                        text-gray-700
-                        bg-white bg-clip-padding bg-no-repeat
-                        border border-solid border-gray-300
-                        rounded-lg
-                        transition
-                        ease-in-out
-                        m-0
-                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
-                        aria-expanded="true" aria-haspopup="true" aria-label="Default select">
-                        <option value="" selected disabled hidden>--Select--</option>
-                        <option value="contributor">Contributors</option>
-                        <option value="commit">Commits</option>
-                        <!-- <option value="all">All</option> -->
-                    </select>
-                
-                    <label for="language-select-1" class="font-bold">Choose Ecosystems:</label>
-                    <div id="query" class="flex flex-row justify-center space-x-4 w-full h-full">
-                        <div id="row-1">
-                            <!-- Dropdown for language selection -->
-                            <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="
+                    <div id="category-dropdown" class="flex flex-col items-center">
+                        <img src="img/ComparisonNum1.png" alt="Num1" class="number-dimensions"/>
+                        <h1 class="text-primary lato-bold text-center text-size-medium">Category</h1>
+                        <p class="py-4 text-center text-gray-400 text-size-xs lato-regular">Choose which of the two graph type you would want to display. <br>Contributors will show the number of active contributors working on the chosen project in a given year. <br> Commits will show how many commits are made to the chosen project in a given year.</p>
+                            <select name="category" id="category-select" onchange="updateDropdown(1)" class="
                                 block
-                                w-full
+                                w-1/3
                                 px-2
                                 py-1
+                                text-center
                                 my-3
                                 text-base
                                 text-center
@@ -128,35 +103,66 @@
                                 rounded-lg
                                 transition
                                 ease-in-out
-                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                m-0
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
                                 aria-expanded="true" aria-haspopup="true" aria-label="Default select">
                                 <option value="" selected disabled hidden>--Select--</option>
-                                <option value="All">All</option>
-                                <option value="Atom">Atom</option>
-                                <option value="Bower">Bower</option>
-                                <option value="Cargo">Cargo</option>
-                                <option value="Clojars">Clojars</option>
-                                <option value="CocoaPods">CocoaPods</option>
-                                <option value="CPAN">CPAN</option>
-                                <option value="CRAN">CRAN</option>
-                                <option value="Go">Go</option>
-                                <option value="Hackage">Hackage</option>
-                                <option value="Hex">Hex</option>
-                                <option value="Maven">Maven</option>
-                                <option value="Meteor">Meteor</option>
-                                <option value="NPM">NPM</option>
-                                <option value="NuGet">NuGet</option>
-                                <option value="Packagist">Packagist</option>
-                                <option value="PlatformIO">PlatformIO</option>
-                                <option value="Pub">Pub</option>
-                                <option value="Puppet">Puppet</option>
-                                <option value="Pypi">PyPi</option>
-                                <option value="RubyGems">RubyGems</option>
+                                <option value="contributor">Contributors</option>
+                                <option value="commit">Commits</option>
+                                <!-- <option value="all">All</option> -->
                             </select>
+                    </div>
+                    <div id="eco-dropdown" class="flex flex-col items-center">
+                        <img src="img/ComparisonNum2.png" alt="Num1" class="number-dimensions"/>
+                        <h1 class="text-primary lato-bold text-center text-size-medium">Ecosystem</h1>
+                        <p class="py-4 text-center text-gray-400 text-size-xs lato-regular">Choose which of the two graph type you would want to display. <br>Contributors will show the number of active contributors working on the chosen project in a given year. <br> Commits will show how many commits are made to the chosen project in a given year.</p>
+                        <div id="query" class="flex flex-row justify-center space-x-4 w-full h-full">
+                            <div id="row-1">
+                                <!-- Dropdown for language selection -->
+                                <select name="language-1" id="language-select-1" onchange="updateDropdown(1)" class="
+                                    block
+                                    w-full
+                                    px-2
+                                    py-1
+                                    my-3
+                                    text-base
+                                    text-center
+                                    font-normal
+                                    text-gray-700
+                                    bg-white bg-clip-padding bg-no-repeat
+                                    border border-solid border-gray-300
+                                    rounded-lg
+                                    transition
+                                    ease-in-out
+                                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                                    <option value="" selected disabled hidden>--Select--</option>
+                                    <option value="All">All</option>
+                                    <option value="Atom">Atom</option>
+                                    <option value="Bower">Bower</option>
+                                    <option value="Cargo">Cargo</option>
+                                    <option value="Clojars">Clojars</option>
+                                    <option value="CocoaPods">CocoaPods</option>
+                                    <option value="CPAN">CPAN</option>
+                                    <option value="CRAN">CRAN</option>
+                                    <option value="Go">Go</option>
+                                    <option value="Hackage">Hackage</option>
+                                    <option value="Hex">Hex</option>
+                                    <option value="Maven">Maven</option>
+                                    <option value="Meteor">Meteor</option>
+                                    <option value="NPM">NPM</option>
+                                    <option value="NuGet">NuGet</option>
+                                    <option value="Packagist">Packagist</option>
+                                    <option value="PlatformIO">PlatformIO</option>
+                                    <option value="Pub">Pub</option>
+                                    <option value="Puppet">Puppet</option>
+                                    <option value="Pypi">PyPi</option>
+                                    <option value="RubyGems">RubyGems</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="flex flex-row justify-center space-x-4 pb-4 pt-4">
+                    <div class="flex flex-row justify-center space-x-4 pb-4 pt-8">
                         <button
                         onclick="addRow()"
                         type="button"
@@ -184,47 +190,51 @@
                     </div>
 
                     <!-- Dropdown Year Selection -->
-                    <label for="year-select" class="font-bold pt-4">Choose Year:</label>
-                    <!-- Dropdown Language Selection -->
-                    <select name="year" id="year-select" onchange="updateDropdown(1)" class="
-                        block
-                        w-1/3
-                        px-2
-                        py-1
-                        my-3
-                        text-base
-                        text-center
-                        font-normal
-                        text-gray-700
-                        bg-white bg-clip-padding bg-no-repeat
-                        border border-solid border-gray-300
-                        rounded
-                        transition
-                        ease-in-out
-                        m-0
-                        "
-                        aria-expanded="true" aria-haspopup="true" aria-label="Default select">
-                        <option id="select-all" value="All" selected>All</option>
-                        <option value="2008">2008</option>
-                        <option value="2009">2009</option>
-                        <option value="2010">2010</option>
-                        <option value="2011">2011</option>
-                        <option value="2012">2012</option>
-                        <option value="2013">2013</option>
-                        <option value="2014">2014</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                    </select>
+                    <div id="year-dropdown" class="flex flex-col items-center">
+                        <img src="img/ComparisonNum3.png" alt="Num3" class="number-dimensions"/>
+                        <h1 class="text-primary lato-bold text-center text-size-medium">Category</h1>
+                        <p class="py-4 text-center text-gray-400 text-size-xs lato-regular">Choose which of the two graph type you would want to display. <br>Contributors will show the number of active contributors working on the chosen project in a given year. <br> Commits will show how many commits are made to the chosen project in a given year.</p>
+                        <!-- Dropdown Language Selection -->
+                        <select name="year" id="year-select" onchange="updateDropdown(1)" class="
+                            block
+                            w-1/3
+                            px-2
+                            py-1
+                            my-3
+                            text-base
+                            text-center
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding bg-no-repeat
+                            border border-solid border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            "
+                            aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                            <option id="select-all" value="All" selected>All</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
 
                     <button
                         onclick="graph()"
                         type="button"
                         data-mdb-ripple="true"
                         data-mdb-ripple-color="light"
-                        class="w-2/12 h-1/12 bg-primary2 bg-primary3 text-white font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla mt-4"
+                        class="z-10 btn-dimensions btn-text bg-primary2 text-white lato-mid font-semibold py-2 px-4 rounded-full shadow-xl font-family-karla mt-24"
                     >Generate
                     </button>
                 </div>
@@ -313,36 +323,10 @@
                 </div>
             </div>
 
-            <!-- Data source description -->
-            <div class="w-1/2 h-full pt-16">
-                <div class="dropdowns mt-8">
-                    <h2 class="font-medium leading-tight text-1xl mt-0 mb-2 text-black-800">
-                        <i class="font-bold">Data Source</i>
-                    </h2>
-                    <p>
-                        We downloaded the list of registered  <button onclick="showDataDescription()"><b>OSS Libraries</b>
-                        </button> (released in Jan 2020) from libraries.io. We consider each package manager as one ecosystem. Then we retrieved these projects' commit history from World of Code.
-                    </p>
-                    <p>
-                        Before counting the number of contributors, we performed identity merging and bot removal.
-                    </p>
-    
-                    <div id="dataDescription"></div>
-                </div>
-            </div>
-        </div>
+
 
         <!-- Scroll to bottom button -->
-        <button
-        type="button"
-        data-mdb-ripple="true"
-        data-mdb-ripple-color="light"
-        class="inline-block p-3 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out hidden bottom-5 right-5 fixed"
-        id="btn-to-bottom"
-        onclick="scrollToBottom()"
-        >
-            Read about Data Sources
-        </button>
+        
         <script src="js/scroll.js"></script>
 
         <footer id="footer" class="pt-24"></footer>

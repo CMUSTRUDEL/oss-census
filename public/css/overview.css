@@ -4,14 +4,14 @@
 }
 
 .text-size-title {
-    font-size: 5.5vw;
+    font-size: 4.5vw;
 }
 
 
 .text-size-subtitle {
-    font-size: 2vw;
-    line-height: 3vw;
-    transform: scaleX(1.25);
+    font-size: 2.25vw;
+    line-height: 2.75vw;
+    transform: scaleX(1.15);
     transform-origin: 0 0;
 
 }

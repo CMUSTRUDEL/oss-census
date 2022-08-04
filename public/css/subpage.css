@@ -74,13 +74,6 @@
     line-height: 2rem; /* 32px */
 }
 
-.text-size-subtitle {
-    font-size: 2vw;
-    line-height: 3vw;
-    transform: scaleX(1.15);
-    transform-origin: center;
-
-}
 
 .h-buttonheight {
     height: 14%;
@@ -172,13 +165,7 @@ td, th {
     height: 7vw;
     width: 4vw;
 }
-.dropdowns {
-    border: 5px; 
-    border-style:dotted; 
-    border-color: orange; 
-    border-radius: 25px;
-    padding: 3em;
-}
+
 
 .bib-padding {
     padding-left: 13vw;
@@ -188,5 +175,74 @@ td, th {
 .main-header {
     font-size: 5vw;
 }
+
+/* for comparisons page */
+
+.text-size-title {
+    font-size: 4.5vw;
+}
+
+.text-size-subtitle {
+    font-size: 2.25vw;
+    line-height: 2.75vw;
+    transform: scaleX(1.15);
+    transform-origin: 0 0;
+
+}
+
+.text-size-medium {
+    font-size: 3vw;
+    line-height: 2.75vw;
+
+
+}
+
+.text-size-xs {
+    font-size: 1.2vw;
+    line-height: 2vw;
+}
+
+.ptop-header{
+    padding-top: 8vw;
+}
+
+.ptop-comparisonHeader {
+    padding-top: 2vw;
+}
+
+
+
+.comparisonGradient{
+    z-index: -1;
+}
+
+.mainLine {
+    right: 165px;
+    top: 662px;
+    width: 1300px;
+}
+
+.number-dimensions{
+    height: 100px;
+    width: 100px;
+    margin-bottom: 2vw;
+    margin-top: 4vw;
+}
+
+.btn-dimensions {
+    height: 65px;
+    width: 220px;
+}
+
+.btn-text {
+    font-size: 1.5em;
+}
+
+.line-position {
+    top: 635px;
+    left: 122px;
+    width: 80%;
+}
+
 
 
