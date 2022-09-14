@@ -15,10 +15,25 @@
     
 
     <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/nav.css">
+
     <link rel="icon" type="image/jpg" href="img/CensusLogo2.png">
 
+    <script src="js/animations.js"></script>
+
+
     <style>
-        li#index  { color: #2E6A5E; font-weight: bold;} 
+
+        li#index  { 
+            color: #f4f4f4; 
+            font-weight: bold;
+        } 
+
+        .nav-scrolled li#index  { 
+            color: #2E6A5E; 
+            font-weight: bold;
+        } 
+
     </style>
 
     <!-- JS Query for Navbar -->
@@ -34,31 +49,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     
 </head>
-
-
-    <body id="index">
-    <div class="bg-white font-family-karla w-full h-full">
+    <div id="navigation"></div>
+    <script> 
+        $(function(){
+            $("#navigation").load("nav.html"); 
+        });
+    </script> 
+    <div class="font-family-karla w-full h-full">
         <!-- Top Bar Nav -->
-        <div id="navigation"></div>
-        <script> 
-            $(function(){
-                $("#navigation").load("nav.html"); 
-            });
-        </script> 
+        
 
         <!-- Text Header -->
+        <body id="index">
 
         <div 
             class="w-full h-full">
             <header class="w-full">
-                <img src="img/MainImage7.png" alt="MainImage" id="MainGradient" class="absolute w-full z-10"/>
+                <img src="img/MainImage8.png" alt="MainImage" id="MainGradient" class="absolute w-full z-10 header-graphic"/>
                 <img src="img/MainCircle1.png" alt="Circle" class="absolute MainCircle1"/>
                 <img src="img/MainCircle1.png" alt="Circle" class="absolute MainCircle2"/>
                 <img src="img/MainCircle2.png" alt="Circle" class="absolute MainCircle3"/>
 
 
 
-                <div class="flex flex-col items-center padding-header relative z-20">
+                <div class="flex flex-col items-center padding-header relative z-20 header-animation">
                     <div class="flex flex-row">
                         <a class="font-bold text-white uppercase text-mainHeader bebas-header">
                             Visualize&nbsp;
@@ -93,7 +107,7 @@
         <div class="w-full bg-midbar3">
             <div class="flex h-problem items-center overflow-hidden main-margin mtop-large">
                 <article class="flex flex-row md:flex-row h-full">
-                    <div class ="flex flex-col justify-center">
+                    <div class ="flex flex-col justify-center reveal fade-left">
                         <div class="items-center">
                             <p class = "pbottom-small lato-bold mt-10 text-primary3 text-sideHeader">The Problem</p>
                         </div> 
@@ -108,8 +122,7 @@
                             increasing gender diversity can boost a team's performance.
                         </p>               
                     </div>
-                    <img src="img/Hands.png" alt="Hands" id="hands" class="self-end"/>
-
+                    <img src="img/Hands.png" alt="Hands" id="hands" class="self-end reveal fade-right"/>
                 </article>
 
             </div>
@@ -117,7 +130,7 @@
         
         <!-- Description of 'Mission' -->
         <div class="w-full h-full bg-midbar padding-mid section-padding2">
-            <div class="flex flex-col items-center w-full">
+            <div class="flex flex-col items-center w-full reveal fade-right">
                 <span class="lato-bold text-primary4 text-sideHeader pb-2 letter-spacing">
                     OUR MISSION
                 </span>
@@ -126,7 +139,7 @@
                 </span>
             </div>
             <div class="grid grid-cols-2 gap-x-12 gap-y-16 py-12 mission-margin">
-                <a class="flex flex-row ml-auto mr-0" href="quick_facts.html">
+                <a class="flex flex-row ml-auto mr-0 reveal fade-left" href="quick_facts.html">
                     <img src="img/GenderBalanceImg.png" alt="chronological data" class="icons-dimensions3"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Analysis
@@ -135,7 +148,7 @@
                         </p>
                     </div>
                 </a>
-                <a class="flex flex-row ml-auto mr-0" href="comparison.html">
+                <a class="flex flex-row ml-auto mr-0 reveal fade-right" href="comparison.html">
                     <img src="img/Computer-Cog.png" alt="ecosystems" class="icons-dimensions"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Ecosystems
@@ -143,7 +156,7 @@
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-icons text-lightgray">An OSS ecosystem constitutes interdependent OSS libraries. We provide a decomposition of gender distribution in 32 ecosystems</p>
                     </div>
                 </a>
-                <a class="flex flex-row ml-auto mr-0" href="quick_facts.html">
+                <a class="flex flex-row ml-auto mr-0 reveal fade-left" href="quick_facts.html">
                     <img src="img/DataImg.png" alt="nodes of people" class="icons-dimensions2"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Data
@@ -152,7 +165,7 @@
                         </p>
                     </div>
                 </a>
-                <a class="flex flex-row ml-auto mr-0" href="comparison.html">
+                <a class="flex flex-row ml-auto mr-0 reveal fade-right" href="comparison.html">
                     <img src="img/FreeExploreImg.png" alt="free explore" class="icons-dimensions"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Exploration
@@ -160,7 +173,7 @@
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-icons text-lightgray">An interface for free exploration of the census data</p>
                     </div>
                 </a>
-                <a class="flex flex-row ml-auto mr-0" href="references.html">
+                <a class="flex flex-row ml-auto mr-0 reveal fade-left" href="references.html">
                     <img src="img/BibliographyImg.png" alt="annotated bibliography" class="icons-dimensions2"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Bibliography
@@ -169,7 +182,7 @@
                     </div>
                 </a>
                 <!-- TODO: href should lead to a new 'what-to-do' page -->
-                <a class="flex flex-row ml-auto mr-0" href="">
+                <a class="flex flex-row ml-auto mr-0 reveal fade-right" href="">
                     <img src="img/pngwing.com.png" alt="what to do" class="icons-dimensions"/>
                     <div class="flex flex-col">
                         <p class="w-full tracking-wider leading-relaxed pt-4 text-iconsHeader quicksand-bold uppercase">Suggestions
@@ -183,11 +196,11 @@
         <!-- Description of 'Datasets' -->
         <div class="flex pt-2 items-center overflow-hidden bg-midbar2 padding-mid section-padding">
             <article class="flex flex-row md:flex-row max-w-10xl main-margin">
-                <div class="flex justify-center items-center text-center text-processingHeader">
+                <div class="flex justify-center items-center text-center text-processingHeader reveal fade-left">
                     <h1 class="text-white quicksand-bold">We used two data sets for pre-processing</h1>
                 </div>
                 <div class ="flex flex-col w-full">
-                    <div class ="flex flex-row gap-x-8">
+                    <div class ="flex flex-row gap-x-8 reveal fade-right">
                         <img src="img/GreenButton.png" alt="greenbutton" class="greenBtn animate-pulse mt-4 md:mt-4"/>
                         <div class ="flex flex-col w-full">
                             <p class = "font-bold text-missionHeader text-justify text-green-500 font-light tracking-wider leading-relaxed">
@@ -325,7 +338,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class ="pt-8 flex flex-row gap-x-8">
+                    <div class ="pt-8 flex flex-row gap-x-8 reveal fade-right">
                         <img src="img/GreenButton.png" alt="greenbutton" class="greenBtn animate-pulse mt-4 md:mt-4"/>
                         <div class ="flex flex-col w-full">
                             <p class = "font-bold text-missionHeader text-justify text-green-500 font-light tracking-wider leading-relaxed">
@@ -345,8 +358,8 @@
         <!-- Description of 'Gender Inference' -->
         <div class="flex items-center overflow-hidden bg-midbar3">
             <article class="flex flex-row md:flex-row max-w-10xl section-padding main-margin">
-                <img src="img/Gender_Img.png" alt="gender" id="gender" class="object-left margins-image pt-10"/>
-                <div class ="flex flex-col text-right w-11/12">
+                <img src="img/Gender_Img.png" alt="gender" id="gender" class="object-left margins-image pt-10 reveal fade-left"/>
+                <div class ="flex flex-col text-right w-11/12 reveal fade-right">
                     <p class = "pbottom-small lato-bold text-primary3 text-sideHeader">Gender Inference</p>
                     <p class = "mt-4 md:mt-4 text-paragraph text-justify text-gray-700 font-light tracking-wider leading-relaxed">
                         We used computational approaches to infer binary gender from names. In this study, we chose to use 
@@ -367,11 +380,13 @@
             <div class="flex items-center overflow-hidden main-margin section-padding">
                 <article class="flex flex-row md:flex-row">
                     <div class ="flex flex-col w-full">
-                        <p class = "lato-bold text-primary4 text-sideHeader text-center pb-2 letter-spacing2">DATA ANALYSIS</p>
-                        <p class = "mt-4 md:mt-4 text-sideHeader2 text-center text-lightgray">
+                        <div class="reveal fade-bottom">
+                            <p class = "lato-bold text-primary4 text-sideHeader text-center pb-2 letter-spacing2">DATA ANALYSIS</p>
+                            <p class = "mt-4 md:mt-4 text-sideHeader2 text-center text-lightgray">
                             We explored and analyzed the OSS contributor <br>community data based on several different factors</p>
+                        </div>
                         <div class="ptop-medium grid grid-cols-3 w-full gap-x-12 card-padding">
-                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover">
+                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover reveal fade-left">
                                 <div class="flex justify-center mx-4">
                                       <img
                                         id="cardImg1"
@@ -387,7 +402,7 @@
                                     We aggregated data by time and visualized how gender distribution and female participation in OSS has changed from year to year.
                                 </p>
                             </div>
-                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover">
+                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover reveal fade-bottom">
                                 <div class="mx-4">
                                       <img
                                         id="cardImg2"
@@ -403,7 +418,7 @@
                                     Our analysis considered each package manager registered at <a href="www.libraries.io" class="text-green-600">libraries.io</a> as one ecosystem. We then aggregated data based on each ecosystem and visualized how gender distribution varies across different ecosystems.
                                 </p>
                             </div>
-                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover">
+                            <div class="relative max-w-md mx-auto xl:max-w-2xl break-words bg-white w-full mb-6 shadow-lg rounded-xl card-hover reveal fade-right">
                                 <div class="mx-4">
                                       <img
                                         id="cardImg3"
@@ -433,7 +448,6 @@
                 $("#footer").load("footer.html"); 
             });
         </script> 
-
+    </body>
     </div>
-</body>
 </html>

@@ -8,7 +8,7 @@ li#index  { color:purple; font-weight: bold;}
     font-family: bebas-neue, sans-serif;
     font-weight: 700;
     font-style: normal;
-    letter-spacing: 4.5px;
+    letter-spacing: 0.3vw;
 }
 
 
@@ -121,7 +121,7 @@ li#index  { color:purple; font-weight: bold;}
 
 
 .mtop-large {
-    margin-top: 7vw;
+    margin-top: 12vw;
 }
 
 /* text sizing */
@@ -211,7 +211,7 @@ li#index  { color:purple; font-weight: bold;}
 }
 
 .padding-header {
-    padding-top: 6vw;
+    padding-top: 10vw;
     padding-bottom: 3vw;
 }
 
@@ -260,18 +260,10 @@ li#index  { color:purple; font-weight: bold;}
 }
 
 #gender {
-    animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
     height: 25vw;
     width: 40vw;
 }
 #hands {
-    animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari and Chrome */
-    -o-animation: fadein 2s; /* Opera */
     height: 28vw;
     width: 30vw;
 }
@@ -444,15 +436,15 @@ li#index  { color:purple; font-weight: bold;}
 /* Main gradient */
 #MainGradient {
     z-index: 0;
-    height: 35vw;
+    height: 45vw;
 }
 
 
 .MainCircle1 {
     height: 30vw;
-    width: 30vw;
+    width: 29vw;
     left: 15vw;
-    top: 8vw;
+    top: 7vw;
     animation: bounce2 7s forwards infinite alternate;
     opacity: 1;
 
@@ -462,16 +454,16 @@ li#index  { color:purple; font-weight: bold;}
     height: 10vw;
     width: 10vw;
     right: 20vw;
-    top: 4vw;
+    top: 1vw;
     animation: bounce2 7s forwards infinite alternate;
 
 }
 
 .MainCircle3 {
-    height: 15vw;
-    width: 15vw;
+    height: 16vw;
+    width: 16vw;
     right: 20vw;
-    top: 28vw;
+    top: 25vw;
     animation: bounce1 10s forwards infinite;
 }
 
@@ -549,4 +541,75 @@ li#index  { color:purple; font-weight: bold;}
     padding-left: 3vw;
     padding-right: 3vw;
 }
+
+/* Loading in Images */
+
+.reveal{
+    opacity: 0;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.active.fade-in {
+    animation: fade-in 1.2 ease-in;
+}
+
+.active.fade-bottom {
+    animation: fade-bottom 1.2s ease-in;
+}
+
+.active.fade-left {
+    animation: fade-left 1.2s ease-in;
+}
+  
+.active.fade-right {
+    animation: fade-right 1.2s ease-in;
+}
+
+.header-animation {
+    animation: fade-bottom 1.2s ease-in;
+}
+
+
+@keyframes fade-bottom {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
 

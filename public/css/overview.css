@@ -1,6 +1,6 @@
 .main-margin {
-    margin-right: 6vw;
-    margin-left: 6vw;
+    margin-right: 8vw;
+    margin-left: 8vw;
 }
 
 .text-size-title {
@@ -28,50 +28,51 @@
 
 .blob1-position {
     left: 10vw;
-    top: 50vw;
+    top: 55vw;
 }
 
 .blob2-position {
     right: 10vw;
-    top: 75vw;
+    top: 80vw;
 }
 
 .blob3 {
     left: 45vw;
     top: -2.5vw;
-    height: 15vw;
-    width: 15vw;
+    height: 10vw;
+    width: 10vw;
     z-index: -1;
     animation: bounce1 10s infinite alternate;
 }
 
 .blob4 {
-    right: 25vw;
-    top: -4vw;
-    height: 15vw;
-    width: 15vw;
+    left: 25vw;
+    top: 1vw;
+    height: 10vw;
+    width: 10vw;
     z-index: -1;
     animation: bounce2 10s forwards infinite alternate;
 
 }
 
 .blob5 {
-    left: 20vw;
-    top: -10vw;
-    height: 15vw;
-    width: 15vw;
+    right: 30vw;
+    top: -1vw;
+    height: 10vw;
+    width: 10vw;
     z-index: -1;
     animation: bounce2 10s forwards infinite alternate;
 
 }
 
 .blob6 {
-    right: 20vw;
-    top: -10vw;
-    height: 17vw;
-    width: 17vw;
+    left: 24vw;
+    top: 5vw;
+    height: 12vw;
+    width: 12vw;
+    transform: rotate(-10deg);
     z-index: -1;
-    animation: bounce2 10s forwards infinite alternate;
+    animation: bounce2 10s forwards infinite ease alternate;
 
 }
 
@@ -109,9 +110,13 @@
     33% {
         transform: translateX(-10%);
         transform: translateY(-5%);
+
     }
     66% {
         transform: translateX(10%);
         transform: translateY(5%);
+
     }
 }
+
+
