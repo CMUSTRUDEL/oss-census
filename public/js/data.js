@@ -5420,7 +5420,7 @@ var data = {
                 "2019-3"
             ]
         },
-        "Rubygems": {
+        "RubyGems": {
             "data": [
                 {
                     "color": "blanchedalmond",
@@ -5642,7 +5642,7 @@ var data = {
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
             "label_y_secondary": "Women Commit Ratio = F/(F + M)",
-            "title": "Commits in Rubygems Public Projects",
+            "title": "Commits in RubyGems Public Projects",
             "x_categories": [
                 "2008-3",
                 "2008-6",
@@ -12173,7 +12173,7 @@ var data = {
                 "2019-3"
             ]
         },
-        "Rubygems": {
+        "RubyGems": {
             "data": [
                 {
                     "color": "blanchedalmond",
@@ -12448,7 +12448,7 @@ var data = {
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
             "label_y_secondary": "% Women (of total m + w)",
-            "title": "Active Contributors in Rubygems Public Projects",
+            "title": "Active Contributors in RubyGems Public Projects",
             "x_categories": [
                 "2008-3",
                 "2008-6",
@@ -12573,7 +12573,7 @@ var data = {
                     "z": 1.6
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 3216,
                     "z": 1.68
                 },
@@ -12674,7 +12674,7 @@ var data = {
                     "z": 1.08
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 7412,
                     "z": 1.43
                 },
@@ -12785,7 +12785,7 @@ var data = {
                     "z": 1.68
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 13094,
                     "z": 1.71
                 },
@@ -12931,7 +12931,7 @@ var data = {
                     "z": 1.73
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 25134,
                     "z": 1.84
                 },
@@ -13042,7 +13042,7 @@ var data = {
                     "z": 1.87
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 42935,
                     "z": 1.9
                 },
@@ -13153,7 +13153,7 @@ var data = {
                     "z": 2.06
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 62161,
                     "z": 2.14
                 },
@@ -13269,7 +13269,7 @@ var data = {
                     "z": 2.26
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 69922,
                     "z": 2.6
                 },
@@ -13415,7 +13415,7 @@ var data = {
                     "z": 2.82
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 73175,
                     "z": 2.99
                 },
@@ -13536,7 +13536,7 @@ var data = {
                     "z": 3.05
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 69744,
                     "z": 3.31
                 },
@@ -13652,7 +13652,7 @@ var data = {
                     "z": 3.34
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 65275,
                     "z": 3.66
                 },
@@ -13768,7 +13768,7 @@ var data = {
                     "z": 3.53
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 59595,
                     "z": 4.03
                 },
@@ -13884,7 +13884,7 @@ var data = {
                     "z": 3.6
                 },
                 {
-                    "name": "Rubygems",
+                    "name": "RubyGems",
                     "y": 13638,
                     "z": 3.77
                 },
@@ -13989,7 +13989,7 @@ var data = {
                 "Pub",
                 "Puppet",
                 "Pypi",
-                "Rubygems"
+                "RubyGems"
             ]
         }
     }
@@ -14994,7 +14994,7 @@ var data = {
                     3.95,
                     3.77
                 ],
-                "name": "Rubygems"
+                "name": "RubyGems"
             }
         ],
         "height_ratio": 69.23076923076923,
@@ -15351,7 +15351,7 @@ var data = {
             {
                 "high": 4.15,
                 "low": 1.28,
-                "name": "Rubygems"
+                "name": "RubyGems"
             },
             {
                 "high": 3.65,
