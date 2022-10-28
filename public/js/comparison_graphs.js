@@ -240,7 +240,7 @@ function addGraph() {
     div.innerHTML = `
     <div class="mx-auto my-3 w-full"> 
         <div id="contributor-`+ String(numRows) + `" style="display: none" class="flex-col items-center w-full my-3">                
-            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+            <a href="#!" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                 <figure class="highcharts-figure" onclick="return false;">
                     <div id="cont-`+ String(numRows) + `"></div>
                     <!-- JS file link -->
@@ -250,7 +250,7 @@ function addGraph() {
         </div>
     
         <div id="commit-`+ String(numRows) + `" style="display: none" class="flex-col items-center my-3 w-full">
-            <a href="#" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+            <a href="#!" class="px-6 hover:opacity-75 my-4 md:w-3/3">
                 <figure class="highcharts-figure" onclick="return false;">
                     <div id="comm-`+ String(numRows) + `"></div> 
                     <!-- JS file link -->
