@@ -66,7 +66,7 @@ li#index  { color:purple; font-weight: bold;}
 }
 
 .bg-midbar2{
-    background: #0A253F;
+    background: #6F8A6B;
 }
 
 .bg-midbar3{
@@ -92,7 +92,7 @@ li#index  { color:purple; font-weight: bold;}
 }
 
 .text-orange {
-    color: #FD9A23;
+    color: #FFA866;
 }
 
 /* padding and margins */
@@ -155,8 +155,8 @@ li#index  { color:purple; font-weight: bold;}
 }
 
 .text-sideHeader2{
-    font-size: 1.7vw;
-    line-height: 2.1vw;
+    font-size: 1.55vw;
+    line-height: 2vw;
 }
 
 .text-sideHeader3{
@@ -174,7 +174,7 @@ li#index  { color:purple; font-weight: bold;}
 .text-iconsHeader {
     font-size: 1.7vw;
     line-height: 1.4vw; /* 32px */
-    color: #013A51;
+    color: #6F8A6B;
     padding-left: 3vw;
 }
 
@@ -373,7 +373,7 @@ li#index  { color:purple; font-weight: bold;}
 
 
 #logo-grid > a {
-    background: #00CA90;
+    background: #FFA866;
     position: relative;
     border-radius: 0.75vw;
   }
@@ -510,8 +510,8 @@ li#index  { color:purple; font-weight: bold;}
 
 /* Data Analysis */
 #cardImg1 {
-    height: 15vw;
-    width: 21vw;
+    height: 13vw;
+    width: 13vw;
     margin-top: -4vw;
 
 }
