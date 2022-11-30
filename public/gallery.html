@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSS Census</title>
+    <meta name="author" content="Justin">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
+
+    <link rel="stylesheet" href="css/subpage.css">
+    <link rel="stylesheet" href="css/nav.css">
+
+
+    <link rel="icon" type="image/jpg" href="img/CensusLogo2.png">
+
+    <style>
+        li#xomparison  { 
+            color: #f4f4f4; 
+            font-weight: bold;
+        } 
+
+        .nav-scrolled li#gallery  { 
+            color: #2E6A5E; 
+            font-weight: bold;
+        }  
+    </style>
+
+    <script src="js/animations.js"></script>
+
+   
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- Highchart Imports -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+
+
+    <!-- JS Graphs -->
+    <script src="js/data.js"></script>
+    <script src="js/parse.js"></script>
+    <script src="js/gallery_graphs.js" defer></script>
+
+    <script src="js/visualizations/graph_gallery.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</head>
+
+
+    <div id="navigation">
+    </div>
+    <script> 
+        $(function(){
+          $("#navigation").load("nav.html"); 
+        });
+    </script> 
+
+    <body id="comparison w-full h-full" onload="loadGraphs()">
+
+    <div class="bg-white font-family-karla w-full h-full">
+        <!-- Top Bar Nav -->
+
+        <!-- Text Header -->
+        <div class="w-full h-gradient relative">
+            <img src="img/BackgroundGradient.png" alt="GreenGradient" id="GreenGradient" class="absolute w-full header-graphic"/>
+
+            <article class="flex flex-row md:flex-row pleft-large ptop-medium">
+                <div class ="flex flex-col w-full header-animation">
+                    <div class="items-center z-10">
+                        <p class = "lato-bold ptop-medium text-white text-size-title pb-2">Gallery of Ecosystems</p>
+                    </div>               
+                    <p class = "w-1/2 mt-4 md:mt-4 text-size-subtitle font-family-quicksand1 text-white font-light tracking-wider leading-relaxed">
+                        Gender Demographics of Contributors in Different Open Source Ecosystems
+                    </p> 
+                    <div class = "w-1/2 mt-4 md:mt-4 text-size font-family-quicksand1 text-white font-light tracking-wider leading-relaxed z-10">
+                        <ul class = "list-disc">
+                            <li>% Women over time</li>
+                            <li># Contributors by inferred gender</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Graph 1 All line graph -->
+        <p class = "w-full mt-4 md:mt-4 text-size-subtitle font-family-quicksand1 text-primary font-light tracking-wider leading-relaxed pt-48 pl-48 pr-48">
+            % Women over Time
+        </p> 
+        <p class = "w-full mt-4 md:mt-4 text-size-xs font-family-quicksand1 text-primary font-light tracking-wider leading-relaxed pl-48 pr-48">
+            The lines demonstrate the change in the ratio of women among binary-gendered contributors in open source projects with the change of time from 2008 to 2019. (The scale is not on 0-100%.) <br>
+            Among all = % women out of all contributors who have submitted contributions to the project.<br>
+            Among active = % women out of the most active contributors of the project (individuals who've submitted 5% or more of total commits in that time period) 
+        </p> 
+
+        <div id="line-graphs" class="grid grid-cols-3 gap-6 w-full pt-36 pl-48 pr-48">
+            <div id="visualizations-1/3" class="flex flex-col text-center">
+                <div class="mx-auto w-full">
+                    <div id="line" alt="Graph1" style="display: show" class="flex-col items-center w-full my-3">                
+                        <a href="#!" class="hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure" onclick="return false;">
+                                <div id="cont-1"></div>
+                                <!-- JS file link -->
+                                <script> 
+                                    parseData("Contributor", "All_line");
+                                    graphGallery("1");
+                                </script>
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="women-bar-graphs" class="grid grid-cols-3 gap-6 w-full p-48">
+            <div id="visualizations-1" class="flex flex-col text-center">
+                <div class="mx-auto w-full">
+                    <div id="women-bar" alt="Graph1" style="display: show" class="flex-col items-center w-full my-3">                
+                        <a href="#!" class="hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure" onclick="return false;">
+                                <div id="cont-2"></div>
+                                <!-- JS file link -->
+                                <script> 
+                                    parseData("Contributor", "All_women-bar");
+                                    graphGallery("2");
+                                </script>
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to bottom button -->
+        
+        <script src="js/scroll.js"></script>
+
+        <footer id="footer" class="pt-24"></footer>
+        <script> 
+            $(function(){
+                $("#footer").load("footer.html"); 
+            });
+        </script> 
+    </div>
+    </body>
+
+</html>

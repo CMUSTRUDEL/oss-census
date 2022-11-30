@@ -13,6 +13,100 @@ import numpy as np
 import pandas as pd
 import json
 
+def load_contributor_line(lang, dat_path, store_path):
+    dat = _convert_csv_to_df(dat_path)
+
+    # Plot ratio line for female in all contributor
+    male = dat["male_all"].replace(0, np.nan)
+    # Convert to percent
+    ratio_all = round((dat["female_all"] / (dat["female_all"] + dat["male_all"]) * 100), 2)
+    for win in dat["win"]:
+        win = win - 1
+        if dat["female_all"][win] + dat["male_all"][win] == 0 and dat["all_all"][win] > 0:
+            ratio_all[win] = 0
+
+    # Plot ratio line for female in core contributor
+    male = dat["male_core"].replace(0, np.nan)
+    # Convert to percent
+    ratio_core = round((dat["female_core"] / (dat["female_core"] + dat["male_core"]) * 100), 2)
+    for win in dat["win"]:
+        win = win - 1
+        if dat["female_core"][win] + dat["male_core"][win] == 0 and dat["all_core"][win] > 0:
+            ratio_core[win] = 0
+
+    # Format line data of contributors
+    among_all = {}
+    among_all["name"] = "Among all"
+    among_all["type"] = "spline"
+    among_all["data"] = list(ratio_all)
+    among_all["color"] = "#2D7665"
+    among_all["yAxis"] = 1
+
+    # Change window to date
+    wins = dat["win"]
+    x = []
+    for win in wins:
+        x.append(_format_year(win))
+    wins = x
+
+    # Graph setup information
+    lang_title = lang
+    x_categories = wins
+    height_ratio = (2 / 3 * 100) # 16:9 ratio
+    data = [among_all]
+   
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = ''
+    out_dict['label_x'] = '' 
+    out_dict['label_y'] = ''
+    out_dict['label_y_secondary'] = ''
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path + '/' + lang + '_line.json', 'w') as out_file:
+        json.dump(out_dict, out_file)
+
+
+
+def load_contributor_women_bar(lang, dat_path, store_path):
+    dat = _convert_csv_to_df(dat_path)
+
+    # Format column data of contributors by gender
+    all_female = {}
+    all_female["name"] = "Women"
+    all_female["type"] = "column"
+    all_female["data"] = list(dat["female_all"] / 1000)
+    all_female["color"] = "#de2d26"
+    all_female["yAxis"] = 1
+
+    # Change window to date
+    wins = dat["win"]
+    x = []
+    for win in wins:
+        x.append(_format_year(win))
+    wins = x
+
+    # Graph setup information
+    lang_title = lang
+    x_categories = wins
+    height_ratio = (2 / 3 * 100) # 16:9 ratio
+    data = [all_female]
+   
+    # write data to js file that creates variables referenced in script.js file
+    out_dict = dict()
+    out_dict['title'] = ''
+    out_dict['label_x'] = '' 
+    out_dict['label_y'] = ''
+    out_dict['label_y_secondary'] = ''
+    out_dict['x_categories'] = x_categories
+    out_dict['height_ratio'] = height_ratio
+    out_dict['data'] = data
+    with open(store_path + '/' + lang + '_women-bar.json', 'w') as out_file:
+        json.dump(out_dict, out_file)
+
+
+
 def load_contributor_stack_line(lang, dat_path, store_path):
     """
     Stores formatted JavaScript variables for graph from:
@@ -550,6 +644,19 @@ def _format_date(period):
         year -= 1
 
     return f"{year}-{month}"
+
+
+def _format_year(period):
+    # Assumed there are four 3-month periods in each year 
+    # Format year and month of dataframe value "year-month"
+
+    time = 3 * period
+    year = 2008 + math.floor(time/12)
+    month = time - math.floor(time/12)*12
+    if not month:
+        year -= 1
+
+    return f"{year}"
 
 
 def _convert_csv_to_df(dat_path):
