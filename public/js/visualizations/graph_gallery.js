@@ -9,6 +9,7 @@ function graphGallery(graph_id) {
     },
     xAxis: {
         tickInterval: 12,
+        tickWidth: 1,
         title: {
             text: obj.label_x
         },
@@ -17,7 +18,7 @@ function graphGallery(graph_id) {
             x: 10,
             overflow: 'allow',
             style: {
-                fontSize: '20px',
+                fontSize: '18px',
             }
         },
         categories: obj.x_categories
@@ -33,7 +34,18 @@ function graphGallery(graph_id) {
             }
         },
         { // Secondary yAxis
-            tickInterval: 2,
+            tickPositioner: function () {
+                var positions = [],
+                    tick = 0,
+                    increment = Math.ceil((this.dataMax - 0) / 3);
+
+                if (this.dataMax !== null && this.dataMin !== null) {
+                    for (tick; tick - increment <= this.dataMax; tick += increment) {
+                        positions.push(tick);
+                    }
+                }
+                return positions;
+            },
             title: {
                 text: obj.label_y_secondary,
             },
@@ -41,9 +53,9 @@ function graphGallery(graph_id) {
                 overflow: 'allow',
                 y: 4,
                 style: {
-                    fontSize: '20px',
+                    fontSize: '18px',
                 },
-                format: graph_id%2==1 ? '{value}%' : '{value}',
+                format: graph_id.includes('line') ? '{value}%' : '{value}',
             },
             opposite: true,
         }],
