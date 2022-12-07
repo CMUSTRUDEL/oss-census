@@ -8,6 +8,9 @@ function addGraph(lang, graph_type) {
     div.id = `graph-${graph_type}-${lang}`;
 
     div.innerHTML = `
+    <div id="line-graphs-title">
+        <h2 class="text-primary lato-bold text-paragraph">${lang}</h2>
+    </div>
     <div class="mx-auto w-full">
         <div style="display: show" class="flex-col items-center w-full my-3">                
             <a href="#!" class="hover:opacity-75 my-4 md:w-3/3">
@@ -37,4 +40,8 @@ function loadGraphs() {
         addGraph(langs[i], 'women-bar');
         console.log(langs[i]);
     }
+}
+
+function scrollTo(graph_type) {
+    document.getElementById(graph_type+'-title').scrollIntoView();
 }
