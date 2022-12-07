@@ -76,7 +76,7 @@ def load_contributor_women_bar(lang, dat_path, store_path):
     all_female = {}
     all_female["name"] = "Women"
     all_female["type"] = "column"
-    all_female["data"] = list(dat["female_all"] / 1000)
+    all_female["data"] = list(dat["female_all"])
     all_female["color"] = "#de2d26"
     all_female["yAxis"] = 1
 
