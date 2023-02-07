@@ -9,7 +9,7 @@ function addGraph(lang, graph_type) {
 
     div.innerHTML = `
     <div class="line-graphs-title">
-        <img class="ecosystem_logo" src="img/LibLogos/${lang}_logo_colored.png" alt="Atom">
+        <img class="ecosystem_logo" src="img/LibLogos/${lang}_logo_colored.png" alt="${lang} logo">
         <h2 class="text-primary lato-bold text-paragraph">${lang}</h2>
     </div>
     <div class="mx-auto w-full">
