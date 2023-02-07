@@ -187,7 +187,6 @@ td, th {
     line-height: 2.75vw;
     transform: scaleX(1.15);
     transform-origin: 0 0;
-
 }
 
 .text-size-medium {
@@ -250,6 +249,22 @@ td, th {
     top: 31.5vw;
     left: 7.5%;
     width: 78.5vw;
+}
+
+/* For the Gallery page */
+
+.ecosystem_logo {
+    margin-right: 10%;
+    height: 40px;
+    border-radius: 0.75vw;
+}
+
+.line-graphs-title {
+    display: flex;
+}
+
+.line-graphs-title .text-paragraph {
+    margin: auto 0;
 }
 
 /* Loading in Images */
