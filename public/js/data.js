@@ -6129,7 +6129,7 @@ var data = {
         "All_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         39,
                         40,
@@ -6671,7 +6671,7 @@ var data = {
         "Atom_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -7213,7 +7213,7 @@ var data = {
         "Bower_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         1,
                         3,
@@ -7755,7 +7755,7 @@ var data = {
         "CPAN_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         4,
                         3,
@@ -8297,7 +8297,7 @@ var data = {
         "CRAN_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -8839,7 +8839,7 @@ var data = {
         "Cargo_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -9381,7 +9381,7 @@ var data = {
         "Clojars_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -9923,7 +9923,7 @@ var data = {
         "CocoaPods_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -10465,7 +10465,7 @@ var data = {
         "Go_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         1,
                         0,
@@ -11007,7 +11007,7 @@ var data = {
         "Hackage_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         1,
                         1,
@@ -11549,7 +11549,7 @@ var data = {
         "Hex_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -12091,7 +12091,7 @@ var data = {
         "Maven_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         8,
                         9,
@@ -12633,7 +12633,7 @@ var data = {
         "Meteor_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -13175,7 +13175,7 @@ var data = {
         "NPM_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         6,
                         6,
@@ -13717,7 +13717,7 @@ var data = {
         "NuGet_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         1,
                         2,
@@ -14259,7 +14259,7 @@ var data = {
         "Packagist_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         2,
                         0,
@@ -14801,7 +14801,7 @@ var data = {
         "PlatformIO_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -15343,7 +15343,7 @@ var data = {
         "Pub_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -15885,7 +15885,7 @@ var data = {
         "Puppet_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         0,
                         0,
@@ -16427,7 +16427,7 @@ var data = {
         "Pypi_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         6,
                         9,
@@ -16969,7 +16969,7 @@ var data = {
         "Rubygems_women-bar": {
             "data": [
                 {
-                    "color": "#de2d26",
+                    "color": "#f29d4b",
                     "data": [
                         10,
                         11,
