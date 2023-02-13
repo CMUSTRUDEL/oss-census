@@ -267,6 +267,10 @@ td, th {
     margin: auto 0;
 }
 
+.text-size-subtitle-container {
+    width: 85%;
+}
+
 /* Loading in Images */
 
 .reveal{
