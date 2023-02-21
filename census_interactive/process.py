@@ -5,13 +5,71 @@ import numpy as np
 import pandas as pd
 import json
 
-
-
-import math
-import os, webbrowser
-import numpy as np
-import pandas as pd
-import json
+visualization_props = {
+    "All": {
+        "color": "#52796F"
+    }, 
+    "Atom": {
+        "color": "#5FB57D"
+    }, 
+    "Bower": {
+        "color": "#D13916"
+    },
+    "Cargo": {
+        "color": "#765229"
+    },
+    "CPAN": {
+        "color": "#131313"
+    }, 
+    "CRAN": {
+        "color": "#2167BA"
+    }, 
+    "Clojars": {
+        "color": "#341133"
+    }, 
+    "CocoaPods": {
+        "color": "#E31316"
+    }, 
+    "Go": {
+        "color": "#017C9B"
+    }, 
+    "Hackage": {
+        "color": "#5C5281"
+    }, 
+    "Hex": {
+        "color": "#52796F"
+    }, 
+    "Maven": {
+        "color": "#000000"
+    }, 
+    "Meteor": {
+        "color": "#585CFE"
+    }, 
+    "NPM": {
+        "color": "#CB3837"
+    }, 
+    "NuGet": {
+        "color": "#004880"
+    }, 
+    "Packagist": {
+        "color": "#BB522D"
+    }, 
+    "PlatformIO": {
+        "color": "#C14E24"
+    },
+    "Pub": {
+        "color": "#01579B"
+    }, 
+    "Puppet": {
+        "color": "#9C670E"
+    },
+    "Pypi": {
+        "color": "#3774A8"
+    },
+    "Rubygems": {
+        "color": "#CF3E2D"
+    },
+}
 
 def load_contributor_line(lang, dat_path, store_path):
     dat = _convert_csv_to_df(dat_path)
@@ -39,7 +97,7 @@ def load_contributor_line(lang, dat_path, store_path):
     among_all["name"] = "Among all"
     among_all["type"] = "spline"
     among_all["data"] = list(ratio_all)
-    among_all["color"] = "#2D7665"
+    among_all["color"] = visualization_props[lang]["color"]
     among_all["yAxis"] = 1
 
     # Change window to date
@@ -77,7 +135,7 @@ def load_contributor_women_bar(lang, dat_path, store_path):
     all_female["name"] = "Women"
     all_female["type"] = "column"
     all_female["data"] = list(dat["female_all"])
-    all_female["color"] = "#f29d4b"
+    all_female["color"] = visualization_props[lang]["color"]
     all_female["yAxis"] = 1
 
     # Change window to date
