@@ -5420,7 +5420,7 @@ var data = {
                 "2019-3"
             ]
         },
-        "RubyGems": {
+        "Rubygems": {
             "data": [
                 {
                     "color": "blanchedalmond",
@@ -5642,7 +5642,7 @@ var data = {
             "label_x": "Time (quarter)",
             "label_y": "Commit Numbers (thousand)",
             "label_y_secondary": "Women Commit Ratio = F/(F + M)",
-            "title": "Commits in RubyGems Public Projects",
+            "title": "Commits in Rubygems Public Projects",
             "x_categories": [
                 "2008-3",
                 "2008-6",
@@ -5848,7 +5848,7 @@ var data = {
                         8.408,
                         8.362
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -6172,7 +6172,7 @@ var data = {
                         0.026,
                         0.023
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -6496,7 +6496,7 @@ var data = {
                         0.57,
                         0.524
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -6820,7 +6820,7 @@ var data = {
                         0.014,
                         0.012
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -7144,7 +7144,7 @@ var data = {
                         0.161,
                         0.177
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -7468,7 +7468,7 @@ var data = {
                         0.137,
                         0.18
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -7792,7 +7792,7 @@ var data = {
                         0.083,
                         0.085
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -8116,7 +8116,7 @@ var data = {
                         0.362,
                         0.313
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -8440,7 +8440,7 @@ var data = {
                         0.751,
                         0.71
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -8764,7 +8764,7 @@ var data = {
                         0.036,
                         0.044
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -9088,7 +9088,7 @@ var data = {
                         0.051,
                         0.05
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -9412,7 +9412,7 @@ var data = {
                         0.922,
                         0.876
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -9736,7 +9736,7 @@ var data = {
                         0.042,
                         0.039
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -10060,7 +10060,7 @@ var data = {
                         3.76,
                         3.693
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -10384,7 +10384,7 @@ var data = {
                         0.395,
                         0.391
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -10708,7 +10708,7 @@ var data = {
                         0.698,
                         0.677
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -11032,7 +11032,7 @@ var data = {
                         0.023,
                         0.029
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -11356,7 +11356,7 @@ var data = {
                         0.057,
                         0.068
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -11680,7 +11680,7 @@ var data = {
                         0.027,
                         0.024
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -12004,7 +12004,7 @@ var data = {
                         1.721,
                         1.759
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -12173,7 +12173,7 @@ var data = {
                 "2019-3"
             ]
         },
-        "RubyGems": {
+        "Rubygems": {
             "data": [
                 {
                     "color": "blanchedalmond",
@@ -12328,7 +12328,7 @@ var data = {
                         0.563,
                         0.514
                     ],
-                    "name": "All Women %",
+                    "name": "All Women",
                     "type": "column"
                 },
                 {
@@ -12448,7 +12448,7 @@ var data = {
             "label_x": "Time (quarter)",
             "label_y": "Number of Contributors (thousand)",
             "label_y_secondary": "% Women (of total m + w)",
-            "title": "Active Contributors in RubyGems Public Projects",
+            "title": "Active Contributors in Rubygems Public Projects",
             "x_categories": [
                 "2008-3",
                 "2008-6",
@@ -12573,7 +12573,7 @@ var data = {
                     "z": 1.6
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 3216,
                     "z": 1.68
                 },
@@ -12674,7 +12674,7 @@ var data = {
                     "z": 1.08
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 7412,
                     "z": 1.43
                 },
@@ -12785,7 +12785,7 @@ var data = {
                     "z": 1.68
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 13094,
                     "z": 1.71
                 },
@@ -12931,7 +12931,7 @@ var data = {
                     "z": 1.73
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 25134,
                     "z": 1.84
                 },
@@ -13042,7 +13042,7 @@ var data = {
                     "z": 1.87
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 42935,
                     "z": 1.9
                 },
@@ -13153,7 +13153,7 @@ var data = {
                     "z": 2.06
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 62161,
                     "z": 2.14
                 },
@@ -13269,7 +13269,7 @@ var data = {
                     "z": 2.26
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 69922,
                     "z": 2.6
                 },
@@ -13415,7 +13415,7 @@ var data = {
                     "z": 2.82
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 73175,
                     "z": 2.99
                 },
@@ -13536,7 +13536,7 @@ var data = {
                     "z": 3.05
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 69744,
                     "z": 3.31
                 },
@@ -13652,7 +13652,7 @@ var data = {
                     "z": 3.34
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 65275,
                     "z": 3.66
                 },
@@ -13768,7 +13768,7 @@ var data = {
                     "z": 3.53
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 59595,
                     "z": 4.03
                 },
@@ -13884,7 +13884,7 @@ var data = {
                     "z": 3.6
                 },
                 {
-                    "name": "RubyGems",
+                    "name": "Rubygems",
                     "y": 13638,
                     "z": 3.77
                 },
@@ -13989,7 +13989,7 @@ var data = {
                 "Pub",
                 "Puppet",
                 "Pypi",
-                "RubyGems"
+                "Rubygems"
             ]
         }
     }
@@ -14994,7 +14994,7 @@ var data = {
                     3.95,
                     3.77
                 ],
-                "name": "RubyGems"
+                "name": "Rubygems"
             }
         ],
         "height_ratio": 69.23076923076923,
@@ -15351,7 +15351,7 @@ var data = {
             {
                 "high": 4.15,
                 "low": 1.28,
-                "name": "RubyGems"
+                "name": "Rubygems"
             },
             {
                 "high": 3.65,

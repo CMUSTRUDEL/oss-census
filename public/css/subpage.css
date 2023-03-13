@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 @import url('https://use.typekit.net/koo5qlj.css');
+@import url('https://use.typekit.net/fhn8ija.css');
 
 .font-family-quicksand1 {
     font-family: quicksand, sans-serif;
@@ -16,6 +17,12 @@
 }
 .font-family-karla {
     font-family: karla;
+}
+
+.hobo-med {
+    font-family: hobo-std,sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .lato-regular {
@@ -47,7 +54,7 @@
     background: #ECE4E3;
 }
 .text-primary{
-    color: #4D7959;
+    color: #025555;
 }
 .text-paragraph{
     font-size: 1.4rem; /* 24px */
@@ -206,6 +213,9 @@ td, th {
     padding-top: 8vw;
 }
 
+.ptop-small {
+    padding-top: 35px;
+}
 .ptop-large {
     padding-top: 11vw;
 }
@@ -371,7 +381,44 @@ td, th {
     }
 }
 
+/* New Comparison Page */
 
+  
+.column {
+    flex: 50%;
+}
+
+.column-margins {
+    margin-top: 50px;
+    padding-right: 5vw;
+    padding-left: 5vw;
+}
+
+.grid-margin {
+    padding-right: 2vw;
+    padding-left: 2vw;
+}
+
+.Commit-Img {
+    height: 50px;
+    width: 120px;
+}
+
+.Contributors-Img {
+    height: 50px;
+    width: 90px;
+}
+.mtop-small {
+    margin-top: 20px;
+}
+
+.pbot-small {
+    padding-bottom: 30px;
+}
+
+.pbot-medium {
+    padding-bottom: 75px;
+}
 
 
 
