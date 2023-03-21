@@ -1,8 +1,9 @@
 import json
 import yaml
 from census_interactive.process import (load_commit_stack_line, load_contributor_stack_line, 
-    load_contributor_bar, load_contributor_dumbbell, load_contributor_percent,
-    load_contributor_pie, load_contributor_stack)
+    load_contributor_bar, load_contributor_dumbbell, load_contributor_line, 
+    load_contributor_percent, load_contributor_pie, load_contributor_stack,
+    load_contributor_women_bar)
 
 CONTRIBUTOR_STORE_PATH = './census_interactive/data/processed/contributor/'
 COMMIT_STORE_PATH = './census_interactive/data/processed/commit/'
@@ -27,12 +28,30 @@ def main():
     data["Contributor"] = dict()
     for lang in langs:
         dat_path = CONTRIBUTOR_RETRIEVE_PATH+lang+'.csv'
+
+        ## Stack Line graphs ##
         load_contributor_stack_line(lang, dat_path, CONTRIBUTOR_STORE_PATH)
 
         # Save graph data to overall JSON data
         with open(CONTRIBUTOR_STORE_PATH+lang+'.json') as json_file:
             add_data = json.load(json_file)
             data["Contributor"][lang] = add_data
+
+        ## Line graphs ##
+        load_contributor_women_bar(lang, dat_path, CONTRIBUTOR_STORE_PATH)
+
+        # Save graph data to overall JSON data
+        with open(CONTRIBUTOR_STORE_PATH+lang+'_women-bar.json') as json_file:
+            add_data = json.load(json_file)
+            data["Contributor"][lang+'_women-bar'] = add_data
+
+        ## Women-only Bar graphs ##
+        load_contributor_line(lang, dat_path, CONTRIBUTOR_STORE_PATH)
+
+        # Save graph data to overall JSON data
+        with open(CONTRIBUTOR_STORE_PATH+lang+'_line.json') as json_file:
+            add_data = json.load(json_file)
+            data["Contributor"][lang+'_line'] = add_data
 
     # Commits
     data["Commit"] = dict()
