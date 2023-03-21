@@ -1,3 +1,20 @@
+function getStats(cat, ecosystem, year) {
+    /* We can get the data from `var data` of data.js
+     *  which stores all the raw data.
+     * Time is arranged in quarters, from 2008-3 to 2019-3
+     *  and we will take the data of year-3 for each year
+     */
+    const eco_data = data[cat][ecosystem].data;
+    const all_men = eco_data.find(e => e.name=="All Men").data;
+    const all_women = eco_data.find(e => e.name=="All Women").data;
+    const time_index = (year-2008)*4; // 2008 -> 0 -> 2008-3, 2019 -> 44 -> 2019-3
+    
+    // Note that the numbers are recorded in thousands
+    const total = Math.round((all_men[time_index] + all_women[time_index]) * 1000);
+    const percentage = (all_women[time_index] * 1000 / total) * 100;
+    return [total, percentage];
+}
+
 function updateLang1() {
     var selectLanguage = document.getElementById('language-1');
     localStorage.setItem("language-1", selectLanguage.options[selectLanguage.selectedIndex].value);
@@ -18,25 +35,21 @@ function updateLang2() {
 function updateStats() {
     
     var selectYear = document.getElementById('year-select');
-    var targetNum = document.getElementById('contributor-num');
-    var targetPer = document.getElementById('contributor-percent');
+    var contributorNum = document.getElementById('contributor-num');
+    var contributorPer = document.getElementById('contributor-percent');
+    var commitNum = document.getElementById('commit-num');
+    var commitPer = document.getElementById('commit-percent');
 
     var selectedLanguage = localStorage.getItem("language-1");
-    console.log("language " + selectedLanguage)
-    var selectedYear = selectYear.options[selectYear.selectedIndex].value
+    console.log("language " + selectedLanguage);
+    var selectedYear = selectYear.options[selectYear.selectedIndex].value;
 
-    console.log("hi + " + selectedYear);
-    function isCorrectName(obj) {
-        // console.log("dog " + data_pie["Contributor"][selectedYear.toString()]["data"]["name"]);
-        // return selectedLanguage == data_pie["Contributor"][selectedYear.toString()]["data"]["name"];
-        return selectedLanguage == obj["name"];
-    }
-    // targetPer = data_pie["Contributor"][selectedYear.toString()]["data"].filter(isCorrectName)["x"];
-    // targetNum = data_pie["Contributor"][selectedYear.toString()]["data"].filter(isCorrectName)["y"];
-    console.log(data_pie["Contributor"][selectedYear]["data"])
-    targetPer.innerHTML = ((data_pie["Contributor"][selectedYear]["data"]).filter(isCorrectName))[0]["z"];
-    targetNum.innerHTML = ((data_pie["Contributor"][selectedYear]["data"]).filter(isCorrectName))[0]["y"];
-
+    const [contributorNumData, contributorPerData] = getStats('Contributor', selectedLanguage, parseInt(selectedYear));
+    const [commitNumData, commitPerData] = getStats('Commit', selectedLanguage, parseInt(selectedYear));
+    contributorNum.innerHTML = contributorNumData;
+    contributorPer.innerHTML = contributorPerData.toFixed(2) + '%';
+    commitNum.innerHTML = commitNumData;
+    commitPer.innerHTML = commitPerData.toFixed(2) + '%';
 
 }
 
