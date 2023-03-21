@@ -87,15 +87,7 @@ def main():
             add_data = json.load(json_file)
         data_pie["Contributor"][year_opt] = add_data
 
-    data_pie["Commit"] = dict()
-    for year_opt in year_opts:
-        # Updates processed JSON file
-        load_contributor_pie( COMMIT_RETRIEVE_PATH, COMMIT_STORE_PATH, 
-                            langs, year_opt)
-        # Save graph data to overall JSON data
-        with open(COMMIT_STORE_PATH+'all_pie'+'.json') as json_file:
-            add_data = json.load(json_file)
-        data_pie["Commit"][year_opt] = add_data
+
     ## Bar Graph ##
 
     data_bar = dict()  

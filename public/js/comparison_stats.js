@@ -15,33 +15,25 @@ function getStats(cat, ecosystem, year) {
     return [total, percentage];
 }
 
-function updateLang1() {
-    var selectLanguage = document.getElementById('language-1');
-    localStorage.setItem("language-1", selectLanguage.options[selectLanguage.selectedIndex].value);
-    updateContributorGraph();
-    updateCommitGraph();
-
-}
-
-function updateLang2() {
-    var selectLanguage = document.getElementById('language-2');
-    localStorage.setItem("language-2", selectLanguage.options[selectLanguage.selectedIndex].value);
-    updateContributorGraph();
-    updateCommitGraph();
-
+function updateLang(lang_num) {
+    const selectLanguageDiv = document.getElementById('language-' + lang_num);
+    const selectedLanguage = selectLanguageDiv.options[selectLanguageDiv.selectedIndex].value;
+    localStorage.setItem("language-" + lang_num, selectedLanguage);
+    updateStats(lang_num);
+    updateContributorGraphs(lang_num, selectedLanguage);
 }
 
 
-function updateStats() {
+function updateStats(lang_num) {
     
-    var selectYear = document.getElementById('year-select');
-    var contributorNum = document.getElementById('contributor-num');
-    var contributorPer = document.getElementById('contributor-percent');
-    var commitNum = document.getElementById('commit-num');
-    var commitPer = document.getElementById('commit-percent');
+    var selectYear = document.getElementById('year-select-'+lang_num);
+    var contributorNum = document.getElementById('contributor-num-'+lang_num);
+    var contributorPer = document.getElementById('contributor-percent-'+lang_num);
+    var commitNum = document.getElementById('commit-num-'+lang_num);
+    var commitPer = document.getElementById('commit-percent-'+lang_num);
 
-    var selectedLanguage = localStorage.getItem("language-1");
-    console.log("language " + selectedLanguage);
+    var selectedLanguage = localStorage.getItem("language-" + lang_num);
+    console.log("language: " + selectedLanguage);
     var selectedYear = selectYear.options[selectYear.selectedIndex].value;
 
     const [contributorNumData, contributorPerData] = getStats('Contributor', selectedLanguage, parseInt(selectedYear));
@@ -54,27 +46,54 @@ function updateStats() {
 }
 
 // wrong graph
-function updateContributorGraph() {
-    let lang = localStorage.getItem("language-1");
-    let cont = document.getElementById("contributor-single");
-    let comm = document.getElementById("commit-single");
+function updateContributorGraphs(lang_num, lang) {
+    let line_graph = document.getElementById("contributor-line-"+lang_num);
+    let bar_graph = document.getElementById("contributor-bar-"+lang_num);
 
-    parseData("Contributor", lang);
-    setDisplay(cont, comm, "show", "none");
-    // Reloads graph with updated data vars
-    graphContributor("0");
+    // Show graphs
+    line_graph.style.display = "block";
+    bar_graph.style.display = "block";
+
+    // Add diagrams
+    line_graph.innerHTML = `
+    % Women Contributors
+    <div class="mx-auto w-full">
+        <div style="display: show" class="flex-col items-center w-full my-3">                
+            <a href="#!" class="hover:opacity-75 my-4 md:w-3/3">
+                <figure class="highcharts-figure" onclick="return false;">
+                    <div id="cont-line-${lang}"></div>
+                    <!-- JS file link -->
+                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                </figure>
+            </a>
+        </div>
+    </div>
+    `;
+
+    // Load data
+    parseData("Contributor", `${lang}_line`);
+    graphGallery(`line-${lang}`);
+    
+    bar_graph.innerHTML = `
+    # Women Contributors
+    <div class="mx-auto w-full">
+        <div style="display: show" class="flex-col items-center w-full my-3">                
+            <a href="#!" class="hover:opacity-75 my-4 md:w-3/3">
+                <figure class="highcharts-figure" onclick="return false;">
+                    <div id="cont-women-bar-${lang}"></div>
+                    <!-- JS file link -->
+                    <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                </figure>
+            </a>
+        </div>
+    </div>
+    `;
+    
+    // Load data
+    parseData("Contributor", `${lang}_women-bar`);
+    graphGallery(`women-bar-${lang}`);
 }
 
-function updateCommitGraph() {
-    let lang = localStorage.getItem("language-1");
-    let cont = document.getElementById("contributor-single");
-    let comm = document.getElementById("commit-single");
-    parseData("Commit", lang);
-    setDisplay(cont, comm, "none", "show");
-    // Reloads graph with updated data vars
-    graphCommit("0");
-
-}
 
 
 
