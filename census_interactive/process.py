@@ -720,7 +720,7 @@ def _format_year(period):
 def _convert_csv_to_df(dat_path):
     # Converts OSS public data CSV to dataframe
     # Default max 45 rows
-    dat = pd.read_csv(dat_path, error_bad_lines=False, warn_bad_lines=False, index_col=False)
+    dat = pd.read_csv(dat_path, on_bad_lines='skip', index_col=False)
     max_win = 45
     dat = dat[dat['win']<=max_win]
 

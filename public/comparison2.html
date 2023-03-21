@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSS Census</title>
+    <meta name="author" content="Justin">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
+
+    <link rel="stylesheet" href="css/subpage.css">
+    <link rel="stylesheet" href="css/nav.css">
+
+
+    <link rel="icon" type="image/jpg" href="img/CensusLogo2.png">
+
+    <style>
+        li#comparison  { 
+            color: #f4f4f4; 
+            font-weight: bold;
+        } 
+
+        .nav-scrolled li#comparison  { 
+            color: #2E6A5E; 
+            font-weight: bold;
+        }  
+    </style>
+
+    <script src="js/animations.js"></script>
+
+   
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- Highchart Imports -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+
+
+    <!-- JS Graphs -->
+    <script src="js/data.js"></script>
+    <script src="js/parse.js"></script>
+    <script src="js/comparison_graphs.js" defer></script>
+    <script src="js/comparison_stats.js" defer></script>
+    <script src="js/single_graphs.js"></script>   
+
+    <script src="js/visualizations/graph_contributor.js"></script>
+    <script src="js/visualizations/graph_commit.js"></script>
+    <script src="js/visualizations/graph_pie.js"></script>
+    <script src="js/visualizations/graph_stack.js"></script>
+    <script src="js/visualizations/graph_gallery.js"></script>
+
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</head>
+
+<div id="navigation">
+</div>
+<script> 
+    $(function(){
+      $("#navigation").load("nav.html"); 
+    });
+</script> 
+
+<body id="comparison w-full h-full">
+    <div class="bg-white font-family-karla w-full h-full">
+        <div class="w-full h-gradient relative">
+            <img src="img/BackgroundGradient.png" alt="GreenGradient" id="GreenGradient" class="absolute w-full header-graphic"/>
+            <img src="img/GraphComparisonImg.png" alt="GraphImg" id="GraphComparison" class="absolute"/>
+
+            <article class="flex flex-row md:flex-row pleft-large ptop-medium">
+                <div class ="flex flex-col w-full header-animation">
+                    <div class="items-center z-10">
+                        <p class = "lato-bold ptop-medium text-white text-size-title pb-2">Graph Comparisons</p>
+                    </div>               
+                    <p class = "w-1/2 mt-4 md:mt-4 text-size-subtitle font-family-quicksand1 text-white font-light tracking-wider leading-relaxed">
+                        Freely choose any constraints to <br> 
+                        generate and compare graphs
+                    </p> 
+                </div>
+            </article>
+        </div>
+        <div class="w-full text-center lato-bold text-size-medium ptop-large text-primary">
+            Choose Two Ecosystems
+        </div>
+        <p class="py-4 text-center text-gray-400 text-size-xs lato-regular">Choose which of the two graph type you would want to display. <br>Contributors will show the number of active contributors working on the chosen project in a given year. <br> Commits will show how many commits are made to the chosen project in a given year.</p>
+
+        <div class="flex w-full">
+            <div class="column w-full">
+                <div class="flex flex-col items-center w-full">
+                    <div>
+                        <img src="img/ComparisonNum1.png" alt="Num1" class="number-dimensions"/>
+                    </div>
+                    <div id="query" class="space-x-4">
+                        <div id="row-1">
+                            <!-- Dropdown for language selection -->
+                            <select name="language-1" id="language-1" onchange="updateLang(1)" class="
+                                block
+                                w-full
+                                px-2
+                                py-1
+                                my-3
+                                text-base
+                                text-center
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded-lg
+                                transition
+                                ease-in-out
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                                <option value="" selected disabled hidden>--Select a Language--</option>
+                                <option value="Atom">Atom</option>
+                                <option value="Bower">Bower</option>
+                                <option value="Cargo">Cargo</option>
+                                <option value="Clojars">Clojars</option>
+                                <option value="CocoaPods">CocoaPods</option>
+                                <option value="CPAN">CPAN</option>
+                                <option value="CRAN">CRAN</option>
+                                <option value="Go">Go</option>
+                                <option value="Hackage">Hackage</option>
+                                <option value="Hex">Hex</option>
+                                <option value="Maven">Maven</option>
+                                <option value="Meteor">Meteor</option>
+                                <option value="NPM">NPM</option>
+                                <option value="NuGet">NuGet</option>
+                                <option value="Packagist">Packagist</option>
+                                <option value="PlatformIO">PlatformIO</option>
+                                <option value="Pub">Pub</option>
+                                <option value="Puppet">Puppet</option>
+                                <option value="Pypi">PyPi</option>
+                                <option value="RubyGems">RubyGems</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column-margins w-full">
+                        <div class="w-full bg-gray-100 flex flex-col items-center rounded-lg pbot-medium">
+                            <div class="ptop-small text-size-medium text-primary lato-bold">
+                                Statistics
+                            </div>
+                            <select name="year" id="year-select-1" onchange="updateStats(1)" class="
+                                block
+                                w-1/3
+                                px-2
+                                py-1
+                                my-3
+                                text-base
+                                text-center
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                            "
+                            aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                            <option value="" selected disabled hidden>--Select a Year--</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                        </select>
+                            <div class="w-full grid grid-cols-2 gap-4 grid-margin ptop-small">
+                                <div class="w-full bg-gray-300 rounded-lg flex flex-col items-center pbot-small">
+                                    <img src="img/CommitImg.png" alt="CommitsImg" class="w-full Commit-Img mtop-small"/>
+                                    <div id="commit-num-1" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Commits
+                                    </div>
+                                    <div id="commit-percent-1" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0%
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Commits From Women
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-lg flex flex-col items-center pbot-small">
+                                    <img src="img/ContributorsImg.png" alt="ContributorsImg" class="w-full Contributors-Img mtop-small"/>
+                                    <div id="contributor-num-1" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Contributors
+                                    </div>
+                                    <div id="contributor-percent-1" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0%
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Contributors are Women
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="contributor-line-1" class="ptop-small text-size-medium text-primary lato-bold" style="display: none">
+                            </div>
+                            <div id="contributor-bar-1" class="ptop-small text-size-medium text-primary lato-bold" style="display: none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column flex justify-center w-full">
+                <div class="flex flex-col items-center w-full">
+                    <div>
+                        <img src="img/ComparisonNum2.png" alt="Num1" class="number-dimensions"/>
+                    </div>
+                    <div id="query" class="space-x-4">
+                        <div id="row-1">
+                            <!-- Dropdown for language selection -->
+                            <select name="language-2" id="language-2" onchange="updateLang(2)" class="
+                                block
+                                w-full
+                                px-2
+                                py-1
+                                my-3
+                                text-base
+                                text-center
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded-lg
+                                transition
+                                ease-in-out
+                                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                                <option value="" selected disabled hidden>--Select a Language--</option>
+                                <option value="Atom">Atom</option>
+                                <option value="Bower">Bower</option>
+                                <option value="Cargo">Cargo</option>
+                                <option value="Clojars">Clojars</option>
+                                <option value="CocoaPods">CocoaPods</option>
+                                <option value="CPAN">CPAN</option>
+                                <option value="CRAN">CRAN</option>
+                                <option value="Go">Go</option>
+                                <option value="Hackage">Hackage</option>
+                                <option value="Hex">Hex</option>
+                                <option value="Maven">Maven</option>
+                                <option value="Meteor">Meteor</option>
+                                <option value="NPM">NPM</option>
+                                <option value="NuGet">NuGet</option>
+                                <option value="Packagist">Packagist</option>
+                                <option value="PlatformIO">PlatformIO</option>
+                                <option value="Pub">Pub</option>
+                                <option value="Puppet">Puppet</option>
+                                <option value="Pypi">PyPi</option>
+                                <option value="RubyGems">RubyGems</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="column-margins w-full">
+                        <div class="w-full bg-gray-100 flex flex-col items-center rounded-lg pbot-medium">
+                            <div class="ptop-small text-size-medium text-primary lato-bold">
+                                Statistics
+                            </div>
+                            <select name="year" id="year-select-2" onchange="updateStats(2)" class="
+                                block
+                                w-1/3
+                                px-2
+                                py-1
+                                my-3
+                                text-base
+                                text-center
+                                font-normal
+                                text-gray-700
+                                bg-white bg-clip-padding bg-no-repeat
+                                border border-solid border-gray-300
+                                rounded
+                                transition
+                                ease-in-out
+                                m-0
+                            "
+                            aria-expanded="true" aria-haspopup="true" aria-label="Default select">
+                            <option value="" selected disabled hidden>--Select a Year--</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                        </select>
+                            <div class="w-full grid grid-cols-2 gap-4 grid-margin ptop-small">
+                                <div class="w-full bg-gray-300 rounded-lg flex flex-col items-center pbot-small">
+                                    <img src="img/CommitImg.png" alt="CommitsImg" class="w-full Commit-Img mtop-small"/>
+                                    <div id="commit-num-2" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Commits
+                                    </div>
+                                    <div id="commit-percent-2" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0%
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Commits From Women
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-300 rounded-lg flex flex-col items-center pbot-small">
+                                    <img src="img/ContributorsImg.png" alt="ContributorsImg" class="w-full Contributors-Img mtop-small"/>
+                                    <div id="contributor-num-2" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Contributors
+                                    </div>
+                                    <div id="contributor-percent-2" class="ptop-small text-size-medium text-primary lato-bold">
+                                        0%
+                                    </div>
+                                    <div class="text-size-small text-primary lato-regular">
+                                        Contributors are Women
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="contributor-line-2" class="ptop-small text-size-medium text-primary lato-bold" style="display: none">
+                            </div>
+                            <div id="contributor-bar-2" class="ptop-small text-size-medium text-primary lato-bold" style="display: none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+        <footer id="footer" class="pt-24"></footer>
+        <script> 
+            $(function(){
+                $("#footer").load("footer.html"); 
+            });
+        </script>
+</html>

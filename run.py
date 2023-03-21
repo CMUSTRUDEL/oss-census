@@ -87,7 +87,7 @@ def main():
             add_data = json.load(json_file)
         data_pie["Contributor"][year_opt] = add_data
 
-    
+
     ## Bar Graph ##
 
     data_bar = dict()  
