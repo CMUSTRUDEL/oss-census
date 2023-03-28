@@ -40,11 +40,11 @@ function updateStats(lang_num) {
     console.log("language: " + selectedLanguage);
 
     // Update Ecosystem Logo and Title
+    logoDiv.src = `img/LibLogos/${selectedLanguage}_logo_colored.png`;
+    logoDiv.alt = `${selectedLanguage} Logo`;
+    titleDiv.innerText = selectedLanguage + " Statistics";
     if (logoDiv.style.display == "none") {
-        logoDiv.src = `img/LibLogos/${selectedLanguage}_logo_colored.png`;
-        logoDiv.alt = `${selectedLanguage} Logo`;
         logoDiv.style.display = "block";
-        titleDiv.innerText = selectedLanguage + " Statistics";
     }
 
     // Update Year
