@@ -1,5 +1,5 @@
 function getStats(cat, ecosystem, year) {
-    /* We can get the data from `var data` of data.js
+    /* We can get the data from `let data` of data.js
      *  which stores all the raw data.
      * Time is arranged in quarters, from 2008-3 to 2019-3
      *  and we will take the data of year-3 for each year
@@ -18,25 +18,31 @@ function getStats(cat, ecosystem, year) {
 function updateLang(lang_num) {
     const selectLanguageDiv = document.getElementById('language-' + lang_num);
     const selectedLanguage = selectLanguageDiv.options[selectLanguageDiv.selectedIndex].value;
-    localStorage.setItem("language-" + lang_num, selectedLanguage);
     updateStats(lang_num);
     updateContributorGraphs(lang_num, selectedLanguage);
 }
 
-
 function updateStats(lang_num) {
-    
-    var selectYear = document.getElementById('year-select-'+lang_num);
-    var contributorNum = document.getElementById('contributor-num-'+lang_num);
-    var contributorPer = document.getElementById('contributor-percent-'+lang_num);
-    var commitNum = document.getElementById('commit-num-'+lang_num);
-    var commitPer = document.getElementById('commit-percent-'+lang_num);
+    const selectLanguageDiv = document.getElementById('language-' + lang_num);
+    const selectYearDiv = document.getElementById('year-select-'+lang_num);
+    const contributorNum = document.getElementById('contributor-num-'+lang_num);
+    const contributorPer = document.getElementById('contributor-percent-'+lang_num);
+    const commitNum = document.getElementById('commit-num-'+lang_num);
+    const commitPer = document.getElementById('commit-percent-'+lang_num);
 
-    var selectedLanguage = localStorage.getItem("language-" + lang_num);
+    if (selectLanguageDiv.selectedIndex == 0) {
+        return;
+    }
+    const selectedLanguage = selectLanguageDiv.options[selectLanguageDiv.selectedIndex].value;
     console.log("language: " + selectedLanguage);
-    var selectedYear = selectYear.options[selectYear.selectedIndex].value;
+    if (selectYearDiv.selectedIndex == 0) {
+        // Set default year to the latest
+        selectYearDiv.selectedIndex = selectYearDiv.options.length - 1
+    }
+    let selectedYear = parseInt(selectYearDiv.options[selectYearDiv.selectedIndex].value);
+    console.log("year: " + selectedYear);
 
-    const [contributorNumData, contributorPerData] = getStats('Contributor', selectedLanguage, parseInt(selectedYear));
+    const [contributorNumData, contributorPerData] = getStats('Contributor', selectedLanguage, selectedYear);
     const [commitNumData, commitPerData] = getStats('Commit', selectedLanguage, parseInt(selectedYear));
     contributorNum.innerHTML = contributorNumData;
     contributorPer.innerHTML = contributorPerData.toFixed(2) + '%';
@@ -99,14 +105,14 @@ function updateContributorGraphs(lang_num, lang) {
 
 // function updateStats() {
     
-//     var selectYear = document.getElementById('year-select');
-//     var selectLanguage = document.getElementById('language-select');
-//     var targetNum = document.getElementById('contributor-num');
-//     var targetPer = document.getElementById('contributor-percent');
+//     let selectYear = document.getElementById('year-select');
+//     let selectLanguage = document.getElementById('language-select');
+//     let targetNum = document.getElementById('contributor-num');
+//     let targetPer = document.getElementById('contributor-percent');
 
-//     var selectedLanguage = selectLanguage.options[selectLanguage.selectedIndex].value
+//     let selectedLanguage = selectLanguage.options[selectLanguage.selectedIndex].value
 //     console.log("language " + selectedLanguage)
-//     var selectedYear = selectYear.options[selectYear.selectedIndex].value
+//     let selectedYear = selectYear.options[selectYear.selectedIndex].value
 
 //     console.log("hi + " + selectedYear);
 //     function isCorrectName(obj) {

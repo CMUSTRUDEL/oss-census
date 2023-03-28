@@ -206,7 +206,7 @@ function addRow() {
             <option value="Pub">Pub</option>
             <option value="Puppet">Puppet</option>
             <option value="PyPi">PyPi</option>
-            <option value="RubyGems">RubyGems</option>
+            <option value="Rubygems">Rubygems</option>
         </select>
     `;
   
