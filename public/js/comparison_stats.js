@@ -25,16 +25,29 @@ function updateLang(lang_num) {
 function updateStats(lang_num) {
     const selectLanguageDiv = document.getElementById('language-' + lang_num);
     const selectYearDiv = document.getElementById('year-select-'+lang_num);
+    const logoDiv = document.getElementById('ecosystem_logo-' + lang_num);
+    const titleDiv = document.getElementById('ecosystem_title-' + lang_num);
     const contributorNum = document.getElementById('contributor-num-'+lang_num);
     const contributorPer = document.getElementById('contributor-percent-'+lang_num);
     const commitNum = document.getElementById('commit-num-'+lang_num);
     const commitPer = document.getElementById('commit-percent-'+lang_num);
 
+    // Update Ecosystem (aka "Language")
     if (selectLanguageDiv.selectedIndex == 0) {
         return;
     }
     const selectedLanguage = selectLanguageDiv.options[selectLanguageDiv.selectedIndex].value;
     console.log("language: " + selectedLanguage);
+
+    // Update Ecosystem Logo and Title
+    if (logoDiv.style.display == "none") {
+        logoDiv.src = `img/LibLogos/${selectedLanguage}_logo_colored.png`;
+        logoDiv.alt = `${selectedLanguage} Logo`;
+        logoDiv.style.display = "block";
+        titleDiv.innerText = selectedLanguage + " Statistics";
+    }
+
+    // Update Year
     if (selectYearDiv.selectedIndex == 0) {
         // Set default year to the latest
         selectYearDiv.selectedIndex = selectYearDiv.options.length - 1
@@ -48,7 +61,6 @@ function updateStats(lang_num) {
     contributorPer.innerHTML = contributorPerData.toFixed(2) + '%';
     commitNum.innerHTML = commitNumData;
     commitPer.innerHTML = commitPerData.toFixed(2) + '%';
-
 }
 
 // wrong graph
