@@ -17,7 +17,8 @@ export default function SiderLayout({
           {title}
         </Typography.Title>
       </Col>
-      <Col span={14} offset={2} style={{textAlign: "left"}}>
+      <Col span={1} />
+      <Col span={14} style={{textAlign: "left"}}>
         <div className="description-container">
           <Typography.Text>{description}</Typography.Text>
         </div>
@@ -25,6 +26,7 @@ export default function SiderLayout({
           {sections}
         </div>
       </Col>
+      <Col span={1} />
     </Row>
   );
 }

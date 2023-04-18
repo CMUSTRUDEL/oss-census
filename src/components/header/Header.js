@@ -34,7 +34,7 @@ export default function Header(props) {
               <Link to="/comparisons">Comparisons</Link>
             </Button>
             <Button type="text">
-              <Link to="/references">References</Link>
+              <Link to="/resources">Resources</Link>
             </Button>
         </Space>
         <Divider style={{margin: "4px 0"}}/>

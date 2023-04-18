@@ -14,7 +14,7 @@ import Home from "./pages/home/Home";
 import QuickFacts from "./pages/quickfacts/QuickFacts";
 import Gallery from "./pages/gallery/Gallery";
 import Comparisons from "./pages/comparisons/Comparisons";
-import References from "./pages/references/References";
+import Resources from "./pages/resources/Resources";
 
 import { ConfigProvider } from "antd";
 
@@ -26,6 +26,7 @@ function App() {
           token: {
             colorPrimary: "#2A2A2A",
             colorSplit: "black",
+            fontFamily: "Everett Regular",
             fontSize: 20,
             fontSizeHeading1: 40,
             fontSizeHeading2: 36,
@@ -41,7 +42,7 @@ function App() {
               <Route exact path='/quick-facts' element={<QuickFacts />}></Route>
               <Route exact path='/gallery' element={<Gallery />}></Route>
               <Route exact path='/comparisons' element={<Comparisons />}></Route>
-              <Route exact path='/references' element={<References />}></Route>
+              <Route exact path='/resources' element={<Resources />}></Route>
             </Routes>
           </div>
           <Footer />
