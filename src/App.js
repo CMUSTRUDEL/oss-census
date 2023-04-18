@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from "react";
+
 import './App.css';
+
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+
+import { ConfigProvider, Divider } from "antd";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#2A2A2A",
+          fontSize: 20,
+          fontSizeHeading1: 40,
+          fontSizeHeading2: 30,
+        }
+      }}
+    >
+      <div className="App">
+        <Header />
+        <Divider style={{margin: "4px 0"}}/>
+        <Footer />
+      </div>
+    </ConfigProvider>
   );
 }
 
