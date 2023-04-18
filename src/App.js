@@ -21,7 +21,6 @@ function App() {
     >
       <div className="App">
         <Header />
-        <Divider style={{margin: "4px 0"}}/>
         <Footer />
       </div>
     </ConfigProvider>

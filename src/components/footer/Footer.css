@@ -1,0 +1,18 @@
+img {
+    height: 100%;
+}
+
+#strudel-logo {
+    height: 40px;
+}
+
+#coex-logo {
+    height: 55px;
+}
+
+
+.logo-container {
+    width: calc(100% - 24px);
+    margin-right: 24px;
+    justify-content: right;
+}
