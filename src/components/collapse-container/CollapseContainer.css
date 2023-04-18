@@ -1,0 +1,21 @@
+.sections-container .ant-collapse-header {
+    flex-direction: row-reverse;
+    align-items: center !important;
+    padding: 0 !important;
+}
+
+.sections-container .ant-collapse-header h3 {
+    margin: 0;
+}
+
+.sections-container .ant-collapse-header span{
+    font-size: 28px !important;
+}
+
+/* Expansion Icon Styling */
+.sections-container .ant-collapse-item .ant-collapse-expand-icon svg{
+    transform: rotate(90deg);
+}
+.sections-container .ant-collapse-item.ant-collapse-item-active .ant-collapse-expand-icon svg{
+    transform: rotate(270deg) !important;
+}

@@ -39,7 +39,7 @@ function App() {
           <div className="main-content">
             <Routes>
               <Route exact path='/' element={<Home />}></Route>
-              <Route exact path='/quick-facts' element={<QuickFacts />}></Route>
+              <Route exact path='/overview' element={<QuickFacts />}></Route>
               <Route exact path='/gallery' element={<Gallery />}></Route>
               <Route exact path='/comparisons' element={<Comparisons />}></Route>
               <Route exact path='/resources' element={<Resources />}></Route>
