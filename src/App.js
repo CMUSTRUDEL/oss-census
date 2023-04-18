@@ -28,19 +28,22 @@ function App() {
             colorSplit: "black",
             fontSize: 20,
             fontSizeHeading1: 40,
-            fontSizeHeading2: 30,
+            fontSizeHeading2: 36,
+            fontSizeHeading3: 30,
           }
         }}
       >
         <div className="App">
           <Header />
-          <Routes>
-            <Route exact path='/' element={<Home />}></Route>
-            <Route exact path='/quick-facts' element={<QuickFacts />}></Route>
-            <Route exact path='/gallery' element={<Gallery />}></Route>
-            <Route exact path='/comparisons' element={<Comparisons />}></Route>
-            <Route exact path='/references' element={<References />}></Route>
-          </Routes>
+          <div className="main-content">
+            <Routes>
+              <Route exact path='/' element={<Home />}></Route>
+              <Route exact path='/quick-facts' element={<QuickFacts />}></Route>
+              <Route exact path='/gallery' element={<Gallery />}></Route>
+              <Route exact path='/comparisons' element={<Comparisons />}></Route>
+              <Route exact path='/references' element={<References />}></Route>
+            </Routes>
+          </div>
           <Footer />
         </div>
       </ConfigProvider>
