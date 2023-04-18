@@ -4,11 +4,12 @@ import Icon from '@ant-design/icons';
 
 import {ReactComponent as LogoIcon} from '../../assets/logo.svg';
 
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import './Header.css';
 
 export default function Header(props) {
+  const navigate = useNavigate();
   return (
     <div style={{ 
         position: "sticky",
@@ -18,24 +19,12 @@ export default function Header(props) {
         background: "white",
     }}>
         <Space size="middle" style={{margin: "16px 24px", float: "left"}}>
-            <Button type="text" icon={<Icon component={LogoIcon} />}>
-              <Link to="/" />
-            </Button>
-            <Button type="text">
-              <Link to="/">Home</Link>
-            </Button>
-            <Button type="text">
-              <Link to="/quick-facts">Quick Facts</Link>
-            </Button>
-            <Button type="text">
-              <Link to="/gallery">Gallery</Link>
-            </Button>
-            <Button type="text">
-              <Link to="/comparisons">Comparisons</Link>
-            </Button>
-            <Button type="text">
-              <Link to="/resources">Resources</Link>
-            </Button>
+            <Button type="text" icon={<Icon component={LogoIcon} onClick={() => navigate('/')}/>} />
+            <Button type="text" onClick={() => navigate('/')}>Home</Button>
+            <Button type="text" onClick={() => navigate('/overview')}>Overview</Button>
+            <Button type="text" onClick={() => navigate('/gallery')}>Gallery</Button>
+            <Button type="text" onClick={() => navigate('/comparisons')}>Comparisons</Button>
+            <Button type="text" onClick={() => navigate('/resources')}>Resources</Button>
         </Space>
         <Divider style={{margin: "4px 0"}}/>
     </div>
