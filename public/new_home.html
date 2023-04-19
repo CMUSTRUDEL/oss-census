@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSS Census</title>
+    <meta name="author" content="Justin">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
+    <!-- Lato Font-->
+    <link rel="stylesheet" href="https://use.typekit.net/koo5qlj.css">
+    
+
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/redesign.css">
+
+
+    <link rel="icon" type="image/jpg" href="img/CensusLogo2.png">
+
+    <script src="js/animations.js"></script>
+
+
+    <style>
+
+        li#index  { 
+            color: #f4f4f4; 
+            font-weight: bold;
+        } 
+
+        .nav-scrolled li#index  { 
+            color: #2E6A5E; 
+            font-weight: bold;
+        } 
+
+    </style>
+
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- Graph 1 CSS and Script links -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    
+</head>
+    <div id="navigation" class="font-family-karla"></div>
+    <script> 
+        $(function(){
+            $("#navigation").load("new_nav.html"); 
+        });
+    </script> 
+    <div class="font-family-karla w-full h-full">
+        <!-- Top Bar Nav -->
+    <!-- Text Header -->
+    <body id="index">
+        <div class="left-margin flex flex-col gap-8">
+            <div class="relative z-20 header-animation uppercase header-text">
+                <span class="font-bold underline">learn</span> and <span class="font-bold underline">visualize</span><br> gender demographics across<br>the open source community
+            </div>
+            <div class="paragraph-text">
+                OSS Census is committed to study and spread awareness of the underlying<br>inequalities in the movement that is changing the face of technology
+            </div>
+            <button class="bg-black hover:bg-gray-200 text-white font-bold py-2 px-4 rounded-full w-32">
+                Learn More
+            </button>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <hr>
+        <br/>
+        <br/>
+
+        <article class="flex flex-row md:flex-row max-w-10xl main-margin-redesign">
+            <div class="text-grid">
+                <div>
+                    <h1 class="subheader-text">The Problem</h1>
+                </div>
+                <div class ="paragraph-text">
+                    Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as "The Heartbleed Bug" could occur. Because of this, maintaining OSS is undoubtedly crucial.
+                    However, several obstacles hinder OSS's sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture. Moreover, since gender diversity is shown to be associated with higher productivity, increasing gender diversity can boost a team's performance.
+                </div>
+            </div>
+        </article>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <article class="flex flex-row md:flex-row max-w-10xl main-margin-redesign pb-32">
+            <div class="text-grid">
+                <div>
+                    <h1 class="subheader-text">The Mission</h1>
+                </div>
+                <div class ="mission-grid">
+                    <div class="mission-image">
+                        <img class ="mission-image-size" src="img/AnalysisGraphic.png" alt="Analysis">
+                        <p>ANALYSIS</p>
+                    </div>
+                    <div class="mission-image">
+                        <img class ="mission-image-size" src="img/EcosystemsGraphic.png" alt="Ecosystems">
+                        <p>ECOSYSTEMS</p>
+                    </div>
+                    <div class="mission-image">
+                        <img class ="mission-image-size" src="img/DataGraphic.png" alt="Data">
+                        <p>DATA</p>
+                    </div>
+                    <div class="mission-image">
+                        <img class ="mission-image-size" src="img/ExplorationGraphic.png" alt="Exploration">
+                        <p>EXPLORATION</p>
+                    </div>
+                    <div class="mission-image">
+                        <img class ="mission-image-size" src="img/BibliographyGraphic.png" alt="Bibliography">
+                        <p>BIBLIOGRAPHY</p>
+                    </div>
+                    <div class="mission-image">
+                        <img class ="mission-image-size" src="img/SuggestionsGraphic.png" alt="Suggestions">
+                        <p>SUGGESTIONS</p>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+        <footer id="footer"></footer>
+        <script> 
+            $(function(){
+                $("#footer").load("footer.html"); 
+            });
+        </script> 
+    </body>
+    </div>
+</html>
