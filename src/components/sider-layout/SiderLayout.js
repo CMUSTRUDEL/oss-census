@@ -11,16 +11,16 @@ export default function SiderLayout({
 }) {
   return (
     <Row style={{margin: "65px 0"}}>
-      <Col span={8}>
+      <Col span={4} offset={1}>
         <Typography.Title level={2} style={{
+          textAlign: "left",
           textTransform: "uppercase",
           marginTop: 0,
         }}>
           {title}
         </Typography.Title>
       </Col>
-      <Col span={1} />
-      <Col span={14} style={{textAlign: "left"}}>
+      <Col span={14} style={{textAlign: "left"}} offset={3}>
         <div className="description-container">
           <Typography.Text>{description}</Typography.Text>
         </div>
