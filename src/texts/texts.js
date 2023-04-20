@@ -1,4 +1,4 @@
-export default texts = {
+const texts = {
     home: {
         title: "Home",
         path: "/",
@@ -34,47 +34,49 @@ export default texts = {
                     {
                         title: "QUICK FACTS",
                         description: "View a summary outlining important distinctions between open-source software libraries and public repositories",
-                        comparison: {
-                            title: ["OSS", "Public"],
-                            metrics: [
-                                {
-                                    metric: "Largest Ecosystem",
-                                    value: ["Npm", "Javascript"],
-                                },
-                                {
-                                    metric: "Community with highest women %",
-                                    value: ["CRAN", "HTML"],
-                                },
-                                {
-                                    metric: "% of women among all contributors over the years",
-                                    value: ["bar graph", "bar graph"], // Placeholders
-                                },
-                                {
-                                    metric: "% of women among core contributors over the years",
-                                    value: ["bar graph", "bar graph"], // Placeholders
-                                },
-                            ]
+                        content: {
+                            comparison: {
+                                title: ["OSS", "Public"],
+                                metrics: [
+                                    {
+                                        metric: "Largest Ecosystem",
+                                        value: ["Npm", "Javascript"],
+                                    },
+                                    {
+                                        metric: "Community with highest women %",
+                                        value: ["CRAN", "HTML"],
+                                    },
+                                    {
+                                        metric: "% of women among all contributors over the years",
+                                        value: ["bar graph", "bar graph"], // Placeholders
+                                    },
+                                    {
+                                        metric: "% of women among core contributors over the years",
+                                        value: ["bar graph", "bar graph"], // Placeholders
+                                    },
+                                ]
+                            },
                         }
                     },
                     {
                         title: "CONTRIBUTIONS",
                         description: "Starting with women percentage of 2.13% among core contributors in year xxxx and 2.25% among all contributors , the number has been steadily growing between 2008 and 2021. Moreover, we found that, between 2014 and 2021, the women percentage among cores has surpassed the percentage among all, leaving a slight but constant margin of 0.3%.",
-                        visualization: "% OSS Contributors by Gender",
+                        content: "% OSS Contributors by Gender",
                     },
                     {
                         title: "CONTRIBUTORS AND COMMITS",
                         description: "It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.",
-                        visualization: "Active Contributors and Commits in ALl Public Projects",
+                        content: "Active Contributors and Commits in ALl Public Projects",
                     },
                     {
                         title: "% WOMEN IN ECOSYSTMES",
                         description: "The graph shows the percentage of women contributors at its maximum and minimum in each ecosystem. Some ecosystems have a higher percentage of women contributors than others.",
-                        visualization: "Min and Max % Women in Ecosystems 2008-2019",
+                        content: "Min and Max % Women in Ecosystems 2008-2019",
                     },
                     {
                         title: "ECOSYSTEMS BY SIZE AND WOMEN %",
                         description: "More specific to gender distributions, we observed that the percentages of female contributors varied across different ecosystems. We also found that languages that are commonly used for web development, especially frontend development, like HTML and CSS, have higher female ratio in general.",
-                        visualization: "Contributors by Ecosystem Size and % Women",
+                        content: "Contributors by Ecosystem Size and % Women",
                     }
                 ]
             },
@@ -91,13 +93,13 @@ export default texts = {
                     {
                         title: "% WOMEN OVER TIME",
                         description: "The lines demonstrate the change in the number of women in open source projects with the change of time from 2008 to 2019. (The scale is not on 0-100%.)Genders in the dataset are inferred based on name and cultural background with the tool NamSor, limited by the tool's binary gender inference capability.",
-                        visualization: "Average across ecosystems",
+                        content: "Average across ecosystems",
                     }
                 ]
             },
             galleryLayout: {
                 title: "ECOSYSTEMS BREAKDOWN",
-                visualizations: {},
+                contents: {},
             }
         }
     },
@@ -114,39 +116,41 @@ export default texts = {
                     },
                     {
                         title: "2. TOGGLE BETWEEN DIFFERENT YEARS",
-                        comparison: {
-                            title: ["Atom", "Cargo"],
-                            metrics: [
-                                {
-                                    metric: "Year",
-                                    value: ["year selector", "year selector"], // Placeholders
-                                },
-                                {
-                                    metric: "Commits",
-                                    value: ["bar graph", "bar graph"], // Placeholders
-                                },
-                                {
-                                    metric: "Contributors",
-                                    value: ["bar graph", "bar graph"], // Placeholders
-                                },
-                                {
-                                    metric: "Commits From Women",
-                                    value: ["bar graph", "bar graph"], // Placeholders
-                                },
-                                {
-                                    metric: "Contributors who are Women",
-                                    value: ["bar graph", "bar graph"], // Placeholders
-                                },
-                                {
-                                    metric: "% of women among all contributors over the years",
-                                    value: ["highcharts", "highcharts"], // Placeholders
-                                },
-                                {
-                                    metric: "# of women among all contributors over the years",
-                                    value: ["highcharts", "highcharts"], // Placeholders
-                                },
-                            ]
-                        }
+                        constent: {
+                                comparison: {
+                                title: ["Atom", "Cargo"],
+                                metrics: [
+                                    {
+                                        metric: "Year",
+                                        value: ["year selector", "year selector"], // Placeholders
+                                    },
+                                    {
+                                        metric: "Commits",
+                                        value: ["bar graph", "bar graph"], // Placeholders
+                                    },
+                                    {
+                                        metric: "Contributors",
+                                        value: ["bar graph", "bar graph"], // Placeholders
+                                    },
+                                    {
+                                        metric: "Commits From Women",
+                                        value: ["bar graph", "bar graph"], // Placeholders
+                                    },
+                                    {
+                                        metric: "Contributors who are Women",
+                                        value: ["bar graph", "bar graph"], // Placeholders
+                                    },
+                                    {
+                                        metric: "% of women among all contributors over the years",
+                                        value: ["highcharts", "highcharts"], // Placeholders
+                                    },
+                                    {
+                                        metric: "# of women among all contributors over the years",
+                                        value: ["highcharts", "highcharts"], // Placeholders
+                                    },
+                                ]
+                            },
+                        },
                     },
                 ]
             }
@@ -162,48 +166,52 @@ export default texts = {
                 sections: [
                     {
                         title: "OVERVIEW OF GENDER DIVERSITY IN OSS",
-                        references: [
-                            {
-                                title: "‘Patches don’t have gender’: What is not open in open source software",
-                                author: "Nafus, D. (2012). ‘Patches don’t have gender’: What is not open in open source software.",
-                                container: "New Media & Society, 14(4), 669-683.",
-                            },
-                            {
-                                title: "Diversity and inclusion in open source software (oss) projects: Where do we stand?",
-                                author: "Bosu, A., & Sultana, K. Z. (2019, September). Diversity and inclusion in open source software (OSS) projects: Where do we stand?.",
-                                container: "In 2019 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (pp. 1-11). IEEE.",
-                            },
-                            {
-                                title: "FLOSS Participants' Perceptions About Gender and Inclusiveness: A Survey",
-                                author: "Lee, A., & Carver, J. C. (2019, May). FLOSS participants' perceptions about gender and inclusiveness: a survey.",
-                                container: "In 2019 IEEE/ACM 41st International Conference on Software Engineering (ICSE) (pp. 677-687). IEEE.",
-                            },
-                            {
-                                title: "FLOSS Participants' Perceptions About Gender and Inclusiveness: A Survey",
-                                author: "Lee, A., & Carver, J. C. (2019, May). FLOSS participants' perceptions about gender and inclusiveness: a survey.",
-                                container: "In 2019 IEEE/ACM 41st International Conference on Software Engineering (ICSE) (pp. 677-687). IEEE."
-                            }
-                        ]
+                        content: {
+                            references: [
+                                {
+                                    title: "‘Patches don’t have gender’: What is not open in open source software",
+                                    author: "Nafus, D. (2012). ‘Patches don’t have gender’: What is not open in open source software.",
+                                    container: "New Media & Society, 14(4), 669-683.",
+                                },
+                                {
+                                    title: "Diversity and inclusion in open source software (oss) projects: Where do we stand?",
+                                    author: "Bosu, A., & Sultana, K. Z. (2019, September). Diversity and inclusion in open source software (OSS) projects: Where do we stand?.",
+                                    container: "In 2019 ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (pp. 1-11). IEEE.",
+                                },
+                                {
+                                    title: "FLOSS Participants' Perceptions About Gender and Inclusiveness: A Survey",
+                                    author: "Lee, A., & Carver, J. C. (2019, May). FLOSS participants' perceptions about gender and inclusiveness: a survey.",
+                                    container: "In 2019 IEEE/ACM 41st International Conference on Software Engineering (ICSE) (pp. 677-687). IEEE.",
+                                },
+                                {
+                                    title: "FLOSS Participants' Perceptions About Gender and Inclusiveness: A Survey",
+                                    author: "Lee, A., & Carver, J. C. (2019, May). FLOSS participants' perceptions about gender and inclusiveness: a survey.",
+                                    container: "In 2019 IEEE/ACM 41st International Conference on Software Engineering (ICSE) (pp. 677-687). IEEE."
+                                }
+                            ],
+                        },
                     },
                     {
                         title: "BENEFITS OF DIVERSITY",
-                        references: [
-                            {
-                                title: "Gender and tenure diversity in github teams",
-                                author: "B. Vasilescu, D. Posnett, B. Ray, M. G. van den Brand, A. Serebrenik, P. Devanbu, and V. Filkov, “Gender and tenure diversity in github teams,”", 
-                                container: "In Proceedings of the 33rd annual ACM conference on human factors in computing systems, 2015, pp. 3789–3798."
-                            },
-                            {
-                                title: "The effects of diversity in global, distributed collectives: A study of open source project success",
-                                author: "Daniel, S., Agarwal, R., & Stewart, K. J. (2013). The effects of diversity in global, distributed collectives: A study of open source project success.",
-                                container: "Information Systems Research, 24(2), 312-333.",
-                            },
-                            {
-                                title: "nformation Systems Research, 24(2), 312-333.",
-                                author: "Moon, E. (2013, January). Gendered patterns of politeness in free/libre open source software development.",
-                                container: "In 2013 46th Hawaii International Conference on System Sciences (pp. 3168-3177). IEEE."
-                            }
-                        ]
+                        content: {
+                            references: [
+                                {
+                                    title: "Gender and tenure diversity in github teams",
+                                    author: "B. Vasilescu, D. Posnett, B. Ray, M. G. van den Brand, A. Serebrenik, P. Devanbu, and V. Filkov, “Gender and tenure diversity in github teams,”", 
+                                    container: "In Proceedings of the 33rd annual ACM conference on human factors in computing systems, 2015, pp. 3789–3798."
+                                },
+                                {
+                                    title: "The effects of diversity in global, distributed collectives: A study of open source project success",
+                                    author: "Daniel, S., Agarwal, R., & Stewart, K. J. (2013). The effects of diversity in global, distributed collectives: A study of open source project success.",
+                                    container: "Information Systems Research, 24(2), 312-333.",
+                                },
+                                {
+                                    title: "nformation Systems Research, 24(2), 312-333.",
+                                    author: "Moon, E. (2013, January). Gendered patterns of politeness in free/libre open source software development.",
+                                    container: "In 2013 46th Hawaii International Conference on System Sciences (pp. 3168-3177). IEEE."
+                                }
+                            ],
+                        },
                     },
                     {
                         title: "FAIRNESS",
@@ -809,3 +817,5 @@ export default texts = {
         }
     }
 }
+
+export default texts;
