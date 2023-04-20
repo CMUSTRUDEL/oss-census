@@ -103,7 +103,7 @@ const texts = {
             }
         }
     },
-    comparison: {
+    comparisons: {
         title: "Comparisons",
         path: "/comparisons",
         content: {
