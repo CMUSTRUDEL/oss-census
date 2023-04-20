@@ -27,3 +27,8 @@
 .sections-container .ant-collapse.ant-collapse-ghost.sections-container {
     border-block-start: none;
 }
+
+
+.sections-container .section-reference {
+    margin-bottom: 40px;
+}

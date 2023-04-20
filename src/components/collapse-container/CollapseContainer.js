@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapse, Divider, Typography } from "antd";
+import { Col, Collapse, Divider, Row, Space, Typography } from "antd";
 
 import "./CollapseContainer.css"
 
@@ -14,14 +14,20 @@ function getSingleSection(
     if (Object.keys(section.content) == "references") {
       content = section.content.references.map(
         (reference, referenceIndex) =>
-        <div 
-          className={`section-${index}-reference-${referenceIndex}`}
+        <Row 
+          className={`section-reference section-${index}-reference-${referenceIndex}`}
           key={`section-${index}-reference-${referenceIndex}`}
         >
-          <Typography.Text>{reference.title}</Typography.Text>
-          <Typography.Text>{reference.author}</Typography.Text>
-          <Typography.Text>{reference.container}</Typography.Text>
-        </div>
+          <Col span={15}>
+            <Space direction="vertical">
+              <Typography.Text strong>{reference.title}</Typography.Text>
+              <Typography.Text>{reference.author}</Typography.Text>
+            </Space>
+          </Col>
+          <Col span={7} offset={1}>
+            <Typography.Text italic>{reference.container}</Typography.Text>
+          </Col>
+        </Row>
       )
     } else if (section.content.$$typeof == Symbol.for('react.element')){
       content = section.content;
