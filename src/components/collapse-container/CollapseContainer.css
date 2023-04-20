@@ -19,3 +19,11 @@
 .sections-container .ant-collapse-item.ant-collapse-item-active .ant-collapse-expand-icon svg{
     transform: rotate(270deg) !important;
 }
+
+.sections-container .ant-collapse {
+    border-block-start-width: 0.5px;
+}
+
+.sections-container .ant-collapse.ant-collapse-ghost.sections-container {
+    border-block-start: none;
+}

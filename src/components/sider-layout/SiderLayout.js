@@ -2,13 +2,15 @@ import React from "react";
 
 import { Row, Col, Typography } from 'antd';
 
+import CollapseContainer from "../collapse-container/CollapseContainer";
+
 export default function SiderLayout({
   title,
   description,
   sections,
 }) {
   return (
-    <Row style={{marginTop: "65px"}}>
+    <Row style={{margin: "65px 0"}}>
       <Col span={8}>
         <Typography.Title level={2} style={{
           textTransform: "uppercase",
@@ -23,7 +25,7 @@ export default function SiderLayout({
           <Typography.Text>{description}</Typography.Text>
         </div>
         <div className="sections-container" style={{marginTop: "36px"}}>
-          {sections}
+          <CollapseContainer sections={sections} />
         </div>
       </Col>
       <Col span={1} />
