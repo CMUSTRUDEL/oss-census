@@ -2,12 +2,15 @@ import React from "react";
 
 import SiderLayout from "../../components/sider-layout/SiderLayout";
 
+import texts from "../../texts/texts";
+
 export default function Comparisons(props) {
+  const text = texts.comparisons.content.siderLayout;
   return (
-    <SiderLayout
-      title={"Graph Comparisons"}
-      description={"Choose which of the two graph type you would want to display.\n\nContributors will show the number of active contributors working on the chosen project in a given year. Commits will show how many commits are made to the chosen project in a given year."}
-      sections={<div>Comparisons</div>}
+    <SiderLayout 
+      title={text.title}
+      description={text.description}
+      sections={text.sections}
     />
   );
 }

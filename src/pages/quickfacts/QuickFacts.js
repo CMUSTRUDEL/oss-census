@@ -2,12 +2,15 @@ import React from "react";
 
 import SiderLayout from "../../components/sider-layout/SiderLayout";
 
+import texts from "../../texts/texts";
+
 export default function QuickFacts(props) {
+  const text = texts.overview.content.siderLayout;
   return (
     <SiderLayout 
-      title="Census Overview"
-      description=""
-      sections={<div>Quick Facts</div>}
+      title={text.title}
+      description={text.description}
+      sections={text.sections}
     />
   );
 }

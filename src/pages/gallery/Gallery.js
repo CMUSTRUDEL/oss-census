@@ -2,12 +2,15 @@ import React from "react";
 
 import SiderLayout from "../../components/sider-layout/SiderLayout";
 
+import texts from "../../texts/texts";
+
 export default function Gallery(props) {
+  const text = texts.gallery.content.siderLayout;
   return (
-    <SiderLayout
-      title={"ECOSYSTEMS GALLERY"}
-      description={""}
-      sections={<div>Gallery</div>}
+    <SiderLayout 
+      title={text.title}
+      description={text.description}
+      sections={text.sections}
     />
   );
 }
