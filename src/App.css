@@ -43,6 +43,11 @@
   padding-bottom: 75px;
 }
 
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
 h1{
   font-weight: normal !important;
 }
