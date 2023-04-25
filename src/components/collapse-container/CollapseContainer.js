@@ -10,8 +10,8 @@ function getSingleSection(
   let content = "";
   if (!section.content) {
     // Do nothing
-  } else if (section.content.constructor.name == "Object") { // This is a dictionary
-    if (Object.keys(section.content) == "references") {
+  } else if (section.content.constructor.name === "Object") { // This is a dictionary
+    if (Object.keys(section.content) === "references") {
       content = section.content.references.map(
         (reference, referenceIndex) =>
         <Row 
@@ -29,7 +29,7 @@ function getSingleSection(
           </Col>
         </Row>
       )
-    } else if (section.content.$$typeof == Symbol.for('react.element')){
+    } else if (section.content.$$typeof === Symbol.for('react.element')){
       content = section.content;
     }
   } else { // This is an HTML element

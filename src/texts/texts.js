@@ -13,12 +13,8 @@ const texts = {
         path: "/",
         content: {
             intro: {
-                title: 
-                    <div className="home-intro-title">
-                        <u><b>LEARN</b></u> AND <u><b>VISUALIZE</b></u>
-                        <br />
-                        GENDER DEMOGRAPHICS ACROSS THE OPEN-SOURCE SOFTWARE COMMUNITY 
-                    </div>,
+                title: <><u><b>LEARN</b></u> AND <u><b>VISUALIZE</b></u></>,
+                subtitle:"GENDER DEMOGRAPHICS ACROSS THE OPEN-SOURCE SOFTWARE COMMUNITY",
                 description: "OSS Census is committed to study and spread awareness of the underlying inequalities in the movement that is changing the face of technology",
                 button: "LEARN MORE",
             },

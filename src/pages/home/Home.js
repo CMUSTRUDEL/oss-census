@@ -8,8 +8,6 @@ import SiderLayout from "../../components/sider-layout/SiderLayout";
 import "./Home.css";
 
 import texts from "../../texts/texts";
-const problem = texts.home.content.problem;
-const missions = texts.home.content.mission;
 
 function getMissionContainer(
   mission,
@@ -30,9 +28,17 @@ function getMissionContainer(
 }
 
 export default function Home(props) {
+  const intro = texts.home.content.intro;
+  const problem = texts.home.content.problem;
+  const missions = texts.home.content.mission;
   return (
     <>
-      <FullPager />
+      <FullPager 
+        title={intro.title}
+        subtitle={intro.subtitle}
+        description={intro.description}
+        button={intro.button}
+      />
       <SiderLayout 
         size="sm"
         title={problem.title}

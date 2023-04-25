@@ -1,0 +1,37 @@
+.full-pager {
+    height: calc(100vh - 65px);
+    background-color: white;
+}
+
+.full-pager > button {
+    height: 20%;
+    outline-offset: -35px !important;
+}
+
+/* .full-pager > button:hover {
+    background-color: white !important;
+} */
+/* .full-pager > button:active {
+    background-color: white !important;
+} */
+
+.full-pager img {
+    height: 34px;
+}
+
+.full-paper-text-container {
+    height: 80%;
+    text-align: left;
+    align-content: center;
+}
+
+.full-paper-text-container > .ant-col > h2 {
+    margin-top: 0;
+}
+
+.full-paper-text-container > .ant-col > button {
+    margin-top: 35px;
+    height: fit-content;
+    padding: 12px 24px;
+    box-shadow: none;
+}
