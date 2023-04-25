@@ -1,3 +1,5 @@
+import { LinkButton } from "../components/button/Button";
+
 const texts = {
     home: {
         title: "Home",
@@ -15,7 +17,29 @@ const texts = {
             },
             problem: {
                 title: "THE PROBLEM",
-                description: "Open-source software (OSS) is now ubiquitous, forming a solid digital infrastructure for our everyday life. This digital infrastructure requires tremendous efforts to develop and maintain. Without constant support, destructive consequences such as \"The Heartbleed Bug\" could occur. Because of this, maintaining OSS is undoubtedly crucial.\n\nHowever, several obstacles hinder OSS's sustainability. One major obstacle is the inadequate diversity, especially in gender, which causes a subsequent unwelcoming culture. Moreover, since gender diversity is shown to be associated with higher productivity, increasing gender diversity can boost a team's performance.",
+                description: 
+                <div>
+                    Open-source software (OSS) is now ubiquitous, forming a 
+                    solid digital infrastructure for our everyday life. This 
+                    digital infrastructure requires tremendous efforts to 
+                    develop and maintain. Without constant support, destructive 
+                    consequences such as 
+                    <LinkButton href="https://heartbleed.com/">
+                        "The Heartbleed Bug"
+                    </LinkButton> 
+                    could occur. Because of this, maintaining OSS is undoubtedly 
+                    crucial.
+                    <br/>
+                    <br/>
+                    However, several obstacles hinder OSS's sustainability. One 
+                    major obstacle is the inadequate diversity, especially in 
+                    gender, which 
+                    <LinkButton href="https://journals.sagepub.com/doi/pdf/10.1177/1461444811422887?casa_token=nZsTM6mo6XYAAAAA:f5R1CvpZM9GXD-CC8uMC1C9njToDXFUOy3SOBrZe75naWHogjbRNFzVoe5ZxiG__fePJuzzYLrF5-g">
+                        causes a subsequent unwelcoming culture
+                    </LinkButton>. Moreover, since gender diversity is shown to be 
+                    associated with higher productivity, increasing gender 
+                    diversity can boost a team's performance.
+                </div>
             },
             mission: {
                 title: "THE MISSION",
