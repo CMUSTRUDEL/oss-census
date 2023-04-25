@@ -4,7 +4,7 @@ import Icon from '@ant-design/icons';
 
 import {ReactComponent as LogoIcon} from '../../assets/logo.svg';
 
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import './Header.css';
 
