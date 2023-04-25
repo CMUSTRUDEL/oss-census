@@ -1,3 +1,17 @@
 .description-container {
     white-space: pre-line;
 }
+
+.sider-layout {
+    margin: 65px 0;
+}
+
+.sider-layout-sm {
+    white-space: nowrap;
+}
+
+.sider-layout-title {
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 0;
+}

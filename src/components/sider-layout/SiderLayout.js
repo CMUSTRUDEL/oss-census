@@ -6,19 +6,25 @@ import CollapseContainer from "../collapse-container/CollapseContainer";
 
 import "./SiderLayout.css";
 
+function getLevelFromSize(size) {
+  switch(size) {
+    case "sm": return 3;
+    case "md": return 2;
+    case "lg": return 1;
+    default: return 2;
+  }
+}
+
 export default function SiderLayout({
   title,
   description,
   sections = [],
+  size = "md",
 }) {
   return (
-    <Row style={{margin: "65px 0"}}>
+    <Row className={`sider-layout sider-layout-${size}`}>
       <Col span={4} offset={1}>
-        <Typography.Title level={2} style={{
-          textAlign: "left",
-          textTransform: "uppercase",
-          marginTop: 0,
-        }}>
+        <Typography.Title className="sider-layout-title" level={getLevelFromSize(size)}>
           {title}
         </Typography.Title>
       </Col>

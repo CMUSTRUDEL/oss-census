@@ -34,10 +34,12 @@ export default function Home(props) {
     <>
       <FullPager />
       <SiderLayout 
+        size="sm"
         title={problem.title}
         description={problem.description}
       />
       <SiderLayout 
+        size="sm"
         title={missions.title}
         description={
           <Space 
