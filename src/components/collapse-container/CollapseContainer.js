@@ -5,7 +5,7 @@ import "./CollapseContainer.css"
 
 function getSingleSection(
   section,
-  index
+  index,
 ) {
   let content = "";
   if (!section.content) {
@@ -40,7 +40,7 @@ function getSingleSection(
       <Divider />
       <Collapse.Panel
         header={<Typography.Title level={3}>{section.title}</Typography.Title>}
-        key={index+1}
+        key={`section-${index+1}-${section.title}`}
       >
         <p>{section.description ?? ""}</p>
         {content}
