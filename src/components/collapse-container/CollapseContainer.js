@@ -51,7 +51,6 @@ function getSingleSection(
       <Collapse.Panel
         header={<Typography.Title level={3}>{section.title}</Typography.Title>}
         key={`section-${index+1}-${section.title}`}
-        
       >
         <p>{section.description ?? ""}</p>
         {content}
@@ -60,12 +59,17 @@ function getSingleSection(
   )
 }
 export default function CollapseContainer({
-  sections
+  sections = []
 }) {
   return (
     <Collapse 
       className="sections-container" 
-      defaultActiveKey={['1']} 
+      defaultActiveKey={
+        [`section-1${sections.length > 0 ? 
+          ("-" + sections[0].title) 
+          : ""}`
+        ]
+      } 
       expandIconPosition="end"
       ghost
     >
