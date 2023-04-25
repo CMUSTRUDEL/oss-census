@@ -1,8 +1,12 @@
 import React from "react";
 import { Button } from 'antd';
 
-export default function Header(props) {
+import "./Button.css";
+
+export function LinkButton(props) {
   return (
-    <Button>{props.text}</Button>
+    <Button type="text" className="link-button" href={props.href}>
+      {props.children}
+    </Button>
   );
 }

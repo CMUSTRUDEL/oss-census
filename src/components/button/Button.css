@@ -1,0 +1,12 @@
+.link-button {
+    padding: 0;
+}
+
+.link-button span {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    text-transform: none;
+    text-decoration: underline;
+    color: black;
+    padding: 0 0.3em;
+}
