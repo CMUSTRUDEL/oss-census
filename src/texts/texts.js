@@ -174,8 +174,8 @@ const texts = {
                     },
                     {
                         title: "2. TOGGLE BETWEEN DIFFERENT YEARS",
-                        constent: {
-                                comparison: {
+                        content: {
+                            comparison: {
                                 title: ["Atom", "Cargo"],
                                 metrics: [
                                     {

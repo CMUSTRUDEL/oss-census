@@ -1,5 +1,4 @@
 .sections-container .ant-collapse-header {
-    flex-direction: row-reverse;
     align-items: center !important;
     padding: 0 !important;
 }
