@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Collapse, Divider, Row, Space, Typography } from "antd";
 
+import ColumnComparison from "../column-comparison/ColumnComparison";
+
 import "./CollapseContainer.css"
 
 function getSingleSection(
@@ -11,7 +13,9 @@ function getSingleSection(
   if (!section.content) {
     // Do nothing
   } else if (section.content.constructor.name === "Object") { // This is a dictionary
-    if (Object.keys(section.content) === "references") {
+    const content_type = Object.keys(section.content)[0];
+
+    if (content_type === "references") {
       content = section.content.references.map(
         (reference, referenceIndex) =>
         <Row 
@@ -29,6 +33,12 @@ function getSingleSection(
           </Col>
         </Row>
       )
+    } else if (content_type === "comparison") {
+      content = 
+        <ColumnComparison 
+          title={section.content.comparison.title}
+          metrics={section.content.comparison.metrics}
+        />;
     } else if (section.content.$$typeof === Symbol.for('react.element')){
       content = section.content;
     }
