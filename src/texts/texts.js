@@ -1,5 +1,12 @@
 import { LinkButton } from "../components/button/Button";
 
+import AnalysisLogo from "../assets/missions/analysis.svg";
+import EcosystemsLogo from "../assets/missions/ecosystems.svg";
+import DataLogo from "../assets/missions/data.svg";
+import ExplorationLogo from "../assets/missions/exploration.svg";
+import BibliographyLogo from "../assets/missions/bibliography.svg";
+import SuggestionsLogo from "../assets/missions/suggestions.svg";
+
 const texts = {
     home: {
         title: "Home",
@@ -43,7 +50,38 @@ const texts = {
             },
             mission: {
                 title: "THE MISSION",
-                description: ["analysis", "ecosystems", "data", "exploration", "bibilography", "suggestions"],
+                description: [
+                    {
+                        title: "analysis",
+                        logo: <img src={AnalysisLogo} alt="a logo representing the process of analysis" />,
+                        description: "Read through a chronological analysis of the gender distribution in open-source software communities",
+                    },
+                    {
+                        title: "ecosystems",
+                        logo: <img src={EcosystemsLogo} alt="a logo representing the ecosystems" />,
+                        description: "An OSS ecosystem constitutes interdependent OSS libraries. We provide a decomposition of gender distribution in 32 ecosystems",
+                    },
+                    {
+                        title: "data",
+                        logo: <img src={DataLogo} alt="a logo representing data" />,
+                        description: "Statistics of gender representation based on roles",
+                    }, 
+                    {
+                        title: "exploration",
+                        logo: <img src={ExplorationLogo} alt="a logo representing the process of exploration" />,
+                        description: "An interface for free exploration of the census",
+                    },
+                    {
+                        title: "bibilography",
+                        logo: <img src={BibliographyLogo} alt="a logo representing bibliography" />,
+                        description: "Bibliography of prior studies on gender in OSS",
+                    },
+                    {
+                        title: "suggestions",
+                        logo: <img src={SuggestionsLogo} alt="a logo representing the suggestions" />,
+                        description: "Strategies to enhance diversity and inclusion"
+                    }
+                ],
             }
         }
     },

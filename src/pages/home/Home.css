@@ -1,0 +1,8 @@
+.missions-container > .ant-space-item {
+    width: calc(33% - 5px);
+    text-align: center;
+}
+
+.mission-title {
+    text-transform: uppercase;
+}
