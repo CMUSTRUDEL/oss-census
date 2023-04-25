@@ -4,10 +4,12 @@ import { Row, Col, Typography } from 'antd';
 
 import CollapseContainer from "../collapse-container/CollapseContainer";
 
+import "./SiderLayout.css";
+
 export default function SiderLayout({
   title,
   description,
-  sections,
+  sections = [],
 }) {
   return (
     <Row style={{margin: "65px 0"}}>

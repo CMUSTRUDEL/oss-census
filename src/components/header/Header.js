@@ -11,13 +11,7 @@ import './Header.css';
 export default function Header(props) {
   const navigate = useNavigate();
   return (
-    <div style={{ 
-        position: "sticky",
-        top: 0,
-        zIndex: 1,
-        width: "100%",
-        background: "white",
-    }}>
+    <div className="header">
         <Space size="middle" style={{margin: "16px 24px", float: "left"}}>
             <Button type="text" icon={<Icon component={LogoIcon} onClick={() => navigate('/')}/>} />
             <Button type="text" onClick={() => navigate('/')}>Home</Button>
