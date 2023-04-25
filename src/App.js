@@ -31,6 +31,7 @@ function App() {
             fontSizeHeading1: 40,
             fontSizeHeading2: 36,
             fontSizeHeading3: 30,
+            fontSizeHeading4: 20,
           }
         }}
       >
