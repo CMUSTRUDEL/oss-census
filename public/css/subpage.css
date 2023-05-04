@@ -269,6 +269,11 @@ td, th {
     border-radius: 0.75vw;
 }
 
+[id^="ecosystem_logo"] {
+    height: 100%;
+    border-radius: 0.75vw;
+}
+
 .line-graphs-title {
     display: flex;
 }
