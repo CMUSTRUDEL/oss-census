@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSS Census</title>
+    <meta name="author" content="Justin">
+    <meta name="description" content="">
+
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/irn8ehh.css">
+
+    <!-- Lato Font-->
+    <link rel="stylesheet" href="https://use.typekit.net/koo5qlj.css">
+
+    <link rel="icon" type="image/jpg" href="img/CensusLogo2.png">
+    <link rel="stylesheet" href="css/subpage.css">
+    <link rel="stylesheet" href="css/overview.css">
+    <link rel="stylesheet" href="css/nav.css">
+
+
+    <style>
+
+        li#quick-facts  { 
+            color: #f4f4f4; 
+            font-weight: bold;
+        } 
+
+        .nav-scrolled li#quick-facts  { 
+            color: #2E6A5E; 
+            font-weight: bold;
+        } 
+
+    </style>
+
+    <!-- JS Query for Navbar -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="js/animations.js"></script>
+
+
+    <!-- Graph 1 CSS and Script links -->
+    <script src="https://code.highcharts.com/10.3.3/highcharts.js"></script>
+    <script src="https://code.highcharts.com/10.3.3/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/10.3.3/modules/dumbbell.js"></script>
+    <script src="https://code.highcharts.com/10.3.3/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/10.3.3/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/10.3.3/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/10.3.3/modules/variable-pie.js"></script>
+    
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    
+    <!-- Imported Functions -->
+    <script src="js/single_graphs.js"></script>
+    <script src="js/comparison_graphs.js"></script>   
+    <!-- JS graph and tab switch functions -->
+    <script src="js/tab_graphs.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/parse.js"></script>
+    <script src="js/visualizations/graph_contributor.js"></script> 
+    <script src="js/visualizations/graph_commit.js"></script>
+    <script src="js/visualizations/graph_percent.js"></script>
+    <script src="js/visualizations/graph_dumbbell.js"></script>
+    <script src="js/visualizations/graph_pie.js"></script>
+</head>
+
+    <div id="navigation"></div>
+            <script> 
+                $(function(){
+                    $("#navigation").load("nav.html"); 
+                });
+            </script>
+    <!-- onload ensure charts are generated -->
+    <body id="quick-facts w-full h-full" onload="showGraphPercent(); showGraphDumbbell();showGraphPolar()">
+        <div class="font-family-karla w-full h-full">
+            <!-- Top Bar Nav -->
+            
+        
+            <div class="w-full h-gradient bg-contain bg-no-repeat" style="background-image: url('img/GreenGradient.png');">
+                <img src="img/BackgroundGradient.png" alt="GreenGradient" id="GreenGradient" class="absolute w-full header-graphic"/>
+                <img src="img/BarGraphGraphic.png" alt="BarGraph" id="BarGraphImg" class="absolute"/>
+
+
+                <article class="flex flex-row md:flex-row pleft-large ptop-large">
+                    <div class ="flex flex-col w-full header-animation">
+                        <div class="items-center z-10">
+                            <p class = "lato-bold text-white text-size-title pb-2">Census Overview</p>
+                        </div>               
+                        <p class = "w-3/4 mt-4 md:mt-4 text-size-subtitle font-family-quicksand1 text-white font-light tracking-wider leading-relaxed">
+                            Interact and explore data<br> 
+                            concerning all ecosystems<br> 
+                            for all years
+                        </p> 
+                    </div>
+        
+                </article>
+                
+            </div>
+
+            <div>
+                <div class="w-1/3 h-1/3 absolute z-0 blob1-position">
+                    <img src="img/Ellipse1.png" alt="Blob"/>
+                </div>
+                <div class="w-full p-16 ptop-large flex flex-col text-center">
+                    <div class="reveal fade-right">
+                        <div class="font-bold text-primary4 text-7xl lato-bold z-10">
+                            Quick Facts
+                        </div>
+                        <div class="pt-4 text-gray-400 text-size-small lato-regular z-10">
+                            View a summary outlining important distinctions between <br> open-source software libraries and public repositories
+                        </div>
+                    </div>
+
+                    <div class="px-14 table-padding flex flex-row justify-center reveal fade-left">
+                        <img src="img/Table2.png" alt="Table" class="w-2/3 h-2/3 z-10"/>
+                    </div>
+                </div>
+                <div class="w-1/3 h-1/3 absolute z-0 blob2-position">
+                    <img src="img/Ellipse2.png" alt="Blob"/>
+                </div>
+            </div>
+                
+
+            <!-- Row 1 -->
+            <div class = "flex flex-row h-max py-24 relative main-margin reveal fade-left">
+                <div class="absolute z-0 blob3">
+                    <img src="img/NumberBlob1.png" alt="Blob"/>
+                </div>
+                <!-- Graph 1 Percent Area -->
+                <div class="flex flex-col w-1/2 h-full mr-16">  
+                    <a href="#!" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure" onclick="return false;">
+                            <div id="percent"></div>
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+                <div class = "flex flex-col w-2/5">
+                    <div class="font-bold text-primary text-5xl lato-bold z-10 pb-4">
+                        Contributions
+                    </div>
+                    <div class="text-2xl text-justify pr-24">
+                        Starting with women percentage of 
+                        <span class="text-blurb1 font-bold">2.13% among core contributors</span>
+                        in year xxxx and 
+                        <span class="text-blurb1 font-bold">2.25% among all contributors</span>
+                        , the number has been steadily growing between 2008 and 2021. Moreover, we found that, between 2014 and 2021, the women percentage among cores has surpassed the percentage among all, leaving a slight but constant 
+                        <span class="text-blurb1 font-bold">margin of 0.3%.</span>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Row 2 -->
+            <div class = "flex flex-row main-margin h-max pl-24 py-24 relative reveal fade-right">
+                <div class = "flex flex-col w-2/5">
+                    <div class="font-bold text-primary text-5xl lato-bold z-10 pb-4">
+                        Contributors and Commits
+                    </div>
+                    <div class="text-2xl text-justify pr-24">
+                        It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.
+                    </div>
+                </div>
+                <div class="absolute z-0 blob4">
+                    <img src="img/NumberBlob2.png" alt="Blob"/>
+                </div>
+                <!-- Graph 2 Stacked Line Plot -->
+                <div class="flex flex-col w-1/2 h-full mr-24 m-auto">
+                    <div class="h-buttonheight flex flex-row justify-around items-stretch gap-x-1">
+                        <button id="cont-button" class="w-full h-full bg-primary hover:bg-green-900 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('cont', 'All')">Contributors</button>
+                        <button id="comm-button" class="w-full h-full bg-gray-300 hover:bg-gray-500 text-white text-lg font-semibold rounded-t-2xl" onclick="updateTab('comm', 'All')">Commits</button>
+                    </div>
+
+                    <div id="cont" alt="Graph1" style="display: show" class="flex-col items-center w-full h-full">                
+                        <a href="#!" class="hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure" onclick="return false;">
+                                <div id="cont-1"></div>
+                                <!-- JS file link -->
+                                <script> 
+                                    parseData("Contributor", "All");
+                                    graphContributor("1");
+                                </script>
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>
+
+                    <div id="comm" alt="Graph1" style="display: none" class="flex-col items-center w-full h-full">
+                        <a href="#!" class="hover:opacity-75 my-4 md:w-3/3">
+                            <figure class="highcharts-figure" onclick="return false;">
+                                <div id="comm-1"></div> 
+                                <!-- JS file link -->
+                                <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class = "flex flex-row main-margin h-max pl-24 py-24 relative reveal fade-left">
+                <div class="absolute z-0 blob5">
+                    <img src="img/NumberBlob3.png" alt="Blob"/>
+                </div>
+                <!-- Graph 3 Dumbbell -->
+                <div class="flex flex-col w-1/2 h-full mr-16">
+                    <a href="#!" class="px-6 hover:opacity-75 my-4 md:w-3/3">
+                        <figure class="highcharts-figure" onclick="return false;">
+                            <div id="dumbbell"></div>
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+                <div class = "flex flex-col w-2/5">
+                    <div class="font-bold text-primary text-5xl lato-bold z-10 pb-4">
+                        % of Women in Ecosystems
+                    </div>
+                    <div class="text-2xl text-justify pr-24">
+                        The graph shows the percentage of women contributors at its maximum and minimum in each ecosystem. Some ecosystems have a higher percentage of women contributors than others. 
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class = "flex flex-row main-margin h-max pl-24 py-24 relative reveal fade-right">
+                <div class = "flex flex-col w-2/5 pr-12">
+                    <div class="font-bold text-primary text-5xl lato-bold z-10 pb-4">
+                        Ecosystems by Size and Women Percentage
+                    </div>
+                    <div class="text-2xl text-justify">
+                        <p>
+                            More specific to gender distributions, we observed that the percentages of female contributors varied across different ecosystems.
+                            We also found that languages that are commonly used for web development, especially frontend development, like HTML
+                            and CSS, have higher female ratio in general.
+                        </p>
+                    </div>
+                </div>
+                <!-- Polar Chart -->
+                <div class="w-1/2 h-full">  
+                    <div class="absolute z-0 blob6">
+                        <img src="img/NumberBlob4.png" alt="Blob"/>
+                    </div>
+                    <a href="#!" class="px-3 hover:opacity-75 my-2 md:w-3/4">
+                        <figure class="highcharts-figure" onclick="return false;">
+                            <div id="pie-cont"></div>
+                            <!-- JS file link -->
+                            <script src="https://blacklabel.github.io/grouped_categories/grouped-categories.js"></script>    
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            
+
+            <footer id="footer" class="pt-24"></footer>
+            <script> 
+                $(function(){
+                    $("#footer").load("footer.html"); 
+                });
+            </script> 
+        </div>
+    </body>
+</html>

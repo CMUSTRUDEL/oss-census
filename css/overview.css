@@ -1,0 +1,122 @@
+.main-margin {
+    margin-right: 8vw;
+    margin-left: 8vw;
+}
+
+.text-size-title {
+    font-size: 4.5vw;
+}
+
+
+.text-size-subtitle {
+    font-size: 2.25vw;
+    line-height: 2.75vw;
+    transform: scaleX(1.15);
+    transform-origin: 0 0;
+
+}
+
+.text-size-small {
+    font-size: 1.8vw;
+    line-height: 2.5vw;
+}
+
+.table-padding {
+    padding-top: 5vw;
+    padding-bottom: 7vw;
+}
+
+.blob1-position {
+    left: 10vw;
+    top: 55vw;
+}
+
+.blob2-position {
+    right: 10vw;
+    top: 80vw;
+}
+
+.blob3 {
+    left: 45vw;
+    top: -2.5vw;
+    height: 10vw;
+    width: 10vw;
+    z-index: -1;
+    animation: bounce1 10s infinite alternate;
+}
+
+.blob4 {
+    left: 25vw;
+    top: 1vw;
+    height: 10vw;
+    width: 10vw;
+    z-index: -1;
+    animation: bounce2 10s forwards infinite alternate;
+
+}
+
+.blob5 {
+    right: 30vw;
+    top: -1vw;
+    height: 10vw;
+    width: 10vw;
+    z-index: -1;
+    animation: bounce2 10s forwards infinite alternate;
+
+}
+
+.blob6 {
+    left: 24vw;
+    top: 5vw;
+    height: 12vw;
+    width: 12vw;
+    transform: rotate(-10deg);
+    z-index: -1;
+    animation: bounce2 10s forwards infinite ease alternate;
+
+}
+
+.text-blurb1{
+    color: #77AC87;
+}
+
+.paragraph-size {
+    font-size: 1.4vw;
+    line-height: 1.8vw;
+}
+
+@keyframes bounce1 {
+    0% {
+        transform: translateX(0);
+        transform: translateY(0);
+
+    }
+    33% {
+        transform: translateX(-10%);
+        transform: translateY(-5%);
+    }
+    66% {
+        transform: translateX(10%);
+        transform: translateY(5%);
+    }
+}
+
+@keyframes bounce2 {
+    0% {
+        transform: translateX(0);
+        transform: translateY(0);
+
+    }
+    33% {
+        transform: translateX(-10%);
+        transform: translateY(-5%);
+
+    }
+    66% {
+        transform: translateX(10%);
+        transform: translateY(5%);
+
+    }
+}
+
+
