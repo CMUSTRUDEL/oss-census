@@ -4,6 +4,8 @@ import SiderLayout from "../../components/sider-layout/SiderLayout";
 
 import texts from "../../js/texts";
 
+import "./QuickFacts.css";
+
 export default function QuickFacts(props) {
   const text = texts.overview.content.siderLayout;
   return (
