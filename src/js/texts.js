@@ -142,7 +142,7 @@ const texts = {
                         </TabContainer>
                     },
                     {
-                        title: "% WOMEN IN ECOSYSTMES",
+                        title: "% WOMEN IN ECOSYSTEMS",
                         description: "The graph shows the percentage of women contributors at its maximum and minimum in each ecosystem. Some ecosystems have a higher percentage of women contributors than others.",
                         // content: "Min and Max % Women in Ecosystems 2008-2019",
                         content: <DumbbellGraph category="Contributor"/>
