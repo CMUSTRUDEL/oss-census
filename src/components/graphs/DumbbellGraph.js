@@ -4,7 +4,7 @@ import HighchartsReact from 'highcharts-react-official';
 import highchartsDumbbell from "highcharts/modules/dumbbell";
 import HC_more from "highcharts/highcharts-more";
 
-import { data_dumbbell } from '../js/data';
+import { data_dumbbell } from '../../js/data';
 
 HC_more(Highcharts);
 highchartsDumbbell(Highcharts);

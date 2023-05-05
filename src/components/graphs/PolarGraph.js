@@ -2,7 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-import { data_pie } from '../js/data';
+import { data_pie } from '../../js/data';
 
 export default function PolarGraph({
     category,

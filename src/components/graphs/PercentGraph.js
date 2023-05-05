@@ -2,7 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-import { data_percent } from '../js/data';
+import { data_percent } from '../../js/data';
 
 export default function PercentageGraph({
     category,
