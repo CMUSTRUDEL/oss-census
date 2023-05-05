@@ -62,7 +62,7 @@ export default function PercentageGraph({
         series: data["data"]
     };
     return (
-        <div>
+        <div className={`highcharts-graph percent-graph ${category}-percent-graph`}>
           <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
     );
