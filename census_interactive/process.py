@@ -66,7 +66,7 @@ visualization_props = {
     "Pypi": {
         "color": "#3774A8"
     },
-    "Rubygems": {
+    "RubyGems": {
         "color": "#CF3E2D"
     },
 }
@@ -444,7 +444,8 @@ def load_contributor_pie(dat_path, store_path, langs, year_opt):
         dat = _convert_csv_to_df(dat_path+lang+'.csv')
    
         add_data = {}
-        add_data["name"] = lang.capitalize()
+        # add_data["name"] = lang.capitalize()
+        add_data["name"] = lang
         # Year index moves in 3 month intervals start in 2008
         total_women = sum(list(dat["female"+"_all"])[year_start:year_start+4])
         total = sum(list(dat["all"+"_all"])[year_start:year_start+4])
