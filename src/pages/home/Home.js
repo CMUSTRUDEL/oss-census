@@ -7,7 +7,7 @@ import SiderLayout from "../../components/sider-layout/SiderLayout";
 
 import "./Home.css";
 
-import texts from "../../texts/texts";
+import texts from "../../js/texts";
 
 function getMissionContainer(
   mission,

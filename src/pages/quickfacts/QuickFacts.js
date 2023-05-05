@@ -2,7 +2,7 @@ import React from "react";
 
 import SiderLayout from "../../components/sider-layout/SiderLayout";
 
-import texts from "../../texts/texts";
+import texts from "../../js/texts";
 
 export default function QuickFacts(props) {
   const text = texts.overview.content.siderLayout;
