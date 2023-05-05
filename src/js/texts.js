@@ -14,6 +14,8 @@ import PercentageGraph from "../components/graphs/PercentGraph";
 import PolarGraph from "../components/graphs/PolarGraph";
 import StackLineGraph from "../components/graphs/StackLineGraph";
 
+import TabContainer from "../components/graphs-container/TabContainer";
+
 const texts = {
     home: {
         title: "Home",
@@ -133,7 +135,11 @@ const texts = {
                         title: "CONTRIBUTORS AND COMMITS",
                         description: "It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.",
                         // content: "Active Contributors and Commits in ALl Public Projects",
-                        content: <StackLineGraph category="Contributor" ecosystem="All"/>
+                        content: 
+                        <TabContainer labels={["Contributors", "Commits"]}>
+                            <StackLineGraph category="Contributor" ecosystem="All"/>
+                            <StackLineGraph category="Commit" ecosystem="All"/>
+                        </TabContainer>
                     },
                     {
                         title: "% WOMEN IN ECOSYSTMES",
