@@ -8,10 +8,11 @@ import ExplorationLogo from "../assets/missions/exploration.svg";
 import BibliographyLogo from "../assets/missions/bibliography.svg";
 import SuggestionsLogo from "../assets/missions/suggestions.svg";
 
-// For the Graphs
-import DumbbellGraph from "../graphs/DumbbellGraph";
-import PercentageGraph from "../graphs/PercentGraph";
-import PolarGraph from "../graphs/PolarGraph";
+// For the Graphs in the Quick Facts page
+import DumbbellGraph from "../components/graphs/DumbbellGraph";
+import PercentageGraph from "../components/graphs/PercentGraph";
+import PolarGraph from "../components/graphs/PolarGraph";
+import StackLineGraph from "../components/graphs/StackLineGraph";
 
 const texts = {
     home: {
@@ -131,7 +132,8 @@ const texts = {
                     {
                         title: "CONTRIBUTORS AND COMMITS",
                         description: "It is a well-known phenomenon that the percentage of women contributors is low in the OSS community. Through mining the data of open-source projects on GitHub, we found that women’s participation among all contributors has been constantly low, with the percentage being lower than higher than 5.0%.",
-                        content: "Active Contributors and Commits in ALl Public Projects",
+                        // content: "Active Contributors and Commits in ALl Public Projects",
+                        content: <StackLineGraph category="Contributor" ecosystem="All"/>
                     },
                     {
                         title: "% WOMEN IN ECOSYSTMES",
