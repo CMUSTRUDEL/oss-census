@@ -1,8 +1,43 @@
-.missions-container > .ant-space-item {
+#missions-container > .ant-space-item {
     width: calc(33% - 5px);
-    text-align: center;
 }
+
+#missions-container {
+    align-items: initial !important;
+}
+
+#analysis-container > .ant-space-item {
+    width: 100%;
+}
+
 
 .mission-title {
     text-transform: uppercase;
+    width: 100%;
+}
+
+.mission-description {
+    font-size: 15px;
+    line-height: 2px;
+    text-align: start;
+}
+
+.OSS-libraries-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.annotation {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.analysis-logo img {
+    width: 60px;
+}
+
+.analysis-title {
+    width: 200px;
+    font-weight: bold;
 }

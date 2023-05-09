@@ -7,12 +7,20 @@ import DataLogo from "../assets/missions/data.svg";
 import ExplorationLogo from "../assets/missions/exploration.svg";
 import BibliographyLogo from "../assets/missions/bibliography.svg";
 import SuggestionsLogo from "../assets/missions/suggestions.svg";
+import OSSLibraries from "../assets/DataLogo.png";
+import OSSEcosystemsLogo from "../assets/data_analysis/EcosystemsLogo.png";
+import YearLogo from "../assets/data_analysis/YearLogo.png";
+
+
+
 
 // For the Graphs in the Quick Facts page
 import DumbbellGraph from "../components/graphs/DumbbellGraph";
 import PercentageGraph from "../components/graphs/PercentGraph";
 import PolarGraph from "../components/graphs/PolarGraph";
 import StackLineGraph from "../components/graphs/StackLineGraph";
+import QuickFactsGraph from "../components/graphs/QuickFactsGraph";
+
 
 import TabContainer from "../components/graphs-container/TabContainer";
 
@@ -87,7 +95,62 @@ const texts = {
                         description: "Strategies to enhance diversity and inclusion"
                     }
                 ],
+            },
+            data: {
+                title: "THE DATA",
+                description: 
+                <div>
+                    We used two data-sets for pre-processing.
+                    <br/><br/>
+                    <span className="font-bold">Registered OSS Libraries</span>
+                    <br/><br/>
+                    We downloaded the list of registered OSS libraries, released in Jan 2020, 
+                    from libraries.io. We considered each package manager as one ecosystem 
+                    and then we retrieved each projects’ commit history from World of Code. 
+                    This dataset is denoted as OSS on the website.
+                    <br/><br/>
+                    <img src={OSSLibraries} className="OSS-libraries-img" alt="a logo representing bibliography" />
+                    <br/><br/>
+                    <span className="font-bold">Github Public Repositories</span>
+                    <br/><br/>
+                    We downloaded the list of registered OSS libraries, released in Jan 2020, from libraries.io. We considered each package manager as one ecosystem and then we retrieved each projects’ commit history from World of Code. This dataset is denoted as OSS on the website.
+                    We used data from GHTorrent, which consists of all GitHub activities until Mar 2021. Because GitHub projects may contain projects for personal or educational use, we excluded projects with fewer than four people as a heuristic. This dataset is denoted as PUBLIC on the website.
+
+                </div>
+            },
+            gender: {
+                title: "GENDER INFERENCE",
+                description: 
+                <div>
+                    We used computational approaches to infer binary gender from names. In this study, we chose to use NamSor, an automatic tool that can infer gender based on one’s name and cultural background, for its high accuracy among similar tools**.
+                    <br/><br/>
+                    We acknowledge that binary gender does not reflect the current perception of gender. Moreover, name-based inference has limitations.
+                    However, our results can still provide insights into the gender diversity status in OSS. Future researchers could use the results to conduct more targeted studies.
+                    <br/><br/>
+                    <span className="annotation">* Please see our annotated bibliography** Sebo, P. (2021). Performance of gender detection tools: a comparative study of name-to-gender inference services. Journal of the Medical Library Association: JMLA, 109(3), 414.</span>
+                </div>
+            },
+            analysis: {
+                title: "DATA ANALYSIS",
+                description: [
+                    {
+                        title: "Year",
+                        logo: <img src={YearLogo} alt="a logo representing the year" />,
+                        description: "We aggregated data by time and visualized how gender distribution and female participation in OSS has changed from year to year.",
+                    },
+                    {
+                        title: "OSS Ecosystems",
+                        logo: <img src={OSSEcosystemsLogo} alt="a logo representing the ecosystems" />,
+                        description: "Our analysis considered each package manager registered at libraries.io as one ecosystem. We then aggregated data based on each ecosystem and visualized how gender distribution varies across different ecosystems.",
+                    },
+                    {
+                        title: "Contributors",
+                        logo: <img src={OSSEcosystemsLogo} alt="a logo representing data" />,
+                        description: "We divided contributors into two categories: core and peripheral. To identify core contributors for each ecosystem, we identified projects whose number of commits were in the top 10% of their ecosystem. Then, within each of the top projects, we identified each project's core developers as those who made more than 10% of the commits within that three-month window. We analyzed and compared gender distributions among core contributors and all contributors.",
+                    }
+                ],
             }
+
         }
     },
     overview: {
@@ -115,11 +178,17 @@ const texts = {
                                     },
                                     {
                                         metric: "% of women among all contributors over the years",
-                                        value: ["bar graph", "bar graph"], // Placeholders
+                                        value: [
+                                            <QuickFactsGraph data2008="2.25" data2021="4.87"/>, 
+                                            <QuickFactsGraph data2008="3.64" data2021="6.87"/>
+                                        ], // Placeholders
                                     },
                                     {
                                         metric: "% of women among core contributors over the years",
-                                        value: ["bar graph", "bar graph"], // Placeholders
+                                        value: [
+                                        <QuickFactsGraph data2008="2.13" data2021="5.27"/>, 
+                                        <QuickFactsGraph data2008="3.69" data2021="7.09"/>
+                                        ], // Placeholders
                                     },
                                 ]
                             },
