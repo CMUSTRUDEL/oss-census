@@ -57,8 +57,9 @@ const texts = {
                     <LinkButton href="https://journals.sagepub.com/doi/pdf/10.1177/1461444811422887?casa_token=nZsTM6mo6XYAAAAA:f5R1CvpZM9GXD-CC8uMC1C9njToDXFUOy3SOBrZe75naWHogjbRNFzVoe5ZxiG__fePJuzzYLrF5-g">
                         causes a subsequent unwelcoming culture
                     </LinkButton>. Moreover, since gender diversity is shown to be 
-                    associated with higher productivity, increasing gender 
-                    diversity can boost a team's performance.
+                    <LinkButton href="https://cmustrudel.github.io/papers/chi15.pdf">
+                        associated with higher productivity
+                    </LinkButton>, increasing gender diversity can boost a team's performance.
                 </div>
             },
             mission: {
@@ -104,25 +105,29 @@ const texts = {
                     <br/><br/>
                     <span className="font-bold">Registered OSS Libraries</span>
                     <br/><br/>
-                    We downloaded the list of registered OSS libraries, released in Jan 2020, 
-                    from libraries.io. We considered each package manager as one ecosystem 
-                    and then we retrieved each projects’ commit history from World of Code. 
+                    We downloaded the list of registered OSS libraries, released in Jan 2020, from
+                    <LinkButton href="https://libraries.io/data">libraries.io</LinkButton>. We considered each package manager as one ecosystem 
+                    and then we retrieved each projects’ commit history from<LinkButton href="https://worldofcode.org/">World of Code</LinkButton>. 
                     This dataset is denoted as OSS on the website.
                     <br/><br/>
                     <img src={OSSLibraries} className="OSS-libraries-img" alt="a logo representing bibliography" />
                     <br/><br/>
                     <span className="font-bold">Github Public Repositories</span>
                     <br/><br/>
-                    We downloaded the list of registered OSS libraries, released in Jan 2020, from libraries.io. We considered each package manager as one ecosystem and then we retrieved each projects’ commit history from World of Code. This dataset is denoted as OSS on the website.
-                    We used data from GHTorrent, which consists of all GitHub activities until Mar 2021. Because GitHub projects may contain projects for personal or educational use, we excluded projects with fewer than four people as a heuristic. This dataset is denoted as PUBLIC on the website.
-
+                    We downloaded the list of registered OSS libraries, released in Jan 2020, from<LinkButton href="https://libraries.io/data">libraries.io</LinkButton>. We considered each package manager as one ecosystem and then we retrieved each projects’ commit history from World of Code. This dataset is denoted as OSS on the website.
+                    <br/><br/>
+                    We used data from 
+                    <LinkButton href="https://ghtorrent.org/">GHTorrent</LinkButton>,
+                    which consists of all GitHub activities until Mar 2021. Because GitHub projects may contain projects for personal or educational use, we excluded projects with fewer than four people as a heuristic. This dataset is denoted as PUBLIC on the website.
                 </div>
             },
             gender: {
                 title: "GENDER INFERENCE",
                 description: 
                 <div>
-                    We used computational approaches to infer binary gender from names. In this study, we chose to use NamSor, an automatic tool that can infer gender based on one’s name and cultural background, for its high accuracy among similar tools**.
+                    We used computational approaches to infer binary gender from names. In this study, we chose to use
+                    <LinkButton href="https://namsor.app/">NamSor</LinkButton>, an automatic tool that can infer gender
+                    based on one’s name and cultural background, for its high accuracy among similar tools**.
                     <br/><br/>
                     We acknowledge that binary gender does not reflect the current perception of gender. Moreover, name-based inference has limitations.
                     However, our results can still provide insights into the gender diversity status in OSS. Future researchers could use the results to conduct more targeted studies.
@@ -141,12 +146,17 @@ const texts = {
                     {
                         title: "OSS Ecosystems",
                         logo: <img src={OSSEcosystemsLogo} alt="a logo representing the ecosystems" />,
-                        description: "Our analysis considered each package manager registered at libraries.io as one ecosystem. We then aggregated data based on each ecosystem and visualized how gender distribution varies across different ecosystems.",
+                        description: <>Our analysis considered each package manager registered at<LinkButton href="https://libraries.io/data">libraries.io</LinkButton>as one ecosystem. We then aggregated data based on each ecosystem and visualized how gender distribution varies across different ecosystems."</>,
                     },
                     {
                         title: "Contributors",
                         logo: <img src={OSSEcosystemsLogo} alt="a logo representing data" />,
-                        description: "We divided contributors into two categories: core and peripheral. To identify core contributors for each ecosystem, we identified projects whose number of commits were in the top 10% of their ecosystem. Then, within each of the top projects, we identified each project's core developers as those who made more than 10% of the commits within that three-month window. We analyzed and compared gender distributions among core contributors and all contributors.",
+                        description: <>
+                            We divided contributors into two categories:
+                            <LinkButton href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8870179&casa_token=zeXxx_ecz5UAAAAA:mpOzo_72wLc-WCK19YPPtFfNShNxq0TEvOoqNFXAKFHSyhos6apVjzBV42iPTmoZbDMquMWvaQ&tag=1">
+                                core and peripheral.
+                            </LinkButton>
+                            To identify core contributors for each ecosystem, we identified projects whose number of commits were in the top 10% of their ecosystem. Then, within each of the top projects, we identified each project's core developers as those who made more than 10% of the commits within that three-month window. We analyzed and compared gender distributions among core contributors and all contributors."</>,
                     }
                 ],
             }

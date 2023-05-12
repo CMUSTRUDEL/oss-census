@@ -22,8 +22,8 @@ function getMissionContainer(
       <Typography.Text className="mission-title">
         {mission.title}
       </Typography.Text>
+      <Divider />
       <Typography.Text className="mission-description">
-        <hr></hr>
         {mission.description}
       </Typography.Text>
     </Space>
@@ -37,8 +37,10 @@ function getAnalysisContainer(
   return (
     <Space 
       direction="horizontal" 
-      align="baseline"
+      align="start"
       key={`analysis-${index}`}
+      className="analysis-row"
+      size={20}
     >
       <div className="analysis-logo">{analysis.logo}</div>
       <div className="analysis-title">
@@ -46,10 +48,8 @@ function getAnalysisContainer(
       </div>
       <Typography.Paragraph className="analysis-description">
         {analysis.description}
-        <hr></hr>
+        {index == 2 ? null : <Divider />}
       </Typography.Paragraph>
-      <Divider className="divider" />
-
     </Space>
   )
 }
@@ -58,6 +58,7 @@ export default function Home(props) {
   const intro = texts.home.content.intro;
   const problem = texts.home.content.problem;
   const missions = texts.home.content.mission;
+
   const data = texts.home.content.data;
   const gender = texts.home.content.gender;
   const analysis = texts.home.content.analysis;
@@ -82,7 +83,7 @@ export default function Home(props) {
         description={
           <Space 
             id="missions-container" 
-            size={[10,50]}
+            size={[50,50]}
             wrap
           >
             {missions.description.map(getMissionContainer)}
@@ -104,8 +105,7 @@ export default function Home(props) {
         title={analysis.title}
         description={
           <Space 
-            id="analysis-container" 
-            size={[10,50]}
+            id="analysis-container"
             wrap
           >
             {analysis.description.map(getAnalysisContainer)}

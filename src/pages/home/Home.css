@@ -1,15 +1,30 @@
+.description-container .ant-divider {
+    border-block-start-color: #BDBDBD;
+}
+
 #missions-container > .ant-space-item {
-    width: calc(33% - 5px);
+    width: calc(33% - 33px);
 }
 
 #missions-container {
     align-items: initial !important;
 }
 
+#missions-container .ant-divider {
+    margin: 8px 0;
+}
+
 #analysis-container > .ant-space-item {
     width: 100%;
 }
 
+.analysis-row > .ant-space-item:not(:first-child) {
+    margin-top: 16px;
+}
+
+.analysis-row .ant-divider {
+    margin-top: 40px;
+}
 
 .mission-title {
     text-transform: uppercase;
@@ -17,7 +32,6 @@
 }
 
 .mission-description {
-    font-size: 15px;
     line-height: 2px;
     text-align: start;
 }
