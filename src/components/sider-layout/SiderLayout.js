@@ -18,6 +18,7 @@ function getLevelFromSize(size) {
 export default function SiderLayout({
   title,
   description,
+  subdescription,
   sections = [],
   size = "md",
 }) {

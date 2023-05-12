@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Space, Typography } from "antd";
+import { Space, Typography, Divider } from "antd";
 
 import FullPager from "../../components/full-pager/FullPager";
 import SiderLayout from "../../components/sider-layout/SiderLayout";
@@ -16,13 +16,40 @@ function getMissionContainer(
   return (
     <Space 
       direction="vertical" 
-      align="center" 
       key={`mission-${index}`}
     >
       {mission.logo}
       <Typography.Text className="mission-title">
         {mission.title}
       </Typography.Text>
+      <Typography.Text className="mission-description">
+        <hr></hr>
+        {mission.description}
+      </Typography.Text>
+    </Space>
+  )
+}
+
+function getAnalysisContainer(
+  analysis,
+  index
+) {
+  return (
+    <Space 
+      direction="horizontal" 
+      align="baseline"
+      key={`analysis-${index}`}
+    >
+      <div className="analysis-logo">{analysis.logo}</div>
+      <div className="analysis-title">
+        {analysis.title}
+      </div>
+      <Typography.Paragraph className="analysis-description">
+        {analysis.description}
+        <hr></hr>
+      </Typography.Paragraph>
+      <Divider className="divider" />
+
     </Space>
   )
 }
@@ -31,6 +58,11 @@ export default function Home(props) {
   const intro = texts.home.content.intro;
   const problem = texts.home.content.problem;
   const missions = texts.home.content.mission;
+  const data = texts.home.content.data;
+  const gender = texts.home.content.gender;
+  const analysis = texts.home.content.analysis;
+
+
   return (
     <>
       <FullPager 
@@ -49,11 +81,34 @@ export default function Home(props) {
         title={missions.title}
         description={
           <Space 
-            className="missions-container" 
+            id="missions-container" 
             size={[10,50]}
             wrap
           >
             {missions.description.map(getMissionContainer)}
+          </Space>
+        }
+      />
+      <SiderLayout 
+        size="sm"
+        title={data.title}
+        description={data.description}
+      />
+      <SiderLayout 
+        size="sm"
+        title={gender.title}
+        description={gender.description}
+      />
+      <SiderLayout 
+        size="sm"
+        title={analysis.title}
+        description={
+          <Space 
+            id="analysis-container" 
+            size={[10,50]}
+            wrap
+          >
+            {analysis.description.map(getAnalysisContainer)}
           </Space>
         }
       />
