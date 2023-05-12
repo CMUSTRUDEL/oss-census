@@ -72,6 +72,11 @@ export default function Home(props) {
         description={intro.description}
         button={intro.button}
       />
+      <Divider style={{marginTop: "-1px"}}/>
+      <Typography.Text italic style={{fontSize: "16px"}}>
+        This website presents a census on gender diversity, one of the many diversity measures, 
+        in the OSS community. On this site, you can find:
+      </Typography.Text>
       <SiderLayout 
         size="sm"
         title={problem.title}
